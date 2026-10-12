@@ -1,0 +1,191 @@
+{
+  "presentation": "ppt/raa-v0.pptx",
+  "slide_count": 10,
+  "slide_size": "16:9",
+  "font": "Noto Sans CJK SC",
+  "metric": "pen-down 3D position RMSE, mm",
+  "normal_rmse_mm": {
+    "pd": 32.95501356239024,
+    "gc-pd": 0.5616286610814545,
+    "rbf": 0.567192220191334,
+    "fuzzy": 0.5183124374896171
+  },
+  "disturbed_rmse_mm": {
+    "pd": 32.83184026073022,
+    "gc-pd": 2.558163937367584,
+    "rbf": 2.0955107719842068,
+    "fuzzy": 1.7688798881701515
+  },
+  "recovery_s": {
+    "pd": [
+      2.2940000000000005,
+      4.410000000000004,
+      1.3560000000000088
+    ],
+    "gc-pd": [
+      0.18400000000000105,
+      0.24399999999999977,
+      0.24399999999999977
+    ],
+    "rbf": [
+      1.6870000000000012,
+      2.710000000000001,
+      2.206000000000003
+    ],
+    "fuzzy": [
+      0.6159999999999997,
+      0.8269999999999982,
+      1.203000000000003
+    ]
+  },
+  "fuzzy_vs_gc_pd_disturbed_rmse_reduction_percent": 30.853536697480997,
+  "recovery_definition": "After force off, disturbed-normal 3D distance <= 2 mm for at least 0.5 s; time is start of qualifying interval minus force end.",
+  "outline_display": "10 ms displayed samples, stroke endpoints preserved, RDP tolerance 0.05 mm; all reported RMSE use complete 1 ms experiment data",
+  "time_series_display": "first force window, 19–27 s, displayed samples every 10 ms",
+  "native_editable": [
+    "text",
+    "tables",
+    "flowchart",
+    "trajectory freeform paths",
+    "XY time-series chart with embedded Excel workbook"
+  ],
+  "raster_assets": [
+    "output/video_checks/fuzzy_normal/frame_113_9s.png",
+    "output/video_checks/gc-pd_disturbed/frame_55_5s.png"
+  ],
+  "embedded_videos": [
+    {
+      "controller": "pd",
+      "condition": "normal",
+      "slide": 8,
+      "source": "video/pd_normal.mp4",
+      "poster": "output/video_checks/pd_normal/frame_113_9s.png",
+      "explanation": "按位置偏差纠正。\n自重使轮廓偏离明显。"
+    },
+    {
+      "controller": "gc-pd",
+      "condition": "normal",
+      "slide": 8,
+      "source": "video/gc-pd_normal.mp4",
+      "poster": "output/video_checks/gc-pd_normal/frame_113_9s.png",
+      "explanation": "先抵消机械臂自重。\n轮廓更贴近目标线。"
+    },
+    {
+      "controller": "rbf",
+      "condition": "normal",
+      "slide": 8,
+      "source": "video/rbf_normal.mp4",
+      "poster": "output/video_checks/rbf_normal/frame_113_9s.png",
+      "explanation": "边画边学习补偿。\n轮廓接近目标线。"
+    },
+    {
+      "controller": "fuzzy",
+      "condition": "normal",
+      "slide": 8,
+      "source": "video/fuzzy_normal.mp4",
+      "poster": "output/video_checks/fuzzy_normal/frame_113_9s.png",
+      "explanation": "根据误差规则补偿。\n本次整体误差最小。"
+    },
+    {
+      "controller": "pd",
+      "condition": "disturbed",
+      "slide": 9,
+      "source": "video/pd_disturbed.mp4",
+      "poster": "output/video_checks/pd_disturbed/frame_55_5s.png",
+      "explanation": "推力增加轨迹偏移。\n撤力后逐步恢复。"
+    },
+    {
+      "controller": "gc-pd",
+      "condition": "disturbed",
+      "slide": 9,
+      "source": "video/gc-pd_disturbed.mp4",
+      "poster": "output/video_checks/gc-pd_disturbed/frame_55_5s.png",
+      "explanation": "受推时短暂偏离。\n本次撤力恢复最快。"
+    },
+    {
+      "controller": "rbf",
+      "condition": "disturbed",
+      "slide": 9,
+      "source": "video/rbf_disturbed.mp4",
+      "poster": "output/video_checks/rbf_disturbed/frame_55_5s.png",
+      "explanation": "受推时在线学补偿。\n偏移后仍能继续画。"
+    },
+    {
+      "controller": "fuzzy",
+      "condition": "disturbed",
+      "slide": 9,
+      "source": "video/fuzzy_disturbed.mp4",
+      "poster": "output/video_checks/fuzzy_disturbed/frame_55_5s.png",
+      "explanation": "按误差持续更新补偿。\n本次受推误差最小。"
+    }
+  ],
+  "video_delivery": "8 complete internally embedded MP4 files; four videos start automatically in parallel on each video slide; no external video links",
+  "pdf_preview": "Static poster frames only; embedded videos play in the PPTX slideshow",
+  "source_sha256": {
+    "output/summary.csv": "c34b4f79313a8458ef05da82e02e44e5a992144c76a191894229704b6e0d281a",
+    "output/experiment_manifest.json": "35452be251b01b73db888e9d2a1b5b9476c4da45fec8a10cd88c78ed3c664ef0",
+    "output/normal/pd/trajectory.csv": "24e114cfea1c34107b395bd7a0e5adba913705da3cdf6b103dd6810709f31b68",
+    "output/normal/gc-pd/trajectory.csv": "f4b9178b9045a4ff26f90cc61b12f49431d9f81472cd4308040ee27fc3c15d1b",
+    "output/normal/rbf/trajectory.csv": "db9b2ca6413e07b8f80c65e9c15c7bbe6427f228f44430019d0d1131f0187165",
+    "output/normal/fuzzy/trajectory.csv": "f43d229f87a7b516194029864da75c2e34cf6bb7666b8d27006a1fa7d8caa06f",
+    "output/disturbed/fuzzy/trajectory.csv": "70f899c96e27dadac57941e63ed8f9c917ca55379a80c751250887a32c1512ec",
+    "output/comparisons/pd/comparison.csv": "d9ee5ac1413eda191a3edd34d02ad1575230bbcbc7cc2112e80c19ae72d78d9e",
+    "output/comparisons/pd/comparison_metrics.json": "24bff9f39c5b6308f53bfae06ade657a9f0b56040864dae8bb2b4cecb220c332",
+    "output/comparisons/gc-pd/comparison.csv": "d2deadc31f5143c548fa0a4222f5521a5c5722f754b0264252724df279ea758d",
+    "output/comparisons/gc-pd/comparison_metrics.json": "8489ed768b6825b7853e8dd2fe530720ec31fa0d58d3ea8078943e33b7f1bf5a",
+    "output/comparisons/rbf/comparison.csv": "3c0a2475dbd0b17405bb15971f6817d10ee6e4c5ec7c596a24296e48234fb441",
+    "output/comparisons/rbf/comparison_metrics.json": "2d6648933460f802d6b076c3232f6b6b00dc8ae851e528db4092e531ee68fba8",
+    "output/comparisons/fuzzy/comparison.csv": "faf97e9b7cb03be22640eda2fb23a74e30680a7fac8452237f0da3f88a8b4dc0",
+    "output/comparisons/fuzzy/comparison_metrics.json": "6a8dfd6fb10ffa735663ca607ddb00aed85f4a0275231470a3bba3c42b4b7094",
+    "video/pd_normal.mp4": "a7722736f7b0593f16d0a0c8d56bc876243ba4995db1526119cf06a9223509a9",
+    "output/video_checks/pd_normal/frame_113_9s.png": "01880ccbfb9d06641332c08bd8f735a3fb67a9ac04eb7196ebaa4b282289f3e6",
+    "video/gc-pd_normal.mp4": "5802fdc419192cd2d36d46a9561f817381315b7861bf0a9a44fca07d03c24949",
+    "output/video_checks/gc-pd_normal/frame_113_9s.png": "e403f631898a666e50b1a463b3728cf7f26216303ad2f9ffa0a88e0cb0523b67",
+    "video/rbf_normal.mp4": "77c7cc17b2b8071dc37906d28291360fc77842299b65e1783b460dbe1a126646",
+    "output/video_checks/rbf_normal/frame_113_9s.png": "43858aa4cb9a8de80e55ced804331e71aa118481ff302fc3374d87cca0e61f85",
+    "video/fuzzy_normal.mp4": "792975ec5511ddde75b11a2e3902c92fa72eb5099a01846b8f72adb023d0038a",
+    "output/video_checks/fuzzy_normal/frame_113_9s.png": "a1452237abae70a23d78bf701015c7645fa79277cb728390ecbc7edbdf43c352",
+    "video/pd_disturbed.mp4": "76d1ff70633a4982c9384d6fe51342abdb91b0969dab0042cb3b0b414465a253",
+    "output/video_checks/pd_disturbed/frame_55_5s.png": "01f786e18ef8c1f52942fe6645402e4b97217b1d44726ace6f6c63d53de05938",
+    "video/gc-pd_disturbed.mp4": "a43bfe015520c364162ef1a591cddc3f0a294c9d5363e8c0a399d62a9f19701e",
+    "output/video_checks/gc-pd_disturbed/frame_55_5s.png": "db822ed44d7850a83fbf945812211e843e129d388d3e96f8f8c33d8d2a55121d",
+    "video/rbf_disturbed.mp4": "c463feb87353754b75b9444837cd4ae1ca6b8da784e7547c35cd36277154cbf3",
+    "output/video_checks/rbf_disturbed/frame_55_5s.png": "135e95add018d3bc681fa691b5ae7196e0fb7daa9e72a06ff5a2747a583af2a5",
+    "video/fuzzy_disturbed.mp4": "06213859e6f458540e1ecd07eae931780d94f90ca623c4fb229683e60240d039",
+    "output/video_checks/fuzzy_disturbed/frame_55_5s.png": "42a7a72446216e0862749f2f6b74ee88b9c231239ff6a00cbc5b52a1453108bc"
+  },
+  "notes_from_markdown": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "shape_counts": [
+    9,
+    40,
+    9,
+    11,
+    143,
+    56,
+    12,
+    19,
+    19,
+    18
+  ],
+  "video_playback": {
+    "trigger": "slide entry",
+    "start_delay_ms": 0,
+    "mode": "parallel",
+    "videos_per_slide": 4,
+    "slides": [
+      8,
+      9
+    ]
+  }
+}

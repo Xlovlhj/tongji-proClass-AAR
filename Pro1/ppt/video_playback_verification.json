@@ -1,0 +1,41 @@
+{
+  "presentation": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro1/ppt/raa-v0.pptx",
+  "video_slides": [
+    8,
+    9
+  ],
+  "mode": "four videos automatically start together on slide entry",
+  "start_delay_ms": 0,
+  "parallel_targets": {
+    "ppt/slides/slide8.xml": [
+      "8",
+      "11",
+      "14",
+      "17"
+    ],
+    "ppt/slides/slide9.xml": [
+      "8",
+      "11",
+      "14",
+      "17"
+    ]
+  },
+  "modified_package_entries": [
+    "ppt/slides/slide8.xml",
+    "ppt/notesSlides/notesSlide8.xml",
+    "ppt/slides/slide9.xml",
+    "ppt/notesSlides/notesSlide9.xml"
+  ],
+  "embedded_media_sha256": {
+    "ppt/media/media1.mp4": "a7722736f7b0593f16d0a0c8d56bc876243ba4995db1526119cf06a9223509a9",
+    "ppt/media/media2.mp4": "5802fdc419192cd2d36d46a9561f817381315b7861bf0a9a44fca07d03c24949",
+    "ppt/media/media3.mp4": "77c7cc17b2b8071dc37906d28291360fc77842299b65e1783b460dbe1a126646",
+    "ppt/media/media4.mp4": "792975ec5511ddde75b11a2e3902c92fa72eb5099a01846b8f72adb023d0038a",
+    "ppt/media/media5.mp4": "76d1ff70633a4982c9384d6fe51342abdb91b0969dab0042cb3b0b414465a253",
+    "ppt/media/media6.mp4": "a43bfe015520c364162ef1a591cddc3f0a294c9d5363e8c0a399d62a9f19701e",
+    "ppt/media/media7.mp4": "c463feb87353754b75b9444837cd4ae1ca6b8da784e7547c35cd36277154cbf3",
+    "ppt/media/media8.mp4": "06213859e6f458540e1ecd07eae931780d94f90ca623c4fb229683e60240d039"
+  },
+  "embedded_videos_unchanged": true,
+  "pptx_sha256": "bb3a10f3daac36cf67873750bd292554556301041d8f19c1db733bb885a74ca7"
+}

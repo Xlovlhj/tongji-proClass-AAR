@@ -1,0 +1,480 @@
+{
+  "project": "robot arm artist",
+  "version": "raa-v0",
+  "audited_at": "2026-10-11T15:36:32.077134+00:00",
+  "audit_method": "Independent Python standard-library CSV sums, paired position differences, source SHA-256 and sidecar checks; no simulator or controller functions called",
+  "manifest_status": "completed",
+  "source_sha256": "0b6a48d48d94efe1a8e5d86c5c721a9b144fb74fc14f43c64180a9af6ffb7abe",
+  "runs": {
+    "pd_normal": {
+      "sample_count": 113935,
+      "drawing_sample_count": 87418,
+      "strokes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "last_sample_time_s": 113.934,
+      "reference_sha256": "8be53824f2769caf24342d69f35a83d97f00cc83a37971795c7bc491ec461248",
+      "computed_metrics": {
+        "tip_rmse_m": 0.037704343883167867,
+        "tip_max_error_m": 0.06351663766974913,
+        "xy_rmse_m": 0.024959938308468772,
+        "xy_max_error_m": 0.051245233828326534,
+        "drawing_tip_rmse_m": 0.03295501356239023,
+        "drawing_tip_max_error_m": 0.055942221830150185,
+        "drawing_xy_rmse_m": 0.024113993297149583,
+        "drawing_xy_max_error_m": 0.051245233828326534,
+        "torque_rms_nm": 3.15508110876727,
+        "torque_max_abs_nm": 18.60318154384894,
+        "torque_saturation_fraction": 0.0
+      },
+      "force_sample_counts": [
+        0,
+        0,
+        0
+      ],
+      "actual_z_range_m": [
+        0.28227689385414123,
+        0.3300001871585846
+      ],
+      "training_step_count": null,
+      "weights_l2_norm": null,
+      "video_frame_count": 3479,
+      "video_motion_frame_count": 3419,
+      "video_hold_frame_count": 60,
+      "video_duration_s": 115.96666666666667,
+      "video_resolution": [
+        960,
+        720
+      ],
+      "video_dropped_frames": 0,
+      "mp4_media_payload_unchanged": true
+    },
+    "gc-pd_normal": {
+      "sample_count": 113935,
+      "drawing_sample_count": 87418,
+      "strokes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "last_sample_time_s": 113.934,
+      "reference_sha256": "8be53824f2769caf24342d69f35a83d97f00cc83a37971795c7bc491ec461248",
+      "computed_metrics": {
+        "tip_rmse_m": 0.0009650216478479739,
+        "tip_max_error_m": 0.003874297755994945,
+        "xy_rmse_m": 0.000528685318011778,
+        "xy_max_error_m": 0.0022099051444105294,
+        "drawing_tip_rmse_m": 0.0005616286610814551,
+        "drawing_tip_max_error_m": 0.003874297755994945,
+        "drawing_xy_rmse_m": 0.0004002824800865256,
+        "drawing_xy_max_error_m": 0.0016703463899968023,
+        "torque_rms_nm": 9.681884156039317,
+        "torque_max_abs_nm": 23.748535807456644,
+        "torque_saturation_fraction": 0.0
+      },
+      "force_sample_counts": [
+        0,
+        0,
+        0
+      ],
+      "actual_z_range_m": [
+        0.301426203250885,
+        0.33362016201019284
+      ],
+      "training_step_count": null,
+      "weights_l2_norm": null,
+      "video_frame_count": 3479,
+      "video_motion_frame_count": 3419,
+      "video_hold_frame_count": 60,
+      "video_duration_s": 115.96666666666667,
+      "video_resolution": [
+        960,
+        720
+      ],
+      "video_dropped_frames": 0,
+      "mp4_media_payload_unchanged": true
+    },
+    "rbf_normal": {
+      "sample_count": 113935,
+      "drawing_sample_count": 87418,
+      "strokes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "last_sample_time_s": 113.934,
+      "reference_sha256": "8be53824f2769caf24342d69f35a83d97f00cc83a37971795c7bc491ec461248",
+      "computed_metrics": {
+        "tip_rmse_m": 0.0009708097947667052,
+        "tip_max_error_m": 0.0040823275525714246,
+        "xy_rmse_m": 0.0005261520322564165,
+        "xy_max_error_m": 0.002326613341109591,
+        "drawing_tip_rmse_m": 0.000567192220191332,
+        "drawing_tip_max_error_m": 0.0040823275525714246,
+        "drawing_xy_rmse_m": 0.0003980865392958404,
+        "drawing_xy_max_error_m": 0.0016998509265158976,
+        "torque_rms_nm": 9.681827339136952,
+        "torque_max_abs_nm": 23.749273543528766,
+        "torque_saturation_fraction": 0.0
+      },
+      "force_sample_counts": [
+        0,
+        0,
+        0
+      ],
+      "actual_z_range_m": [
+        0.30123372316360475,
+        0.33381162881851195
+      ],
+      "training_step_count": 113935,
+      "weights_l2_norm": 0.04454155849434459,
+      "video_frame_count": 3479,
+      "video_motion_frame_count": 3419,
+      "video_hold_frame_count": 60,
+      "video_duration_s": 115.96666666666667,
+      "video_resolution": [
+        960,
+        720
+      ],
+      "video_dropped_frames": 0,
+      "mp4_media_payload_unchanged": true
+    },
+    "fuzzy_normal": {
+      "sample_count": 113935,
+      "drawing_sample_count": 87418,
+      "strokes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "last_sample_time_s": 113.934,
+      "reference_sha256": "8be53824f2769caf24342d69f35a83d97f00cc83a37971795c7bc491ec461248",
+      "computed_metrics": {
+        "tip_rmse_m": 0.0009078484432581238,
+        "tip_max_error_m": 0.003920937682653399,
+        "xy_rmse_m": 0.0004899643270389447,
+        "xy_max_error_m": 0.002378084533958803,
+        "drawing_tip_rmse_m": 0.0005183124374896174,
+        "drawing_tip_max_error_m": 0.003917353463180204,
+        "drawing_xy_rmse_m": 0.00036769826611209386,
+        "drawing_xy_max_error_m": 0.0016895800740281469,
+        "torque_rms_nm": 9.681778606245198,
+        "torque_max_abs_nm": 23.749329495590196,
+        "torque_saturation_fraction": 0.0
+      },
+      "force_sample_counts": [
+        0,
+        0,
+        0
+      ],
+      "actual_z_range_m": [
+        0.30140502095222477,
+        0.3335887432098389
+      ],
+      "training_step_count": 113935,
+      "weights_l2_norm": 0.4913198319418586,
+      "video_frame_count": 3479,
+      "video_motion_frame_count": 3419,
+      "video_hold_frame_count": 60,
+      "video_duration_s": 115.96666666666667,
+      "video_resolution": [
+        960,
+        720
+      ],
+      "video_dropped_frames": 0,
+      "mp4_media_payload_unchanged": true
+    },
+    "pd_disturbed": {
+      "sample_count": 113935,
+      "drawing_sample_count": 87418,
+      "strokes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "last_sample_time_s": 113.934,
+      "reference_sha256": "8be53824f2769caf24342d69f35a83d97f00cc83a37971795c7bc491ec461248",
+      "computed_metrics": {
+        "tip_rmse_m": 0.03760190610451852,
+        "tip_max_error_m": 0.06352731544414061,
+        "xy_rmse_m": 0.02480389722110514,
+        "xy_max_error_m": 0.04547593450960482,
+        "drawing_tip_rmse_m": 0.03283184026072996,
+        "drawing_tip_max_error_m": 0.05071991324773262,
+        "drawing_xy_rmse_m": 0.02394474385615973,
+        "drawing_xy_max_error_m": 0.04547593450960482,
+        "torque_rms_nm": 3.1564233781411732,
+        "torque_max_abs_nm": 18.60318154384894,
+        "torque_saturation_fraction": 0.0
+      },
+      "force_sample_counts": [
+        2000,
+        2000,
+        2000
+      ],
+      "actual_z_range_m": [
+        0.2822762680053711,
+        0.3300001871585846
+      ],
+      "training_step_count": null,
+      "weights_l2_norm": null,
+      "video_frame_count": 3479,
+      "video_motion_frame_count": 3419,
+      "video_hold_frame_count": 60,
+      "video_duration_s": 115.96666666666667,
+      "video_resolution": [
+        960,
+        720
+      ],
+      "video_dropped_frames": 0,
+      "mp4_media_payload_unchanged": true
+    },
+    "gc-pd_disturbed": {
+      "sample_count": 113935,
+      "drawing_sample_count": 87418,
+      "strokes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "last_sample_time_s": 113.934,
+      "reference_sha256": "8be53824f2769caf24342d69f35a83d97f00cc83a37971795c7bc491ec461248",
+      "computed_metrics": {
+        "tip_rmse_m": 0.0023896169425008836,
+        "tip_max_error_m": 0.012334204146554882,
+        "xy_rmse_m": 0.002091184994187775,
+        "xy_max_error_m": 0.01232344711896151,
+        "drawing_tip_rmse_m": 0.002558163937367593,
+        "drawing_tip_max_error_m": 0.012334204146554882,
+        "drawing_xy_rmse_m": 0.0023442538656662034,
+        "drawing_xy_max_error_m": 0.01232344711896151,
+        "torque_rms_nm": 9.674201668138837,
+        "torque_max_abs_nm": 24.13340019481703,
+        "torque_saturation_fraction": 0.0
+      },
+      "force_sample_counts": [
+        2000,
+        2000,
+        2000
+      ],
+      "actual_z_range_m": [
+        0.30142626285552976,
+        0.3336153936386108
+      ],
+      "training_step_count": null,
+      "weights_l2_norm": null,
+      "video_frame_count": 3479,
+      "video_motion_frame_count": 3419,
+      "video_hold_frame_count": 60,
+      "video_duration_s": 115.96666666666667,
+      "video_resolution": [
+        960,
+        720
+      ],
+      "video_dropped_frames": 0,
+      "mp4_media_payload_unchanged": true
+    },
+    "rbf_disturbed": {
+      "sample_count": 113935,
+      "drawing_sample_count": 87418,
+      "strokes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "last_sample_time_s": 113.934,
+      "reference_sha256": "8be53824f2769caf24342d69f35a83d97f00cc83a37971795c7bc491ec461248",
+      "computed_metrics": {
+        "tip_rmse_m": 0.0020225938584517533,
+        "tip_max_error_m": 0.011205873051072335,
+        "xy_rmse_m": 0.0017313380583581113,
+        "xy_max_error_m": 0.011196962400312784,
+        "drawing_tip_rmse_m": 0.0020955107719842106,
+        "drawing_tip_max_error_m": 0.011205873051072335,
+        "drawing_xy_rmse_m": 0.0019180554146813232,
+        "drawing_xy_max_error_m": 0.011196962400312784,
+        "torque_rms_nm": 9.673211854093333,
+        "torque_max_abs_nm": 24.131120248436105,
+        "torque_saturation_fraction": 0.0
+      },
+      "force_sample_counts": [
+        2000,
+        2000,
+        2000
+      ],
+      "actual_z_range_m": [
+        0.3012330687046051,
+        0.33372799277305604
+      ],
+      "training_step_count": 113935,
+      "weights_l2_norm": 0.05595677909861382,
+      "video_frame_count": 3479,
+      "video_motion_frame_count": 3419,
+      "video_hold_frame_count": 60,
+      "video_duration_s": 115.96666666666667,
+      "video_resolution": [
+        960,
+        720
+      ],
+      "video_dropped_frames": 0,
+      "mp4_media_payload_unchanged": true
+    },
+    "fuzzy_disturbed": {
+      "sample_count": 113935,
+      "drawing_sample_count": 87418,
+      "strokes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "last_sample_time_s": 113.934,
+      "reference_sha256": "8be53824f2769caf24342d69f35a83d97f00cc83a37971795c7bc491ec461248",
+      "computed_metrics": {
+        "tip_rmse_m": 0.0017222941548746089,
+        "tip_max_error_m": 0.01113459243565277,
+        "xy_rmse_m": 0.001453836998885719,
+        "xy_max_error_m": 0.011128236749386207,
+        "drawing_tip_rmse_m": 0.0017688798881701569,
+        "drawing_tip_max_error_m": 0.01113459243565277,
+        "drawing_xy_rmse_m": 0.0016134072573026643,
+        "drawing_xy_max_error_m": 0.011128236749386207,
+        "torque_rms_nm": 9.6733936485934,
+        "torque_max_abs_nm": 24.131159180171032,
+        "torque_saturation_fraction": 0.0
+      },
+      "force_sample_counts": [
+        2000,
+        2000,
+        2000
+      ],
+      "actual_z_range_m": [
+        0.30140502095222477,
+        0.333418972492218
+      ],
+      "training_step_count": 113935,
+      "weights_l2_norm": 1.0885578206456576,
+      "video_frame_count": 3479,
+      "video_motion_frame_count": 3419,
+      "video_hold_frame_count": 60,
+      "video_duration_s": 115.96666666666667,
+      "video_resolution": [
+        960,
+        720
+      ],
+      "video_dropped_frames": 0,
+      "mp4_media_payload_unchanged": true
+    }
+  },
+  "comparisons": {
+    "pd": {
+      "computed_deviation_metrics": {
+        "tip_rmse_m": 0.002668142213902196,
+        "tip_max_error_m": 0.019676202427884558,
+        "drawing_tip_rmse_m": 0.0030143016537982634,
+        "drawing_tip_max_error_m": 0.019676202427884558
+      },
+      "computed_recovery_time_s": [
+        2.2940000000000005,
+        4.410000000000004,
+        1.3560000000000088
+      ],
+      "pre_first_force_identical_samples": 20000,
+      "first_nonzero_deviation_time_s": 20.001,
+      "reference_and_time_aligned": true
+    },
+    "gc-pd": {
+      "computed_deviation_metrics": {
+        "tip_rmse_m": 0.0022337847938616513,
+        "tip_max_error_m": 0.012528033737771229,
+        "drawing_tip_rmse_m": 0.002550171781594524,
+        "drawing_tip_max_error_m": 0.012528033737771229
+      },
+      "computed_recovery_time_s": [
+        0.18400000000000105,
+        0.24399999999999977,
+        0.24399999999999977
+      ],
+      "pre_first_force_identical_samples": 20000,
+      "first_nonzero_deviation_time_s": 20.001,
+      "reference_and_time_aligned": true
+    },
+    "rbf": {
+      "computed_deviation_metrics": {
+        "tip_rmse_m": 0.0018215010241022943,
+        "tip_max_error_m": 0.011499238887143015,
+        "drawing_tip_rmse_m": 0.0020714482887490737,
+        "drawing_tip_max_error_m": 0.011499238887143015
+      },
+      "computed_recovery_time_s": [
+        1.6870000000000012,
+        2.710000000000001,
+        2.206000000000003
+      ],
+      "pre_first_force_identical_samples": 20000,
+      "first_nonzero_deviation_time_s": 20.001,
+      "reference_and_time_aligned": true
+    },
+    "fuzzy": {
+      "computed_deviation_metrics": {
+        "tip_rmse_m": 0.0015291437844236501,
+        "tip_max_error_m": 0.011446266748706867,
+        "drawing_tip_rmse_m": 0.0017431839048052142,
+        "drawing_tip_max_error_m": 0.011446266748706867
+      },
+      "computed_recovery_time_s": [
+        0.6159999999999997,
+        0.8269999999999982,
+        1.203000000000003
+      ],
+      "pre_first_force_identical_samples": 20000,
+      "first_nonzero_deviation_time_s": 20.001,
+      "reference_and_time_aligned": true
+    }
+  },
+  "frozen_runtime_sources_unchanged": true,
+  "all_eight_reference_hashes_identical": true,
+  "all_checks_passed": true,
+  "failures": []
+}

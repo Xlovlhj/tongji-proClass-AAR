@@ -1,0 +1,103 @@
+{
+  "normal_output": "Pro1/output/normal/pd",
+  "disturbed_output": "Pro1/output/disturbed/pd",
+  "sample_count": 113935,
+  "duration_s": 113.934,
+  "units": {
+    "time": "s",
+    "positions_and_errors": "m"
+  },
+  "metrics": {
+    "normal_tracking": {
+      "sample_count": 113935,
+      "drawing_sample_count": 87418,
+      "tip_rmse_m": 0.0377043438831677,
+      "tip_max_error_m": 0.06351663766974913,
+      "xy_rmse_m": 0.024959938308468738,
+      "xy_max_error_m": 0.051245233828326534,
+      "drawing_tip_rmse_m": 0.032955013562390244,
+      "drawing_tip_max_error_m": 0.055942221830150185,
+      "drawing_xy_rmse_m": 0.024113993297149545,
+      "drawing_xy_max_error_m": 0.051245233828326534
+    },
+    "disturbed_tracking": {
+      "sample_count": 113935,
+      "drawing_sample_count": 87418,
+      "tip_rmse_m": 0.03760190610451852,
+      "tip_max_error_m": 0.06352731544414061,
+      "xy_rmse_m": 0.024803897221104963,
+      "xy_max_error_m": 0.04547593450960482,
+      "drawing_tip_rmse_m": 0.03283184026073021,
+      "drawing_tip_max_error_m": 0.05071991324773262,
+      "drawing_xy_rmse_m": 0.02394474385615974,
+      "drawing_xy_max_error_m": 0.04547593450960482
+    },
+    "disturbance_deviation": {
+      "sample_count": 113935,
+      "drawing_sample_count": 87418,
+      "tip_rmse_m": 0.002668142213902196,
+      "tip_max_error_m": 0.019676202427884558,
+      "xy_rmse_m": 0.0026679850217655406,
+      "xy_max_error_m": 0.01967619454572543,
+      "drawing_tip_rmse_m": 0.0030143016537982634,
+      "drawing_tip_max_error_m": 0.019676202427884558,
+      "drawing_xy_rmse_m": 0.0030141527420140765,
+      "drawing_xy_max_error_m": 0.01967619454572543
+    }
+  },
+  "recovery": {
+    "metric": "3D distance between disturbed and normal positions at the same time",
+    "threshold_m": 0.002,
+    "required_hold_s": 0.5,
+    "windows": [
+      {
+        "start_s": 20.0,
+        "end_s": 22.0,
+        "force_world_n": [
+          3.0,
+          0.0,
+          0.0
+        ],
+        "label": "+X push",
+        "recovery_time_s": 2.2940000000000005,
+        "recovery_started_at_s": 24.294,
+        "recovery_confirmed_at_s": 24.794,
+        "peak_deviation_during_force_m": 0.006832897919105711,
+        "peak_deviation_until_next_force_m": 0.0072561186993096915,
+        "recovery_observation_end_s": 55.0
+      },
+      {
+        "start_s": 55.0,
+        "end_s": 57.0,
+        "force_world_n": [
+          0.0,
+          -3.0,
+          0.0
+        ],
+        "label": "-Y push",
+        "recovery_time_s": 4.410000000000004,
+        "recovery_started_at_s": 61.410000000000004,
+        "recovery_confirmed_at_s": 61.910000000000004,
+        "peak_deviation_during_force_m": 0.012095120675744052,
+        "peak_deviation_until_next_force_m": 0.019676202427884558,
+        "recovery_observation_end_s": 90.0
+      },
+      {
+        "start_s": 90.0,
+        "end_s": 92.0,
+        "force_world_n": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "label": "+X +Y push",
+        "recovery_time_s": 1.3560000000000088,
+        "recovery_started_at_s": 93.35600000000001,
+        "recovery_confirmed_at_s": 93.85600000000001,
+        "peak_deviation_during_force_m": 0.007373147538373325,
+        "peak_deviation_until_next_force_m": 0.009532437167277101,
+        "recovery_observation_end_s": 113.934
+      }
+    ]
+  }
+}

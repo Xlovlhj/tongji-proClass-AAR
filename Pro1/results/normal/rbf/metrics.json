@@ -1,0 +1,438 @@
+{
+  "project": "robot arm artist",
+  "version": "raa-v0",
+  "simulator": "Isaac Sim / PhysX",
+  "isaac_version": "6.0.1-rc.7+release.42383.32955d8d.gl",
+  "controller": "rbf",
+  "completed": true,
+  "reference_duration_s": 113.93333333333334,
+  "wall_time_s": 244.93464151400258,
+  "physics_dt_s": 0.001,
+  "max_ik_tip_error_m": 1.9952423549635005e-06,
+  "logo_source": {
+    "name": "OpenAI / ChatGPT blossom symbol (2025 design)",
+    "author": "OpenAI",
+    "description_page": "https://commons.wikimedia.org/wiki/File:OpenAI_logo_2025_(symbol).svg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/OpenAI_logo_2025_%28symbol%29.svg",
+    "asset_revision": "2026-08-24 cropped SVG, fetched 2026-10-10",
+    "brand_guidelines": "https://openai.com/brand/",
+    "copyright_note": "Wikimedia Commons labels this geometric mark PD-textlogo (public domain).",
+    "trademark_note": "OpenAI and ChatGPT marks belong to OpenAI. This independent course demonstration is not endorsed by OpenAI.",
+    "drawing_method": "Trace all eight SVG boundary subpaths; preserve aspect ratio; lift between subpaths."
+  },
+  "virtual_pen_offset_m": [
+    0.0,
+    0.0,
+    0.13
+  ],
+  "gravity_enabled": true,
+  "arm_position_drives_enabled": false,
+  "external_disturbance_enabled": false,
+  "ink_visualization": "actual tip XY projected onto drawing plane",
+  "ink_plane_z_m": 0.306,
+  "disturbance": {
+    "enabled": false,
+    "frame": "world",
+    "force_units": "N",
+    "position_units": "m",
+    "application_body": "panda_hand",
+    "application_point": "actual virtual pen tip in world coordinates",
+    "interval_convention": "start_s <= time < end_s",
+    "reference_modified": false,
+    "pulses": [
+      {
+        "start_s": 20.0,
+        "end_s": 22.0,
+        "force_world_n": [
+          3.0,
+          0.0,
+          0.0
+        ],
+        "label": "+X push"
+      },
+      {
+        "start_s": 55.0,
+        "end_s": 57.0,
+        "force_world_n": [
+          0.0,
+          -3.0,
+          0.0
+        ],
+        "label": "-Y push"
+      },
+      {
+        "start_s": 90.0,
+        "end_s": 92.0,
+        "force_world_n": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "label": "+X +Y push"
+      }
+    ]
+  },
+  "disturbance_windows": [
+    {
+      "start_s": 20.0,
+      "end_s": 22.0,
+      "force_world_n": [
+        3.0,
+        0.0,
+        0.0
+      ],
+      "label": "+X push"
+    },
+    {
+      "start_s": 55.0,
+      "end_s": 57.0,
+      "force_world_n": [
+        0.0,
+        -3.0,
+        0.0
+      ],
+      "label": "-Y push"
+    },
+    {
+      "start_s": 90.0,
+      "end_s": 92.0,
+      "force_world_n": [
+        2.0,
+        2.0,
+        0.0
+      ],
+      "label": "+X +Y push"
+    }
+  ],
+  "recovery_threshold_m": 0.002,
+  "recovery_hold_s": 0.5,
+  "timeline_play_enabled": true,
+  "physics_elapsed_s": 113.93500541162211,
+  "config_path": "Pro1/configs/rbf.json",
+  "controller_state": {
+    "controller": "rbf",
+    "configuration": {
+      "pd": {
+        "kp": [
+          160.0,
+          160.0,
+          120.0,
+          120.0,
+          70.0,
+          55.0,
+          35.0
+        ],
+        "kd": [
+          22.0,
+          22.0,
+          18.0,
+          18.0,
+          2.0,
+          1.4,
+          0.8
+        ],
+        "torque_limits": [
+          87.0,
+          87.0,
+          87.0,
+          87.0,
+          12.0,
+          12.0,
+          12.0
+        ],
+        "gravity_compensation": true
+      },
+      "dt": 0.001,
+      "learning_rate": [
+        30.0,
+        30.0,
+        30.0,
+        30.0,
+        30.0,
+        30.0,
+        30.0
+      ],
+      "sliding_lambda": [
+        6.0,
+        6.0,
+        6.0,
+        6.0,
+        6.0,
+        6.0,
+        6.0
+      ],
+      "leakage": 0.02,
+      "compensation_limits": [
+        6.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "position_scale": 3.141592653589793,
+      "velocity_scale": 2.5,
+      "rbf_width": 0.65,
+      "centers_per_axis": 3
+    },
+    "started_from_zero_weights": true,
+    "training_step_count": 113935,
+    "feature_count_per_joint": 9,
+    "weights_shape": [
+      7,
+      9
+    ],
+    "weights": [
+      [
+        0.0012443064946805233,
+        0.0026622211360831987,
+        0.0003819648409754371,
+        0.0006938410789280719,
+        -0.0016471703759473242,
+        -0.001715232225193508,
+        -0.0005307150026082678,
+        -0.002758139426215174,
+        -0.0011620161110100886
+      ],
+      [
+        0.00937612403470889,
+        0.02168484770694519,
+        0.003903475463188203,
+        0.010571099381036998,
+        0.010866245703049737,
+        -0.003960648269167971,
+        -0.0009008607728588937,
+        -0.008842085240807311,
+        -0.004535606154746618
+      ],
+      [
+        0.0018917378380206708,
+        0.004414519137829671,
+        0.000803650302580601,
+        0.0024541022828920836,
+        0.0011979906013408327,
+        -0.0017551050548472028,
+        -0.0008391373810495261,
+        -0.005211316505592425,
+        -0.002366070508393954
+      ],
+      [
+        0.000302332628115889,
+        -0.012407029573712848,
+        -0.00801951106533555,
+        -0.004384535498663908,
+        -0.02189737484460618,
+        -0.00910741697337134,
+        -0.0004782179324975816,
+        -0.0019655552381234267,
+        -0.0007306408329793819
+      ],
+      [
+        2.126422559217249e-05,
+        4.6134200092883e-05,
+        6.955267342203259e-06,
+        5.557120969950139e-05,
+        0.00010138937011121721,
+        6.397476693096732e-06,
+        1.2280082513452584e-05,
+        1.4290069231309013e-05,
+        -3.5709361722968553e-06
+      ],
+      [
+        -0.0001367671757938446,
+        -0.00045097192908891213,
+        -0.00014096408601995991,
+        -0.0019573865267081964,
+        -0.0064914519180134566,
+        -0.0020382448673724107,
+        -0.0026164886736066706,
+        -0.008734646557335302,
+        -0.0027566239366677535
+      ],
+      [
+        0.0007934837683004779,
+        -0.002707098841856465,
+        -0.0024718319303422046,
+        -0.00010402438462633843,
+        -0.003198911682239673,
+        -0.001866597961669639,
+        -3.197469577362648e-05,
+        -0.00024942049711367806,
+        -0.00012138539089320136
+      ]
+    ],
+    "weights_l2_norm": 0.04454155849434459,
+    "weight_norms_by_joint": [
+      0.004915027710713899,
+      0.030306061438646042,
+      0.008228666917592125,
+      0.028365974369850746,
+      0.00012808417923155057,
+      0.011878793834469418,
+      0.0052795801039992145
+    ],
+    "last_used_weight_norms_by_joint": [
+      0.004910088771532571,
+      0.030148639153921526,
+      0.008228928733353565,
+      0.028124016365668386,
+      0.0001271165370368648,
+      0.011882515396877976,
+      0.005304390560063669
+    ],
+    "weight_state_timing": "weights are after the latest update; last_used_weights generated the latest torque",
+    "weights_max_abs": 0.02189737484460618,
+    "learning_rate": [
+      30.0,
+      30.0,
+      30.0,
+      30.0,
+      30.0,
+      30.0,
+      30.0
+    ],
+    "sliding_lambda": [
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0
+    ],
+    "leakage": 0.02,
+    "compensation_limits_nm": [
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      2.0,
+      2.0,
+      2.0
+    ],
+    "last_compensation_nm": [
+      -0.0006548291950242941,
+      0.007437871191553028,
+      0.00016655839748143492,
+      -0.01140905333500701,
+      5.401233435928344e-05,
+      -0.005603954634307386,
+      -0.002105277918357416
+    ],
+    "last_sliding_error_rad_s": [
+      -0.0012521570602652687,
+      0.021218281935253325,
+      -0.0001606182512069454,
+      -0.01989197641867868,
+      7.606537007093239e-05,
+      0.0002462406455876476,
+      0.0020772505986732526
+    ],
+    "last_weight_update_norm": 0.00041025245459956877,
+    "last_dt_s": 0.001,
+    "saturated_joint_sample_count": 0,
+    "antiwindup_joint_sample_count": 0,
+    "activation_normalization": "nonnegative features with sum=1 for each joint",
+    "basis_centers": [
+      [
+        -1.0,
+        -1.0
+      ],
+      [
+        -1.0,
+        0.0
+      ],
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "learning_signal_clip_rad_s": 1.0,
+    "guarantee": "bounded weights and compensation; no global tracking stability proof"
+  },
+  "metrics": {
+    "sample_count": 113935,
+    "drawing_sample_count": 87418,
+    "tip_rmse_m": 0.0009708097947667055,
+    "tip_max_error_m": 0.0040823275525714246,
+    "xy_rmse_m": 0.0005261520322564175,
+    "xy_max_error_m": 0.002326613341109591,
+    "drawing_tip_rmse_m": 0.000567192220191334,
+    "drawing_tip_max_error_m": 0.0040823275525714246,
+    "drawing_xy_rmse_m": 0.00039808653929584114,
+    "drawing_xy_max_error_m": 0.0016998509265158976,
+    "duration_s": 113.934,
+    "torque_rms_nm": 9.68182733913951,
+    "torque_max_abs_nm": 23.749273543528766,
+    "torque_saturation_fraction": 0.0
+  },
+  "video": {
+    "path": "Pro1/video/rbf_normal.mp4",
+    "completed": true,
+    "frame_count": 3479,
+    "fps": 30.0,
+    "expected_frame_count": 3479,
+    "frame_count_matches_expected": true,
+    "duration_s": 115.96666666666667,
+    "motion_frame_count": 3419,
+    "hold_frame_count": 60,
+    "hold_seconds": 2.0,
+    "resolution": [
+      960,
+      720
+    ],
+    "codec": "H.264",
+    "container": "MP4",
+    "encoder": "Isaac omni.videoencoding",
+    "dropped_frames": 0,
+    "duplicated_motion_frames": 0,
+    "repeated_final_frames": 60,
+    "no_dropped_frames": true,
+    "first_sim_time_s": 0.0,
+    "last_sim_time_s": 113.934,
+    "source_duration_s": 113.934,
+    "simulation_time_span_s": 113.934,
+    "capture_render_updates": 3419,
+    "frame_timing": "one held physical state per requested simulation-time sample",
+    "mp4_sync_flags": {
+      "path": "Pro1/video/rbf_normal.mp4",
+      "sample_count": 3479,
+      "patched_samples": 3421,
+      "idr_samples": 58,
+      "p_samples": 3421,
+      "metadata_bytes_changed": 6842,
+      "media_bytes": 47359212,
+      "media_sha256_before": "9e74d7a8f6c285e4f9f359deb1117f380af08fe165e3f4f94e7f91894bfb6977",
+      "media_sha256_after": "9e74d7a8f6c285e4f9f359deb1117f380af08fe165e3f4f94e7f91894bfb6977",
+      "media_payload_unchanged": true,
+      "random_access_indexes": false
+    },
+    "file_size_bytes": 47777394
+  },
+  "snapshot_max_link_position_error_m": 1.5716250041522723e-16
+}

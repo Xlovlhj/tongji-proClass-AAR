@@ -1,0 +1,55 @@
+{
+  "controller": "pd",
+  "headless": true,
+  "isaac_root": null,
+  "output": "Pro1/output/disturbed/pd",
+  "logo_width": 0.16,
+  "center": [
+    0.45,
+    0.0
+  ],
+  "draw_z": 0.305,
+  "speed": 0.04,
+  "dt": 0.001,
+  "planning_dt": 0.016666666666666666,
+  "max_steps": 0,
+  "hold_seconds": 0.0,
+  "control": {
+    "kp": [
+      160.0,
+      160.0,
+      120.0,
+      120.0,
+      70.0,
+      55.0,
+      35.0
+    ],
+    "kd": [
+      22.0,
+      22.0,
+      18.0,
+      18.0,
+      2.0,
+      1.4,
+      0.8
+    ],
+    "torque_limits": [
+      87.0,
+      87.0,
+      87.0,
+      87.0,
+      12.0,
+      12.0,
+      12.0
+    ]
+  },
+  "adaptive": {},
+  "disturbance": {
+    "enabled": true
+  },
+  "record_video": "Pro1/video/pd_disturbed.mp4",
+  "video_fps": 30,
+  "video_width": 960,
+  "video_height": 720,
+  "video_tail_seconds": 2.0
+}

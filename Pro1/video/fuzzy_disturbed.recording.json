@@ -1,0 +1,43 @@
+{
+  "path": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro1/video/fuzzy_disturbed.mp4",
+  "completed": true,
+  "frame_count": 3479,
+  "fps": 30.0,
+  "expected_frame_count": 3479,
+  "frame_count_matches_expected": true,
+  "duration_s": 115.96666666666667,
+  "motion_frame_count": 3419,
+  "hold_frame_count": 60,
+  "hold_seconds": 2.0,
+  "resolution": [
+    960,
+    720
+  ],
+  "codec": "H.264",
+  "container": "MP4",
+  "encoder": "Isaac omni.videoencoding",
+  "dropped_frames": 0,
+  "duplicated_motion_frames": 0,
+  "repeated_final_frames": 60,
+  "no_dropped_frames": true,
+  "first_sim_time_s": 0.0,
+  "last_sim_time_s": 113.934,
+  "source_duration_s": 113.934,
+  "simulation_time_span_s": 113.934,
+  "capture_render_updates": 3419,
+  "frame_timing": "one held physical state per requested simulation-time sample",
+  "mp4_sync_flags": {
+    "path": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro1/video/fuzzy_disturbed.mp4",
+    "sample_count": 3479,
+    "patched_samples": 3421,
+    "idr_samples": 58,
+    "p_samples": 3421,
+    "metadata_bytes_changed": 6842,
+    "media_bytes": 47619664,
+    "media_sha256_before": "40289f3cfa98f5c4defbb1500dc3e185e296500fadc034bf13a4822faa7974a9",
+    "media_sha256_after": "40289f3cfa98f5c4defbb1500dc3e185e296500fadc034bf13a4822faa7974a9",
+    "media_payload_unchanged": true,
+    "random_access_indexes": false
+  },
+  "file_size_bytes": 48037846
+}

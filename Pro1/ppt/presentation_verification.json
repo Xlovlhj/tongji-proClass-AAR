@@ -1,0 +1,26 @@
+{
+  "slide_count": 10,
+  "pdf_pages": 10,
+  "notes": 10,
+  "embedded_video_count": 8,
+  "video_pages": {
+    "8": "four normal runs",
+    "9": "four disturbed runs"
+  },
+  "external_video_links": 0,
+  "video_titles_and_explanations": "editable text below every video",
+  "native_click_to_play_actions": 8,
+  "complete_original_videos": true,
+  "independent_media_audit": "PASS: eight MP4 hashes matched originals; MIME, internal MEDIA/VIDEO relationships, embedded IDs, native play actions/timing, aspect ratio and caption placement checked.",
+  "numeric_evidence": "Existing validated experiment tables and charts retained; same source data.",
+  "visual_review": "Video pages rendered and inspected; titles and two-line captions readable; 10-page PDF and previews updated.",
+  "pdf_preview": "static poster images, no video payload",
+  "pptx_size_mib": 360.139,
+  "pdf_size_kib": 647.707,
+  "pptx_sha256": "bb3a10f3daac36cf67873750bd292554556301041d8f19c1db733bb885a74ca7",
+  "pdf_sha256": "9174f610cad086e3598df6b8b71006a85d04e404ef20186e9327fadf80851e14",
+  "video_playback": "four videos automatically start together on slide entry; shared parallel root; start delay 0 ms",
+  "parallel_auto_start_video_nodes": 8,
+  "embedded_videos_unchanged": true,
+  "playback_audit": "Independent audit passed: both slides have four sibling p:video nodes under their shared tmRoot; all conditions exactly delay=0 with no click event; targets and all eight MP4 hashes match."
+}

@@ -1,0 +1,204 @@
+{
+  "project": "robot arm artist",
+  "version": "raa-v0",
+  "simulator": "Isaac Sim / PhysX",
+  "isaac_version": "6.0.1-rc.7+release.42383.32955d8d.gl",
+  "controller": "pd",
+  "completed": true,
+  "reference_duration_s": 113.93333333333334,
+  "wall_time_s": 222.6192110359989,
+  "physics_dt_s": 0.001,
+  "max_ik_tip_error_m": 1.9952423549635005e-06,
+  "logo_source": {
+    "name": "OpenAI / ChatGPT blossom symbol (2025 design)",
+    "author": "OpenAI",
+    "description_page": "https://commons.wikimedia.org/wiki/File:OpenAI_logo_2025_(symbol).svg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/OpenAI_logo_2025_%28symbol%29.svg",
+    "asset_revision": "2026-08-24 cropped SVG, fetched 2026-10-10",
+    "brand_guidelines": "https://openai.com/brand/",
+    "copyright_note": "Wikimedia Commons labels this geometric mark PD-textlogo (public domain).",
+    "trademark_note": "OpenAI and ChatGPT marks belong to OpenAI. This independent course demonstration is not endorsed by OpenAI.",
+    "drawing_method": "Trace all eight SVG boundary subpaths; preserve aspect ratio; lift between subpaths."
+  },
+  "virtual_pen_offset_m": [
+    0.0,
+    0.0,
+    0.13
+  ],
+  "gravity_enabled": true,
+  "arm_position_drives_enabled": false,
+  "external_disturbance_enabled": false,
+  "ink_visualization": "actual tip XY projected onto drawing plane",
+  "ink_plane_z_m": 0.306,
+  "disturbance": {
+    "enabled": false,
+    "frame": "world",
+    "force_units": "N",
+    "position_units": "m",
+    "application_body": "panda_hand",
+    "application_point": "actual virtual pen tip in world coordinates",
+    "interval_convention": "start_s <= time < end_s",
+    "reference_modified": false,
+    "pulses": [
+      {
+        "start_s": 20.0,
+        "end_s": 22.0,
+        "force_world_n": [
+          3.0,
+          0.0,
+          0.0
+        ],
+        "label": "+X push"
+      },
+      {
+        "start_s": 55.0,
+        "end_s": 57.0,
+        "force_world_n": [
+          0.0,
+          -3.0,
+          0.0
+        ],
+        "label": "-Y push"
+      },
+      {
+        "start_s": 90.0,
+        "end_s": 92.0,
+        "force_world_n": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "label": "+X +Y push"
+      }
+    ]
+  },
+  "disturbance_windows": [
+    {
+      "start_s": 20.0,
+      "end_s": 22.0,
+      "force_world_n": [
+        3.0,
+        0.0,
+        0.0
+      ],
+      "label": "+X push"
+    },
+    {
+      "start_s": 55.0,
+      "end_s": 57.0,
+      "force_world_n": [
+        0.0,
+        -3.0,
+        0.0
+      ],
+      "label": "-Y push"
+    },
+    {
+      "start_s": 90.0,
+      "end_s": 92.0,
+      "force_world_n": [
+        2.0,
+        2.0,
+        0.0
+      ],
+      "label": "+X +Y push"
+    }
+  ],
+  "recovery_threshold_m": 0.002,
+  "recovery_hold_s": 0.5,
+  "timeline_play_enabled": true,
+  "physics_elapsed_s": 113.93500541162211,
+  "config_path": "Pro1/configs/pd.json",
+  "controller_state": {
+    "kind": "pd",
+    "gravity_compensation": false,
+    "kp": [
+      160.0,
+      160.0,
+      120.0,
+      120.0,
+      70.0,
+      55.0,
+      35.0
+    ],
+    "kd": [
+      22.0,
+      22.0,
+      18.0,
+      18.0,
+      2.0,
+      1.4,
+      0.8
+    ],
+    "torque_limits": [
+      87.0,
+      87.0,
+      87.0,
+      87.0,
+      12.0,
+      12.0,
+      12.0
+    ],
+    "online_learning": false
+  },
+  "metrics": {
+    "sample_count": 113935,
+    "drawing_sample_count": 87418,
+    "tip_rmse_m": 0.0377043438831677,
+    "tip_max_error_m": 0.06351663766974913,
+    "xy_rmse_m": 0.024959938308468738,
+    "xy_max_error_m": 0.051245233828326534,
+    "drawing_tip_rmse_m": 0.032955013562390244,
+    "drawing_tip_max_error_m": 0.05594222183015019,
+    "drawing_xy_rmse_m": 0.024113993297149545,
+    "drawing_xy_max_error_m": 0.051245233828326534,
+    "duration_s": 113.934,
+    "torque_rms_nm": 3.155081108767302,
+    "torque_max_abs_nm": 18.60318154384894,
+    "torque_saturation_fraction": 0.0
+  },
+  "video": {
+    "path": "Pro1/video/pd_normal.mp4",
+    "completed": true,
+    "frame_count": 3479,
+    "fps": 30.0,
+    "expected_frame_count": 3479,
+    "frame_count_matches_expected": true,
+    "duration_s": 115.96666666666667,
+    "motion_frame_count": 3419,
+    "hold_frame_count": 60,
+    "hold_seconds": 2.0,
+    "resolution": [
+      960,
+      720
+    ],
+    "codec": "H.264",
+    "container": "MP4",
+    "encoder": "Isaac omni.videoencoding",
+    "dropped_frames": 0,
+    "duplicated_motion_frames": 0,
+    "repeated_final_frames": 60,
+    "no_dropped_frames": true,
+    "first_sim_time_s": 0.0,
+    "last_sim_time_s": 113.934,
+    "source_duration_s": 113.934,
+    "simulation_time_span_s": 113.934,
+    "capture_render_updates": 3419,
+    "frame_timing": "one held physical state per requested simulation-time sample",
+    "mp4_sync_flags": {
+      "path": "Pro1/video/pd_normal.mp4",
+      "sample_count": 3479,
+      "patched_samples": 3421,
+      "idr_samples": 58,
+      "p_samples": 3421,
+      "metadata_bytes_changed": 6842,
+      "media_bytes": 44900110,
+      "media_sha256_before": "dbdfa318c0729fc60bcf9225893f32b9a7277a0b40f1c75cc4a6a989495debc2",
+      "media_sha256_after": "dbdfa318c0729fc60bcf9225893f32b9a7277a0b40f1c75cc4a6a989495debc2",
+      "media_payload_unchanged": true,
+      "random_access_indexes": false
+    },
+    "file_size_bytes": 45318292
+  },
+  "snapshot_max_link_position_error_m": 1.4946834900704541e-16
+}
