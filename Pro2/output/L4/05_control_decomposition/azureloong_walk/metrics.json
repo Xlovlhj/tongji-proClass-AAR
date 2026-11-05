@@ -1,0 +1,62 @@
+{
+  "input": "Pro2/output/L4/04_mpc_comparison/cpp_convex_walk/states.csv",
+  "samples": 1000,
+  "duration_s": 9.99,
+  "joints": [
+    {
+      "joint": "J_hip_l_pitch",
+      "wbc_rms_Nm": 8.680944170225413,
+      "pd_filtered_rms_Nm": 9.578359223086444,
+      "command_peak_abs_Nm": 49.29112686166132,
+      "saturation_samples": 0,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 3.721959176767907e-07
+    },
+    {
+      "joint": "J_knee_l_pitch",
+      "wbc_rms_Nm": 59.64467696008848,
+      "pd_filtered_rms_Nm": 32.74008424669752,
+      "command_peak_abs_Nm": 184.91292115724298,
+      "saturation_samples": 0,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 1.5701757350669086e-06
+    },
+    {
+      "joint": "J_ankle_l_pitch",
+      "wbc_rms_Nm": 16.622128095923337,
+      "pd_filtered_rms_Nm": 7.39645124830755,
+      "command_peak_abs_Nm": 58.5,
+      "saturation_samples": 5,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 4.5552710863088607e-07
+    },
+    {
+      "joint": "J_hip_r_pitch",
+      "wbc_rms_Nm": 8.940653255757663,
+      "pd_filtered_rms_Nm": 9.404350785848143,
+      "command_peak_abs_Nm": 43.294966342386715,
+      "saturation_samples": 0,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 3.8007097984470963e-07
+    },
+    {
+      "joint": "J_knee_r_pitch",
+      "wbc_rms_Nm": 62.10265205364861,
+      "pd_filtered_rms_Nm": 33.26487831384067,
+      "command_peak_abs_Nm": 167.10063437941116,
+      "saturation_samples": 0,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 1.653023072927293e-06
+    },
+    {
+      "joint": "J_ankle_r_pitch",
+      "wbc_rms_Nm": 15.203814378294634,
+      "pd_filtered_rms_Nm": 7.596063801747397,
+      "command_peak_abs_Nm": 58.5,
+      "saturation_samples": 10,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 4.017841021002737e-07
+    }
+  ],
+  "actual_effort_semantics": "isaac_applied_Nm is get_dof_efforts actuation when present; projected joint force must be logged separately."
+}

@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "stationary_derivative_norm": 0.0,
+  "minimum_constraint_margin": 9.475375,
+  "status": "Optimization terminated successfully",
+  "iterations": 1,
+  "solve_time_s": 0.05792567399930704,
+  "first_wrench": [
+    0.0,
+    0.0,
+    379.015,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    379.015,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "passed": true
+}

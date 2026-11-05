@@ -1,0 +1,14 @@
+{
+  "simulated_duration_s": 5.0,
+  "minimum_base_height_m": 1.0280005931854248,
+  "maximum_tilt_rad": 0.006152744872043525,
+  "maximum_horizontal_drift_m": 0.006610447802108026,
+  "maximum_abs_joint_velocity_rad_s": 5.568415641784668,
+  "maximum_abs_joint_effort_nm": 0.0,
+  "acceptance_thresholds": {
+    "minimum_base_height_m": 0.85,
+    "maximum_tilt_rad": 0.2,
+    "maximum_horizontal_drift_m": 0.1
+  },
+  "acceptance_passed": true
+}

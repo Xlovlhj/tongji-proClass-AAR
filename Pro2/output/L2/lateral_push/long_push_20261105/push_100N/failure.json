@@ -1,0 +1,4 @@
+{
+  "error": "t=8.994s：机器人失稳，z=0.598m，roll=-0.978，pitch=0.013",
+  "type": "PhysicalInstabilityError"
+}

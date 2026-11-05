@@ -1,13 +1,10 @@
-# Local tooling and Python caches
-__pycache__/
-*.py[cod]
+# Local tools and credentials
 .codex/
 .agents/
 .aws/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
 .~lock.*#
 ~$*
-
-# Complete embedded-video presentation is published as a Release attachment
-Pro1/ppt/raa-v0.pptx
-Pro1/ppt/.*.building.pptx
-Pro1/ppt/.*.syncing.pptx

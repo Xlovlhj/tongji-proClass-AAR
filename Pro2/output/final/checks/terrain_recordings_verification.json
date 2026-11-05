@@ -1,0 +1,1040 @@
+{
+  "verified_at": "2026-11-05T23:09:35.069892+08:00",
+  "purpose": "PPT demonstration evidence. Revised lateral-push recordings and formal L2 metrics share the 2026-11-05 runs; other recordings retain their separate formal experiment sources.",
+  "ffmpeg_binary": "/home/xqw/miniconda3/envs/rllab/lib/python3.1/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2",
+  "requested_clips": 2,
+  "validated_clips": 2,
+  "all_requested_recording_evidence_ready": true,
+  "available_recordings_pass": true,
+  "all_selected_simulations_completed": true,
+  "physically_failed_cases": [],
+  "pass": true,
+  "available_only": false,
+  "selection": [
+    "L4/random_obstacles_seed01_full",
+    "L4/blind_step_up"
+  ],
+  "report_path": "Pro2/output/final/checks/terrain_recordings_verification.json",
+  "recordings": [
+    {
+      "name": "L4/random_obstacles_seed01_full",
+      "level": "L4",
+      "config": "Pro2/experiments/L4/terrain/random_obstacles_seed01_full.json",
+      "output": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full",
+      "extra": [],
+      "state": "validated",
+      "pass": true,
+      "checks": {
+        "run_completed_or_documented_physical_stop": true,
+        "all_state_values_finite": true,
+        "categorical_jump_phases_valid": true,
+        "jump_phase_codes_match_names": true,
+        "state_time_monotonic": true,
+        "steps_match_completed_or_physically_stopped_run": true,
+        "simulation_duration_matches": true,
+        "sample_count_matches": true,
+        "samples_cover_full_run": true,
+        "video_saved": true,
+        "full_video_decode_succeeded": true,
+        "video_frame_count_matches": true,
+        "video_duration_matches": true,
+        "video_fps_matches": true,
+        "saved_config_matches_manifest": true,
+        "source_config_and_defaults_match_effective_physics": true,
+        "controller_library_matches_recorded_hash": true,
+        "controller_library_horizon_matches": true
+      },
+      "video": {
+        "full_decode_succeeded": true,
+        "duration_s": 45.0,
+        "width": 960,
+        "height": 720,
+        "fps": 30.0,
+        "decoded_frames": 1350,
+        "stream": "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 960x720 [SAR 1:1 DAR 4:3], 5029 kb/s, 30 fps, 30 tbr, 30 tbn (default)",
+        "decode_log": "Pro2/output/final/checks/recordings/decode/L4_random_obstacles_seed01_full.log"
+      },
+      "states": {
+        "samples": 4500,
+        "all_values_finite": true,
+        "first_nonfinite": [],
+        "jump_phase_counts": {},
+        "jump_phase_values_valid": true,
+        "jump_phase_codes_match": true,
+        "time_bounds_s": [
+          0.0,
+          44.99
+        ],
+        "time_strictly_increases": true,
+        "bounds": {
+          "base_x_m": [
+            -0.04325190931558609,
+            3.378168821334839
+          ],
+          "base_y_m": [
+            -0.28814995288848877,
+            0.07751406729221344
+          ],
+          "base_z_m": [
+            1.0501735210418701,
+            1.0955153703689575
+          ],
+          "roll_rad": [
+            -0.053325802268469884,
+            0.055187789667891674
+          ],
+          "pitch_rad": [
+            -0.03847061177139087,
+            0.0324635123330642
+          ],
+          "force_y_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "qp_statuses": {
+          "controller:mpc_qp_status": {
+            "present": true,
+            "counts": {
+              "0.0": 4500
+            },
+            "nonzero_samples": 0
+          },
+          "controller:wbc_qp_status": {
+            "present": true,
+            "counts": {
+              "0.0": 4500
+            },
+            "nonzero_samples": 0
+          }
+        }
+      },
+      "effective_physics": {
+        "mode": "walk",
+        "mpc_backend": "cpp_convex",
+        "mpc_horizon_steps": 10,
+        "duration": 45.0,
+        "dt": 0.001,
+        "mpc_dt": 0.005,
+        "swing_time": 0.4,
+        "step_height": 0.18,
+        "stand_height": 1.08,
+        "walk_start": 5.0,
+        "vx": 0.08,
+        "vy": 0.0,
+        "wz": 0.0,
+        "push_at": null,
+        "push_duration": 0.1,
+        "push_force": [
+          0.0,
+          50.0,
+          0.0
+        ],
+        "u_weight": 1e-06,
+        "state_weights": [
+          1,
+          1,
+          1,
+          0.001,
+          100,
+          1,
+          0.001,
+          0.001,
+          0.001,
+          1,
+          100,
+          1
+        ],
+        "input_weights": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "path_tracking": null,
+        "terrain": {
+          "type": "random_obstacles",
+          "friction": 1.0,
+          "restitution": 0.0,
+          "color": [
+            0.17,
+            0.2,
+            0.23
+          ],
+          "seed": 1,
+          "count": 12,
+          "region_x_m": [
+            0.8,
+            3.0
+          ],
+          "region_y_m": [
+            -0.6,
+            0.6
+          ],
+          "height_range_m": [
+            0.02,
+            0.06
+          ],
+          "length_range_m": [
+            0.1,
+            0.22
+          ],
+          "width_range_m": [
+            0.1,
+            0.28
+          ]
+        },
+        "jump": null,
+        "nmpc": {
+          "prediction_dt_s": 0.02,
+          "horizon_steps": 3,
+          "update_period_s": 0.02,
+          "input_weight": 2e-06,
+          "wrench_rate_weight": 1e-07,
+          "state_weights": [
+            4.0,
+            4.0,
+            2.0,
+            1.0,
+            30.0,
+            30.0,
+            0.1,
+            0.1,
+            0.1,
+            5.0,
+            20.0,
+            5.0
+          ],
+          "state_difference": 1e-05,
+          "wrench_difference": 0.001
+        }
+      },
+      "config_differences": {},
+      "analysis_evidence": {
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/analysis/metrics.json": {
+          "sha256": "339de1ca40a44b40588b19e5ca71d895124e7d8af67f47650b66b415ebae311b",
+          "data": {
+            "analysis_kind": "terrain",
+            "source_files": {
+              "run": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/run.json",
+              "states": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/states.csv"
+            },
+            "terrain_type": "random_obstacles",
+            "terrain_config": {
+              "type": "random_obstacles",
+              "friction": 1.0,
+              "restitution": 0.0,
+              "color": [
+                0.17,
+                0.2,
+                0.23
+              ],
+              "seed": 1,
+              "count": 12,
+              "region_x_m": [
+                0.8,
+                3.0
+              ],
+              "region_y_m": [
+                -0.6,
+                0.6
+              ],
+              "height_range_m": [
+                0.02,
+                0.06
+              ],
+              "length_range_m": [
+                0.1,
+                0.22
+              ],
+              "width_range_m": [
+                0.1,
+                0.28
+              ]
+            },
+            "terrain_manifest": {
+              "config": {
+                "type": "random_obstacles",
+                "friction": 1.0,
+                "restitution": 0.0,
+                "color": [
+                  0.17,
+                  0.2,
+                  0.23
+                ],
+                "seed": 1,
+                "count": 12,
+                "region_x_m": [
+                  0.8,
+                  3.0
+                ],
+                "region_y_m": [
+                  -0.6,
+                  0.6
+                ],
+                "height_range_m": [
+                  0.02,
+                  0.06
+                ],
+                "length_range_m": [
+                  0.1,
+                  0.22
+                ],
+                "width_range_m": [
+                  0.1,
+                  0.28
+                ]
+              },
+              "plan": [
+                {
+                  "name": "Ground",
+                  "center_m": [
+                    0.0,
+                    0.0,
+                    -0.05
+                  ],
+                  "size_m": [
+                    200.0,
+                    200.0,
+                    0.1
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.17,
+                    0.2,
+                    0.23
+                  ]
+                },
+                {
+                  "name": "Obstacle00",
+                  "center_m": [
+                    1.389594149878734,
+                    -0.004325081182060431,
+                    0.025275492379532277
+                  ],
+                  "size_m": [
+                    0.11612370929348816,
+                    0.2525380726487019,
+                    0.050550984759064554
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                },
+                {
+                  "name": "Obstacle01",
+                  "center_m": [
+                    1.069011910641244,
+                    -0.4634991912500537,
+                    0.02577446702271026
+                  ],
+                  "size_m": [
+                    0.15393892777464857,
+                    0.21728673509009735,
+                    0.05154893404542052
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                },
+                {
+                  "name": "Obstacle02",
+                  "center_m": [
+                    0.9043573983647825,
+                    -0.05581985423790359,
+                    0.025245601649158837
+                  ],
+                  "size_m": [
+                    0.20029181247038436,
+                    0.17789807222290963,
+                    0.050491203298317675
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                },
+                {
+                  "name": "Obstacle03",
+                  "center_m": [
+                    2.7082401432944194,
+                    -0.497022028592879,
+                    0.02890541391107844
+                  ],
+                  "size_m": [
+                    0.1865848038808939,
+                    0.1411771998286815,
+                    0.05781082782215688
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                },
+                {
+                  "name": "Obstacle04",
+                  "center_m": [
+                    1.650891642399774,
+                    -0.28412207134200246,
+                    0.02878298325557021
+                  ],
+                  "size_m": [
+                    0.1030535033192153,
+                    0.19745424510282938,
+                    0.05756596651114042
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                },
+                {
+                  "name": "Obstacle05",
+                  "center_m": [
+                    1.7727101878185323,
+                    -0.00458464363444433,
+                    0.0144338333254607
+                  ],
+                  "size_m": [
+                    0.15065398906992608,
+                    0.10522734176347623,
+                    0.0288676666509214
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                },
+                {
+                  "name": "Obstacle06",
+                  "center_m": [
+                    1.8162971745269405,
+                    -0.2225043934610575,
+                    0.014375620746753772
+                  ],
+                  "size_m": [
+                    0.12797013403090873,
+                    0.1415559774773772,
+                    0.028751241493507544
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                },
+                {
+                  "name": "Obstacle07",
+                  "center_m": [
+                    2.1984512184876857,
+                    -0.2981490685993744,
+                    0.021129086453048666
+                  ],
+                  "size_m": [
+                    0.10257876463190907,
+                    0.25076403561926314,
+                    0.04225817290609733
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                },
+                {
+                  "name": "Obstacle08",
+                  "center_m": [
+                    1.5685867642478082,
+                    0.20934919379456285,
+                    0.012417799196116129
+                  ],
+                  "size_m": [
+                    0.21910520946112783,
+                    0.2547903751831522,
+                    0.024835598392232257
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                },
+                {
+                  "name": "Obstacle09",
+                  "center_m": [
+                    2.5649087156246013,
+                    0.1586295350368368,
+                    0.0184421399992283
+                  ],
+                  "size_m": [
+                    0.18534301236343356,
+                    0.26855930562390273,
+                    0.0368842799984566
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                },
+                {
+                  "name": "Obstacle10",
+                  "center_m": [
+                    2.6144115312613665,
+                    0.005253361947755719,
+                    0.02764958001663715
+                  ],
+                  "size_m": [
+                    0.13640422131195012,
+                    0.2057645091058407,
+                    0.0552991600332743
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                },
+                {
+                  "name": "Obstacle11",
+                  "center_m": [
+                    2.503528307062866,
+                    -0.09372209231398021,
+                    0.014854799470861352
+                  ],
+                  "size_m": [
+                    0.17068027095790622,
+                    0.10621464942724149,
+                    0.029709598941722704
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.45,
+                    0.2,
+                    0.08
+                  ]
+                }
+              ],
+              "primitive_count": 13,
+              "primitive_paths": [
+                "/World/Terrain/Ground",
+                "/World/Terrain/Obstacle00",
+                "/World/Terrain/Obstacle01",
+                "/World/Terrain/Obstacle02",
+                "/World/Terrain/Obstacle03",
+                "/World/Terrain/Obstacle04",
+                "/World/Terrain/Obstacle05",
+                "/World/Terrain/Obstacle06",
+                "/World/Terrain/Obstacle07",
+                "/World/Terrain/Obstacle08",
+                "/World/Terrain/Obstacle09",
+                "/World/Terrain/Obstacle10",
+                "/World/Terrain/Obstacle11"
+              ]
+            },
+            "terrain_bounds_source": "terrain.plan",
+            "terrain_x_start_m": 0.8042114921295903,
+            "terrain_x_end_m": 2.8015325452348665,
+            "terrain_y_min_m": -0.5721425587951023,
+            "terrain_y_max_m": 0.33674438138613894,
+            "maximum_base_x_m": 3.378168821334839,
+            "entry_time_s": 12.450000000000001,
+            "exit_time_s": 40.21,
+            "samples_inside": 2776,
+            "forward_progress_on_terrain_m": 1.997321053105276,
+            "progress_fraction": 1.0,
+            "entered_terrain": true,
+            "traversed_terrain": true,
+            "completion_reason": "穿越",
+            "step_front_clearance_m": null,
+            "step_front_crossed_proxy": null,
+            "step_front_proxy_note": null,
+            "run_status": "completed",
+            "run_error": null,
+            "logged_samples": 4500,
+            "logged_duration_s": 44.99,
+            "walking_samples": 4000,
+            "initial_base_position_m": [
+              1.862645149230957e-09,
+              5.820766091346741e-10,
+              1.0840739011764526
+            ],
+            "final_logged_base_position_m": [
+              3.378168821334839,
+              -0.026574579998850822,
+              1.0871822834014893
+            ],
+            "net_forward_displacement_m": 3.3781688194721937,
+            "net_lateral_displacement_m": -0.02657458058092743,
+            "planar_distance_travelled_m": 6.554852359497924,
+            "walking_planar_distance_travelled_m": 6.5123936464776655,
+            "minimum_logged_base_height_m": 1.0501735210418701,
+            "maximum_logged_base_height_m": 1.0955153703689575,
+            "maximum_logged_tilt_rad": 0.055187789667891674,
+            "maximum_logged_abs_roll_rad": 0.055187789667891674,
+            "maximum_logged_abs_pitch_rad": 0.03847061177139087,
+            "forward_velocity_tracking_rmse_m_s": 0.07093369641379867,
+            "lateral_velocity_tracking_rmse_m_s": 0.14139072062564206,
+            "peak_abs_logged_joint_torque_Nm": 200.73566181347655,
+            "run_manifest_summary": {
+              "simulation_duration_s": 45.0,
+              "samples": 4500,
+              "minimum_base_height_m": 1.0501718521118164,
+              "maximum_tilt_rad": 0.055195780232125825,
+              "maximum_joint_torque_nm": 246.03826914656958
+            },
+            "figures": [
+              "planar_trajectory.png",
+              "base_height.png",
+              "base_attitude.png",
+              "forward_velocity.png"
+            ]
+          }
+        }
+      },
+      "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48",
+      "controller_library": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/isaac/build/mpc_n10/libopenloong_controller.so",
+      "source_sha256": {
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/run.json": "7d748ba1a50e6a648a70e1143cdb2e3f28926557a84d4dc0392d8466b511d73b",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/config.json": "d28a66fe578f11a4461c954766dfcef37030a4137ddd8aa06c8b6f4ec7be3b58",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/states.csv": "f5037a2bae6ddea95ff2a24406edc90a1ffda7baf753183db06c2e80d4823ad3",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/demo.mp4": "cd7bdee434aee2504b86f7767e3e711380d1f7dc93cdf03ce3f6a3b5553f631e",
+        "Pro2/experiments/L4/terrain/random_obstacles_seed01_full.json": "fcedd0c78d399b966e4d00f414461dc6c981743ff6bbf360db32e79b4af3adf1"
+      },
+      "maximum_tilt_rad": 0.055195780232125825,
+      "minimum_base_height_m": 1.0501718521118164,
+      "path_visualization": null,
+      "force_visualization": null,
+      "behavior_status": "completed",
+      "physical_instability_stop": false,
+      "termination_state": null,
+      "jump_control": null
+    },
+    {
+      "name": "L4/blind_step_up",
+      "level": "L4",
+      "config": "Pro2/experiments/L4/terrain/blind_step_up.json",
+      "output": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up",
+      "extra": [],
+      "state": "validated",
+      "pass": true,
+      "checks": {
+        "run_completed_or_documented_physical_stop": true,
+        "all_state_values_finite": true,
+        "categorical_jump_phases_valid": true,
+        "jump_phase_codes_match_names": true,
+        "state_time_monotonic": true,
+        "steps_match_completed_or_physically_stopped_run": true,
+        "simulation_duration_matches": true,
+        "sample_count_matches": true,
+        "samples_cover_full_run": true,
+        "video_saved": true,
+        "full_video_decode_succeeded": true,
+        "video_frame_count_matches": true,
+        "video_duration_matches": true,
+        "video_fps_matches": true,
+        "saved_config_matches_manifest": true,
+        "source_config_and_defaults_match_effective_physics": true,
+        "controller_library_matches_recorded_hash": true,
+        "controller_library_horizon_matches": true
+      },
+      "video": {
+        "full_decode_succeeded": true,
+        "duration_s": 24.0,
+        "width": 960,
+        "height": 720,
+        "fps": 30.0,
+        "decoded_frames": 720,
+        "stream": "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 960x720 [SAR 1:1 DAR 4:3], 3800 kb/s, 30 fps, 30 tbr, 30 tbn (default)",
+        "decode_log": "Pro2/output/final/checks/recordings/decode/L4_blind_step_up.log"
+      },
+      "states": {
+        "samples": 2400,
+        "all_values_finite": true,
+        "first_nonfinite": [],
+        "jump_phase_counts": {},
+        "jump_phase_values_valid": true,
+        "jump_phase_codes_match": true,
+        "time_bounds_s": [
+          0.0,
+          23.990000000000002
+        ],
+        "time_strictly_increases": true,
+        "bounds": {
+          "base_x_m": [
+            -0.04274187609553337,
+            1.622869610786438
+          ],
+          "base_y_m": [
+            -0.1111120879650116,
+            0.06239773705601692
+          ],
+          "base_z_m": [
+            1.0577701330184937,
+            1.102081060409546
+          ],
+          "roll_rad": [
+            -0.042125869235332805,
+            0.07080540090063146
+          ],
+          "pitch_rad": [
+            -0.038503971016043595,
+            0.039771772327313534
+          ],
+          "force_y_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "qp_statuses": {
+          "controller:mpc_qp_status": {
+            "present": true,
+            "counts": {
+              "0.0": 2400
+            },
+            "nonzero_samples": 0
+          },
+          "controller:wbc_qp_status": {
+            "present": true,
+            "counts": {
+              "0.0": 2400
+            },
+            "nonzero_samples": 0
+          }
+        }
+      },
+      "effective_physics": {
+        "mode": "walk",
+        "mpc_backend": "cpp_convex",
+        "mpc_horizon_steps": 10,
+        "duration": 24.0,
+        "dt": 0.001,
+        "mpc_dt": 0.005,
+        "swing_time": 0.4,
+        "step_height": 0.18,
+        "stand_height": 1.08,
+        "walk_start": 5.0,
+        "vx": 0.08,
+        "vy": 0.0,
+        "wz": 0.0,
+        "push_at": null,
+        "push_duration": 0.1,
+        "push_force": [
+          0.0,
+          50.0,
+          0.0
+        ],
+        "u_weight": 1e-06,
+        "state_weights": [
+          1,
+          1,
+          1,
+          0.001,
+          100,
+          1,
+          0.001,
+          0.001,
+          0.001,
+          1,
+          100,
+          1
+        ],
+        "input_weights": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "path_tracking": null,
+        "terrain": {
+          "type": "blind_step",
+          "friction": 1.0,
+          "restitution": 0.0,
+          "color": [
+            0.17,
+            0.2,
+            0.23
+          ],
+          "variant": "up",
+          "start_x_m": 0.9,
+          "height_m": 0.06,
+          "length_m": 4.0,
+          "width_m": 2.0
+        },
+        "jump": null,
+        "nmpc": {
+          "prediction_dt_s": 0.02,
+          "horizon_steps": 3,
+          "update_period_s": 0.02,
+          "input_weight": 2e-06,
+          "wrench_rate_weight": 1e-07,
+          "state_weights": [
+            4.0,
+            4.0,
+            2.0,
+            1.0,
+            30.0,
+            30.0,
+            0.1,
+            0.1,
+            0.1,
+            5.0,
+            20.0,
+            5.0
+          ],
+          "state_difference": 1e-05,
+          "wrench_difference": 0.001
+        }
+      },
+      "config_differences": {},
+      "analysis_evidence": {
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/analysis/metrics.json": {
+          "sha256": "43c742ff61f173357dad849955d4d08fc92982c45d03c2ee50dd7eb3fdae7f19",
+          "data": {
+            "analysis_kind": "terrain",
+            "source_files": {
+              "run": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/run.json",
+              "states": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/states.csv"
+            },
+            "terrain_type": "blind_step",
+            "terrain_config": {
+              "type": "blind_step",
+              "friction": 1.0,
+              "restitution": 0.0,
+              "color": [
+                0.17,
+                0.2,
+                0.23
+              ],
+              "variant": "up",
+              "start_x_m": 0.9,
+              "height_m": 0.06,
+              "length_m": 4.0,
+              "width_m": 2.0
+            },
+            "terrain_manifest": {
+              "config": {
+                "type": "blind_step",
+                "friction": 1.0,
+                "restitution": 0.0,
+                "color": [
+                  0.17,
+                  0.2,
+                  0.23
+                ],
+                "variant": "up",
+                "start_x_m": 0.9,
+                "height_m": 0.06,
+                "length_m": 4.0,
+                "width_m": 2.0
+              },
+              "plan": [
+                {
+                  "name": "LowerFloor",
+                  "center_m": [
+                    0.0,
+                    0.0,
+                    -0.16
+                  ],
+                  "size_m": [
+                    200.0,
+                    200.0,
+                    0.1
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.17,
+                    0.2,
+                    0.23
+                  ]
+                },
+                {
+                  "name": "Approach",
+                  "center_m": [
+                    -2.05,
+                    0.0,
+                    -0.055
+                  ],
+                  "size_m": [
+                    5.9,
+                    2.0,
+                    0.11
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.17,
+                    0.2,
+                    0.23
+                  ]
+                },
+                {
+                  "name": "StepLeft",
+                  "center_m": [
+                    2.9,
+                    0.5,
+                    -0.025
+                  ],
+                  "size_m": [
+                    4.0,
+                    1.0,
+                    0.16999999999999998
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.3,
+                    0.32,
+                    0.35
+                  ]
+                },
+                {
+                  "name": "StepRight",
+                  "center_m": [
+                    2.9,
+                    -0.5,
+                    -0.025
+                  ],
+                  "size_m": [
+                    4.0,
+                    1.0,
+                    0.16999999999999998
+                  ],
+                  "rotate_y_deg": 0.0,
+                  "color": [
+                    0.3,
+                    0.32,
+                    0.35
+                  ]
+                }
+              ],
+              "primitive_count": 4,
+              "primitive_paths": [
+                "/World/Terrain/LowerFloor",
+                "/World/Terrain/Approach",
+                "/World/Terrain/StepLeft",
+                "/World/Terrain/StepRight"
+              ]
+            },
+            "terrain_bounds_source": "terrain.plan",
+            "terrain_x_start_m": 0.8999999999999999,
+            "terrain_x_end_m": 4.9,
+            "terrain_y_min_m": -1.0,
+            "terrain_y_max_m": 1.0,
+            "maximum_base_x_m": 1.622869610786438,
+            "entry_time_s": 16.84,
+            "exit_time_s": null,
+            "samples_inside": 716,
+            "forward_progress_on_terrain_m": 0.7228696107864381,
+            "progress_fraction": 0.18071740269660952,
+            "entered_terrain": true,
+            "traversed_terrain": false,
+            "completion_reason": "进入未穿越",
+            "step_front_clearance_m": 0.7228696107864381,
+            "step_front_crossed_proxy": true,
+            "step_front_proxy_note": "base-only proxy：仅依据台阶 y 范围内的基座最大 x；states.csv 未记录足端 contact prim，因此不能等同于双脚已接触上台阶的证明。",
+            "run_status": "completed",
+            "run_error": null,
+            "logged_samples": 2400,
+            "logged_duration_s": 23.990000000000002,
+            "walking_samples": 1900,
+            "initial_base_position_m": [
+              1.862645149230957e-09,
+              5.820766091346741e-10,
+              1.0840739011764526
+            ],
+            "final_logged_base_position_m": [
+              1.622869610786438,
+              -0.013705157674849033,
+              1.0847201347351074
+            ],
+            "net_forward_displacement_m": 1.6228696089237928,
+            "net_lateral_displacement_m": -0.013705158256925642,
+            "planar_distance_travelled_m": 3.461782659826901,
+            "walking_planar_distance_travelled_m": 3.419736065265858,
+            "minimum_logged_base_height_m": 1.0577701330184937,
+            "maximum_logged_base_height_m": 1.102081060409546,
+            "maximum_logged_tilt_rad": 0.07080540090063146,
+            "maximum_logged_abs_roll_rad": 0.07080540090063146,
+            "maximum_logged_abs_pitch_rad": 0.039771772327313534,
+            "forward_velocity_tracking_rmse_m_s": 0.09666029665252113,
+            "lateral_velocity_tracking_rmse_m_s": 0.14949191954199068,
+            "peak_abs_logged_joint_torque_Nm": 216.28892666918117,
+            "run_manifest_summary": {
+              "simulation_duration_s": 24.0,
+              "samples": 2400,
+              "minimum_base_height_m": 1.0577701330184937,
+              "maximum_tilt_rad": 0.07080540090063146,
+              "maximum_joint_torque_nm": 263.12538993744863
+            },
+            "figures": [
+              "planar_trajectory.png",
+              "base_height.png",
+              "base_attitude.png",
+              "forward_velocity.png"
+            ]
+          }
+        }
+      },
+      "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48",
+      "controller_library": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/isaac/build/mpc_n10/libopenloong_controller.so",
+      "source_sha256": {
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/run.json": "bffde566b50dfa8d6715743591f174638264e7488a57b4e4423d839e4e40a08d",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/config.json": "345b4d7e8718c6da0db0d70f5e290f7c62784a0ba5cd9c091fb74c9e09b6aa9b",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/states.csv": "c334ce71b6a3c97c5280c1f492ff9f26d702174943f320eeb8ca24e33bc2623c",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/demo.mp4": "f0339593b7e2ef37b01cf43bfd7bf862c6d2bf1efb11c5c1bfe8fff9597e6246",
+        "Pro2/experiments/L4/terrain/blind_step_up.json": "67f543987223a68e37e878b4ec43ae660485dc775ce716fa07085707187009fd"
+      },
+      "maximum_tilt_rad": 0.07080540090063146,
+      "minimum_base_height_m": 1.0577701330184937,
+      "path_visualization": null,
+      "force_visualization": null,
+      "behavior_status": "completed",
+      "physical_instability_stop": false,
+      "termination_state": null,
+      "jump_control": null
+    }
+  ],
+  "comparisons": {},
+  "controller_build_provenance": {
+    "state": "not_requested",
+    "pass": true,
+    "scope": "Targeted recording integrity and per-run controller-library hashes only; existing full-build provenance is preserved in recordings_verification.json."
+  },
+  "sampling_boundary": "QP status counts are states.csv samples (100 Hz), not unique QP solve counts. Nonzero status counts are disclosed and do not change the recording-integrity verdict; inspect stage metrics for behavioral acceptance."
+}

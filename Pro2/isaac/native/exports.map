@@ -1,0 +1,4 @@
+{
+    global: ol_*;
+    local: *;
+};

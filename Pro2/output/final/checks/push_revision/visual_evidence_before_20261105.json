@@ -1,0 +1,332 @@
+{
+  "review_scope": "All ten montage segments; twelve decoded-frame extracts",
+  "extraction": "Decode from file start and select frame by index; no fast seek is used for NVIDIA source MP4 files.",
+  "frames": [
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_01_l0.mp4",
+      "segment_sha256": "b88bfa9478fa645b9d79f58f1f521aae1f932c2dff20391244200bc6a08a7d6a",
+      "segment_time_s": 6,
+      "actual_decoded_frame_index": 180,
+      "source_time_s": 6.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_01_l0_6.png",
+      "label": "L0 · t = 6.00 s",
+      "sources": [
+        "Pro2/output/L0/walk_10s_video/demo.mp4"
+      ],
+      "source_sha256": [
+        "13b70e9dd024de87a19927e194e7dd08bbc63528edee69e08a6f68067f2eac34"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_02_l2_weight.mp4",
+      "segment_sha256": "36888c138f204df707819211439f46600875093f835584ec8a0f4cf41d076d78",
+      "segment_time_s": 9,
+      "actual_decoded_frame_index": 270,
+      "source_time_s": 9.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_02_l2_weight_9.png",
+      "label": "L2 权重对照 · t = 9.00 s",
+      "sources": [
+        "Pro2/output/L2/ppt_demo_20261104/low/demo.mp4",
+        "Pro2/output/L2/ppt_demo_20261104/baseline/demo.mp4",
+        "Pro2/output/L2/ppt_demo_20261104/high/demo.mp4"
+      ],
+      "source_sha256": [
+        "c34788100e88508168efed8c022a6dc7fdf56a42940f0cbb952e1fb550bbf673",
+        "3d4463eac52d105e499eacbd0e9877e0bd9d4e31c42a15aa521c776c49f09438",
+        "9e13488bd45b4348d8b49e891c132bf884f9c488e7575eba28e5f72ab35351dd"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true,
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          0.399468,
+          0.817248,
+          0.924441
+        ],
+        [
+          0.815801,
+          0.394859,
+          0.736713
+        ],
+        [
+          0.920244,
+          0.731961,
+          0.397033
+        ]
+      ],
+      "each_panel_matches_corresponding_source_best": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_03_l2_horizon.mp4",
+      "segment_sha256": "bf70c58dc83ae8ec409ed8e01ad3c28d5cad66a7be731474cacf79156da87145",
+      "segment_time_s": 9,
+      "actual_decoded_frame_index": 270,
+      "source_time_s": 9.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_03_l2_horizon_9.png",
+      "label": "L2 预测时域对照 · t = 9.00 s",
+      "sources": [
+        "Pro2/output/L2/prediction_horizon/ppt_video_20261104/short_n5/demo.mp4",
+        "Pro2/output/L2/prediction_horizon/ppt_video_20261104/baseline_n10/demo.mp4",
+        "Pro2/output/L2/prediction_horizon/ppt_video_20261104/long_n15/demo.mp4"
+      ],
+      "source_sha256": [
+        "1602f27c0e8a41c1a79044068ad15256d43ff1e65b214d7fc48d6fe30ae0d434",
+        "a6b99f9f2b2142ecef20a165862c8ef21087eb7415668a559e2c9c6936d2395f",
+        "99adde6298c7ab656fe9e70159f503b1ea6a3266c3042d1ca9e0a01cc2eef15a"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true,
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          0.38995,
+          0.869311,
+          0.878414
+        ],
+        [
+          0.874327,
+          0.394395,
+          0.724413
+        ],
+        [
+          0.884389,
+          0.726884,
+          0.400067
+        ]
+      ],
+      "each_panel_matches_corresponding_source_best": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_04_l2_step.mp4",
+      "segment_sha256": "18476733ed8e831d44e858cb709b1aea876380240531adc6b194247bbfe8bd65",
+      "segment_time_s": 6.8,
+      "actual_decoded_frame_index": 204,
+      "source_time_s": 6.8,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_04_l2_step_6p8.png",
+      "label": "L2 抬脚高度对照 · t = 6.80 s",
+      "sources": [
+        "Pro2/output/L2/step_height/ppt_video_20261104/low_008/demo.mp4",
+        "Pro2/output/L2/step_height/ppt_video_20261104/baseline_012/demo.mp4",
+        "Pro2/output/L2/step_height/ppt_video_20261104/high_016/demo.mp4"
+      ],
+      "source_sha256": [
+        "2fc6152bdf192e2696902df3d6de9c961a018e2c98adbd0b4d7062a194cb66ca",
+        "ba77d81d7ba426da442ce557d9f530c5a7efd0126ec0e4b618c67a0e5a34b676",
+        "6449ab84b6a2f6dc22795b1ec0fe98f77b4b705a36aa801b0837cd283fe7691d"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true,
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          0.402376,
+          3.056555,
+          4.4797
+        ],
+        [
+          3.080121,
+          0.42042,
+          4.751903
+        ],
+        [
+          4.481142,
+          4.730213,
+          0.392909
+        ]
+      ],
+      "each_panel_matches_corresponding_source_best": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4",
+      "segment_sha256": "39668d9d697101da5e023cbb14828031e89fb9769a5f6a2a267968811e4d5177",
+      "segment_time_s": 7.05,
+      "actual_decoded_frame_index": 212,
+      "source_time_s": 7.05,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_05_l2_push_7p05.png",
+      "label": "L2 侧向力施加中 · t = 7.05 s",
+      "sources": [
+        "Pro2/output/L2/lateral_push/ppt_video_20261104/no_push/demo.mp4",
+        "Pro2/output/L2/lateral_push/ppt_video_20261104/push_50N/demo.mp4",
+        "Pro2/output/L2/lateral_push/ppt_video_20261104/push_100N/demo.mp4"
+      ],
+      "source_sha256": [
+        "2ebc83adb9cb53ec4e969e5ee4273933f719d15e5e8a2815107d841c54c97c79",
+        "34c69617a2c692eda60fd36ffbb5709d6acb1138b822b11ce7a875e57a5586e8",
+        "def3f2870d4a800257b0113b877d15f880e34b5917870b0cd437d3702c3d22bd"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true,
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          0.410509,
+          0.477084,
+          0.546283
+        ],
+        [
+          0.497641,
+          0.430712,
+          0.505643
+        ],
+        [
+          0.5476,
+          0.488412,
+          0.413965
+        ]
+      ],
+      "each_panel_matches_corresponding_source_best": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4",
+      "segment_sha256": "39668d9d697101da5e023cbb14828031e89fb9769a5f6a2a267968811e4d5177",
+      "segment_time_s": 7.5,
+      "actual_decoded_frame_index": 225,
+      "source_time_s": 7.5,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_05_l2_push_7p5.png",
+      "label": "L2 侧推结束后的恢复 · t = 7.50 s",
+      "sources": [
+        "Pro2/output/L2/lateral_push/ppt_video_20261104/no_push/demo.mp4",
+        "Pro2/output/L2/lateral_push/ppt_video_20261104/push_50N/demo.mp4",
+        "Pro2/output/L2/lateral_push/ppt_video_20261104/push_100N/demo.mp4"
+      ],
+      "source_sha256": [
+        "2ebc83adb9cb53ec4e969e5ee4273933f719d15e5e8a2815107d841c54c97c79",
+        "34c69617a2c692eda60fd36ffbb5709d6acb1138b822b11ce7a875e57a5586e8",
+        "def3f2870d4a800257b0113b877d15f880e34b5917870b0cd437d3702c3d22bd"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true,
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          0.516803,
+          1.357408,
+          1.870838
+        ],
+        [
+          1.366428,
+          0.531922,
+          1.248291
+        ],
+        [
+          1.864103,
+          1.221012,
+          0.514345
+        ]
+      ],
+      "each_panel_matches_corresponding_source_best": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_06_l4_path.mp4",
+      "segment_sha256": "5daff4d3d31d4acdd71c8dd0ff56dfefe4400f6fb3784354193124c37ebe79cb",
+      "segment_time_s": 20,
+      "actual_decoded_frame_index": 600,
+      "source_time_s": 20.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_06_l4_path_20.png",
+      "label": "L4 路径跟踪 · t = 20.00 s",
+      "sources": [
+        "Pro2/output/L4/02_path_tracking/ppt_video_20261104/waypoints/demo.mp4"
+      ],
+      "source_sha256": [
+        "494a89368f7579861a353f301b75563614b0709ef2d8cc8bc84f9c5345556b00"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_07_l4_rough.mp4",
+      "segment_sha256": "65c55c4c9e5a3af1a971fcaec912641fb23a60045cbfe1d233bad2fc5c02c650",
+      "segment_time_s": 22,
+      "actual_decoded_frame_index": 660,
+      "source_time_s": 22.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_07_l4_rough_22.png",
+      "label": "L4 不平整地面 · t = 22.00 s",
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/rough_medium/demo.mp4"
+      ],
+      "source_sha256": [
+        "c442fc20c32268bbc1fa081a3cf18afeff04aa9b5471dcc78818bb3e4086f5fb"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_08_l4_slope.mp4",
+      "segment_sha256": "9dd2108237f2fa44735e23bee2cabb752a75a3a453564f482573df997fc6f59f",
+      "segment_time_s": 20,
+      "actual_decoded_frame_index": 600,
+      "source_time_s": 20.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_08_l4_slope_20.png",
+      "label": "L4 斜坡行走 · t = 20.00 s",
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/slope_05deg/demo.mp4"
+      ],
+      "source_sha256": [
+        "41e88307f5989bd9079337069c3410b86c7d82e6311cae569a34b4e143573fc5"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_09_l4_jump.mp4",
+      "segment_sha256": "648c8e9b4c7b9e6b613df4c3e28fcac9adde3067a256a913f8afddc6dfbd8559",
+      "segment_time_s": 8.75,
+      "actual_decoded_frame_index": 263,
+      "source_time_s": 8.75,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_09_l4_jump_8p75.png",
+      "label": "L4 跳跃：腾空 · t = 8.75 s",
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/demo.mp4"
+      ],
+      "source_sha256": [
+        "309f5d45e836116b0f2b765643439cab4904884cf28e08ae3029098b0b091b2d"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_09_l4_jump.mp4",
+      "segment_sha256": "648c8e9b4c7b9e6b613df4c3e28fcac9adde3067a256a913f8afddc6dfbd8559",
+      "segment_time_s": 11,
+      "actual_decoded_frame_index": 330,
+      "source_time_s": 11.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_09_l4_jump_11.png",
+      "label": "L4 跳跃：恢复站立 · t = 11.00 s",
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/demo.mp4"
+      ],
+      "source_sha256": [
+        "309f5d45e836116b0f2b765643439cab4904884cf28e08ae3029098b0b091b2d"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_10_l4_jump_replay.mp4",
+      "segment_sha256": "cdd193de7ce7a5fc30dce7030f90ec89374f493a25271f297b8223a724b9489c",
+      "segment_time_s": 1.5,
+      "actual_decoded_frame_index": 45,
+      "source_time_s": 8.75,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_10_l4_jump_replay_1p5.png",
+      "label": "L4 跳跃：0.5× 回放 · 原片 t = 8.75 s",
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/demo.mp4"
+      ],
+      "source_sha256": [
+        "309f5d45e836116b0f2b765643439cab4904884cf28e08ae3029098b0b091b2d"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    }
+  ]
+}

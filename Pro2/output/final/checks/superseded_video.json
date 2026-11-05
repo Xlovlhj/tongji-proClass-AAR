@@ -1,0 +1,7 @@
+{
+  "superseded_asset": "Pro2/output/final/assets/项目验收演示_150s.mp4",
+  "sha256": "366e417732061eda5f537f5a346416f5208128f33f2ab2a4335456e4277d50e8",
+  "replacement": "Pro2/output/final/assets/项目验收演示_L0_L2_L4.mp4",
+  "replacement_sha256": "9e369cb381024f990c374c48a6224973bd1136525b30fd187e3c33f51410a6af",
+  "reason": "用户要求第一页改为L0、四组L2同屏对照及L4路径/粗糙地面/坡道/跳跃合成视频；仅移除已替换的旧合成成片，保留全部原始实验录像。"
+}

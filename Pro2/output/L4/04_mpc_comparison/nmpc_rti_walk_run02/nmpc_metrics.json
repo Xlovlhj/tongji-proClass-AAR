@@ -1,0 +1,11 @@
+{
+  "updates": 350,
+  "successful_updates": 314,
+  "failed_updates": 36,
+  "deadline_misses": 44,
+  "solve_time_sum_s": 6.480898013000115,
+  "solve_time_max_s": 0.028014673000143375,
+  "solve_time_mean_s": 0.018516851465714614,
+  "success_fraction": 0.8971428571428571,
+  "deadline_miss_fraction": 0.12571428571428572
+}

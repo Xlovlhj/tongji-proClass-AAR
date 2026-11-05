@@ -1,0 +1,15 @@
+{
+  "robot": "unitree_h1_2_handless",
+  "spec": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/robots/unitree_h1_2_handless.json",
+  "asset": null,
+  "isaac_root": null,
+  "output": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/output/L4/01_robot_swap/h1_fixstand_pd_5s",
+  "duration": 5.0,
+  "dt": 0.002,
+  "base_height": 1.05,
+  "log_hz": 100.0,
+  "render_hz": 30.0,
+  "kp_scale": 1.0,
+  "kd_scale": 1.0,
+  "headless": true
+}

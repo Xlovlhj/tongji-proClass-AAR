@@ -1,0 +1,39 @@
+{
+  "file": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/side_by_side.mp4",
+  "sha256": "c1cb1609ddb7736106c49f995282dc9c376259decf6f5f5c447d87efefca6dd7",
+  "duration_s": 12,
+  "fps": 30,
+  "frames": 360,
+  "width": 1920,
+  "height": 1080,
+  "purpose": "Three simultaneous actual Isaac recordings; condition labels and captions burned into the picture.",
+  "sources": [
+    "Pro2/output/L2/lateral_push/long_push_20261105/no_push/demo.mp4",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/demo.mp4",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/demo.mp4"
+  ],
+  "source_hashes": {
+    "Pro2/output/L2/lateral_push/long_push_20261105/no_push/demo.mp4": "64df421261735f958e69ff7e19d6366c0513bc64d6a0d3b755cdf368edd26506",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/demo.mp4": "7be8422c6be90ea6bec955754d848197cb02b16dd289bd31a876e2e6af849c3e",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/demo.mp4": "e77891a401f698354be3e272732ca77404311baeabe05335e388a6f905742072"
+  },
+  "physical_force_interval_s": [
+    7,
+    7.5
+  ],
+  "physical_force_values_N": [
+    0,
+    50,
+    100
+  ],
+  "failed_panel": {
+    "video_key": "push_push_100N",
+    "panel_index": 2,
+    "freeze_at_s": 9.0,
+    "simulation_stop_s": 8.994,
+    "reason": "physical_instability"
+  },
+  "failed_panel_disclosure": "100 N physical instability at 8.994 s; raw video is 9.0 s / 270 frames. Only that panel is frozen after 9 s with an explicit on-frame notice; the other runs continue.",
+  "raw_video_modified": false,
+  "montage_segment_source": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4"
+}

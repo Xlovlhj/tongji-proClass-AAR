@@ -1,0 +1,11 @@
+{
+  "mode": "walk",
+  "duration": 10.0,
+  "walk_start": 3.0,
+  "vx": 0.08,
+  "vy": 0.0,
+  "wz": 0.0,
+  "terrain": {"type": "flat"},
+  "mpc_backend": "cpp_convex",
+  "log_control_decomposition": true
+}

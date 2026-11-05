@@ -1,0 +1,19 @@
+{
+  "requested": true,
+  "required_capabilities": {
+    "dynamic_base_height_reference": "运行时修改质心/基座高度参考",
+    "flight_phase_control": "腾空时关闭接触力 MPC 并切换腿部轨迹",
+    "bilateral_contact_feedback": "读取左右脚接触以判定落地"
+  },
+  "available_capabilities": {
+    "dynamic_base_height_reference": false,
+    "flight_phase_control": false,
+    "bilateral_contact_feedback": false
+  },
+  "ready": false,
+  "missing": [
+    "运行时修改质心/基座高度参考",
+    "腾空时关闭接触力 MPC 并切换腿部轨迹",
+    "读取左右脚接触以判定落地"
+  ]
+}

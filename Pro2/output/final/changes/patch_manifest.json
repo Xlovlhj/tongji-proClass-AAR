@@ -1,0 +1,50 @@
+{
+  "upstream_head": "4dd7a7e42a9cfd588afc78f3e429998ed8a30f4e",
+  "patch_path": "Pro2/output/final/changes/OpenLoong修改.patch",
+  "patch_sha256": "84f25b9a4bcfeda4b5646cc9cc569d5c4dfb7bfe00dbf11b0eba58878f00035a",
+  "diff_stat": "algorithm/mpc.cpp            |  10 ++-\n algorithm/mpc.h              |   7 +-\n algorithm/priority_tasks.cpp |  69 +++++++++++++-\n algorithm/priority_tasks.h   |   2 +-\n algorithm/wbc_priority.cpp   | 210 ++++++++++++++++++++++++++++++++++++++-----\n algorithm/wbc_priority.h     |  14 +++\n common/PVT_ctrl.cpp          |  26 ++++--\n common/PVT_ctrl.h            |   9 ++\n math/LPF_fst.cpp             |   7 +-\n math/LPF_fst.h               |   1 +\n 10 files changed, 317 insertions(+), 38 deletions(-)",
+  "modified_files": [
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/mpc.cpp",
+      "sha256": "1344ec101f4f8b4631ed5e83c564df91278d28c183a339029b62813027fdd8a3"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/mpc.h",
+      "sha256": "a0be044758b8c58bca246c420f10692f93ebe33dd24d5e33d126fb88fc3ea494"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/priority_tasks.cpp",
+      "sha256": "dbcf7f05f1fbe7f13972ee861c694c97273b43ca767dd0213ead490e33ec351f"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/priority_tasks.h",
+      "sha256": "abb67e6c861834a10281e458913503cd2853219ca274a589264e44fdb7772ba8"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/wbc_priority.cpp",
+      "sha256": "47dde2c8dcddc4b35df41c34091c52fb94dbb2725099a4dd2b5fc75ba1aa27db"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/wbc_priority.h",
+      "sha256": "8240ffcc8656ada481fe03ea00ad5df2209ee6ad70ad5ac5c5ed82209474756f"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/common/PVT_ctrl.cpp",
+      "sha256": "48022cf7cbffe3eb102c4ca965f4c468a40b475fa0beb6ebcfbc638d9cda9c66"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/common/PVT_ctrl.h",
+      "sha256": "db43d9f911e3b1157a6dde78523ef003704c1a4fd8d6ffe6580d2458a9ed7664"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/math/LPF_fst.cpp",
+      "sha256": "e57c68293737b3859d6d1acffeef7132ee28b251f21f61af1799bf472f4fc64a"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/math/LPF_fst.h",
+      "sha256": "ef27a3afda36a4d14767d9669ad19baabf797472d45064dfd5537682c6fcf21c"
+    }
+  ],
+  "reverse_apply_check_passed": true,
+  "source_files_modified_during_export": false
+}

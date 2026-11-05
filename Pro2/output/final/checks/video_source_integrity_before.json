@@ -1,0 +1,40 @@
+{
+  "sources": [
+    {
+      "path": "Pro2/output/L0/L0验收报告.md",
+      "sha256": "2c7dfe30a04ef04de649e69ee00367ea129ec08697d142ef5dbe26d90705f8c9"
+    },
+    {
+      "path": "Pro2/output/L0/walk_10s_video/demo.mp4",
+      "sha256": "13b70e9dd024de87a19927e194e7dd08bbc63528edee69e08a6f68067f2eac34"
+    },
+    {
+      "path": "Pro2/output/L0/walk_turn_at_5s_gui/demo.mp4",
+      "sha256": "32097c9b1fc8e830e51e102b255603d353209278e9bbffa73c584b63c6ae4c6b"
+    },
+    {
+      "path": "Pro2/output/L2/L2验收报告.md",
+      "sha256": "45d6d88693504181cb196d99008c8e43aa56c6b171712b34aff36d9d44ee2694"
+    },
+    {
+      "path": "Pro2/output/L2/mpc_vx_weight/comparison/metrics.csv",
+      "sha256": "9bc2134a29f4220be646aaa17f1039a737de55fe8225a96550270e8b01e81f63"
+    },
+    {
+      "path": "Pro2/output/L2/mpc_vx_weight/comparison/speed_tracking.png",
+      "sha256": "0e5595c27db689f89c45ad74a3a4d1a08fa5351970bcf5044f5add591988bc41"
+    },
+    {
+      "path": "Pro2/output/L2/ppt_demo_20261104/baseline/demo.mp4",
+      "sha256": "3d4463eac52d105e499eacbd0e9877e0bd9d4e31c42a15aa521c776c49f09438"
+    },
+    {
+      "path": "Pro2/output/L2/ppt_demo_20261104/high/demo.mp4",
+      "sha256": "9e13488bd45b4348d8b49e891c132bf884f9c488e7575eba28e5f72ab35351dd"
+    },
+    {
+      "path": "Pro2/output/L2/ppt_demo_20261104/low/demo.mp4",
+      "sha256": "c34788100e88508168efed8c022a6dc7fdf56a42940f0cbb952e1fb550bbf673"
+    }
+  ]
+}

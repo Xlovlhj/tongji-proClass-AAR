@@ -1,0 +1,11 @@
+# Regenerable local runtime and build products
+__pycache__/
+*.py[cod]
+isaac/build/
+cache/
+
+# Keep reports, plots, CSV data, JSON metadata, videos and the final presentation.
+output/**/video_frames/
+output/**/*.log
+output/**/*.usda
+output/final/assets/video_build*/

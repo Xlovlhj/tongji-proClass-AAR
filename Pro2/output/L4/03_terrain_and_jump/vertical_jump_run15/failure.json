@@ -1,0 +1,4 @@
+{
+  "error": "落地吸收失败：双脚接触或水平/竖直速度未在时限内稳定",
+  "type": "JumpRuntimeError"
+}

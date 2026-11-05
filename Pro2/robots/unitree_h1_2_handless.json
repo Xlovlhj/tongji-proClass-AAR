@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "robot_id": "unitree_h1_2_handless",
+  "display_name": "Unitree H1-2 Handless",
+  "asset": {
+    "format": "usd",
+    "environment_variable": "UNITREE_H1_USD",
+    "path_candidates": [
+      "~/xqw-file/unitree_model/H1-2/h1_2_handless/h1_2_handless.usd",
+      "Pro2/assets/unitree_h1_2_handless/h1_2_handless.usd"
+    ],
+    "source_policy": "read_only_reference"
+  },
+  "expected_usd": {
+    "default_prim": "/h1_2",
+    "up_axis": "Z",
+    "meters_per_unit": 1.0,
+    "articulation_root": "/h1_2/pelvis",
+    "floating_base": true,
+    "base_link": "/h1_2/pelvis",
+    "left_foot_link": "/h1_2/left_ankle_roll_link",
+    "right_foot_link": "/h1_2/right_ankle_roll_link",
+    "rigid_body_count": 28,
+    "total_mass_kg": 66.98399928212166,
+    "mass_relative_tolerance": 1e-06
+  },
+  "joints": {
+    "count": 27,
+    "names": [
+      "left_hip_yaw_joint",
+      "left_hip_pitch_joint",
+      "left_hip_roll_joint",
+      "left_knee_joint",
+      "left_ankle_pitch_joint",
+      "left_ankle_roll_joint",
+      "right_hip_yaw_joint",
+      "right_hip_pitch_joint",
+      "right_hip_roll_joint",
+      "right_knee_joint",
+      "right_ankle_pitch_joint",
+      "right_ankle_roll_joint",
+      "torso_joint",
+      "left_shoulder_pitch_joint",
+      "left_shoulder_roll_joint",
+      "left_shoulder_yaw_joint",
+      "left_elbow_joint",
+      "left_wrist_roll_joint",
+      "left_wrist_pitch_joint",
+      "left_wrist_yaw_joint",
+      "right_shoulder_pitch_joint",
+      "right_shoulder_roll_joint",
+      "right_shoulder_yaw_joint",
+      "right_elbow_joint",
+      "right_wrist_roll_joint",
+      "right_wrist_pitch_joint",
+      "right_wrist_yaw_joint"
+    ],
+    "isaac_dof_order": [
+      "left_hip_yaw_joint",
+      "right_hip_yaw_joint",
+      "torso_joint",
+      "left_hip_pitch_joint",
+      "right_hip_pitch_joint",
+      "left_shoulder_pitch_joint",
+      "right_shoulder_pitch_joint",
+      "left_hip_roll_joint",
+      "right_hip_roll_joint",
+      "left_shoulder_roll_joint",
+      "right_shoulder_roll_joint",
+      "left_knee_joint",
+      "right_knee_joint",
+      "left_shoulder_yaw_joint",
+      "right_shoulder_yaw_joint",
+      "left_ankle_pitch_joint",
+      "right_ankle_pitch_joint",
+      "left_elbow_joint",
+      "right_elbow_joint",
+      "left_ankle_roll_joint",
+      "right_ankle_roll_joint",
+      "left_wrist_roll_joint",
+      "right_wrist_roll_joint",
+      "left_wrist_pitch_joint",
+      "right_wrist_pitch_joint",
+      "left_wrist_yaw_joint",
+      "right_wrist_yaw_joint"
+    ],
+    "semantic_roles": {
+      "left_hip_yaw": "left_hip_yaw_joint",
+      "left_hip_pitch": "left_hip_pitch_joint",
+      "left_hip_roll": "left_hip_roll_joint",
+      "left_knee": "left_knee_joint",
+      "left_ankle_pitch": "left_ankle_pitch_joint",
+      "left_ankle_roll": "left_ankle_roll_joint",
+      "right_hip_yaw": "right_hip_yaw_joint",
+      "right_hip_pitch": "right_hip_pitch_joint",
+      "right_hip_roll": "right_hip_roll_joint",
+      "right_knee": "right_knee_joint",
+      "right_ankle_pitch": "right_ankle_pitch_joint",
+      "right_ankle_roll": "right_ankle_roll_joint",
+      "waist_yaw": "torso_joint",
+      "left_hand": "left_wrist_yaw_joint",
+      "right_hand": "right_wrist_yaw_joint"
+    }
+  },
+  "controller_target": {
+    "name": "openloong_mpc_wbc",
+    "baseline_robot": "azureloong",
+    "compatibility_policy": "exact_joint_model_required"
+  },
+  "stand_control": {
+    "name": "unitree_h1_2_fixstand",
+    "source": "~/xqw-file/unitree_rl_lab/deploy/robots/h1_2/config/config.yaml",
+    "source_section": "FSM.FixStand",
+    "source_transition_interval_s": [0.0, 3.0],
+    "order": "joints.names",
+    "position_targets_rad": [
+      0.0, -0.3, 0.0, 0.5, -0.2, 0.0,
+      0.0, -0.3, 0.0, 0.5, -0.2, 0.0,
+      0.0,
+      0.35, 0.25, -0.1, 0.65, 0.0, 0.0, 0.0,
+      0.35, -0.25, -0.1, 0.65, 0.0, 0.0, 0.0
+    ],
+    "kp_nm_per_rad": [
+      250.0, 250.0, 250.0, 400.0, 80.0, 40.0,
+      250.0, 250.0, 250.0, 400.0, 80.0, 40.0,
+      600.0,
+      250.0, 400.0, 80.0, 80.0, 20.0, 20.0, 20.0,
+      250.0, 400.0, 80.0, 80.0, 20.0, 20.0, 20.0
+    ],
+    "kd_nm_s_per_rad": [
+      6.5, 6.5, 6.5, 10.0, 1.5, 0.4,
+      6.5, 6.5, 6.5, 10.0, 1.5, 0.4,
+      6.0,
+      6.0, 10.0, 2.0, 2.0, 0.5, 0.5, 0.5,
+      6.0, 10.0, 2.0, 2.0, 0.5, 0.5, 0.5
+    ]
+  },
+  "notes": [
+    "The local USD is referenced read-only; source layers are never edited.",
+    "All expected values in this file are checked against the composed USD stage.",
+    "Passing the USD checks proves asset integrity, not OpenLoong controller compatibility."
+  ]
+}

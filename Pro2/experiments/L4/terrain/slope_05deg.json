@@ -1,0 +1,4 @@
+{
+  "mode": "walk", "duration": 24.0, "walk_start": 5.0, "vx": 0.10, "step_height": 0.14,
+  "terrain": {"type": "slope", "angle_deg": 5.0, "start_x_m": 0.8, "length_m": 2.5, "width_m": 2.0, "thickness_m": 0.08}
+}

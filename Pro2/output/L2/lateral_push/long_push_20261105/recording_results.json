@@ -1,0 +1,32 @@
+[
+  {
+    "condition": "no_push",
+    "returncode": 0,
+    "run_status": "completed",
+    "actual_steps": 12000,
+    "planned_duration_s": 12.0,
+    "video_saved": true,
+    "video_duration_s": 12.0,
+    "error": null
+  },
+  {
+    "condition": "push_50N",
+    "returncode": 0,
+    "run_status": "completed",
+    "actual_steps": 12000,
+    "planned_duration_s": 12.0,
+    "video_saved": true,
+    "video_duration_s": 12.0,
+    "error": null
+  },
+  {
+    "condition": "push_100N",
+    "returncode": 1,
+    "run_status": "failed",
+    "actual_steps": 8994,
+    "planned_duration_s": 12.0,
+    "video_saved": true,
+    "video_duration_s": 9.0,
+    "error": "t=8.994s：机器人失稳，z=0.598m，roll=-0.978，pitch=0.013"
+  }
+]

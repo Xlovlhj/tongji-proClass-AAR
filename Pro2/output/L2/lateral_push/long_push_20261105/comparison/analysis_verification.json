@@ -1,0 +1,61 @@
+{
+  "active_manifest": "Pro2/output/L2/active_runs.json",
+  "valid_conditions": 12,
+  "completed_conditions": 11,
+  "physical_instability_conditions": 1,
+  "strict_data_validation": "passed",
+  "other_three_group_metrics_unchanged": true,
+  "shared_controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48",
+  "same_time_difference_window_s": [
+    7.0,
+    8.99
+  ],
+  "same_time_samples": 200,
+  "common_general_analysis_window_s": [
+    5.0,
+    8.99
+  ],
+  "common_general_samples": 400,
+  "raw_states_not_padded": true,
+  "formal_run_directories": [
+    "Pro2/output/L2/lateral_push/long_push_20261105/no_push",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_50N",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_100N"
+  ],
+  "original_comparison_sha256": {
+    "Pro2/output/L2/mpc_vx_weight/comparison/control_effort.png": "0b0d948b10f8ec6ee292a731002031c7dcce667c3552dcf26099bcb4de87df7f",
+    "Pro2/output/L2/mpc_vx_weight/comparison/speed_tracking.png": "0e5595c27db689f89c45ad74a3a4d1a08fa5351970bcf5044f5add591988bc41",
+    "Pro2/output/L2/mpc_vx_weight/comparison/posture.png": "069563556573614b68b575d03ff85c49fad588505c320ee5715c0a5279560eb1",
+    "Pro2/output/L2/mpc_vx_weight/comparison/analysis.md": "42b1bf6d3e09302e86400545120d422088a509f244c084778866de0651563124",
+    "Pro2/output/L2/mpc_vx_weight/comparison/metrics.csv": "9bc2134a29f4220be646aaa17f1039a737de55fe8225a96550270e8b01e81f63",
+    "Pro2/output/L2/prediction_horizon/comparison/solver_time.png": "96892fa878f3c43cf2585e83a8c382a51126081f36fea36cff8f5f80712f09ab",
+    "Pro2/output/L2/prediction_horizon/comparison/speed_tracking.png": "4d75169dfdf7d6988aa97b5aa032296ec2d6201570e4e73bcc5e42e8455ddf96",
+    "Pro2/output/L2/prediction_horizon/comparison/posture.png": "331a0a9d6dfd4f3271385c2313990363438925b15233db240dd2e6e3f177007c",
+    "Pro2/output/L2/prediction_horizon/comparison/analysis.md": "da65258915dd5c0753d10817f4bd58d14d4ac16b7e7d5780185c4f9fd98077af",
+    "Pro2/output/L2/prediction_horizon/comparison/metrics.csv": "2bda236b04c920eeb9fa8e4ca56dc89db5edc0d247621a1458f885e803e707d4",
+    "Pro2/output/L2/step_height/comparison/posture.png": "c4611923dcddf7b3ce7ffe2fe5dd65293972ca9ef5f8b11b0b6f3e9929533ab5",
+    "Pro2/output/L2/step_height/comparison/joint_torque.png": "60eee8fe0fc51295fb3f112f6bde8bd125131f2ab6116bbe6f2fb060cf925633",
+    "Pro2/output/L2/step_height/comparison/analysis.md": "33678880caf36767a8068831c2805f1d5203ca507ff2b81a9a2369107fb4cf88",
+    "Pro2/output/L2/step_height/comparison/metrics.csv": "a84d5c6166e5d2d594be4144b0bacde9f970f4ad822238cfd3a08b9671b5e0f3",
+    "Pro2/output/L2/step_height/comparison/base_height.png": "46570f419f5be7a85002f705a978a1bb78300784812c3238869d7e14825b9797",
+    "Pro2/output/L2/lateral_push/comparison/metrics.csv": "4ce1e95856c0d76cb324a85e36eff422b2a2b62b3c99cf0710f7af50b4ebf8be",
+    "Pro2/output/L2/lateral_push/comparison/analysis.md": "ee3f03b9370afd45af46956bab5309c98b4997fc6ca1b147dffcd734d5c854e3",
+    "Pro2/output/L2/lateral_push/comparison/disturbance_response.png": "51010c17d0682227de50f49aff442924648b850bc5f43b6a49bd5d93ed28a4a5",
+    "Pro2/output/L2/lateral_push/comparison/recovery.png": "90c15a7e5e43332f410e473ad4fc763fa963fe92f465a5c2180af60066a60d90",
+    "Pro2/output/L2/lateral_push/comparison/control_effort.png": "38614fb290b0e5f1cfbc4822390207103c1dc9f3d4f1b6b3c17ab2e434b6dc1a"
+  },
+  "raw_sha256": {
+    "Pro2/output/L2/lateral_push/long_push_20261105/no_push/run.json": "08486138ecc975b64602eff3b22bf4a7487b2e06ce5ebea4b7610852378b72bd",
+    "Pro2/output/L2/lateral_push/long_push_20261105/no_push/states.csv": "389a0a59f82e061c1379715cbcc840e68be0b57bf61a0a843f8dbbf73bd7b631",
+    "Pro2/output/L2/lateral_push/long_push_20261105/no_push/config.json": "6d5ee21cafc07434a1f0c591d9d962ff20f5a500ee8015efd5d10cd4de39571c",
+    "Pro2/output/L2/lateral_push/long_push_20261105/no_push/demo.mp4": "64df421261735f958e69ff7e19d6366c0513bc64d6a0d3b755cdf368edd26506",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/run.json": "1e2072adc312aa0c73d348858d04f2844f6e83bfda18e69be32b125dd2005349",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/states.csv": "c5422bc6bfe005263f958595262af236a7b2e8ca244a6b736ae79d7bec109c92",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/config.json": "ce9d7127870782074fb6db38ea49b661235e1f54e4b0d850a707aa226726d6a4",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/demo.mp4": "7be8422c6be90ea6bec955754d848197cb02b16dd289bd31a876e2e6af849c3e",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/run.json": "2b4cd9698a0ba84c633ec472dce1063ef9ba527b7031203971dfabc16d298d1c",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/states.csv": "e855bd5ad18fc457d0cfcc20eba40b27da15824d0ce7cf64a516b66da0f340b3",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/config.json": "fc136e282216d8ac3a2a73ffdbe80d849c6cd51ab1b142b0d1e48ff8edc88988",
+    "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/demo.mp4": "e77891a401f698354be3e272732ca77404311baeabe05335e388a6f905742072"
+  }
+}

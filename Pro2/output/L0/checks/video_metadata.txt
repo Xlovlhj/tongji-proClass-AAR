@@ -1,0 +1,23 @@
+$ gst-discoverer-1.0 Pro2/output/L0/walk_10s_video/demo.mp4
+
+Analyzing file:///home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/output/L0/walk_10s_video/demo.mp4
+Done discovering file:///home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/output/L0/walk_10s_video/demo.mp4
+
+Properties:
+  Duration: 0:00:10.000000000
+  Seekable: yes
+  Live: no
+  container #0: Quicktime
+    video #1: H.264 (Constrained Baseline Profile)
+      Stream ID: 40f20ae732da5e3c7946351a74c5be7237e4f0419cd77bc86052fbdfa757a35c/001
+      Width: 960
+      Height: 720
+      Depth: 24
+      Frame rate: 30/1
+      Pixel aspect ratio: 1/1
+      Interlaced: false
+      Bitrate: 2815975
+      Max bitrate: 4555200
+
+
+exit_code=0

@@ -1,0 +1,39 @@
+{
+  "status": "pass",
+  "summary_sha256": "dceb6055602bbd15f742dc6479204fdd250873521fe8d028491a1ec30bd60a08",
+  "checks": [
+    {
+      "experiment": "slope_05deg",
+      "independent_primary_metrics_match": true,
+      "sources_sha256_match": true,
+      "all_contiguous_window_sample_counts_match": true,
+      "primary_samples": 1700,
+      "support_transitions": 50
+    },
+    {
+      "experiment": "rough_medium_run02",
+      "independent_primary_metrics_match": true,
+      "sources_sha256_match": true,
+      "all_contiguous_window_sample_counts_match": true,
+      "primary_samples": 2100,
+      "support_transitions": 57
+    },
+    {
+      "experiment": "random_obstacles_seed01_full",
+      "independent_primary_metrics_match": true,
+      "sources_sha256_match": true,
+      "all_contiguous_window_sample_counts_match": true,
+      "primary_samples": 3800,
+      "support_transitions": 104
+    },
+    {
+      "experiment": "blind_step_up_run02",
+      "independent_primary_metrics_match": true,
+      "sources_sha256_match": true,
+      "all_contiguous_window_sample_counts_match": true,
+      "primary_samples": 1700,
+      "support_transitions": 48
+    }
+  ],
+  "verification_method": "Independent csv.DictReader recomputation, without importing analysis functions; comparisons at 1e-12 tolerance."
+}

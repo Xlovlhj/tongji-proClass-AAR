@@ -1,0 +1,707 @@
+{
+  "revision": "page 13: assess gait continuity, body motion, speed error and support scheduling; preserve all other pages and jump content",
+  "decks": {
+    "青龙MPC_项目汇报_15页": [
+      {
+        "page": 1,
+        "stage": "项目汇报",
+        "title": "青龙人形机器人 MPC 开源实践",
+        "report": null,
+        "sections": [],
+        "notes": "演示安排：共 132 秒（2 分 12 秒），依次展示 L0 跑通、L2 四组对照与 L4 综合演示。\n01:28–01:52：5° 坡道、粗糙地面、随机障碍与 6 cm 台阶按 2×2 同屏播放，四组均展示前 24 秒并按仿真时间同步。\n这段画面用于观察不同地形下的步态；完整录像保留各自运行时长，姿态、速度和换腿节奏的分析见 L4 报告第5节。\n01:52–02:05：竖直跳跃。\n02:05–02:12：跳跃关键动作 0.5 倍速回放。\n综合视频引用 19 条原片，原始录像与配置按 L0、L2、L4 分别保存。",
+        "sources": [
+          "Pro2/机器人智能控制_作业2_足式机器人MPC开源实践.docx",
+          "Pro2/output/final/assets/项目验收演示_L0_L2_L4.mp4",
+          "Pro2/output/final/assets/poster.png"
+        ],
+        "images": [],
+        "videos": [
+          {
+            "source": "Pro2/output/final/assets/项目验收演示_L0_L2_L4.mp4",
+            "sha256": "f064344452c4e183902465de212b9e790f5bc7a25788783f8838690f71ef43b9",
+            "poster": "Pro2/output/final/assets/poster.png",
+            "embedded": true,
+            "autoplay": false
+          }
+        ],
+        "body_text": "青龙人形机器人 MPC 开源实践\nOpenLoong · Isaac Sim 仿真适配       任务demo展示\nL0  跑通与调参\nL1  控制原理与源码\nL2  四组对照实验\nL3  理论联系\nL4  五项挑战",
+        "tables": []
+      },
+      {
+        "page": 2,
+        "stage": "L0",
+        "title": "环境搭建与默认运行",
+        "report": "Pro2/output/L0/L0验收报告.md",
+        "sections": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L0/L0验收报告.md",
+          "Pro2/output/L0/walk_10s_video/demo.mp4",
+          "Pro2/output/L0/walk_10s_video/final_frame.png"
+        ],
+        "images": [],
+        "videos": [
+          {
+            "source": "Pro2/output/L0/walk_10s_video/demo.mp4",
+            "sha256": "13b70e9dd024de87a19927e194e7dd08bbc63528edee69e08a6f68067f2eac34",
+            "poster": "Pro2/output/L0/walk_10s_video/final_frame.png",
+            "embedded": true,
+            "autoplay": false
+          }
+        ],
+        "body_text": "L0  环境搭建与默认运行\n关节映射、基座速度转换、力矩接口完成Isaac适配\n默认 10 s：净位移 1.172 m\nMPC、WBC 非零状态均为 0\n从项目根目录检查、构建、启动命令：\npython3 Pro2/run_isaac.py --check-env\npython3 Pro2/run_isaac.py --build-only\npython3 Pro2/run_isaac.py --level L0 --duration 10 --walk-start 3",
+        "tables": [
+          [
+            [
+              "实际环境",
+              "配置"
+            ],
+            [
+              "系统",
+              "Ubuntu 22.04.5 双系统"
+            ],
+            [
+              "仿真",
+              "Isaac Sim 6.0.1、PhysX"
+            ],
+            [
+              "编译",
+              "g++ 11.4、CMake 3.22"
+            ],
+            [
+              "原路线",
+              "人形 MuJoCo，无需 ROS"
+            ]
+          ]
+        ]
+      },
+      {
+        "page": 3,
+        "stage": "L0",
+        "title": "输入代价权重：实际调参与分析",
+        "report": "Pro2/output/L0/L0验收报告.md",
+        "sections": [
+          6,
+          8,
+          9
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L0/L0验收报告.md",
+          "Pro2/output/L0/mpc_input_weight/comparison/speed_tracking.png"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L0/mpc_input_weight/comparison/speed_tracking.png",
+            "sha256": "95a9c51b9bac0b406cbb8a64df9c6f60b32204a050674e445774fc41d759d4c9"
+          }
+        ],
+        "videos": [],
+        "body_text": "L0  输入代价权重：实际调参与分析\nu_weight：10⁻⁷、10⁻⁶（默认）、10⁻⁵；每次 12 s，统计 5–12 s。\n10⁻⁵ 相对默认\n速度误差 −14.39%\n控制努力 +2.83%\n增大接触输入代价改变了优化折中；10⁻⁵ 是当前场景三候选中的推荐。",
+        "tables": [
+          [
+            [
+              "输入权重",
+              "速度 RMSE"
+            ],
+            [
+              "10⁻⁷",
+              "0.02189 m/s"
+            ],
+            [
+              "10⁻⁶",
+              "0.02361 m/s"
+            ],
+            [
+              "10⁻⁵",
+              "0.02021 m/s"
+            ]
+          ]
+        ]
+      },
+      {
+        "page": 4,
+        "stage": "L1",
+        "title": "MPC、WBC 闭环与优化问题",
+        "report": "Pro2/output/L1/L1源码分析报告.md",
+        "sections": [
+          3,
+          4,
+          5,
+          7
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L1/L1源码分析报告.md",
+          "Pro2/output/L1/figures/L1闭环控制框架.png"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L1/figures/L1闭环控制框架.png",
+            "sha256": "98fddf2d66d948e4be32cae5f255d377aafcfd213b1c743e8d7f457fcf83e9b4"
+          }
+        ],
+        "videos": [],
+        "body_text": "L1  MPC、WBC 闭环与优化问题\nMPC 决定未来双脚怎样发力。\n优化变量：未来左右脚的接触力与力矩序列。\n预测状态：姿态、位置、角速度、线速度（12 维）。\n目标：最小化两项误差的加权平方和：\n① 预测状态与参考运动的误差；\n② 接触输入与参考支撑载荷的偏差。\n约束：摩擦、单边接触、足底力矩与支撑切换。\n模型：线性化单刚体；qpOASES 求解。\n只把第一步接触输入交给 WBC，再求关节力矩。\n预测 10 × 5 ms = 50 ms；独立控制 3 步。\nMPC 200 Hz；WBC、PVT、物理 1 kHz。",
+        "tables": []
+      },
+      {
+        "page": 5,
+        "stage": "L1",
+        "title": "源码定位与关节力矩执行",
+        "report": "Pro2/output/L1/L1源码分析报告.md",
+        "sections": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L1/L1源码分析报告.md"
+        ],
+        "images": [],
+        "videos": [],
+        "body_text": "L1  源码定位与关节力矩执行\n控制目录：Pro2/OpenLoong-Dyn-Control/；表内 algorithm 与 common 均相对此处。\nWBC：分层伪逆与零空间求运动目标，再用动力学 QP 得到前馈力矩。\nPVT：滤波 PD + WBC 前馈 → maxTorque 限幅 → Isaac 关节侧力矩。",
+        "tables": [
+          [
+            [
+              "模块",
+              "源码、函数"
+            ],
+            [
+              "状态反馈（适配层）",
+              "Pro2/isaac/simulation.py::_run()"
+            ],
+            [
+              "步态、足端规划",
+              "algorithm/gait_scheduler.cpp::step()\nalgorithm/foot_placement.cpp::getSwingPos()"
+            ],
+            [
+              "MPC：预测与优化",
+              "algorithm/mpc.cpp::cal()、set_weight()"
+            ],
+            [
+              "WBC：全身运动",
+              "algorithm/wbc_priority.cpp::computeDdq()、computeTau()"
+            ],
+            [
+              "PVT：反馈与限幅",
+              "common/PVT_ctrl.cpp\ncommon/joint_ctrl_config.json"
+            ]
+          ]
+        ]
+      },
+      {
+        "page": 6,
+        "stage": "L2",
+        "title": "对照实验一：前向速度权重",
+        "report": "Pro2/output/L2/L2验收报告.md",
+        "sections": [
+          4
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L2/L2验收报告.md",
+          "Pro2/output/L2/mpc_vx_weight/comparison/speed_tracking.png"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L2/mpc_vx_weight/comparison/speed_tracking.png",
+            "sha256": "0e5595c27db689f89c45ad74a3a4d1a08fa5351970bcf5044f5add591988bc41"
+          }
+        ],
+        "videos": [],
+        "body_text": "L2  对照实验一：前向速度权重\nstate_weights[9]：0.2、1.0（默认）、5.0\n高权重相对默认\n误差 −22.9%\n峰值力矩 +11.2%\n更重视速度误差，跟踪更紧；封面对照为当前库补录，曲线为原正式运行。\n配置：Pro2/experiments/L2/mpc_vx_weight/high.json",
+        "tables": [
+          [
+            [
+              "速度权重",
+              "RMSE (m/s)"
+            ],
+            [
+              "0.2",
+              "0.04430"
+            ],
+            [
+              "1.0",
+              "0.02354"
+            ],
+            [
+              "5.0",
+              "0.01814"
+            ]
+          ]
+        ]
+      },
+      {
+        "page": 7,
+        "stage": "L2",
+        "title": "对照实验二：预测时域",
+        "report": "Pro2/output/L2/L2验收报告.md",
+        "sections": [
+          5
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L2/L2验收报告.md",
+          "Pro2/output/L2/prediction_horizon/comparison/solver_time.png"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L2/prediction_horizon/comparison/solver_time.png",
+            "sha256": "96892fa878f3c43cf2585e83a8c382a51126081f36fea36cff8f5f80712f09ab"
+          }
+        ],
+        "videos": [],
+        "body_text": "L2  对照实验二：预测时域\nmpc_horizon_steps：5、10（默认）、15；对应 25、50、75 ms。\n50 ms 跟踪最好\n75 ms 抽样控制步\n耗时增加 36.1%\n更长时域增加计算负担；图中为 QP CPU 时间，抽样控制步耗时另行统计。\n配置：Pro2/experiments/L2/prediction_horizon/long_n15.json",
+        "tables": [
+          [
+            [
+              "预测窗口",
+              "RMSE (m/s)"
+            ],
+            [
+              "25 ms",
+              "0.02482"
+            ],
+            [
+              "50 ms",
+              "0.02354"
+            ],
+            [
+              "75 ms",
+              "0.02613"
+            ]
+          ]
+        ]
+      },
+      {
+        "page": 8,
+        "stage": "L2",
+        "title": "对照实验三：抬腿高度",
+        "report": "Pro2/output/L2/L2验收报告.md",
+        "sections": [
+          6
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L2/L2验收报告.md",
+          "Pro2/output/L2/step_height/comparison/base_height.png"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L2/step_height/comparison/base_height.png",
+            "sha256": "46570f419f5be7a85002f705a978a1bb78300784812c3238869d7e14825b9797"
+          }
+        ],
+        "videos": [],
+        "body_text": "L2  对照实验三：抬腿高度\nstep_height：0.08、0.12（默认）、0.16 m；平地，目标速度 0.2 m/s。\n0.08 m 平地负担较小\n绝对机械功代理\n相对默认 −28.8%\n降低摆腿幅度减轻全身运动负担；该结果不能直接外推为越障性能更好。\n配置：Pro2/experiments/L2/step_height/low_008.json",
+        "tables": [
+          [
+            [
+              "期望步高",
+              "RMSE (m/s)"
+            ],
+            [
+              "0.08 m",
+              "0.01788"
+            ],
+            [
+              "0.12 m",
+              "0.02354"
+            ],
+            [
+              "0.16 m",
+              "0.02708"
+            ]
+          ]
+        ]
+      },
+      {
+        "page": 9,
+        "stage": "L2",
+        "title": "对照实验四：侧向扰动",
+        "report": "Pro2/output/L2/L2验收报告.md",
+        "sections": [
+          7
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L2/L2验收报告.md",
+          "Pro2/output/L2/lateral_push/long_push_20261105/comparison/presentation_summary.json",
+          "Pro2/output/L2/lateral_push/long_push_20261105/comparison/presentation_summary.json",
+          "Pro2/output/L2/lateral_push/long_push_20261105/comparison/disturbance_response.png",
+          "Pro2/output/L2/lateral_push/long_push_20261105/comparison/presentation_summary.json"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/disturbance_response.png",
+            "sha256": "4fc672c589f6271bd33ce6ab9784b4c9a0ecf4fafc69a8259cdc38da8a8c9bce"
+          }
+        ],
+        "videos": [],
+        "body_text": "L2  对照实验四：侧向扰动\n世界 +Y 侧推 0、50、100 N，7–7.5 s；Δvy 峰值窗口 7–9 s\n50 N 完成 12 s\n100 N：约 9 s 失稳\n失稳属于正式对照结果\n外力持续 0.5 s，冲量为 0、25、50 N·s。\n100 N 组失稳；QP 状态为 0 不代表闭环稳定。\n配置：Pro2/experiments/L2/lateral_push/push_100N.json",
+        "tables": [
+          [
+            [
+              "侧推 (N)",
+              "|Δvy| (m/s)"
+            ],
+            [
+              "0",
+              "0.0000"
+            ],
+            [
+              "50",
+              "0.3371"
+            ],
+            [
+              "100",
+              "2.7335"
+            ]
+          ]
+        ]
+      },
+      {
+        "page": 10,
+        "stage": "L3",
+        "title": "LQR、iLQR 与 MPC 的理论联系",
+        "report": "Pro2/output/L3/L3理论联系报告.md",
+        "sections": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L3/L3理论联系报告.md",
+          "Pro2/output/L3/figures/L3理论关系图.png"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L3/figures/L3理论关系图.png",
+            "sha256": "53ce27cfa4b366878f5b55cca49d7b73996e97b9570728149c1844eb61c78109"
+          }
+        ],
+        "videos": [],
+        "body_text": "L3  LQR、iLQR 与 MPC 的理论联系\n方法与执行框架：分别回答怎样求解、怎样执行。\nLQR：线性二次问题，Riccati 求反馈增益。\niLQR：局部线性化，后向求增益、前向修正轨迹。\nMPC：按当前状态重算未来，只执行第一步。\n固定增益的局限：接触切换、摩擦与单边约束、\n模型变化和力矩饱和，需要显式约束与前瞻。\n凸 MPC：计算较轻，受局部模型近似限制。\nNMPC：保留非线性，计算与收敛负担更大。\n本阶段为理论分析，未运行 LQR、iLQR。",
+        "tables": []
+      },
+      {
+        "page": 11,
+        "stage": "L4",
+        "title": "挑战一：更换 H1 模型并站立",
+        "report": "Pro2/output/L4/L4验收报告.md",
+        "sections": [
+          3
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L4/L4验收报告.md",
+          "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_height.png"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_height.png",
+            "sha256": "4394400ca74bac29e6da89f86bdc27573ba7ef631a63f0322a9c9dcdcecd7787"
+          }
+        ],
+        "videos": [],
+        "body_text": "L4  挑战一：更换 H1 模型并站立\n真实 H1-2 Handless USD，27 关节；3 s 过渡 + 5 s 保持。\n独立 FixStand PD + 骨盆反馈站立通过。\nOpenLoong MPC、WBC 尚未迁移到 H1。",
+        "tables": [
+          [
+            [
+              "验收指标",
+              "实测值"
+            ],
+            [
+              "最低高度",
+              "0.9893 m"
+            ],
+            [
+              "最大单轴倾角",
+              "0.07764 rad"
+            ],
+            [
+              "水平最大漂移",
+              "0.06073 m"
+            ],
+            [
+              "最终关节 RMSE",
+              "0.03650 rad"
+            ]
+          ]
+        ]
+      },
+      {
+        "page": 12,
+        "stage": "L4",
+        "title": "挑战二：给定路径跟踪",
+        "report": "Pro2/output/L4/L4验收报告.md",
+        "sections": [
+          4
+        ],
+        "notes": "图外补充参考路径、实际轨迹及如何判断跟踪效果的说明。",
+        "sources": [
+          "Pro2/output/L4/L4验收报告.md",
+          "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/planar_trajectory.png"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/planar_trajectory.png",
+            "sha256": "c0ba583ee02670e9998e9a09939daf8d11199cd8b9a5021e90969dc6fb937f12"
+          }
+        ],
+        "videos": [],
+        "body_text": "L4  挑战二：给定路径跟踪\n路径误差生成 vx、vy、wz，经限幅送入原 MPC、WBC 行走闭环。\n五组完成，四组触发到点。圆开环、闭环时长和容差不同，不能直接比较优劣。\n多路径点最终距目标 0.2874 m：到点事件与最终停稳位置分别评价。\n左图：灰虚线为参考路径，\n蓝实线为机器人实际轨迹。\n两线越接近，路径跟踪越准确。",
+        "tables": [
+          [
+            [
+              "路径",
+              "RMSE (m)",
+              "到点"
+            ],
+            [
+              "直线",
+              "0.07909",
+              "是"
+            ],
+            [
+              "90° 转弯",
+              "0.20102",
+              "是"
+            ],
+            [
+              "圆开环",
+              "0.14480",
+              "否"
+            ],
+            [
+              "圆闭环",
+              "0.13395",
+              "是"
+            ],
+            [
+              "多路径点",
+              "0.21732",
+              "锁存"
+            ]
+          ]
+        ]
+      },
+      {
+        "page": 13,
+        "stage": "L4",
+        "title": "挑战三：复杂地形与竖直跳跃",
+        "report": "Pro2/output/L4/L4验收报告.md",
+        "sections": [
+          5
+        ],
+        "notes": "使用四组正式运行的姿态、速度误差与支撑调度间隔分析行走稳定性；不以区域覆盖评价步态能力，右侧跳跃内容保留。",
+        "sources": [
+          "Pro2/output/L4/L4验收报告.md",
+          "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/height.png",
+          "Pro2/output/L4/03_terrain_and_jump/gait_stability_analysis/summary.json",
+          "Pro2/output/L4/03_terrain_and_jump/slope_05deg/run.json",
+          "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis_gait/metrics.json",
+          "Pro2/output/L4/03_terrain_and_jump/slope_05deg/states.csv",
+          "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/run.json",
+          "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis_gait/metrics.json",
+          "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/states.csv",
+          "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/run.json",
+          "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis_gait/metrics.json",
+          "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/states.csv",
+          "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/run.json",
+          "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis_gait/metrics.json",
+          "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/states.csv"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/height.png",
+            "sha256": "ccee2002a9af9a1b5938dba0c2d6c01ec36406e15fa4f698bfe431c9a621e4c4"
+          }
+        ],
+        "videos": [],
+        "body_text": "L4  挑战三：复杂地形与竖直跳跃\n竖直跳跃\n两次独立运行，各 21 项验收通过。\n增高 0.0608 m；腾空 0.27 s。\n腾空关闭接触 MPC，着陆恢复支撑。\n未达 0.12 m 目标，落地冲击待优化。\n四种地形：步态与行走稳定性\n四组均保持行走，未触发失稳保护。\n台阶速度误差与换腿节奏波动更大。\n统计 7 s 后行走，含接近与地形过渡。\n各组观察时长与步态参数不同。\n换腿节奏依据控制器状态统计，\n尚未用实际足底接触数据核验。",
+        "tables": [
+          [
+            [
+              "地形",
+              "姿态峰值\n(°)",
+              "速度RMSE\n(m/s)",
+              "调度间隔\nCV (%)"
+            ],
+            [
+              "5° 坡道",
+              "2.27",
+              "0.031",
+              "7.0"
+            ],
+            [
+              "粗糙地面",
+              "3.46",
+              "0.037",
+              "3.1"
+            ],
+            [
+              "随机障碍",
+              "4.06",
+              "0.063",
+              "6.1"
+            ],
+            [
+              "6 cm 台阶",
+              "3.63",
+              "0.083",
+              "8.7"
+            ]
+          ]
+        ]
+      },
+      {
+        "page": 14,
+        "stage": "L4",
+        "title": "挑战四：凸 MPC 与 NMPC 对照",
+        "report": "Pro2/output/L4/L4验收报告.md",
+        "sections": [
+          6
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L4/L4验收报告.md",
+          "Pro2/output/L4/figures/L4凸MPC与NMPC对比.png"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L4/figures/L4凸MPC与NMPC对比.png",
+            "sha256": "8c0c8e343b2381e1c39fbd937513f59aa1ab01eb0087004ea35630987e5f9a63"
+          }
+        ],
+        "videos": [],
+        "body_text": "L4  挑战四：凸 MPC 与 NMPC 对照\n前向误差接近，但当前 NMPC 的平均求解时间更长。\nNMPC 失败或接触不匹配时回退到 C++ 输入。\n误差取全时段，耗时取行走期；控制周期也不同。\n各一次运行，不能据此推断普遍性能优劣。",
+        "tables": [
+          [
+            [
+              "同控制库 10 s 对照",
+              "凸 MPC",
+              "SQP-RTI NMPC"
+            ],
+            [
+              "前向 RMSE (m/s)",
+              "0.03532",
+              "0.03408"
+            ],
+            [
+              "平均求解 (ms)",
+              "0.355",
+              "17.129"
+            ],
+            [
+              "求解失败",
+              "采样未见",
+              "36 次，共 350 次"
+            ]
+          ]
+        ]
+      },
+      {
+        "page": 15,
+        "stage": "L4",
+        "title": "挑战五：足底力与关节力矩分解",
+        "report": "Pro2/output/L4/L4验收报告.md",
+        "sections": [
+          7
+        ],
+        "notes": "",
+        "sources": [
+          "Pro2/output/L4/L4验收报告.md",
+          "Pro2/output/L4/figures/L4力矩分解链路.png",
+          "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/mpc_vertical_contact_force.png",
+          "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_ankle_l_pitch.png"
+        ],
+        "images": [
+          {
+            "source": "Pro2/output/L4/figures/L4力矩分解链路.png",
+            "sha256": "99daf6b857d8b7eeb851d6cb2d67c810063b4cbf6701981bf7acd759452c15e3"
+          },
+          {
+            "source": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/mpc_vertical_contact_force.png",
+            "sha256": "053cbe45c59354cce7af709bd6907cad2424f13d9d509b8e0b206664929a0d29"
+          },
+          {
+            "source": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_ankle_l_pitch.png",
+            "sha256": "852f87afe8bd1ccdf79353be847972218e9d49679826078a439f85d76a03e4a3"
+          }
+        ],
+        "videos": [],
+        "body_text": "L4  挑战五：足底力与关节力矩分解\nWBC 前馈 + 滤波 PD → 限幅 → Isaac 施加。\n左、右踝限幅 5、10 点；命令回读差约 10⁻⁶ N·m。\n学习结论：调参需同时看跟踪、稳定性与控制代价。",
+        "tables": []
+      }
+    ]
+  },
+  "frameworks_required": [
+    "Pro2/output/L1/figures/L1闭环控制框架.png",
+    "Pro2/output/L3/figures/L3理论关系图.png",
+    "Pro2/output/L4/figures/L4凸MPC与NMPC对比.png",
+    "Pro2/output/L4/figures/L4力矩分解链路.png"
+  ],
+  "original_report_image_count": 14,
+  "minimum_text_pt": 20,
+  "allowed_text_colors": [
+    "142D38",
+    "006D68"
+  ],
+  "source_sha256": {
+    "Pro2/output/L0/L0验收报告.md": "2c7dfe30a04ef04de649e69ee00367ea129ec08697d142ef5dbe26d90705f8c9",
+    "Pro2/output/L0/mpc_input_weight/comparison/speed_tracking.png": "95a9c51b9bac0b406cbb8a64df9c6f60b32204a050674e445774fc41d759d4c9",
+    "Pro2/output/L0/walk_10s_video/demo.mp4": "13b70e9dd024de87a19927e194e7dd08bbc63528edee69e08a6f68067f2eac34",
+    "Pro2/output/L0/walk_10s_video/final_frame.png": "82b02d3597457e74c9f490d91adcd8f04f997f24e3863f1bd8f04d95a79c7dca",
+    "Pro2/output/L1/L1源码分析报告.md": "a9ae39df33a301c7d8c45657b5e95b84c9f254b70f2be1af85a0c2808033cd6b",
+    "Pro2/output/L1/figures/L1闭环控制框架.png": "98fddf2d66d948e4be32cae5f255d377aafcfd213b1c743e8d7f457fcf83e9b4",
+    "Pro2/output/L2/L2验收报告.md": "a52c013e77842250f2bf9f95d9a4da5b120a21c10b3b108bfb3a7ffa416d9800",
+    "Pro2/output/L2/lateral_push/long_push_20261105/comparison/disturbance_response.png": "4fc672c589f6271bd33ce6ab9784b4c9a0ecf4fafc69a8259cdc38da8a8c9bce",
+    "Pro2/output/L2/lateral_push/long_push_20261105/comparison/presentation_summary.json": "f1c7a9d649a55f3a0e41d05f3d1a5d2930c512dd5f8b5a409e62059fd9f072bf",
+    "Pro2/output/L2/mpc_vx_weight/comparison/speed_tracking.png": "0e5595c27db689f89c45ad74a3a4d1a08fa5351970bcf5044f5add591988bc41",
+    "Pro2/output/L2/prediction_horizon/comparison/solver_time.png": "96892fa878f3c43cf2585e83a8c382a51126081f36fea36cff8f5f80712f09ab",
+    "Pro2/output/L2/step_height/comparison/base_height.png": "46570f419f5be7a85002f705a978a1bb78300784812c3238869d7e14825b9797",
+    "Pro2/output/L3/L3理论联系报告.md": "8f9650da23636112d5feba7cbc22213aff5b759ddb6d449ad4bf0a7846db18b7",
+    "Pro2/output/L3/figures/L3理论关系图.png": "53ce27cfa4b366878f5b55cca49d7b73996e97b9570728149c1844eb61c78109",
+    "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_height.png": "4394400ca74bac29e6da89f86bdc27573ba7ef631a63f0322a9c9dcdcecd7787",
+    "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/planar_trajectory.png": "c0ba583ee02670e9998e9a09939daf8d11199cd8b9a5021e90969dc6fb937f12",
+    "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis_gait/metrics.json": "6ff41c0db75e37349e33a31d3487768cc4de45015734562804be7ca5ee330d45",
+    "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/run.json": "f29b706bff20f0d61ef157b88be96495b3481fa610ddf7036a0a6ec4c46f1aa1",
+    "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/states.csv": "aea4617fc2ed4776f9d9bfd2b6266d6e84e6ea7e8b4544012a73c2c30b9f5a6f",
+    "Pro2/output/L4/03_terrain_and_jump/gait_stability_analysis/summary.json": "dceb6055602bbd15f742dc6479204fdd250873521fe8d028491a1ec30bd60a08",
+    "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis_gait/metrics.json": "96be65e897486c3d86e88e9b7edc430371154c8f080f6f683c22e7ec875a8e96",
+    "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/run.json": "11bdf4b6a2a022e288b7fef5b88bec22c467ed4068b26b55d93edfbbd508d24d",
+    "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/states.csv": "f0bb218e745334f656209578abc53b7a3211aa628b0f712ad2b6a2ca79561086",
+    "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis_gait/metrics.json": "67e5009c7ec576f0fee7bbca5240bafcc2d12c1464300f0c48b7f8aeec914de4",
+    "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/run.json": "0c7f45317cf7d169c69980ed7698813addf772ef87060e383a6a23cafd879c6e",
+    "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/states.csv": "13ccf2973021d2096f4dbc80b5fb2ec06ec7ca959790740d4cf7c0f572e8a1ba",
+    "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis_gait/metrics.json": "53d919ca1213007eed02b12ed3fa094ede44d56b1625ffaa3dc998733543cf9c",
+    "Pro2/output/L4/03_terrain_and_jump/slope_05deg/run.json": "160eaa91a6de2c48ef63210942bde2ecb57068f7b388b3d2706b826880a09d96",
+    "Pro2/output/L4/03_terrain_and_jump/slope_05deg/states.csv": "36dd5a92b13eb2ee52c1c8c07209e85097d43ed351c9489b150309916c97cfd1",
+    "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/height.png": "ccee2002a9af9a1b5938dba0c2d6c01ec36406e15fa4f698bfe431c9a621e4c4",
+    "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_ankle_l_pitch.png": "852f87afe8bd1ccdf79353be847972218e9d49679826078a439f85d76a03e4a3",
+    "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/mpc_vertical_contact_force.png": "053cbe45c59354cce7af709bd6907cad2424f13d9d509b8e0b206664929a0d29",
+    "Pro2/output/L4/L4验收报告.md": "19feee2fd44d4fcd28fc5e51b287e9defa5b141040bfa017f59bc514275f2d13",
+    "Pro2/output/L4/figures/L4凸MPC与NMPC对比.png": "8c0c8e343b2381e1c39fbd937513f59aa1ab01eb0087004ea35630987e5f9a63",
+    "Pro2/output/L4/figures/L4力矩分解链路.png": "99daf6b857d8b7eeb851d6cb2d67c810063b4cbf6701981bf7acd759452c15e3",
+    "Pro2/output/final/assets/poster.png": "46cb2c2a52c43f01dbcb53893547cd57884e9f616f852032fbd4945530834288",
+    "Pro2/output/final/assets/项目验收演示_L0_L2_L4.mp4": "f064344452c4e183902465de212b9e790f5bc7a25788783f8838690f71ef43b9",
+    "Pro2/机器人智能控制_作业2_足式机器人MPC开源实践.docx": "c68a39aa2dd2b0c03388454fb47e8282a59598ba1be8a73db168b6c6a8eadf30"
+  },
+  "cover_video_duration_s": 132.0
+}

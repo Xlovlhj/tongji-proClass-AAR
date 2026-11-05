@@ -1,0 +1,42 @@
+{
+  "status": "pass",
+  "snapshot_before": "/tmp/pro2_terrain_before_178b893422b2.pptx",
+  "input_pptx_sha256": "178b893422b2465d7749877b61c3eef75ec2e7962438fe59f557261419af40f4",
+  "output_pptx_sha256": "868a7daa04d0c362675402cff0fa0357e66633cbd423002a4e77af20993728ba",
+  "changed_parts": [
+    "ppt/notesSlides/notesSlide14.xml",
+    "ppt/notesSlides/notesSlide13.xml",
+    "ppt/slides/_rels/slide13.xml.rels",
+    "ppt/slides/slide13.xml",
+    "ppt/slides/slide14.xml"
+  ],
+  "added_parts": [
+    "ppt/media/image1.png",
+    "ppt/media/image19.png",
+    "ppt/media/image20.png",
+    "ppt/media/image3.png"
+  ],
+  "all_original_media_byte_identical": true,
+  "preserved_slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    15
+  ],
+  "terrain_images": [
+    "Pro2/output/L4/03_terrain_and_jump/slope_05deg/final_frame.png",
+    "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/final_frame.png",
+    "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/final_frame.png",
+    "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/final_frame.png"
+  ],
+  "nm_pc_wording": "前向误差接近，但当前 NMPC 的平均求解时间更长。"
+}

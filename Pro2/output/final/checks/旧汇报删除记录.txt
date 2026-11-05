@@ -1,0 +1,14 @@
+Pro2/output/final/青龙MPC_完整汇报_按阶段整理.pptx
+Pro2/output/final/青龙MPC_限页汇报_10页.pptx
+Pro2/output/final/青龙MPC_限页汇报_10页.pdf
+Pro2/output/final/青龙MPC_完整汇报_按阶段整理.pdf
+Pro2/output/final/archive
+Pro2/output/final/preview
+Pro2/output/final/__pycache__
+Pro2/output/final/presentation_sources.json
+Pro2/output/final/presentation_verification.json
+Pro2/output/final/逐页讲稿与原报告对应.md
+Pro2/output/final/验收要求与PPT对应.md
+Pro2/output/final/revision_l4_map.md
+Pro2/output/final/revision_stage_map.md
+Pro2/output/final/proposed_inserts.md

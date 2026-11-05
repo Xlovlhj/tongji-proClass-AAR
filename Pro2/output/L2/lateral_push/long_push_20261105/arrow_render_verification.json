@@ -1,0 +1,208 @@
+{
+  "status": "passed_with_measured_viewport_latency",
+  "fps": 30,
+  "actual_physics_force_interval_s": [
+    7,
+    7.5
+  ],
+  "actual_physics_interval_end_exclusive": true,
+  "observed_arrow_first_frame": 211,
+  "observed_arrow_last_frame": 225,
+  "observed_arrow_first_frame_s": 7.033333333333333,
+  "observed_arrow_hidden_again_s": 7.533333333333333,
+  "observed_display_delay_frames": 1,
+  "observed_display_delay_s": 0.03333333333333333,
+  "explanation": "实际施力按1ms物理步为[7.000,7.500)s，100Hz日志记录7.00至7.49。视口箭头像素出现在211–225帧，显示管线相对力切换约延迟1个视频帧(33ms)；无扰动组始终无箭头。指标以states.csv为准。截图排队在world.render之前，等待completion_frames发生在截图完成后。未为显示延迟移动或修改数据。",
+  "method": "逐帧查找R>100、R>floor(1.5G)且R>floor(1.5B)的橙红像素，>100像素判定箭头可见；人工复核两非零组frame216。",
+  "cases": {
+    "no_push": {
+      "video_frames_checked": 360,
+      "visible_arrow_frame_indices": [],
+      "arrow_visible_frame_count": 0,
+      "samples": {
+        "209": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "210": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "211": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "216": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "224": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "225": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "226": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "250": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        }
+      }
+    },
+    "push_50N": {
+      "video_frames_checked": 360,
+      "visible_arrow_frame_indices": [
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225
+      ],
+      "arrow_visible_frame_count": 15,
+      "samples": {
+        "209": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "210": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "211": {
+          "red_orange_pixels": 1074,
+          "bounding_box": [
+            374,
+            326,
+            475,
+            381
+          ]
+        },
+        "216": {
+          "red_orange_pixels": 1065,
+          "bounding_box": [
+            374,
+            325,
+            475,
+            379
+          ]
+        },
+        "224": {
+          "red_orange_pixels": 1073,
+          "bounding_box": [
+            374,
+            323,
+            476,
+            378
+          ]
+        },
+        "225": {
+          "red_orange_pixels": 1075,
+          "bounding_box": [
+            374,
+            322,
+            475,
+            376
+          ]
+        },
+        "226": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "250": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        }
+      }
+    },
+    "push_100N": {
+      "video_frames_checked": 270,
+      "visible_arrow_frame_indices": [
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225
+      ],
+      "arrow_visible_frame_count": 15,
+      "samples": {
+        "209": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "210": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "211": {
+          "red_orange_pixels": 1395,
+          "bounding_box": [
+            253,
+            326,
+            475,
+            419
+          ]
+        },
+        "216": {
+          "red_orange_pixels": 1390,
+          "bounding_box": [
+            253,
+            325,
+            476,
+            418
+          ]
+        },
+        "224": {
+          "red_orange_pixels": 1390,
+          "bounding_box": [
+            253,
+            325,
+            476,
+            417
+          ]
+        },
+        "225": {
+          "red_orange_pixels": 1388,
+          "bounding_box": [
+            253,
+            323,
+            476,
+            414
+          ]
+        },
+        "226": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        },
+        "250": {
+          "red_orange_pixels": 0,
+          "bounding_box": null
+        }
+      }
+    }
+  }
+}

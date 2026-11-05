@@ -1,0 +1,87 @@
+{
+  "status": "pass",
+  "decks": [
+    {
+      "file": "青龙MPC_项目汇报_15页.pptx",
+      "slides": 15,
+      "pdf_pages": 15,
+      "stage_page_ranges": {
+        "L0": [
+          2,
+          3
+        ],
+        "L1": [
+          4,
+          5
+        ],
+        "L2": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "L3": [
+          10
+        ],
+        "L4": [
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "original_image_placements": 14,
+      "embedded_video_placements": 2,
+      "autoplay_movies": 0,
+      "editable_tables": 11,
+      "source_notes": 15,
+      "out_of_bounds": [
+        [
+          1,
+          "TextBox 4"
+        ]
+      ],
+      "pptx_sha256": "0b5ca6fb2c4ee6b0b626b2306a71676199fe5be4b29d988fdd5cbc9486ede0e4",
+      "pdf_sha256": "cb63fdc457b773b5c40b1da0b4d0de595a281115c1f4477c06a61ebc034b6f20"
+    }
+  ],
+  "source_files_checked": 38,
+  "original_frameworks_reused": 4,
+  "original_report_images_reused": 14,
+  "minimum_native_text_pt": 20,
+  "native_text_colors": [
+    "142D38",
+    "006D68"
+  ],
+  "checks": [
+    "one formal 15-page deck",
+    "old decks deleted",
+    "all native text >=20pt",
+    "no gray native text",
+    "PPTX ZIP CRC",
+    "chapter order",
+    "original image bytes and no cropping",
+    "selected original frameworks",
+    "MP4 internal relationships and original-byte hashes",
+    "native media timing",
+    "source notes",
+    "shape bounds",
+    "no raw LaTeX",
+    "PDF page counts and text",
+    "source file SHA256"
+  ],
+  "issues": [],
+  "playback_scope": "Embedded H.264 files were fully decoded by video verification; PPTX media and timing were checked structurally. PowerPoint GUI playback was not tested. PDF includes static poster frames.",
+  "warnings": [
+    {
+      "unchanged_user_layout_out_of_bounds": [
+        [
+          1,
+          "TextBox 4"
+        ]
+      ],
+      "scope": "The same complete shape XML exists in the pre-update snapshot. Text is checked in the PDF; the user layout was preserved."
+    }
+  ]
+}

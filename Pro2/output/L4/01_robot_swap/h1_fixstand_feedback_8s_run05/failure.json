@@ -1,0 +1,4 @@
+{
+  "error": "t=5.128s：H1 失稳，z=0.598m，tilt=0.903rad",
+  "type": "RuntimeError"
+}

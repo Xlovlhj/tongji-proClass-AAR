@@ -1,0 +1,571 @@
+{
+  "review_scope": "Eight unchanged encodes retain prior review; four-terrain pane alignment checked at three decoded frames.",
+  "montage_sha256": "f064344452c4e183902465de212b9e790f5bc7a25788783f8838690f71ef43b9",
+  "frames": [
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_01_l0.mp4",
+      "segment_sha256": "b88bfa9478fa645b9d79f58f1f521aae1f932c2dff20391244200bc6a08a7d6a",
+      "segment_time_s": 6,
+      "actual_decoded_frame_index": 180,
+      "source_time_s": 6.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_01_l0_6.png",
+      "label": "L0 · t = 6.00 s",
+      "sources": [
+        "Pro2/output/L0/walk_10s_video/demo.mp4"
+      ],
+      "source_sha256": [
+        "13b70e9dd024de87a19927e194e7dd08bbc63528edee69e08a6f68067f2eac34"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_02_l2_weight.mp4",
+      "segment_sha256": "36888c138f204df707819211439f46600875093f835584ec8a0f4cf41d076d78",
+      "segment_time_s": 9,
+      "actual_decoded_frame_index": 270,
+      "source_time_s": 9.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_02_l2_weight_9.png",
+      "label": "L2 权重对照 · t = 9.00 s",
+      "sources": [
+        "Pro2/output/L2/ppt_demo_20261104/low/demo.mp4",
+        "Pro2/output/L2/ppt_demo_20261104/baseline/demo.mp4",
+        "Pro2/output/L2/ppt_demo_20261104/high/demo.mp4"
+      ],
+      "source_sha256": [
+        "c34788100e88508168efed8c022a6dc7fdf56a42940f0cbb952e1fb550bbf673",
+        "3d4463eac52d105e499eacbd0e9877e0bd9d4e31c42a15aa521c776c49f09438",
+        "9e13488bd45b4348d8b49e891c132bf884f9c488e7575eba28e5f72ab35351dd"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true,
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          0.399468,
+          0.817248,
+          0.924441
+        ],
+        [
+          0.815801,
+          0.394859,
+          0.736713
+        ],
+        [
+          0.920244,
+          0.731961,
+          0.397033
+        ]
+      ],
+      "each_panel_matches_corresponding_source_best": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_03_l2_horizon.mp4",
+      "segment_sha256": "bf70c58dc83ae8ec409ed8e01ad3c28d5cad66a7be731474cacf79156da87145",
+      "segment_time_s": 9,
+      "actual_decoded_frame_index": 270,
+      "source_time_s": 9.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_03_l2_horizon_9.png",
+      "label": "L2 预测时域对照 · t = 9.00 s",
+      "sources": [
+        "Pro2/output/L2/prediction_horizon/ppt_video_20261104/short_n5/demo.mp4",
+        "Pro2/output/L2/prediction_horizon/ppt_video_20261104/baseline_n10/demo.mp4",
+        "Pro2/output/L2/prediction_horizon/ppt_video_20261104/long_n15/demo.mp4"
+      ],
+      "source_sha256": [
+        "1602f27c0e8a41c1a79044068ad15256d43ff1e65b214d7fc48d6fe30ae0d434",
+        "a6b99f9f2b2142ecef20a165862c8ef21087eb7415668a559e2c9c6936d2395f",
+        "99adde6298c7ab656fe9e70159f503b1ea6a3266c3042d1ca9e0a01cc2eef15a"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true,
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          0.38995,
+          0.869311,
+          0.878414
+        ],
+        [
+          0.874327,
+          0.394395,
+          0.724413
+        ],
+        [
+          0.884389,
+          0.726884,
+          0.400067
+        ]
+      ],
+      "each_panel_matches_corresponding_source_best": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_04_l2_step.mp4",
+      "segment_sha256": "18476733ed8e831d44e858cb709b1aea876380240531adc6b194247bbfe8bd65",
+      "segment_time_s": 6.8,
+      "actual_decoded_frame_index": 204,
+      "source_time_s": 6.8,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_04_l2_step_6p8.png",
+      "label": "L2 抬脚高度对照 · t = 6.80 s",
+      "sources": [
+        "Pro2/output/L2/step_height/ppt_video_20261104/low_008/demo.mp4",
+        "Pro2/output/L2/step_height/ppt_video_20261104/baseline_012/demo.mp4",
+        "Pro2/output/L2/step_height/ppt_video_20261104/high_016/demo.mp4"
+      ],
+      "source_sha256": [
+        "2fc6152bdf192e2696902df3d6de9c961a018e2c98adbd0b4d7062a194cb66ca",
+        "ba77d81d7ba426da442ce557d9f530c5a7efd0126ec0e4b618c67a0e5a34b676",
+        "6449ab84b6a2f6dc22795b1ec0fe98f77b4b705a36aa801b0837cd283fe7691d"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true,
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          0.402376,
+          3.056555,
+          4.4797
+        ],
+        [
+          3.080121,
+          0.42042,
+          4.751903
+        ],
+        [
+          4.481142,
+          4.730213,
+          0.392909
+        ]
+      ],
+      "each_panel_matches_corresponding_source_best": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_06_l4_path.mp4",
+      "segment_sha256": "5daff4d3d31d4acdd71c8dd0ff56dfefe4400f6fb3784354193124c37ebe79cb",
+      "segment_time_s": 20,
+      "actual_decoded_frame_index": 600,
+      "source_time_s": 20.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_06_l4_path_20.png",
+      "label": "L4 路径跟踪 · t = 20.00 s",
+      "sources": [
+        "Pro2/output/L4/02_path_tracking/ppt_video_20261104/waypoints/demo.mp4"
+      ],
+      "source_sha256": [
+        "494a89368f7579861a353f301b75563614b0709ef2d8cc8bc84f9c5345556b00"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_08_l4_jump.mp4",
+      "segment_sha256": "648c8e9b4c7b9e6b613df4c3e28fcac9adde3067a256a913f8afddc6dfbd8559",
+      "segment_time_s": 8.75,
+      "actual_decoded_frame_index": 263,
+      "source_time_s": 8.75,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_09_l4_jump_8p75.png",
+      "label": "L4 跳跃：腾空 · t = 8.75 s",
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/demo.mp4"
+      ],
+      "source_sha256": [
+        "309f5d45e836116b0f2b765643439cab4904884cf28e08ae3029098b0b091b2d"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_08_l4_jump.mp4",
+      "segment_sha256": "648c8e9b4c7b9e6b613df4c3e28fcac9adde3067a256a913f8afddc6dfbd8559",
+      "segment_time_s": 11,
+      "actual_decoded_frame_index": 330,
+      "source_time_s": 11.0,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_09_l4_jump_11.png",
+      "label": "L4 跳跃：恢复站立 · t = 11.00 s",
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/demo.mp4"
+      ],
+      "source_sha256": [
+        "309f5d45e836116b0f2b765643439cab4904884cf28e08ae3029098b0b091b2d"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_09_l4_jump_replay.mp4",
+      "segment_sha256": "cdd193de7ce7a5fc30dce7030f90ec89374f493a25271f297b8223a724b9489c",
+      "segment_time_s": 1.5,
+      "actual_decoded_frame_index": 45,
+      "source_time_s": 8.75,
+      "frame": "Pro2/output/final/checks/montage_review_frames/segment_10_l4_jump_replay_1p5.png",
+      "label": "L4 跳跃：0.5× 回放 · 原片 t = 8.75 s",
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/demo.mp4"
+      ],
+      "source_sha256": [
+        "309f5d45e836116b0f2b765643439cab4904884cf28e08ae3029098b0b091b2d"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4",
+      "segment_sha256": "c1cb1609ddb7736106c49f995282dc9c376259decf6f5f5c447d87efefca6dd7",
+      "segment_time_s": 6.9,
+      "actual_decoded_frame_index": 207,
+      "source_time_s": 6.9,
+      "frame": "Pro2/output/final/checks/push_revision/push_6.9s.png",
+      "label": "L2 侧推 · t = 6.9 s",
+      "sources": [
+        "Pro2/output/L2/lateral_push/long_push_20261105/no_push/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/demo.mp4"
+      ],
+      "source_sha256": [
+        "64df421261735f958e69ff7e19d6366c0513bc64d6a0d3b755cdf368edd26506",
+        "7be8422c6be90ea6bec955754d848197cb02b16dd289bd31a876e2e6af849c3e",
+        "e77891a401f698354be3e272732ca77404311baeabe05335e388a6f905742072"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4",
+      "segment_sha256": "c1cb1609ddb7736106c49f995282dc9c376259decf6f5f5c447d87efefca6dd7",
+      "segment_time_s": 7.2,
+      "actual_decoded_frame_index": 216,
+      "source_time_s": 7.2,
+      "frame": "Pro2/output/final/checks/push_revision/push_7.2s.png",
+      "label": "L2 侧推 · t = 7.2 s",
+      "sources": [
+        "Pro2/output/L2/lateral_push/long_push_20261105/no_push/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/demo.mp4"
+      ],
+      "source_sha256": [
+        "64df421261735f958e69ff7e19d6366c0513bc64d6a0d3b755cdf368edd26506",
+        "7be8422c6be90ea6bec955754d848197cb02b16dd289bd31a876e2e6af849c3e",
+        "e77891a401f698354be3e272732ca77404311baeabe05335e388a6f905742072"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true,
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          1.03645,
+          2.77271,
+          4.129537
+        ],
+        [
+          2.76987,
+          1.07083,
+          2.722685
+        ],
+        [
+          4.11744,
+          2.712702,
+          1.099167
+        ]
+      ],
+      "correct_source_minimum_error_for_each_panel": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4",
+      "segment_sha256": "c1cb1609ddb7736106c49f995282dc9c376259decf6f5f5c447d87efefca6dd7",
+      "segment_time_s": 7.6,
+      "actual_decoded_frame_index": 228,
+      "source_time_s": 7.6,
+      "frame": "Pro2/output/final/checks/push_revision/push_7.6s.png",
+      "label": "L2 侧推 · t = 7.6 s",
+      "sources": [
+        "Pro2/output/L2/lateral_push/long_push_20261105/no_push/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/demo.mp4"
+      ],
+      "source_sha256": [
+        "64df421261735f958e69ff7e19d6366c0513bc64d6a0d3b755cdf368edd26506",
+        "7be8422c6be90ea6bec955754d848197cb02b16dd289bd31a876e2e6af849c3e",
+        "e77891a401f698354be3e272732ca77404311baeabe05335e388a6f905742072"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4",
+      "segment_sha256": "c1cb1609ddb7736106c49f995282dc9c376259decf6f5f5c447d87efefca6dd7",
+      "segment_time_s": 8.8,
+      "actual_decoded_frame_index": 264,
+      "source_time_s": 8.8,
+      "frame": "Pro2/output/final/checks/push_revision/push_8.8s.png",
+      "label": "L2 侧推 · t = 8.8 s",
+      "sources": [
+        "Pro2/output/L2/lateral_push/long_push_20261105/no_push/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/demo.mp4"
+      ],
+      "source_sha256": [
+        "64df421261735f958e69ff7e19d6366c0513bc64d6a0d3b755cdf368edd26506",
+        "7be8422c6be90ea6bec955754d848197cb02b16dd289bd31a876e2e6af849c3e",
+        "e77891a401f698354be3e272732ca77404311baeabe05335e388a6f905742072"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true,
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          1.097742,
+          2.383969,
+          10.196195
+        ],
+        [
+          2.384493,
+          1.084548,
+          10.122585
+        ],
+        [
+          10.213313,
+          10.139014,
+          1.097083
+        ]
+      ],
+      "correct_source_minimum_error_for_each_panel": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4",
+      "segment_sha256": "c1cb1609ddb7736106c49f995282dc9c376259decf6f5f5c447d87efefca6dd7",
+      "segment_time_s": 9.5,
+      "actual_decoded_frame_index": 285,
+      "source_time_s": 9.5,
+      "frame": "Pro2/output/final/checks/push_revision/push_9.5s.png",
+      "label": "L2 侧推 · t = 9.5 s",
+      "sources": [
+        "Pro2/output/L2/lateral_push/long_push_20261105/no_push/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/demo.mp4"
+      ],
+      "source_sha256": [
+        "64df421261735f958e69ff7e19d6366c0513bc64d6a0d3b755cdf368edd26506",
+        "7be8422c6be90ea6bec955754d848197cb02b16dd289bd31a876e2e6af849c3e",
+        "e77891a401f698354be3e272732ca77404311baeabe05335e388a6f905742072"
+      ],
+      "distinct_source_paths": true,
+      "distinct_source_hashes": true,
+      "fingerprint_source_hashes_match": true,
+      "stopped_panel": {
+        "video_key": "push_push_100N",
+        "panel_index": 2,
+        "freeze_at_s": 9.0,
+        "simulation_stop_s": 8.994,
+        "reason": "physical_instability"
+      },
+      "annotation": "100 N：失稳保护；仿真已停止于8.994 s；当前画面为停止帧"
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_07_l4_terrain_quad.mp4",
+      "segment_sha256": "5b74a6fd178cf704502ad0cb9f6400788c05491a9e71fb54baee89a3da92e5a6",
+      "segment_time_s": 6,
+      "source_time_s": 6,
+      "actual_decoded_frame_index": 180,
+      "frame": "Pro2/output/final/checks/terrain_quad_revision/quad_6s.png",
+      "label": "L4 四地形 · t = 6 s",
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/slope_05deg/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/rough_medium/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/demo.mp4"
+      ],
+      "source_sha256": [
+        "41e88307f5989bd9079337069c3410b86c7d82e6311cae569a34b4e143573fc5",
+        "c442fc20c32268bbc1fa081a3cf18afeff04aa9b5471dcc78818bb3e4086f5fb",
+        "cd7bdee434aee2504b86f7767e3e711380d1f7dc93cdf03ce3f6a3b5553f631e",
+        "f0339593b7e2ef37b01cf43bfd7bf862c6d2bf1efb11c5c1bfe8fff9597e6246"
+      ],
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          1.062699742887351,
+          5.345385488754324,
+          4.768736783929258,
+          6.9077653426566705
+        ],
+        [
+          5.2456852532679745,
+          1.184302611976163,
+          5.572688389081122,
+          7.137652885909266
+        ],
+        [
+          4.698425785755479,
+          5.603146926662821,
+          1.1693849721261054,
+          7.107916726739716
+        ],
+        [
+          6.996404628027681,
+          7.288479791426375,
+          7.2293423803344865,
+          1.166765787197232
+        ]
+      ],
+      "correct_source_minimum_error_for_each_panel": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_07_l4_terrain_quad.mp4",
+      "segment_sha256": "5b74a6fd178cf704502ad0cb9f6400788c05491a9e71fb54baee89a3da92e5a6",
+      "segment_time_s": 14,
+      "source_time_s": 14,
+      "actual_decoded_frame_index": 420,
+      "frame": "Pro2/output/final/checks/terrain_quad_revision/quad_14s.png",
+      "label": "L4 四地形 · t = 14 s",
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/slope_05deg/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/rough_medium/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/demo.mp4"
+      ],
+      "source_sha256": [
+        "41e88307f5989bd9079337069c3410b86c7d82e6311cae569a34b4e143573fc5",
+        "c442fc20c32268bbc1fa081a3cf18afeff04aa9b5471dcc78818bb3e4086f5fb",
+        "cd7bdee434aee2504b86f7767e3e711380d1f7dc93cdf03ce3f6a3b5553f631e",
+        "f0339593b7e2ef37b01cf43bfd7bf862c6d2bf1efb11c5c1bfe8fff9597e6246"
+      ],
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          1.145053885524798,
+          11.582086817570165,
+          10.715696787293348,
+          10.672670967896963
+        ],
+        [
+          11.39174836601307,
+          1.3957807694156095,
+          9.245365364282968,
+          13.643504000865052
+        ],
+        [
+          10.561695021145715,
+          9.25379811851211,
+          1.2646518166089966,
+          14.229576665224913
+        ],
+        [
+          10.886790837658593,
+          13.97107482698962,
+          14.5034196583045,
+          1.3379349288735103
+        ]
+      ],
+      "correct_source_minimum_error_for_each_panel": true
+    },
+    {
+      "segment": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_07_l4_terrain_quad.mp4",
+      "segment_sha256": "5b74a6fd178cf704502ad0cb9f6400788c05491a9e71fb54baee89a3da92e5a6",
+      "segment_time_s": 23,
+      "source_time_s": 23,
+      "actual_decoded_frame_index": 690,
+      "frame": "Pro2/output/final/checks/terrain_quad_revision/quad_23s.png",
+      "label": "L4 四地形 · t = 23 s",
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/slope_05deg/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/rough_medium/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/demo.mp4"
+      ],
+      "source_sha256": [
+        "41e88307f5989bd9079337069c3410b86c7d82e6311cae569a34b4e143573fc5",
+        "c442fc20c32268bbc1fa081a3cf18afeff04aa9b5471dcc78818bb3e4086f5fb",
+        "cd7bdee434aee2504b86f7767e3e711380d1f7dc93cdf03ce3f6a3b5553f631e",
+        "f0339593b7e2ef37b01cf43bfd7bf862c6d2bf1efb11c5c1bfe8fff9597e6246"
+      ],
+      "panel_to_source_mean_absolute_rgb_error": [
+        [
+          1.1113468978277585,
+          17.398116109188773,
+          16.342200115340255,
+          17.355671496539795
+        ],
+        [
+          17.2381505911188,
+          1.5067627234717416,
+          9.181869653498653,
+          13.944082504325259
+        ],
+        [
+          16.200172409650136,
+          9.162664299788544,
+          1.3391288807189543,
+          13.790103265570934
+        ],
+        [
+          17.652576533064206,
+          14.391584666955017,
+          14.194250708861977,
+          1.358727712898885
+        ]
+      ],
+      "correct_source_minimum_error_for_each_panel": true
+    }
+  ],
+  "preserved_segments": [
+    {
+      "name": "l0",
+      "old_path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_01_l0.mp4",
+      "path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_01_l0.mp4",
+      "sha256": "b88bfa9478fa645b9d79f58f1f521aae1f932c2dff20391244200bc6a08a7d6a"
+    },
+    {
+      "name": "l2_weight",
+      "old_path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_02_l2_weight.mp4",
+      "path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_02_l2_weight.mp4",
+      "sha256": "36888c138f204df707819211439f46600875093f835584ec8a0f4cf41d076d78"
+    },
+    {
+      "name": "l2_horizon",
+      "old_path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_03_l2_horizon.mp4",
+      "path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_03_l2_horizon.mp4",
+      "sha256": "bf70c58dc83ae8ec409ed8e01ad3c28d5cad66a7be731474cacf79156da87145"
+    },
+    {
+      "name": "l2_step",
+      "old_path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_04_l2_step.mp4",
+      "path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_04_l2_step.mp4",
+      "sha256": "18476733ed8e831d44e858cb709b1aea876380240531adc6b194247bbfe8bd65"
+    },
+    {
+      "name": "l2_push",
+      "old_path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4",
+      "path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4",
+      "sha256": "c1cb1609ddb7736106c49f995282dc9c376259decf6f5f5c447d87efefca6dd7"
+    },
+    {
+      "name": "l4_path",
+      "old_path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_06_l4_path.mp4",
+      "path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_06_l4_path.mp4",
+      "sha256": "5daff4d3d31d4acdd71c8dd0ff56dfefe4400f6fb3784354193124c37ebe79cb"
+    },
+    {
+      "name": "l4_jump",
+      "old_path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_09_l4_jump.mp4",
+      "path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_08_l4_jump.mp4",
+      "sha256": "648c8e9b4c7b9e6b613df4c3e28fcac9adde3067a256a913f8afddc6dfbd8559"
+    },
+    {
+      "name": "l4_jump_replay",
+      "old_path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_10_l4_jump_replay.mp4",
+      "path": "Pro2/output/final/assets/video_build_L0_L2_L4/segment_09_l4_jump_replay.mp4",
+      "sha256": "cdd193de7ce7a5fc30dce7030f90ec89374f493a25271f297b8223a724b9489c"
+    }
+  ],
+  "terrain_display_window_s": [
+    0,
+    24
+  ],
+  "terrain_speed": 1.0,
+  "terrain_no_freeze_or_loop": true,
+  "distinct_terrain_sources": 4
+}

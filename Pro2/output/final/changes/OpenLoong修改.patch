@@ -1,0 +1,623 @@
+diff --git a/algorithm/mpc.cpp b/algorithm/mpc.cpp
+index 6d2ef2fd..6a2c218b 100644
+--- a/algorithm/mpc.cpp
++++ b/algorithm/mpc.cpp
+@@ -281,7 +281,7 @@ void MPC::cal()
+             }
+         }
+ 
+-        H = 2 * (Bqp.transpose() * L * Bqp + alpha * K) + 1e-10 * Eigen::MatrixXd::Identity(nx * mpc_N, nx * mpc_N);
++        H = 2 * (Bqp.transpose() * L * Bqp + alpha * K) + 1e-10 * Eigen::MatrixXd::Identity(nu * ch, nu * ch);
+         c = 2 * Bqp.transpose() * L * (Aqp * X_cur - Xd) + 2 * alpha * K * delta_U;
+ 
+         // friction constraint
+@@ -434,7 +434,13 @@ void MPC::cal()
+ 
+         qpOASES::returnValue res;
+         nWSR = 1000000;
+-        cpu_time = dt;
++        // ``dt`` is the prediction discretisation interval, not a reliable
++        // wall-clock budget on a desktop running Isaac Sim.  In particular,
++        // CPU powersave can make an otherwise feasible qpOASES solve hit the
++        // time limit during an external-NMPC fallback.  Keep the 5 ms model
++        // discretisation unchanged while allowing at least 10 ms of solver
++        // wall time; the measured solve duration is still logged separately.
++        cpu_time = dt < 0.01 ? 0.01 : dt;
+ 
+         Eigen::Matrix<double, nc * ch, 1> lbA, ubA, one_ch_1;
+         one_ch_1.setOnes();
+diff --git a/algorithm/mpc.h b/algorithm/mpc.h
+index 66f623f0..aacb37e5 100644
+--- a/algorithm/mpc.h
++++ b/algorithm/mpc.h
+@@ -12,7 +12,10 @@ Feel free to use in any purpose, and cite OpenLoong-Dynamics-Control in any styl
+ #include "data_bus.h"
+ #include "qpOASES.hpp"
+ 
+-const uint16_t  mpc_N = 10;
++#ifndef OPENLOONG_MPC_N
++#define OPENLOONG_MPC_N 10
++#endif
++const uint16_t  mpc_N = OPENLOONG_MPC_N;
+ const uint16_t  ch = 3;
+ const uint16_t  nx = 12;
+ const uint16_t  nu = 13;
+@@ -89,7 +92,7 @@ private:
+ 
+     int legStateCur;
+     int legStateNext;
+-    int legState[10];
++    int legState[mpc_N];
+     double  dt;
+ 
+     //qpOASES
+diff --git a/algorithm/priority_tasks.cpp b/algorithm/priority_tasks.cpp
+index 145e15fc..15a10d9f 100644
+--- a/algorithm/priority_tasks.cpp
++++ b/algorithm/priority_tasks.cpp
+@@ -6,6 +6,47 @@ Feel free to use in any purpose, and cite OpenLoong-Dynamics-Control in any styl
+  <web@openloong.org.cn>
+ */
+ #include "priority_tasks.h"
++#include <algorithm>
++#include <limits>
++
++namespace {
++
++// Pseudoinverse for the symmetric positive-semidefinite task metric J P J^T.
++// Forming the metric through several numerical null-space projectors can leave
++// tiny asymmetric or negative eigenvalues.  Symmetrizing and discarding those
++// near-zero directions prevents an infeasible task direction from being
++// amplified into a large acceleration correction.
++Eigen::MatrixXd symmetricPseudoInverse(const Eigen::MatrixXd &matrix)
++{
++    const Eigen::MatrixXd symmetric = 0.5 * (matrix + matrix.transpose());
++    Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> solver(symmetric);
++    if (solver.info() != Eigen::Success)
++    {
++        Eigen::CompleteOrthogonalDecomposition<Eigen::MatrixXd> decomposition(
++            symmetric);
++        decomposition.setThreshold(1e-8);
++        return decomposition.pseudoInverse();
++    }
++
++    const Eigen::VectorXd eigenvalues = solver.eigenvalues();
++    const double largest = eigenvalues.cwiseAbs().maxCoeff();
++    Eigen::VectorXd inverse = Eigen::VectorXd::Zero(eigenvalues.size());
++    if (largest > 0.0)
++    {
++        const double relativeThreshold = std::max(
++            1e-8,
++            std::numeric_limits<double>::epsilon() *
++                static_cast<double>(std::max(matrix.rows(), matrix.cols())));
++        const double threshold = relativeThreshold * largest;
++        for (Eigen::Index index = 0; index < eigenvalues.size(); ++index)
++            if (eigenvalues(index) > threshold)
++                inverse(index) = 1.0 / eigenvalues(index);
++    }
++    return solver.eigenvectors() * inverse.asDiagonal() *
++           solver.eigenvectors().transpose();
++}
++
++} // namespace
+ 
+ void PriorityTasks::addTask(const char* name) {
+     taskLib.emplace_back(name);
+@@ -63,7 +104,7 @@ void PriorityTasks::printTaskInfo() {
+     }
+ }
+ 
+-void PriorityTasks::computeAll(const Eigen::VectorXd &des_delta_q,const Eigen::VectorXd &des_dq, const Eigen::VectorXd &des_ddq, const Eigen::MatrixXd &dyn_M, const Eigen::MatrixXd &dyn_M_inv, const Eigen::VectorXd &dq) {
++void PriorityTasks::computeAll(const Eigen::VectorXd &des_delta_q,const Eigen::VectorXd &des_dq, const Eigen::VectorXd &des_ddq, const Eigen::MatrixXd &dyn_M, const Eigen::MatrixXd &dyn_M_inv, const Eigen::VectorXd &dq, bool strictHierarchy) {
+     int curId=startId;
+     int parentId=taskLib[curId].parentId;
+     int childId=taskLib[curId].childId;
+@@ -87,8 +128,30 @@ void PriorityTasks::computeAll(const Eigen::VectorXd &des_delta_q,const Eigen::V
+             taskLib[curId].dq=taskLib[parentId].dq+ pseudoInv_right_weighted(taskLib[curId].Jpre,taskLib[curId].W)*(taskLib[curId].dxDes-
+                     taskLib[curId].J*taskLib[parentId].dq);
+             Eigen::VectorXd ddxcmd= taskLib[curId].ddxDes + taskLib[curId].kp * taskLib[curId].errX+taskLib[curId].kd*taskLib[curId].derrX;
+-            taskLib[curId].ddq= taskLib[parentId].ddq + dyn_pseudoInv(taskLib[curId].Jpre,dyn_M_inv,true) *
+-                                                        (ddxcmd-taskLib[curId].dJ*dq-taskLib[curId].J*taskLib[parentId].ddq);
++            const Eigen::VectorXd ddqResidual =
++                ddxcmd-taskLib[curId].dJ*dq-taskLib[curId].J*taskLib[parentId].ddq;
++            if (strictHierarchy)
++            {
++                // Restrict every lower-priority acceleration correction to
++                // the null space accumulated from all preceding tasks.  The
++                // old dyn_pseudoInv(J*N) expression did not explicitly
++                // left-project the correction and could therefore disturb a
++                // higher-priority fixed-contact task near singular poses.
++                Eigen::MatrixXd projectedMinv =
++                    taskLib[curId].N * dyn_M_inv * taskLib[curId].N.transpose();
++                projectedMinv = 0.5 * (projectedMinv + projectedMinv.transpose());
++                Eigen::MatrixXd taskMetric =
++                    taskLib[curId].J * projectedMinv * taskLib[curId].J.transpose();
++                const Eigen::MatrixXd strictJbar =
++                    projectedMinv * taskLib[curId].J.transpose() *
++                    symmetricPseudoInverse(taskMetric);
++                taskLib[curId].ddq =
++                    taskLib[parentId].ddq + strictJbar * ddqResidual;
++            }
++            else
++            {
++                taskLib[curId].ddq= taskLib[parentId].ddq + dyn_pseudoInv(taskLib[curId].Jpre,dyn_M_inv,true) * ddqResidual;
++            }
+ //            std::cout<<taskLib[curId].taskName<<std::endl<<taskLib[curId].delta_q.transpose()<<std::endl;
+         }
+ //        printf("task: %s\n", taskLib[curId].taskName.c_str());
+diff --git a/algorithm/priority_tasks.h b/algorithm/priority_tasks.h
+index ea7ec6c8..5b28a872 100644
+--- a/algorithm/priority_tasks.h
++++ b/algorithm/priority_tasks.h
+@@ -38,7 +38,7 @@ public:
+     int getId(const char* name);
+     void buildPriority(const std::vector<std::string> &taskOrder);
+     void computeAll(const Eigen::VectorXd &des_delta_q,const Eigen::VectorXd &des_dq, const Eigen::VectorXd &des_ddq, const Eigen::MatrixXd &dyn_M
+-    ,const Eigen::MatrixXd &dyn_M_inv, const Eigen::VectorXd &dq);
++    ,const Eigen::MatrixXd &dyn_M_inv, const Eigen::VectorXd &dq, bool strictHierarchy = false);
+     void printTaskInfo();
+ };
+ 
+diff --git a/algorithm/wbc_priority.cpp b/algorithm/wbc_priority.cpp
+index e811f8b5..ff5bd974 100644
+--- a/algorithm/wbc_priority.cpp
++++ b/algorithm/wbc_priority.cpp
+@@ -96,6 +96,21 @@ WBC_priority::WBC_priority(int model_nv_In, int QP_nvIn, int QP_ncIn, double miu
+     kin_tasks_stand.buildPriority(taskOrder_stand);
+ }
+ 
++void WBC_priority::setStandRecoveryMode(bool enabled)
++{
++    standRecoveryMode = enabled;
++}
++
++void WBC_priority::setPreserveHorizontalContactWrench(bool enabled)
++{
++    preserveHorizontalContactWrench = enabled;
++}
++
++void WBC_priority::setTrackHorizontalContactWrench(bool enabled)
++{
++    trackHorizontalContactWrench = enabled;
++}
++
+ void WBC_priority::dataBusRead(const DataBus &robotState)
+ {
+     // foot-end offset posture
+@@ -207,22 +222,25 @@ void WBC_priority::computeTau()
+     Eigen::VectorXd eqRes = Eigen::VectorXd::Zero(6);
+     eqRes = -Sf * dyn_M * ddq_final_kin - Sf * dyn_Non + Sf * Jfe.transpose() * Fr_ff;
+ 
+-    Eigen::Matrix3d Rfe;
++    Eigen::Matrix3d Rfe_left;
++    Eigen::Matrix3d Rfe_right;
+     if (motionStateCur == DataBus::Stand)
+     {
+-        Rfe = fe_l_rot_cur_W;
++        Rfe_left = fe_l_rot_cur_W;
++        Rfe_right = fe_r_rot_cur_W;
+     }
+     else
+     {
+-        Rfe = stance_fe_rot_cur_W;
++        Rfe_left = stance_fe_rot_cur_W;
++        Rfe_right = stance_fe_rot_cur_W;
+     }
+ 
+     Eigen::Matrix<double, 12, 12> Mw2b;
+     Mw2b.setZero();
+-    Mw2b.block(0, 0, 3, 3) = Rfe.transpose();
+-    Mw2b.block(3, 3, 3, 3) = Rfe.transpose();
+-    Mw2b.block(6, 6, 3, 3) = Rfe.transpose();
+-    Mw2b.block(9, 9, 3, 3) = Rfe.transpose();
++    Mw2b.block(0, 0, 3, 3) = Rfe_left.transpose();
++    Mw2b.block(3, 3, 3, 3) = Rfe_left.transpose();
++    Mw2b.block(6, 6, 3, 3) = Rfe_right.transpose();
++    Mw2b.block(9, 9, 3, 3) = Rfe_right.transpose();
+ 
+     Eigen::MatrixXd W = Eigen::MatrixXd::Zero(16, 12);
+     W(0, 0) = 1;
+@@ -332,6 +350,16 @@ void WBC_priority::computeTau()
+ 		eigen_qp_H.block<6, 6>(0, 0) = Q2 * 2.0 * 1e7;
+ 		eigen_qp_H.block<12, 12>(6, 6) = Q1 * 2.0 * 1e1;
+ 	}
++    if (trackHorizontalContactWrench)
++    {
++        // x = [delta_ddq_base(6), delta_Fr_left(6), delta_Fr_right(6)].
++        // A large finite weight keeps the landing MPC's corrective Fx/Fy
++        // direction while leaving qpOASES room to satisfy friction and
++        // floating-base dynamics as the feet settle in PhysX.
++        constexpr double kHorizontalTrackingScale = 1e4;
++        for (const int index : {6, 7, 12, 13})
++            eigen_qp_H(index, index) *= kHorizontalTrackingScale;
++    }
+ 
+     // obj: (1/2)x'Hx+x'g
+     // s.t. lbA<=Ax<=ubA
+@@ -354,11 +382,32 @@ void WBC_priority::computeTau()
+         xOpt_iniGuess[i] = 0;
+         //        xOpt_iniGuess[i] =eigen_xOpt(i);
+         qp_g[i] = 0;
++        qp_lb[i] = -qpOASES::INFTY;
++        qp_ub[i] = qpOASES::INFTY;
++    }
++    if (preserveHorizontalContactWrench)
++    {
++        // x = [delta_ddq_base(6), delta_Fr_left(6), delta_Fr_right(6)].
++        // During jump landing/recovery, Fr_ff is the source jump MPC wrench.
++        // Keep its horizontal forces intact while the WBC may still correct
++        // vertical force, contact moments and floating-base acceleration for
++        // impact absorption and posture stabilization.
++        constexpr int horizontal_force_indices[] = {6, 7, 12, 13};
++        for (const int index : horizontal_force_indices)
++        {
++            qp_lb[index] = 0.0;
++            qp_ub[index] = 0.0;
++        }
+     }
+     nWSR = 200;
+-    cpu_time = timeStep;
++    // Isaac runs are evaluated offline and the host may be in CPU powersave
++    // mode.  Limiting qpOASES to the 1 ms physics step made otherwise feasible
++    // WBC problems fail nondeterministically with RET_MAX_NWSR_REACHED.  Keep
++    // the control discretization at timeStep, but allow the QP up to 10 ms of
++    // wall time; qp_cpuTime still records the time actually consumed.
++    cpu_time = timeStep < 0.01 ? 0.01 : timeStep;
+     //    QP_prob.reset();
+-    res = QP_prob.init(qp_H, qp_g, qp_A, NULL, NULL, qp_lbA, qp_ubA, nWSR, &cpu_time, xOpt_iniGuess);
++    res = QP_prob.init(qp_H, qp_g, qp_A, qp_lb, qp_ub, qp_lbA, qp_ubA, nWSR, &cpu_time, xOpt_iniGuess);
+     qpStatus = qpOASES::getSimpleStatus(res);
+     //    if (res==qpOASES::SUCCESSFUL_RETURN)
+     //        printf("WBC-QP: successful_return\n");
+@@ -544,16 +593,80 @@ void WBC_priority::computeDdq(Pin_KinDyn &pinKinDynIn)
+         kin_tasks_stand.taskLib[id].kp = Eigen::MatrixXd::Identity(12, 12) * 0;
+         kin_tasks_stand.taskLib[id].kd = Eigen::MatrixXd::Identity(12, 12) * 0;
+         kin_tasks_stand.taskLib[id].J = Eigen::MatrixXd::Zero(12, model_nv);
+-        Eigen::MatrixXd taskCtMap = Eigen::MatrixXd::Zero(3, 3);
+-        taskCtMap(0, 0) = 0;
+-        taskCtMap(1, 1) = 1;
+-        taskCtMap(2, 2) = 1;
+-        taskCtMap = fe_l_rot_cur_W * taskCtMap * fe_l_rot_cur_W.transpose(); // disable ankle roll joint
++        Eigen::Matrix3d localPitchYawMap = Eigen::Matrix3d::Zero();
++        localPitchYawMap(1, 1) = 1;
++        localPitchYawMap(2, 2) = 1;
++        const Eigen::Matrix3d taskCtMapL =
++            fe_l_rot_cur_W * localPitchYawMap * fe_l_rot_cur_W.transpose();
++        const Eigen::Matrix3d taskCtMapR =
++            fe_r_rot_cur_W * localPitchYawMap * fe_r_rot_cur_W.transpose();
+         kin_tasks_stand.taskLib[id].J = Jfe;
+-        kin_tasks_stand.taskLib[id].J.block(3, 0, 3, model_nv) = taskCtMap * kin_tasks_stand.taskLib[id].J.block(3, 0, 3, model_nv);
+-        kin_tasks_stand.taskLib[id].J.block(9, 0, 3, model_nv) = taskCtMap * kin_tasks_stand.taskLib[id].J.block(9, 0, 3, model_nv);
++        kin_tasks_stand.taskLib[id].J.block(3, 0, 3, model_nv) = taskCtMapL * kin_tasks_stand.taskLib[id].J.block(3, 0, 3, model_nv);
++        kin_tasks_stand.taskLib[id].J.block(9, 0, 3, model_nv) = taskCtMapR * kin_tasks_stand.taskLib[id].J.block(9, 0, 3, model_nv);
+         kin_tasks_stand.taskLib[id].J.block(0, 22, 12, 3).setZero(); // exculde waist joints
+         kin_tasks_stand.taskLib[id].dJ = Eigen::MatrixXd::Zero(12, model_nv);
++        if (standRecoveryMode)
++        {
++            // A rigid-contact task already constrains horizontal foot
++            // acceleration through J*ddq=0.  Do not position-servo x/y back
++            // to the first touchdown point: a few millimetres of PhysX slip
++            // would otherwise make the leg push along the floor and drive the
++            // torso farther in the opposite direction.  Correct only normal
++            // penetration plus pitch/yaw orientation during recovery.
++            kin_tasks_stand.taskLib[id].errX(2) =
++                fe_l_pos_des_W(2) - fe_l_pos_cur_W(2);
++            kin_tasks_stand.taskLib[id].errX.block<3, 1>(3, 0) =
++                taskCtMapL * diffRot(fe_l_rot_cur_W, fe_l_rot_des_W);
++            kin_tasks_stand.taskLib[id].errX(8) =
++                fe_r_pos_des_W(2) - fe_r_pos_cur_W(2);
++            kin_tasks_stand.taskLib[id].errX.block<3, 1>(9, 0) =
++                taskCtMapR * diffRot(fe_r_rot_cur_W, fe_r_rot_des_W);
++            for (int index : {2, 8})
++                kin_tasks_stand.taskLib[id].errX(index) = std::clamp(
++                    kin_tasks_stand.taskLib[id].errX(index), -0.03, 0.03);
++            for (int index : {3, 4, 5, 9, 10, 11})
++                kin_tasks_stand.taskLib[id].errX(index) = std::clamp(
++                    kin_tasks_stand.taskLib[id].errX(index), -0.20, 0.20);
++            // Enforce J*ddq + dJ*dq consistently during impact recovery.  The
++            // previous recovery branch set dJ=0 and explicitly discarded the
++            // x/y foot-velocity error, allowing both soles to keep sliding on
++            // the PhysX ground even while CoM control tried to catch up.
++            kin_tasks_stand.taskLib[id].dJ = dJfe;
++            kin_tasks_stand.taskLib[id].dJ.block(3, 0, 3, model_nv) =
++                taskCtMapL * kin_tasks_stand.taskLib[id].dJ.block(3, 0, 3, model_nv);
++            kin_tasks_stand.taskLib[id].dJ.block(9, 0, 3, model_nv) =
++                taskCtMapR * kin_tasks_stand.taskLib[id].dJ.block(9, 0, 3, model_nv);
++            kin_tasks_stand.taskLib[id].dJ.block(0, 22, 12, 3).setZero();
++            kin_tasks_stand.taskLib[id].derrX =
++                -kin_tasks_stand.taskLib[id].J * dq;
++            for (int index : {0, 1, 6, 7})
++                kin_tasks_stand.taskLib[id].derrX(index) = std::clamp(
++                    kin_tasks_stand.taskLib[id].derrX(index), -0.8, 0.8);
++            for (int index : {2, 8})
++                kin_tasks_stand.taskLib[id].derrX(index) = std::clamp(
++                    kin_tasks_stand.taskLib[id].derrX(index), -1.0, 1.0);
++            for (int index : {3, 4, 5, 9, 10, 11})
++                kin_tasks_stand.taskLib[id].derrX(index) = std::clamp(
++                    kin_tasks_stand.taskLib[id].derrX(index), -2.0, 2.0);
++            kin_tasks_stand.taskLib[id].kp.block<3, 3>(0, 0).setZero();
++            kin_tasks_stand.taskLib[id].kp(2, 2) = 300.0;
++            kin_tasks_stand.taskLib[id].kp.block<3, 3>(3, 3) =
++                Eigen::Matrix3d::Identity() * 100.0;
++            kin_tasks_stand.taskLib[id].kp.block<3, 3>(6, 6).setZero();
++            kin_tasks_stand.taskLib[id].kp(8, 8) = 300.0;
++            kin_tasks_stand.taskLib[id].kp.block<3, 3>(9, 9) =
++                Eigen::Matrix3d::Identity() * 100.0;
++            kin_tasks_stand.taskLib[id].kd.block<3, 3>(0, 0) =
++                Eigen::Matrix3d::Identity() * 20.0;
++            kin_tasks_stand.taskLib[id].kd(2, 2) = 30.0;
++            kin_tasks_stand.taskLib[id].kd.block<3, 3>(3, 3) =
++                Eigen::Matrix3d::Identity() * 20.0;
++            kin_tasks_stand.taskLib[id].kd.block<3, 3>(6, 6) =
++                Eigen::Matrix3d::Identity() * 20.0;
++            kin_tasks_stand.taskLib[id].kd(8, 8) = 30.0;
++            kin_tasks_stand.taskLib[id].kd.block<3, 3>(9, 9) =
++                Eigen::Matrix3d::Identity() * 20.0;
++        }
+         kin_tasks_stand.taskLib[id].W.diagonal() = Eigen::VectorXd::Ones(model_nv);
+ 
+         id = kin_tasks_stand.getId("HipRPY");
+@@ -583,12 +696,26 @@ void WBC_priority::computeDdq(Pin_KinDyn &pinKinDynIn)
+         kin_tasks_stand.taskLib[id].dxDes = Eigen::VectorXd::Zero(1);
+         kin_tasks_stand.taskLib[id].kp = Eigen::MatrixXd::Identity(1, 1) * 2000; // 100
+         kin_tasks_stand.taskLib[id].kd = Eigen::MatrixXd::Identity(1, 1) * 10;
++        if (standRecoveryMode)
++        {
++            kin_tasks_stand.taskLib[id].errX(0) = std::clamp(
++                kin_tasks_stand.taskLib[id].errX(0), -0.05, 0.05);
++            kin_tasks_stand.taskLib[id].kp(0, 0) = 100.0;
++            kin_tasks_stand.taskLib[id].kd(0, 0) = 25.0;
++        }
+         Eigen::MatrixXd taskMap = Eigen::MatrixXd::Zero(1, 6);
+         taskMap(0, 2) = 1;
+         kin_tasks_stand.taskLib[id].J = taskMap * J_base;
+         kin_tasks_stand.taskLib[id].J.block(0, 22, 1, 3).setZero();
+         kin_tasks_stand.taskLib[id].dJ = taskMap * dJ_base;
+         kin_tasks_stand.taskLib[id].dJ.block(0, 22, 1, 3).setZero();
++        if (standRecoveryMode)
++        {
++            kin_tasks_stand.taskLib[id].derrX(0) =
++                -(kin_tasks_stand.taskLib[id].J * dq)(0);
++            kin_tasks_stand.taskLib[id].derrX(0) = std::clamp(
++                kin_tasks_stand.taskLib[id].derrX(0), -0.5, 0.5);
++        }
+         kin_tasks_stand.taskLib[id].W.diagonal() = Eigen::VectorXd::Ones(model_nv);
+ 
+         id = kin_tasks_stand.getId("CoMTrack");
+@@ -612,22 +739,56 @@ void WBC_priority::computeDdq(Pin_KinDyn &pinKinDynIn)
+         kin_tasks_stand.taskLib[id].errX = Eigen::VectorXd::Zero(5);
+         	kin_tasks_stand.taskLib[id].errX.block(0, 0, 2, 1) = pCoMDes.block(0, 0, 2, 1) - pCoMCur.block(0, 0, 2, 1);
+ 			desRot = eul2Rot(base_rpy_des(0), base_rpy_des(1), base_rpy_des(2));
+-        	kin_tasks_stand.taskLib[id].errX.block<3, 1>(2, 0) = diffRot(hip_link_rot, desRot);
++        if (standRecoveryMode)
++            kin_tasks_stand.taskLib[id].errX.block<3, 1>(2, 0) =
++                diffRot(base_rot, desRot);
++        else
++            kin_tasks_stand.taskLib[id].errX.block<3, 1>(2, 0) =
++                diffRot(hip_link_rot, desRot);
+         kin_tasks_stand.taskLib[id].derrX = Eigen::VectorXd::Zero(5);
+-//                    kin_tasks_stand.taskLib[id].derrX.block(0,0,2,1)=-(Jcom*dq).block(0,0,2,1);
+-//                    kin_tasks_stand.taskLib[id].derrX.block(2,0,3,1)=-taskMapRPY*J_hip_link*dq;
+         kin_tasks_stand.taskLib[id].ddxDes = Eigen::VectorXd::Zero(5);
+         kin_tasks_stand.taskLib[id].dxDes = Eigen::VectorXd::Zero(5);
+         kin_tasks_stand.taskLib[id].kp = Eigen::MatrixXd::Identity(5, 5) * 250; // 100
+ 		kin_tasks_stand.taskLib[id].kp.block(2, 2, 3, 3) = Eigen::MatrixXd::Identity(3,3)*1000;
+ 		kin_tasks_stand.taskLib[id].kd = Eigen::MatrixXd::Identity(5, 5) * 10;
+         	kin_tasks_stand.taskLib[id].kd.block(2, 2, 3, 3) = Eigen::MatrixXd::Identity(3, 3) * 10;   // 100  // for hip rpy
++        if (standRecoveryMode)
++        {
++            for (int axis = 0; axis < 2; ++axis)
++                kin_tasks_stand.taskLib[id].errX(axis) = std::clamp(
++                    kin_tasks_stand.taskLib[id].errX(axis), -0.02, 0.02);
++            kin_tasks_stand.taskLib[id].kp.block(0, 0, 2, 2) =
++                Eigen::Matrix2d::Identity() * 50.0;
++            kin_tasks_stand.taskLib[id].kd.block(0, 0, 2, 2) =
++                Eigen::Matrix2d::Identity() * 15.0;
++            kin_tasks_stand.taskLib[id].kd.block(2, 2, 3, 3) =
++                Eigen::Matrix3d::Identity() * 40.0;
++        }
+         kin_tasks_stand.taskLib[id].J = Eigen::MatrixXd::Zero(5, model_nv);
+         kin_tasks_stand.taskLib[id].J.block(0, 0, 2, model_nv) = Jcom.block(0, 0, 2, model_nv);
+-        kin_tasks_stand.taskLib[id].J.block(2, 0, 3, model_nv) = taskMapRPY * J_hip_link;
+-        kin_tasks_stand.taskLib[id].J.block(2, 22, 3, 3).setZero(); // exculde waist joints
+-        kin_tasks_stand.taskLib[id].J.block(2, 6, 3, 14).setZero(); // exculde arm joints
+         kin_tasks_stand.taskLib[id].dJ = Eigen::MatrixXd::Zero(5, model_nv);
++        if (standRecoveryMode)
++        {
++            kin_tasks_stand.taskLib[id].J.block(2, 0, 3, model_nv) =
++                taskMapRPY * J_base;
++            kin_tasks_stand.taskLib[id].dJ.block(2, 0, 3, model_nv) =
++                taskMapRPY * dJ_base;
++        }
++        else
++        {
++            kin_tasks_stand.taskLib[id].J.block(2, 0, 3, model_nv) =
++                taskMapRPY * J_hip_link;
++            kin_tasks_stand.taskLib[id].J.block(2, 22, 3, 3).setZero(); // exculde waist joints
++            kin_tasks_stand.taskLib[id].J.block(2, 6, 3, 14).setZero(); // exculde arm joints
++        }
++        if (standRecoveryMode)
++        {
++            kin_tasks_stand.taskLib[id].derrX =
++                -kin_tasks_stand.taskLib[id].J * dq;
++            for (int axis = 0; axis < 2; ++axis)
++                kin_tasks_stand.taskLib[id].derrX(axis) = std::clamp(
++                    kin_tasks_stand.taskLib[id].derrX(axis), -0.20, 0.20);
++        }
+         kin_tasks_stand.taskLib[id].W.diagonal() = Eigen::VectorXd::Ones(model_nv);
+         kin_tasks_stand.taskLib[id].W.diagonal()(22) = 200;
+         kin_tasks_stand.taskLib[id].W.diagonal()(23) = 200;
+@@ -713,7 +874,8 @@ void WBC_priority::computeDdq(Pin_KinDyn &pinKinDynIn)
+     }
+     else if (motionStateCur == DataBus::Stand)
+     {
+-        kin_tasks_stand.computeAll(des_delta_q, des_dq, des_ddq, dyn_M, dyn_M_inv, dq);
++        kin_tasks_stand.computeAll(des_delta_q, des_dq, des_ddq, dyn_M, dyn_M_inv, dq,
++                                   standRecoveryMode);
+         delta_q_final_kin = kin_tasks_stand.out_delta_q;
+         dq_final_kin = kin_tasks_stand.out_dq;
+         ddq_final_kin = kin_tasks_stand.out_ddq;
+@@ -745,4 +907,4 @@ void WBC_priority::setQini(const Eigen::VectorXd &qIniDesIn, const Eigen::Vector
+ {
+     qIniDes = qIniDesIn;
+     qIniCur = qIniCurIn;
+-}
+\ No newline at end of file
++}
+diff --git a/algorithm/wbc_priority.h b/algorithm/wbc_priority.h
+index 9aa72d08..89529560 100644
+--- a/algorithm/wbc_priority.h
++++ b/algorithm/wbc_priority.h
+@@ -62,6 +62,15 @@ public:
+     void dataBusRead(const DataBus &robotState);
+     void dataBusWrite(DataBus &robotState);
+     void computeDdq(Pin_KinDyn &pinKinDynIn);
++    // Isaac jump landing/recovery: close the saved double-support foot and
++    // base-velocity loops without changing the upstream walking task set.
++    void setStandRecoveryMode(bool enabled);
++    // Preserve the commanded horizontal contact wrench during landing and
++    // during the bounded damping hold after the recovery MPC window.
++    void setPreserveHorizontalContactWrench(bool enabled);
++    // During the early recovery MPC window, strongly penalize horizontal
++    // wrench changes without making them a hard QP constraint.
++    void setTrackHorizontalContactWrench(bool enabled);
+ private:
+     double timeStep{0.001};
+     qpOASES::QProblem QP_prob;
+@@ -84,6 +93,9 @@ private:
+     Eigen::Vector3d stanceDesPos_W;
+     Eigen::VectorXd des_ddq, des_dq, des_delta_q, des_q;
+     Eigen::VectorXd qIniDes, qIniCur;
++    bool standRecoveryMode{false};
++    bool preserveHorizontalContactWrench{false};
++    bool trackHorizontalContactWrench{false};
+ 
+     static const int QP_nv_des=18;
+     static const int QP_nc_des=22;
+@@ -91,6 +103,8 @@ private:
+     qpOASES::real_t qp_H[QP_nv_des*QP_nv_des];
+     qpOASES::real_t qp_A[QP_nc_des*QP_nv_des];
+     qpOASES::real_t qp_g[QP_nv_des];
++    qpOASES::real_t qp_lb[QP_nv_des];
++    qpOASES::real_t qp_ub[QP_nv_des];
+     qpOASES::real_t qp_lbA[QP_nc_des];
+     qpOASES::real_t qp_ubA[QP_nc_des];
+     qpOASES::real_t xOpt_iniGuess[QP_nv_des];
+diff --git a/common/PVT_ctrl.cpp b/common/PVT_ctrl.cpp
+index 71ad89d2..c11c7144 100644
+--- a/common/PVT_ctrl.cpp
++++ b/common/PVT_ctrl.cpp
+@@ -7,6 +7,7 @@ Feel free to use in any purpose, and cite OpenLoong-Dynamics-Control in any styl
+ */
+ 
+ #include "PVT_ctrl.h"
++#include <stdexcept>
+ 
+ PVT_Ctr::PVT_Ctr(double timeStepIn, const char *jsonPath) {
+     jointNum=motorName.size();
+@@ -17,6 +18,9 @@ PVT_Ctr::PVT_Ctr(double timeStepIn, const char *jsonPath) {
+     motor_pos_des_old.assign(jointNum,0);
+     motor_tor_out_link.assign(jointNum,0);
+     motor_tor_out_motor.assign(jointNum,0);
++    motor_tor_pd_raw.assign(jointNum,0);
++    motor_tor_pd_filtered.assign(jointNum,0);
++    motor_tor_pre_limit.assign(jointNum,0);
+     pvt_Kp.assign(jointNum,0);
+     pvt_Kd.assign(jointNum,0);
+     maxTor.assign(jointNum,400);
+@@ -80,8 +84,10 @@ void PVT_Ctr::calMotorsPVT() {
+     for (int i=0;i<jointNum;i++)
+     {
+         double tauDes{0};
+-        tauDes=PV_enable[i]*pvt_Kp[i]*(motor_pos_des[i]-motor_pos_cur[i])+PV_enable[i]*pvt_Kd[i]*(motor_vel_des[i]-motor_vel[i]);
+-        tauDes=tau_out_lpf[i].ftOut(tauDes)+motor_tor_des[i];
++        motor_tor_pd_raw[i]=PV_enable[i]*pvt_Kp[i]*(motor_pos_des[i]-motor_pos_cur[i])+PV_enable[i]*pvt_Kd[i]*(motor_vel_des[i]-motor_vel[i]);
++        motor_tor_pd_filtered[i]=tau_out_lpf[i].ftOut(motor_tor_pd_raw[i]);
++        tauDes=motor_tor_pd_filtered[i]+motor_tor_des[i];
++        motor_tor_pre_limit[i]=tauDes;
+         if (fabs(tauDes)>=fabs(maxTor[i]))
+             tauDes= sign(tauDes)*maxTor[i];
+         motor_tor_out_motor[i]=tauDes/gear[i];
+@@ -99,8 +105,10 @@ void PVT_Ctr::calMotorsPVT(double deltaP_Lim) {
+         if (fabs(delta)>= fabs(deltaP_Lim))
+             delta=deltaP_Lim * sign(delta);
+         double pDes=delta+motor_pos_des_old[i];
+-        tauDes=PV_enable[i]*pvt_Kp[i]*(pDes-motor_pos_cur[i])+PV_enable[i]*pvt_Kd[i]*(motor_vel_des[i]-motor_vel[i]);
+-        tauDes=tau_out_lpf[i].ftOut(tauDes)+motor_tor_des[i];
++        motor_tor_pd_raw[i]=PV_enable[i]*pvt_Kp[i]*(pDes-motor_pos_cur[i])+PV_enable[i]*pvt_Kd[i]*(motor_vel_des[i]-motor_vel[i]);
++        motor_tor_pd_filtered[i]=tau_out_lpf[i].ftOut(motor_tor_pd_raw[i]);
++        tauDes=motor_tor_pd_filtered[i]+motor_tor_des[i];
++        motor_tor_pre_limit[i]=tauDes;
+         if (fabs(tauDes)>=fabs(maxTor[i]))
+             tauDes= sign(tauDes)*maxTor[i];
+         motor_tor_out_motor[i]=tauDes/gear[i];
+@@ -132,4 +140,12 @@ void PVT_Ctr::disablePV() {
+ 
+ void PVT_Ctr::disablePV(int jtId) {
+     PV_enable[jtId]=0;
+-}
+\ No newline at end of file
++}
++
++void PVT_Ctr::resetPDFilter(int jtId, double filteredTorque) {
++    if (jtId < 0 || jtId >= jointNum)
++        throw std::out_of_range("PVT joint index out of range");
++    tau_out_lpf[jtId].reset(filteredTorque);
++    motor_tor_pd_raw[jtId]=0.0;
++    motor_tor_pd_filtered[jtId]=filteredTorque;
++}
+diff --git a/common/PVT_ctrl.h b/common/PVT_ctrl.h
+index bd15bc40..e307f764 100644
+--- a/common/PVT_ctrl.h
++++ b/common/PVT_ctrl.h
+@@ -28,6 +28,13 @@ public:
+     std::vector<double> motor_vel;
+     std::vector<double> motor_tor_out_link; // final tau output
+     std::vector<double> motor_tor_out_motor; // final tau output
++    // Torque decomposition retained for simulator-side analysis.  The raw PD
++    // term is passed through the original first-order low-pass filter before
++    // being added to motor_tor_des (the WBC feedforward term).  pre_limit is
++    // the sum before the existing actuator saturation is applied.
++    std::vector<double> motor_tor_pd_raw;
++    std::vector<double> motor_tor_pd_filtered;
++    std::vector<double> motor_tor_pre_limit;
+     PVT_Ctr(double timeStepIn, const char * jsonPath);
+     void calMotorsPVT();
+     void calMotorsPVT(double deltaP_Lim);
+@@ -35,6 +42,8 @@ public:
+     void disablePV(); // disable PV control item
+     void enablePV(int jtId); // enable PV control item
+     void disablePV(int jtId); // disable PV control item
++    // Clear a joint's filtered PD residue at a control-mode boundary.
++    void resetPDFilter(int jtId, double filteredTorque = 0.0);
+     void setJointPD(double kp, double kd, const char * jointName);
+     void dataBusRead(DataBus &busIn);
+     void dataBusWrite(DataBus &busIn);
+diff --git a/math/LPF_fst.cpp b/math/LPF_fst.cpp
+index 280efa63..ec17368b 100644
+--- a/math/LPF_fst.cpp
++++ b/math/LPF_fst.cpp
+@@ -32,4 +32,9 @@ double LPF_Fst::ftOut(double dataIn) {
+ 
+ void LPF_Fst::setPara(double fc, double Ts) {
+     alpha=Ts/(Ts+1.0/(2*3.1415*fc));
+-}
+\ No newline at end of file
++}
++
++void LPF_Fst::reset(double output) {
++    dataOld=output;
++    isIni=true;
++}
+diff --git a/math/LPF_fst.h b/math/LPF_fst.h
+index 2debd19d..94227cac 100644
+--- a/math/LPF_fst.h
++++ b/math/LPF_fst.h
+@@ -19,6 +19,7 @@ public:
+     LPF_Fst(double fc,double Ts);
+     void setPara(double fc, double Ts);
+     double ftOut(double dataIn);
++    void reset(double output = 0.0);
+ 
+ };
+ 

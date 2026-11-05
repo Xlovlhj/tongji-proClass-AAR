@@ -1,0 +1,22 @@
+$ python3 -m unittest discover -s Pro2/isaac/tests -v
+
+test_com_at_origin_does_not_change_linear_velocity (test_adapter.BaseVelocityTests.test_com_at_origin_does_not_change_linear_velocity) ... ok
+test_general_angular_velocity_and_rotated_offset (test_adapter.BaseVelocityTests.test_general_angular_velocity_and_rotated_offset) ... ok
+test_yaw_rotates_local_com_offset_before_velocity_correction (test_adapter.BaseVelocityTests.test_yaw_rotates_local_com_offset_before_velocity_correction) ... ok
+test_duplicate_names_rejected_on_both_sides (test_adapter.JointMappingTests.test_duplicate_names_rejected_on_both_sides) ... ok
+test_extra_or_missing_joint_rejected (test_adapter.JointMappingTests.test_extra_or_missing_joint_rejected) ... ok
+test_mismatched_names_rejected_even_when_counts_match (test_adapter.JointMappingTests.test_mismatched_names_rejected_even_when_counts_match) ... ok
+test_reversed_simulator_order_preserves_named_states_and_efforts (test_adapter.JointMappingTests.test_reversed_simulator_order_preserves_named_states_and_efforts) ... ok
+test_invalid_quaternions_rejected (test_adapter.OrientationTests.test_invalid_quaternions_rejected) ... ok
+test_nontrivial_orientation_in_wxyz_order (test_adapter.OrientationTests.test_nontrivial_orientation_in_wxyz_order) ... ok
+test_quaternion_scale_and_sign_do_not_change_orientation (test_adapter.OrientationTests.test_quaternion_scale_and_sign_do_not_change_orientation) ... ok
+test_actual_motor_gears_and_inherited_passive_parameters (test_model_metadata.ModelMigrationTest.test_actual_motor_gears_and_inherited_passive_parameters) ... ok
+test_initial_height_uses_lowest_rotated_sole_corner (test_model_metadata.ModelMigrationTest.test_initial_height_uses_lowest_rotated_sole_corner) ... ok
+test_mesh_resolution_foot_geometry_and_source_immutability (test_model_metadata.ModelMigrationTest.test_mesh_resolution_foot_geometry_and_source_immutability) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.019s
+
+OK
+
+exit_code=0

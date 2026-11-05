@@ -1,0 +1,4 @@
+{
+  "mode": "walk", "duration": 24.0, "walk_start": 5.0, "vx": 0.08, "step_height": 0.18,
+  "terrain": {"type": "blind_step", "variant": "down", "start_x_m": 0.9, "height_m": 0.06, "length_m": 4.0, "width_m": 2.0}
+}

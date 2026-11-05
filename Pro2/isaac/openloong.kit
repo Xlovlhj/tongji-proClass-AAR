@@ -1,0 +1,80 @@
+[package]
+title = "OpenLoong MPC + WBC"
+version = "0.1.0"
+
+[dependencies]
+"isaacsim.simulation_app" = {}
+"isaacsim.core.api" = {}
+"isaacsim.core.experimental.prims" = {}
+"isaacsim.core.experimental.primdata" = {}
+"isaacsim.asset.importer.urdf" = {}
+"omni.kit.loop-isaac" = {}
+"omni.kit.mainwindow" = {}
+"omni.kit.viewport.window" = {}
+"omni.kit.viewport.utility" = {}
+"omni.kit.capture.viewport" = {}
+"omni.videoencoding" = {}
+"omni.kit.manipulator.camera" = {}
+"omni.kit.renderer.core" = {}
+"omni.kit.renderer.capture" = {}
+"omni.hydra.rtx" = {}
+"omni.physx.fabric" = {}
+
+[settings]
+exts."isaacsim.core.simulation_manager".default_engine = "physx"
+exts."isaacsim.core.experimental.prims".prim_data_reader_provider_extension = "isaacsim.core.experimental.primdata"
+exts."omni.usd".locking.onClose = false
+exts."omni.kit.renderer.core".present.enabled = false
+exts."omni.kit.viewport.window".startup.windowName = "OpenLoong MPC + WBC"
+exts."omni.kit.viewport.window".startup.disableWindowOnLoad = false
+exts."omni.kit.viewport.window".startup.selectionManipulator.enabled = false
+renderer.asyncInit = true
+renderer.gpuEnumeration.glInterop.enabled = false
+renderer.multiGpu.enabled = false
+foundation.verifyOsVersion.enabled = false
+physics.autoPopupSimulationOutputWindow = false
+rtx.rendermode = "MinimalRendering"
+rtx.minimal.mode = 3
+rtx.sceneDb.ambientLightIntensity = 0.2
+rtx.post.aa.op = 0
+rtx-transient.dlssg.enabled = false
+
+[settings.app]
+name = "openloong-isaac"
+version = "0.1.0"
+window.title = "OpenLoong MPC + WBC"
+vulkan = true
+content.emptyStageOnStart = true
+fastShutdown = true
+file.ignoreUnsavedStage = true
+settings.persistent = false
+useFabricSceneDelegate = true
+events.qualifiedNames = true
+asyncRendering = false
+runLoops.main.rateLimitEnabled = false
+runLoops.main.manualModeEnabled = true
+player.useFixedTimeStepping = false
+renderer.skipWhileMinimized = false
+renderer.skipWhileInvisible = false
+renderer.sleepMsOnFocus = 0
+renderer.sleepMsOutOfFocus = 0
+renderer.resolution.width = 960
+renderer.resolution.height = 720
+viewport.defaults.fillViewport = true
+viewport.grid.enabled = false
+viewport.outline.enabled = false
+
+[settings.app.exts.folders]
+'++' = [
+    "${env:ISAAC_PATH}/exts",
+    "${env:ISAAC_PATH}/extscache",
+    "${env:ISAAC_PATH}/extsDeprecated",
+    "${env:ISAAC_PATH}/apps",
+]
+
+[settings.persistent]
+app.stage.upAxis = "Z"
+simulation.defaultMetersPerUnit = 1.0
+physics.visualizationDisplayJoints = false
+physics.resetOnStop = true
+renderer.startupMessageDisplayed = true

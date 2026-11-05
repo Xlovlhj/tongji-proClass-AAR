@@ -1,0 +1,11 @@
+{
+  "sample_count": 4500,
+  "cross_track_rmse_m": 0.14404687518375628,
+  "maximum_path_distance_m": 0.354231685847737,
+  "heading_error_rmse_rad": 0.1923893426943043,
+  "final_progress_m": 6.283105558829253,
+  "path_length_m": 6.283105558829253,
+  "completion_fraction": 1.0,
+  "reached_goal": false,
+  "final_goal_distance_m": 0.5404635876341525
+}

@@ -1,0 +1,643 @@
+{
+  "checked_on": "2026-11-04",
+  "source_files_modified": false,
+  "reference_count": 127,
+  "references": [
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/foot_placement.cpp",
+      "exists": true,
+      "sha256": "8a8155dfd60dc851dd939384e35d682b5f37f63e9fc61015da4eb6cca3d55720"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/gait_scheduler.cpp",
+      "exists": true,
+      "sha256": "70b63fe997f5944e30a9a09994c78b0df0644834438fbe183d59fb5377547802"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/mpc.cpp",
+      "exists": true,
+      "sha256": "1344ec101f4f8b4631ed5e83c564df91278d28c183a339029b62813027fdd8a3"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/mpc.h",
+      "exists": true,
+      "sha256": "a0be044758b8c58bca246c420f10692f93ebe33dd24d5e33d126fb88fc3ea494"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/pino_kin_dyn.cpp",
+      "exists": true,
+      "sha256": "af952b8c8bf32ee4c9d4ddfb01b1a116eff2f65c00789dd044eb98aba7c828ef"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/priority_tasks.cpp",
+      "exists": true,
+      "sha256": "dbcf7f05f1fbe7f13972ee861c694c97273b43ca767dd0213ead490e33ec351f"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/priority_tasks.h",
+      "exists": true,
+      "sha256": "abb67e6c861834a10281e458913503cd2853219ca274a589264e44fdb7772ba8"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/wbc_priority.cpp",
+      "exists": true,
+      "sha256": "47dde2c8dcddc4b35df41c34091c52fb94dbb2725099a4dd2b5fc75ba1aa27db"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/algorithm/wbc_priority.h",
+      "exists": true,
+      "sha256": "8240ffcc8656ada481fe03ea00ad5df2209ee6ad70ad5ac5c5ed82209474756f"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/common/PVT_ctrl.cpp",
+      "exists": true,
+      "sha256": "48022cf7cbffe3eb102c4ca965f4c468a40b475fa0beb6ebcfbc638d9cda9c66"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/common/PVT_ctrl.h",
+      "exists": true,
+      "sha256": "db43d9f911e3b1157a6dde78523ef003704c1a4fd8d6ffe6580d2458a9ed7664"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/common/joint_ctrl_config.json",
+      "exists": true,
+      "sha256": "800f1b5c8f0c20bbd91f76521894afa3a5f555a42c6fc738875ce33232e84109"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/demo/jump_mpc.cpp",
+      "exists": true,
+      "sha256": "bf9e4f4490ad0ba94099b715be5f4b877a75cd5670e58e6b643f92d0f825e2c1"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/math/LPF_fst.cpp",
+      "exists": true,
+      "sha256": "e57c68293737b3859d6d1acffeef7132ee28b251f21f61af1799bf472f4fc64a"
+    },
+    {
+      "path": "Pro2/OpenLoong-Dyn-Control/math/LPF_fst.h",
+      "exists": true,
+      "sha256": "ef27a3afda36a4d14767d9669ad19baabf797472d45064dfd5537682c6fcf21c"
+    },
+    {
+      "path": "Pro2/control/convex_mpc_reference.py",
+      "exists": true,
+      "sha256": "a1d7afecce23d28606962e9bc85a3fc7b20f5b8ac12290084e7e907713b4c5e3"
+    },
+    {
+      "path": "Pro2/control/nmpc_rti.py",
+      "exists": true,
+      "sha256": "c307fada73b37d197d4d8671145014fd961cd1c6e7ad9c1d5065b20eea819732"
+    },
+    {
+      "path": "Pro2/control/nmpc_srbd.py",
+      "exists": true,
+      "sha256": "daa2bc33c49a278d55172413d56e92eb2717b6ba74c8c909dd2f80e440e400a0"
+    },
+    {
+      "path": "Pro2/control/runtime_adapter.py",
+      "exists": true,
+      "sha256": "84b89758c996f784596770c57dff62b640fbe8b1062b0ba63ab5982fdb7b7921"
+    },
+    {
+      "path": "Pro2/control/srbd_model.py",
+      "exists": true,
+      "sha256": "8bfc94a4fb5d980d613ef4221ef834fc2af08cc38fd8584cca99c2b143dbf21f"
+    },
+    {
+      "path": "Pro2/control/tests",
+      "exists": true,
+      "sha256": null
+    },
+    {
+      "path": "Pro2/experiments/L0/mpc_input_weight/baseline_1e-6.json",
+      "exists": true,
+      "sha256": "66ff8e5445b5ba4c2756e32cdaebd984a48555b0303d0339475f489aaa38b26f"
+    },
+    {
+      "path": "Pro2/experiments/L0/mpc_input_weight/high_1e-5.json",
+      "exists": true,
+      "sha256": "622edc4e9f5fd87f872f4cd969024092e625562e3f3c0199cd9be3dccb9f9b5b"
+    },
+    {
+      "path": "Pro2/experiments/L0/mpc_input_weight/low_1e-7.json",
+      "exists": true,
+      "sha256": "350593d493817e2c34a27145a95093050b231f51e50f4ad652e39e961a88d2c2"
+    },
+    {
+      "path": "Pro2/experiments/L2/lateral_push/no_push.json",
+      "exists": true,
+      "sha256": "ab1449fad40fede567908b1554e4bb5eaab6434c1a6c27ad06653e9682eb119a"
+    },
+    {
+      "path": "Pro2/experiments/L2/lateral_push/push_100N.json",
+      "exists": true,
+      "sha256": "088a93a7a8e78e83fe9dffc3b8ee4cda911bbf0f51adca2d48b8e630b276e858"
+    },
+    {
+      "path": "Pro2/experiments/L2/lateral_push/push_50N.json",
+      "exists": true,
+      "sha256": "9ae1bfa38c6589f02cb6795ab107ad1358fcd2e3eefc5dcded325d3b2511a7be"
+    },
+    {
+      "path": "Pro2/experiments/L2/mpc_vx_weight/baseline.json",
+      "exists": true,
+      "sha256": "90ccd267290fbeadd67a4a5ce7ddad13f23c802299e78d2e602a00d4e1d2d340"
+    },
+    {
+      "path": "Pro2/experiments/L2/mpc_vx_weight/high.json",
+      "exists": true,
+      "sha256": "999226ffc622106dd4dfefdfee464344cecb81c0f24523a0614741323b99b581"
+    },
+    {
+      "path": "Pro2/experiments/L2/mpc_vx_weight/low.json",
+      "exists": true,
+      "sha256": "a14a785cc33ccc0f6c60b67b577502ebebb582b1133168e418d41cabbff2dedc"
+    },
+    {
+      "path": "Pro2/experiments/L2/prediction_horizon/baseline_n10.json",
+      "exists": true,
+      "sha256": "fef4f34554c2d83406f96c5fd3ed67b343d71b3a23bebd5824fa83935ea77594"
+    },
+    {
+      "path": "Pro2/experiments/L2/prediction_horizon/long_n15.json",
+      "exists": true,
+      "sha256": "34520385e4e864dbc6a48dc79f06a550b2338d7d959f1a414b803cbcbe71df55"
+    },
+    {
+      "path": "Pro2/experiments/L2/prediction_horizon/short_n5.json",
+      "exists": true,
+      "sha256": "95c86f954c65025d02d39c52ce068db1f651fd2f107724d3f205503f470d7775"
+    },
+    {
+      "path": "Pro2/experiments/L2/step_height/baseline_012.json",
+      "exists": true,
+      "sha256": "af4ba59bde05483dacf7c8f9d56e16938a6716829a004c90525e482808e31aba"
+    },
+    {
+      "path": "Pro2/experiments/L2/step_height/high_016.json",
+      "exists": true,
+      "sha256": "266ae456a8e9d26ccdf6c544152692e7e98be801932d2f9f809ae04a807cb7e1"
+    },
+    {
+      "path": "Pro2/experiments/L2/step_height/low_008.json",
+      "exists": true,
+      "sha256": "7af61f46e3c3fa3e46ca84a9cd7874a0792269b4fe6ab6f3093f71812ac73370"
+    },
+    {
+      "path": "Pro2/experiments/L4/jump/vertical_jump.json",
+      "exists": true,
+      "sha256": "8d3f673d635a5118e954406d99c0768372afcfd10d1a798951db12069793b2ac"
+    },
+    {
+      "path": "Pro2/experiments/L4/mpc_comparison/convex_python_reference.json",
+      "exists": true,
+      "sha256": "bd9617725c3fc799642b55d7be9ffc39436a9301c88860897ee399eaafe45c4c"
+    },
+    {
+      "path": "Pro2/experiments/L4/mpc_comparison/cpp_convex_walk_run.json",
+      "exists": true,
+      "sha256": "d2c1b4aff57963879d891a4f41863b8bd36b136a6c8368d774a0a78484c07160"
+    },
+    {
+      "path": "Pro2/experiments/L4/mpc_comparison/nmpc_rti_50hz.json",
+      "exists": true,
+      "sha256": "6f4af6e03a1ad371748fba3ebc3b3cb2ab464b924fce1f2cf4741dedd5b25957"
+    },
+    {
+      "path": "Pro2/experiments/L4/mpc_comparison/nmpc_rti_walk_run.json",
+      "exists": true,
+      "sha256": "d1167081d8f2f18e42b86a0ec7f869da36c4184e93afb2ea450be08cabb37368"
+    },
+    {
+      "path": "Pro2/experiments/L4/mpc_comparison/nmpc_slsqp_offline.json",
+      "exists": true,
+      "sha256": "e2871853a81cb8ac5e55e93764866e7ac8178693bbdf374a8abbaf065f8bc67b"
+    },
+    {
+      "path": "Pro2/experiments/L4/path_tracking/circle_closed_loop.json",
+      "exists": true,
+      "sha256": "80f3ab9b36aa0919d2d47610d38dbda031acf7c3ef173876b74ed6d7caa12920"
+    },
+    {
+      "path": "Pro2/experiments/L4/path_tracking/circle_open_loop.json",
+      "exists": true,
+      "sha256": "ce8c6c5463b1382528236d562d28002a53bbe2cc90131a1528a6cb87ebfa2759"
+    },
+    {
+      "path": "Pro2/experiments/L4/path_tracking/straight.json",
+      "exists": true,
+      "sha256": "fddaf2acf1df15e98c803e7700e13ae840c2584d495b291b1c97fcd2b100454b"
+    },
+    {
+      "path": "Pro2/experiments/L4/path_tracking/turn_90.json",
+      "exists": true,
+      "sha256": "c2053a4d18d404eae50874430396fbdb91056a0a310aeb703aeda30502a5fe26"
+    },
+    {
+      "path": "Pro2/experiments/L4/path_tracking/waypoints.json",
+      "exists": true,
+      "sha256": "4e230161396b803a8ac48a430a2bce9811789c62e5d7f7c5d5d719a4e2b55fea"
+    },
+    {
+      "path": "Pro2/experiments/L4/terrain/blind_step_up.json",
+      "exists": true,
+      "sha256": "67f543987223a68e37e878b4ec43ae660485dc775ce716fa07085707187009fd"
+    },
+    {
+      "path": "Pro2/experiments/L4/terrain/random_obstacles_seed01_full.json",
+      "exists": true,
+      "sha256": "fcedd0c78d399b966e4d00f414461dc6c981743ff6bbf360db32e79b4af3adf1"
+    },
+    {
+      "path": "Pro2/experiments/L4/terrain/rough_medium.json",
+      "exists": true,
+      "sha256": "f007cfa4c4d3be02a1f05549c05c818cb20aa54d6b1f6823e2d0a1e3533433f5"
+    },
+    {
+      "path": "Pro2/experiments/L4/terrain/slope_05deg.json",
+      "exists": true,
+      "sha256": "836207bbb6b0203403705008e005aa3ed73cdcedbaad0cd8c078e3996b43d1a1"
+    },
+    {
+      "path": "Pro2/isaac/adapter.py",
+      "exists": true,
+      "sha256": "a8c81698c266c069a270f408ce08e3c97fdd22887be253d8ac5d903350d3fe59"
+    },
+    {
+      "path": "Pro2/isaac/asset_builder.py",
+      "exists": true,
+      "sha256": "771b7891b1cd0de34d7f5178170c5ee5b7dcf88075330c7f75cc30d6bc89a454"
+    },
+    {
+      "path": "Pro2/isaac/jump_controller.py",
+      "exists": true,
+      "sha256": "757cbd385128ea4c954f01570813f58cc6f4dfd961469c17c949110f287b0bf7"
+    },
+    {
+      "path": "Pro2/isaac/model_metadata.py",
+      "exists": true,
+      "sha256": "b500c227ce72eac53baa66f52253d83b6b46ae9a964d9797dcacee58304216b9"
+    },
+    {
+      "path": "Pro2/isaac/native.py",
+      "exists": true,
+      "sha256": "e143ff27e34bd89b651f93cea169c1419dc1aee9a12e99985ac559f845d790f4"
+    },
+    {
+      "path": "Pro2/isaac/native/CMakeLists.txt",
+      "exists": true,
+      "sha256": "03290b385e37078992f0023c123197cf6d320b3d95b56d37c88f02bdd1dafd32"
+    },
+    {
+      "path": "Pro2/isaac/native/controller_bridge.cpp",
+      "exists": true,
+      "sha256": "3dd0ecca08a0c1b249a9d53ddb12d48792cf610b9b18537c121babd4d30c81c9"
+    },
+    {
+      "path": "Pro2/isaac/native/controller_bridge.h",
+      "exists": true,
+      "sha256": "08e36db0d63d72011137c4cbe52e33086305fa7feeb5b6786564fe69b423a1e8"
+    },
+    {
+      "path": "Pro2/isaac/native/exports.map",
+      "exists": true,
+      "sha256": "79af3f82475ea60a13af738d3095a60602ce289ad19e4ba0ea637d990ba0afba"
+    },
+    {
+      "path": "Pro2/isaac/native/test_bridge.py",
+      "exists": true,
+      "sha256": "4ccc11bb84abddfff43c202a1061d6465638173f45002c40a6df37a0b3661f1c"
+    },
+    {
+      "path": "Pro2/isaac/openloong.kit",
+      "exists": true,
+      "sha256": "d40d393aded32c24ddd52a9f9210b5832491c687649c8069a1ba90b03aa0d53b"
+    },
+    {
+      "path": "Pro2/isaac/path_tracking.py",
+      "exists": true,
+      "sha256": "ff6fc2e80271e90c5d58db761bb20cd6d736f328f916634e1a9c48521e139150"
+    },
+    {
+      "path": "Pro2/isaac/robot_spec.py",
+      "exists": true,
+      "sha256": "31e20808939c665d9b2ce55175eaf1d95c42361a5475c2e2771d3ca4fd2b6158"
+    },
+    {
+      "path": "Pro2/isaac/robot_usd.py",
+      "exists": true,
+      "sha256": "31e3e8649425c7003cbf082bc80e348bdbacc4c4408d04ee74c7186478593e66"
+    },
+    {
+      "path": "Pro2/isaac/runtime.py",
+      "exists": true,
+      "sha256": "532ca5a93109eb08cbd5be5495bbfbda4b733487106ed5b212116a5f20a1deda"
+    },
+    {
+      "path": "Pro2/isaac/simulation.py",
+      "exists": true,
+      "sha256": "6faea21c42e40e9ce5073588df9d5f7ee126923bf7960ca11a8e712db95bb365"
+    },
+    {
+      "path": "Pro2/isaac/terrain.py",
+      "exists": true,
+      "sha256": "98340c84fbfd7b912e0285f5eb334d607a29ea444cf17978295e69da9fe77759"
+    },
+    {
+      "path": "Pro2/isaac/tests",
+      "exists": true,
+      "sha256": null
+    },
+    {
+      "path": "Pro2/output/L0/L0验收报告.md",
+      "exists": true,
+      "sha256": "2c7dfe30a04ef04de649e69ee00367ea129ec08697d142ef5dbe26d90705f8c9"
+    },
+    {
+      "path": "Pro2/output/L0/mpc_input_weight/baseline_1e-6/config.json",
+      "exists": true,
+      "sha256": "05d70a76975f53fe462f7fed8b0d124e7a5ac79deb01e17938db96ba5c569860"
+    },
+    {
+      "path": "Pro2/output/L0/mpc_input_weight/high_1e-5/config.json",
+      "exists": true,
+      "sha256": "4cfd7a3b1f999a3afe499be6071d4fa47d845d1c6f34d4f1af49f5197c1709ef"
+    },
+    {
+      "path": "Pro2/output/L0/mpc_input_weight/low_1e-7/config.json",
+      "exists": true,
+      "sha256": "b14a8dffe63bd5b26bbc4c948051719e4680e55bfe8a2605de34fc17480b4df1"
+    },
+    {
+      "path": "Pro2/output/L1/L1源码分析报告.md",
+      "exists": true,
+      "sha256": "a9ae39df33a301c7d8c45657b5e95b84c9f254b70f2be1af85a0c2808033cd6b"
+    },
+    {
+      "path": "Pro2/output/L2/L2验收报告.md",
+      "exists": true,
+      "sha256": "45d6d88693504181cb196d99008c8e43aa56c6b171712b34aff36d9d44ee2694"
+    },
+    {
+      "path": "Pro2/output/L2/lateral_push/no_push/config.json",
+      "exists": true,
+      "sha256": "60ad312709e369b7489b6ceb92c8ee093b69f5c085a18f353859b50e2b6c7c69"
+    },
+    {
+      "path": "Pro2/output/L2/lateral_push/push_100N/config.json",
+      "exists": true,
+      "sha256": "a2601ea3ff008c562a665fc0aca4f442dd61a5bafff187b9d53ff41d864756a6"
+    },
+    {
+      "path": "Pro2/output/L2/lateral_push/push_50N/config.json",
+      "exists": true,
+      "sha256": "e94a38112a0f1cac0f4dfd33ebf1438e5ee53ae1d5ccd21ff116ffc93e513200"
+    },
+    {
+      "path": "Pro2/output/L2/mpc_vx_weight/baseline/config.json",
+      "exists": true,
+      "sha256": "fe36c6993547e188634198bf535a8cada22f5e9cda13f93da69493c19402cbdb"
+    },
+    {
+      "path": "Pro2/output/L2/mpc_vx_weight/high/config.json",
+      "exists": true,
+      "sha256": "684d5b653cad120f6fdbc804e503c8749cb448338afd5726c1a5eb4534da55ca"
+    },
+    {
+      "path": "Pro2/output/L2/mpc_vx_weight/low/config.json",
+      "exists": true,
+      "sha256": "403d374468d788c9c3f9f2cd6e7015d3fe9c301b4419974c3fc4b8175b7ab90c"
+    },
+    {
+      "path": "Pro2/output/L2/ppt_demo_20261104/verification.json",
+      "exists": true,
+      "sha256": "0f27b3853848b540bc5a6a6777dfb7790cdebe524fdb1e61c73dff99e6da79e2"
+    },
+    {
+      "path": "Pro2/output/L2/prediction_horizon/baseline_n10/config.json",
+      "exists": true,
+      "sha256": "cd6e16934e5e08554252ca15c7a52b1ba5ce2827b431cfbd8841854572a71c92"
+    },
+    {
+      "path": "Pro2/output/L2/prediction_horizon/long_n15/config.json",
+      "exists": true,
+      "sha256": "cd34889d4a06fac60fc356d66945c8cedba7875106616dce545dad425a83fa86"
+    },
+    {
+      "path": "Pro2/output/L2/prediction_horizon/short_n5/config.json",
+      "exists": true,
+      "sha256": "bfdfe0a4885d9560576c4843d4933d267b172bcd59c08909d55917d651db3156"
+    },
+    {
+      "path": "Pro2/output/L2/step_height/baseline_012/config.json",
+      "exists": true,
+      "sha256": "6cbb21617fefff0287e38845db5c239e007ddd8106af122aa618c955123436c4"
+    },
+    {
+      "path": "Pro2/output/L2/step_height/high_016/config.json",
+      "exists": true,
+      "sha256": "804bb80ae1c636975373a17eee32cd0be94dfe8f2038ee0b92146069910f2e98"
+    },
+    {
+      "path": "Pro2/output/L2/step_height/low_008/config.json",
+      "exists": true,
+      "sha256": "7f8848d8225088f835bca97b1fe628a7ac2222e480bd9542fb0b3c16f8559b5b"
+    },
+    {
+      "path": "Pro2/output/L3/L3理论联系报告.md",
+      "exists": true,
+      "sha256": "83e32d065445b2bb53866a89461bfac9938936f9b5a01d6a997e995675c5a805"
+    },
+    {
+      "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/config.json",
+      "exists": true,
+      "sha256": "2e662fcb8428db65ef52998b685fdd07533af62f8eecbfb6ad26325e37b6e8d4"
+    },
+    {
+      "path": "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/config.json",
+      "exists": true,
+      "sha256": "395124b74f2da2a943d9e29ef919d4a9811a015887eddd4759693cd08f797a81"
+    },
+    {
+      "path": "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/config.json",
+      "exists": true,
+      "sha256": "814242a27533696affe613efcbe3c3c66dac56dae84530a805b4b82b8932eb44"
+    },
+    {
+      "path": "Pro2/output/L4/02_path_tracking/straight_run02/config.json",
+      "exists": true,
+      "sha256": "56d5832526c676f76e054ccba547864f838f37204ae62cd0cf06704033ab1740"
+    },
+    {
+      "path": "Pro2/output/L4/02_path_tracking/turn_90/config.json",
+      "exists": true,
+      "sha256": "5ef75fe95ef112aa5fe0bc8e3788adae3b6130044990b1e703d3548d72c1b5f7"
+    },
+    {
+      "path": "Pro2/output/L4/02_path_tracking/waypoints_run06/config.json",
+      "exists": true,
+      "sha256": "3749bb115b106e07f4118743c5d44459f42ed0ad6eed0c0c00e0709d9fcd82c8"
+    },
+    {
+      "path": "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/config.json",
+      "exists": true,
+      "sha256": "34bfbcd56a60f933dc4e583c2b41b13c4afcf3dd51077ce61deeb838ad2832c0"
+    },
+    {
+      "path": "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/config.json",
+      "exists": true,
+      "sha256": "23adcc7806b4001d709cb706902f5a1fbe2a24c874b9e984bf72d701f461bd04"
+    },
+    {
+      "path": "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/config.json",
+      "exists": true,
+      "sha256": "7095177ac30980a17c094bc1c462f7ecea073365ccd1d90071159f7a8eddf66d"
+    },
+    {
+      "path": "Pro2/output/L4/03_terrain_and_jump/slope_05deg/config.json",
+      "exists": true,
+      "sha256": "1005d2ddf2adccb3f3a7dcad3265a6e2e74b741f4500a80d61bf34b13a93bdce"
+    },
+    {
+      "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/config.json",
+      "exists": true,
+      "sha256": "97059587dc4a3055648c5474325d891f971dae6f22195652a2ea4b13b2a8fea8"
+    },
+    {
+      "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/config.json",
+      "exists": true,
+      "sha256": "7fa27384398407c30487f0c9ebee56358fee56a3b1d66a23f87656d253bbc440"
+    },
+    {
+      "path": "Pro2/output/L4/04_mpc_comparison/cpp_convex_walk_run03/config.json",
+      "exists": true,
+      "sha256": "32b5a3cc17d23af296d50102e8ffef04a0822d9304678398d2c0395d9a199bd7"
+    },
+    {
+      "path": "Pro2/output/L4/04_mpc_comparison/cpp_convex_walk_run03/states.csv",
+      "exists": true,
+      "sha256": "87bf58440727f6ab5224ea1a3d8eac22eed14621b7d8c9aa336eca25ef28838a"
+    },
+    {
+      "path": "Pro2/output/L4/04_mpc_comparison/nmpc_rti_walk_run04/config.json",
+      "exists": true,
+      "sha256": "55645bc062cf72104bd2c9c4bfa3004cb6cca9207e6957cf022f796e77e7b443"
+    },
+    {
+      "path": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/metrics.json",
+      "exists": true,
+      "sha256": "3a0ceae4dbdbdb00326a9e1c77694f42f8ce87fe1bb3bc102feb563e24be830e"
+    },
+    {
+      "path": "Pro2/output/L4/L4验收报告.md",
+      "exists": true,
+      "sha256": "18728e455d02968ae46f4744fbccbff69226c146d3ad522de08408e7f5193718"
+    },
+    {
+      "path": "Pro2/output/final/build_demo_video.py",
+      "exists": true,
+      "sha256": "24b1dbf59a2c3ab6c11107c66d16a4c5c33016ea0a33dad06d42bcdf11c5e269"
+    },
+    {
+      "path": "Pro2/output/final/build_presentation.py",
+      "exists": true,
+      "sha256": "23b0b1513abb6531164dc165eb6cfbc014cee05c455189af932af603c894b456"
+    },
+    {
+      "path": "Pro2/output/final/changes/OpenLoong修改.patch",
+      "exists": true,
+      "sha256": "84f25b9a4bcfeda4b5646cc9cc569d5c4dfb7bfe00dbf11b0eba58878f00035a"
+    },
+    {
+      "path": "Pro2/output/final/changes/patch_manifest.json",
+      "exists": true,
+      "sha256": "fb2880db607224bc05310540bb212d4f414df7057178f8f6ae29cd4598ab8b98"
+    },
+    {
+      "path": "Pro2/robots/unitree_h1_2_handless.json",
+      "exists": true,
+      "sha256": "a205db3698bd0f000e2d39b558128558a6d0b0e5b32ee255fc8d89d642662248"
+    },
+    {
+      "path": "Pro2/run_h1_isaac.py",
+      "exists": true,
+      "sha256": "030f1d93e50f38a6032e591b7e7d2ecab3d6340cf124696dea8d202c251ccb8c"
+    },
+    {
+      "path": "Pro2/run_isaac.py",
+      "exists": true,
+      "sha256": "6add0cf92e7f23b2a85050477dfe82c7058d2472c331f50b7583f7590d78f015"
+    },
+    {
+      "path": "Pro2/run_l4_control.py",
+      "exists": true,
+      "sha256": "d6bc395784ad62d6bf2105e2e18cfdecfe1e62b3d25d263a5767ecf6d6ea036b"
+    },
+    {
+      "path": "Pro2/tools/analyze_l0_tuning.py",
+      "exists": true,
+      "sha256": "4adeacc041857fba4c6b32b2155ae4aea6c192836bff4aa61d44f94519903b54"
+    },
+    {
+      "path": "Pro2/tools/analyze_l2_results.py",
+      "exists": true,
+      "sha256": "46ac947720a148c2636fdcb9edb1a63373d53fe78c7d19cbd019210359b110c4"
+    },
+    {
+      "path": "Pro2/tools/analyze_l4_control_decomposition.py",
+      "exists": true,
+      "sha256": "637891eb1ad38825ded5c4c06d9d159a5bb762990c502d9038262d8633f9b271"
+    },
+    {
+      "path": "Pro2/tools/analyze_l4_h1_stand.py",
+      "exists": true,
+      "sha256": "6bd3e36ae3c21e9a9ee135c7ad58de36d20d7bdd122ab9d779b973e006efc28b"
+    },
+    {
+      "path": "Pro2/tools/analyze_l4_jump.py",
+      "exists": true,
+      "sha256": "feb4ff1aa1df1a7ab1e8593e45833746759386e1faad676c5f2783b729ae498f"
+    },
+    {
+      "path": "Pro2/tools/analyze_l4_mpc_comparison.py",
+      "exists": true,
+      "sha256": "71f53f97e7f9ea3a1fe403352cea9187f98a3074a7fde9d41b3d00b31e2a6eb2"
+    },
+    {
+      "path": "Pro2/tools/analyze_l4_path_terrain.py",
+      "exists": true,
+      "sha256": "3263c253c586f1e9c1916965e1f9f61867126664c4f874dbbb8096c4a17a09f9"
+    },
+    {
+      "path": "Pro2/tools/audit_stage_reports.py",
+      "exists": true,
+      "sha256": "a568a0ca74f4ba75dfdaae0cd801c13f9fa8731cce702d6216f984770a241b85"
+    },
+    {
+      "path": "Pro2/tools/preflight_l4_robot.py",
+      "exists": true,
+      "sha256": "490f53fe5f54e1094346f009240bca0a97f4755813642fe70bb4bdfcfbf06ae6"
+    },
+    {
+      "path": "Pro2/tools/render_l4_diagrams.py",
+      "exists": true,
+      "sha256": "456025dae718cbb5f6673e4f3f2877b4ee226969dac90c2d0dc63b653d50020d"
+    },
+    {
+      "path": "Pro2/tools/render_project_diagrams.py",
+      "exists": true,
+      "sha256": "f463e1f189e0cec31d5f7e9ee8ca02bb7e197e434fd46207927dcfc32d992892"
+    },
+    {
+      "path": "Pro2/tools/tests",
+      "exists": true,
+      "sha256": null
+    },
+    {
+      "path": "Pro2/visualize_tasks.py",
+      "exists": true,
+      "sha256": "9f7fa4028dfc4d9209030a21877e1aee0ca73a69b39d2d89e4fabfd72e2c631b"
+    }
+  ],
+  "note": "Formal experiment values read from existing original config.json; no copied/replaced experiment configurations."
+}

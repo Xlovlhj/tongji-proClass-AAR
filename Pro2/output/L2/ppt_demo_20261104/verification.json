@@ -1,0 +1,172 @@
+{
+  "verified_at": "2026-11-04T14:46:24.804510+08:00",
+  "purpose": "PPT supplementary demonstration recordings; not replacements for existing formal L2 data or analyses",
+  "verification_command": "python3 Pro2/output/L2/ppt_demo_20261104/verify_demo.py",
+  "ffmpeg_binary": "/home/xqw/miniconda3/envs/rllab/lib/python3.11/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2",
+  "cross_condition_checks": {
+    "source_configs_only_state_weights_9_differs": true,
+    "effective_configs_only_state_weights_9_and_output_metadata_differ": true,
+    "controller_library_identical": true,
+    "condition_values_0p2_1_5": true
+  },
+  "recordings": [
+    {
+      "condition": "low",
+      "source_config": "Pro2/experiments/L2/mpc_vx_weight/low.json",
+      "state_weights_9": 0.2,
+      "run_directory": "Pro2/output/L2/ppt_demo_20261104/low",
+      "video": "Pro2/output/L2/ppt_demo_20261104/low/demo.mp4",
+      "checks": {
+        "run_completed": true,
+        "12000_steps": true,
+        "1200_samples": true,
+        "finite_csv_values": true,
+        "mpc_status_zero": true,
+        "wbc_status_zero": true,
+        "video_saved": true,
+        "full_decode_succeeded": true,
+        "decoded_360_frames": true,
+        "video_duration_12_seconds": true,
+        "video_30fps": true,
+        "video_960x720": true
+      },
+      "pass": true,
+      "video_info": "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 960x720 [SAR 1:1 DAR 4:3], 3453 kb/s, 30 fps, 30 tbr, 30 tbn (default)",
+      "video_duration_s": 12.0,
+      "decoded_video_frames": 360,
+      "video_fps": 30,
+      "simulated_duration_s": 12.0,
+      "recorded_samples": 1200,
+      "sample_time_bounds_s": [
+        0.0,
+        11.99
+      ],
+      "status_checks": {
+        "controller:mpc_qp_status": {
+          "counts": {
+            "0.0": 1200
+          },
+          "nonzero_samples": 0
+        },
+        "controller:wbc_qp_status": {
+          "counts": {
+            "0.0": 1200
+          },
+          "nonzero_samples": 0
+        }
+      },
+      "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48",
+      "source_config_sha256": "a14a785cc33ccc0f6c60b67b577502ebebb582b1133168e418d41cabbff2dedc",
+      "run_manifest_sha256": "a62c50bb67141ce38817a81be40d467e3823c834c0aa4135271083fda754090f",
+      "states_sha256": "e72efb7d78abd68f5b508c5320c10e609f1ed989801ee2faabcf8fdfcfff4de3",
+      "video_sha256": "c34788100e88508168efed8c022a6dc7fdf56a42940f0cbb952e1fb550bbf673",
+      "decode_log": "Pro2/output/L2/ppt_demo_20261104/low/video_decode_verification.txt"
+    },
+    {
+      "condition": "baseline",
+      "source_config": "Pro2/experiments/L2/mpc_vx_weight/baseline.json",
+      "state_weights_9": 1,
+      "run_directory": "Pro2/output/L2/ppt_demo_20261104/baseline",
+      "video": "Pro2/output/L2/ppt_demo_20261104/baseline/demo.mp4",
+      "checks": {
+        "run_completed": true,
+        "12000_steps": true,
+        "1200_samples": true,
+        "finite_csv_values": true,
+        "mpc_status_zero": true,
+        "wbc_status_zero": true,
+        "video_saved": true,
+        "full_decode_succeeded": true,
+        "decoded_360_frames": true,
+        "video_duration_12_seconds": true,
+        "video_30fps": true,
+        "video_960x720": true
+      },
+      "pass": true,
+      "video_info": "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 960x720 [SAR 1:1 DAR 4:3], 3455 kb/s, 30 fps, 30 tbr, 30 tbn (default)",
+      "video_duration_s": 12.0,
+      "decoded_video_frames": 360,
+      "video_fps": 30,
+      "simulated_duration_s": 12.0,
+      "recorded_samples": 1200,
+      "sample_time_bounds_s": [
+        0.0,
+        11.99
+      ],
+      "status_checks": {
+        "controller:mpc_qp_status": {
+          "counts": {
+            "0.0": 1200
+          },
+          "nonzero_samples": 0
+        },
+        "controller:wbc_qp_status": {
+          "counts": {
+            "0.0": 1200
+          },
+          "nonzero_samples": 0
+        }
+      },
+      "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48",
+      "source_config_sha256": "90ccd267290fbeadd67a4a5ce7ddad13f23c802299e78d2e602a00d4e1d2d340",
+      "run_manifest_sha256": "fab655059251efa3ab8fabd44fd844ad40bcd8c868e537cc3844fee5ea8f6a26",
+      "states_sha256": "b6956784ed4f38cb407fa976d1e400d900a654874765a5059ce7e63edac76a97",
+      "video_sha256": "3d4463eac52d105e499eacbd0e9877e0bd9d4e31c42a15aa521c776c49f09438",
+      "decode_log": "Pro2/output/L2/ppt_demo_20261104/baseline/video_decode_verification.txt"
+    },
+    {
+      "condition": "high",
+      "source_config": "Pro2/experiments/L2/mpc_vx_weight/high.json",
+      "state_weights_9": 5,
+      "run_directory": "Pro2/output/L2/ppt_demo_20261104/high",
+      "video": "Pro2/output/L2/ppt_demo_20261104/high/demo.mp4",
+      "checks": {
+        "run_completed": true,
+        "12000_steps": true,
+        "1200_samples": true,
+        "finite_csv_values": true,
+        "mpc_status_zero": true,
+        "wbc_status_zero": true,
+        "video_saved": true,
+        "full_decode_succeeded": true,
+        "decoded_360_frames": true,
+        "video_duration_12_seconds": true,
+        "video_30fps": true,
+        "video_960x720": true
+      },
+      "pass": true,
+      "video_info": "Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 960x720 [SAR 1:1 DAR 4:3], 3450 kb/s, 30 fps, 30 tbr, 30 tbn (default)",
+      "video_duration_s": 12.0,
+      "decoded_video_frames": 360,
+      "video_fps": 30,
+      "simulated_duration_s": 12.0,
+      "recorded_samples": 1200,
+      "sample_time_bounds_s": [
+        0.0,
+        11.99
+      ],
+      "status_checks": {
+        "controller:mpc_qp_status": {
+          "counts": {
+            "0.0": 1200
+          },
+          "nonzero_samples": 0
+        },
+        "controller:wbc_qp_status": {
+          "counts": {
+            "0.0": 1200
+          },
+          "nonzero_samples": 0
+        }
+      },
+      "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48",
+      "source_config_sha256": "999226ffc622106dd4dfefdfee464344cecb81c0f24523a0614741323b99b581",
+      "run_manifest_sha256": "b14081afacbd254232be91b1d04643eb80c8afc428dc3d0edaaf9285d480e2fb",
+      "states_sha256": "15543b0780ae658de3b1a508d3d058870cf86d02b6e4392146a56a57c8c6927f",
+      "video_sha256": "9e13488bd45b4348d8b49e891c132bf884f9c488e7575eba28e5f72ab35351dd",
+      "decode_log": "Pro2/output/L2/ppt_demo_20261104/high/video_decode_verification.txt"
+    }
+  ],
+  "pass": true,
+  "sampling_boundary": "MPC/WBC status checks use 100 Hz states.csv samples; video and run completion are verified independently."
+}

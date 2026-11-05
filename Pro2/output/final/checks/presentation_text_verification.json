@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "slides": 15,
+  "text_blocks_checked": 163,
+  "enumeration_delimiter_issues": [],
+  "cover_slide_and_all_media_preserved": true,
+  "original_user_deck_sha256": "f484afc534385986ba7f5208e11b89a29ce2006468248dcbbb4cc1bb171a5b03",
+  "final_pptx_sha256": "ee2368e903700e89f2a0fdd6628d41b253560f3e75cf83267102333f13461a4c",
+  "L1_objective_explicit": true
+}

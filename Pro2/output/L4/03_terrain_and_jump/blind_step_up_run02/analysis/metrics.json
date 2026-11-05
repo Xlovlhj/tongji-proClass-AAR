@@ -1,0 +1,182 @@
+{
+  "analysis_kind": "terrain",
+  "source_files": {
+    "run": "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/run.json",
+    "states": "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/states.csv"
+  },
+  "terrain_type": "blind_step",
+  "terrain_config": {
+    "type": "blind_step",
+    "friction": 1.0,
+    "restitution": 0.0,
+    "color": [
+      0.17,
+      0.2,
+      0.23
+    ],
+    "variant": "up",
+    "start_x_m": 0.9,
+    "height_m": 0.06,
+    "length_m": 4.0,
+    "width_m": 2.0
+  },
+  "terrain_manifest": {
+    "config": {
+      "type": "blind_step",
+      "friction": 1.0,
+      "restitution": 0.0,
+      "color": [
+        0.17,
+        0.2,
+        0.23
+      ],
+      "variant": "up",
+      "start_x_m": 0.9,
+      "height_m": 0.06,
+      "length_m": 4.0,
+      "width_m": 2.0
+    },
+    "plan": [
+      {
+        "name": "LowerFloor",
+        "center_m": [
+          0.0,
+          0.0,
+          -0.16
+        ],
+        "size_m": [
+          200.0,
+          200.0,
+          0.1
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.17,
+          0.2,
+          0.23
+        ]
+      },
+      {
+        "name": "Approach",
+        "center_m": [
+          -2.05,
+          0.0,
+          -0.055
+        ],
+        "size_m": [
+          5.9,
+          2.0,
+          0.11
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.17,
+          0.2,
+          0.23
+        ]
+      },
+      {
+        "name": "StepLeft",
+        "center_m": [
+          2.9,
+          0.5,
+          -0.025
+        ],
+        "size_m": [
+          4.0,
+          1.0,
+          0.16999999999999998
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.3,
+          0.32,
+          0.35
+        ]
+      },
+      {
+        "name": "StepRight",
+        "center_m": [
+          2.9,
+          -0.5,
+          -0.025
+        ],
+        "size_m": [
+          4.0,
+          1.0,
+          0.16999999999999998
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.3,
+          0.32,
+          0.35
+        ]
+      }
+    ],
+    "primitive_count": 4,
+    "primitive_paths": [
+      "/World/Terrain/LowerFloor",
+      "/World/Terrain/Approach",
+      "/World/Terrain/StepLeft",
+      "/World/Terrain/StepRight"
+    ]
+  },
+  "terrain_bounds_source": "terrain.plan",
+  "terrain_x_start_m": 0.8999999999999999,
+  "terrain_x_end_m": 4.9,
+  "terrain_y_min_m": -1.0,
+  "terrain_y_max_m": 1.0,
+  "maximum_base_x_m": 1.546552062034607,
+  "entry_time_s": 17.22,
+  "exit_time_s": null,
+  "samples_inside": 678,
+  "forward_progress_on_terrain_m": 0.646552062034607,
+  "progress_fraction": 0.16163801550865176,
+  "entered_terrain": true,
+  "traversed_terrain": false,
+  "completion_reason": "进入未穿越",
+  "step_front_clearance_m": 0.646552062034607,
+  "step_front_crossed_proxy": true,
+  "step_front_proxy_note": "base-only proxy：仅依据台阶 y 范围内的基座最大 x；states.csv 未记录足端 contact prim，因此不能等同于双脚已接触上台阶的证明。",
+  "run_status": "completed",
+  "run_error": null,
+  "logged_samples": 2400,
+  "logged_duration_s": 23.990000000000002,
+  "walking_samples": 1900,
+  "initial_base_position_m": [
+    1.862645149230957e-09,
+    5.820766091346741e-10,
+    1.0840739011764526
+  ],
+  "final_logged_base_position_m": [
+    1.546552062034607,
+    -0.01853301003575325,
+    1.0855222940444946
+  ],
+  "net_forward_displacement_m": 1.5465520601719618,
+  "net_lateral_displacement_m": -0.01853301061782986,
+  "planar_distance_travelled_m": 3.269976412663408,
+  "walking_planar_distance_travelled_m": 3.2279716665011713,
+  "minimum_logged_base_height_m": 1.0590542554855347,
+  "maximum_logged_base_height_m": 1.1003155708312988,
+  "maximum_logged_tilt_rad": 0.06331381285156486,
+  "maximum_logged_abs_roll_rad": 0.06331381285156486,
+  "maximum_logged_abs_pitch_rad": 0.038503971016043595,
+  "forward_velocity_tracking_rmse_m_s": 0.08567280927257336,
+  "lateral_velocity_tracking_rmse_m_s": 0.14376316408468034,
+  "peak_abs_logged_joint_torque_Nm": 222.93490382287172,
+  "run_manifest_summary": {
+    "simulation_duration_s": 24.0,
+    "samples": 2400,
+    "minimum_base_height_m": 1.059039831161499,
+    "maximum_tilt_rad": 0.06331381285156486,
+    "maximum_joint_torque_nm": 265.8851788636629
+  },
+  "figures": [
+    "planar_trajectory.png",
+    "base_height.png",
+    "base_attitude.png",
+    "forward_velocity.png"
+  ]
+}

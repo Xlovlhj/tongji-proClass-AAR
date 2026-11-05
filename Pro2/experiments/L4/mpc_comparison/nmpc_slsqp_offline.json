@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "algorithm": "nonlinear_srbd_mpc",
+  "role": "offline_full_nlp_reference",
+  "state_order": ["roll", "pitch", "yaw", "px", "py", "pz", "wx", "wy", "wz", "vx", "vy", "vz"],
+  "wrench_frame": "world",
+  "prediction_dt_s": 0.02,
+  "horizon_steps": 5,
+  "input_weight": 2e-6,
+  "wrench_rate_weight": 1e-7,
+  "state_weights": [4.0, 4.0, 2.0, 1.0, 30.0, 30.0, 0.1, 0.1, 0.1, 5.0, 20.0, 5.0],
+  "max_iterations": 30,
+  "tolerance": 1e-5,
+  "solver": "SciPy SLSQP direct single shooting",
+  "online_use": false,
+  "note": "Used to check the nonlinear formulation; the SQP-RTI implementation is used for online Isaac experiments."
+}

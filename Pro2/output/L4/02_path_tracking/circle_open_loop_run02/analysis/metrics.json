@@ -1,0 +1,103 @@
+{
+  "analysis_kind": "path_tracking",
+  "source_files": {
+    "run": "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/run.json",
+    "states": "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/states.csv",
+    "reference_path": "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/reference_path.csv",
+    "path_metrics": "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/path_metrics.json"
+  },
+  "path_mode": "open_loop",
+  "run_status": "completed",
+  "run_error": null,
+  "logged_samples": 5000,
+  "logged_duration_s": 49.99,
+  "walking_samples": 4500,
+  "initial_base_position_m": [
+    1.862645149230957e-09,
+    5.820766091346741e-10,
+    1.0840739011764526
+  ],
+  "final_logged_base_position_m": [
+    0.2677094638347626,
+    -0.034205131232738495,
+    1.073475956916809
+  ],
+  "net_forward_displacement_m": 0.2677094619721174,
+  "net_lateral_displacement_m": -0.034205131814815104,
+  "planar_distance_travelled_m": 9.13238550858076,
+  "walking_planar_distance_travelled_m": 9.089828418620854,
+  "minimum_logged_base_height_m": 1.0603363513946533,
+  "maximum_logged_base_height_m": 1.089698314666748,
+  "maximum_logged_tilt_rad": 0.04852346156438085,
+  "maximum_logged_abs_roll_rad": 0.04062278806253373,
+  "maximum_logged_abs_pitch_rad": 0.04852346156438085,
+  "forward_velocity_tracking_rmse_m_s": 0.048288210929180536,
+  "lateral_velocity_tracking_rmse_m_s": 0.12936151010431027,
+  "peak_abs_logged_joint_torque_Nm": 178.20030229894286,
+  "run_manifest_summary": {
+    "simulation_duration_s": 50.0,
+    "samples": 5000,
+    "minimum_base_height_m": 1.0603151321411133,
+    "maximum_tilt_rad": 0.04852346156438085,
+    "maximum_joint_torque_nm": 221.61885134672468
+  },
+  "path_tracking": {
+    "sample_count": 4500,
+    "cross_track_rmse_m": 0.14480047135675683,
+    "maximum_path_distance_m": 0.2921812490787316,
+    "heading_error_rmse_rad": 0.36839585495463756,
+    "final_progress_m": 6.283105558829253,
+    "path_length_m": 6.283105558829233,
+    "completion_fraction": 1.0,
+    "reached_goal": false,
+    "final_goal_distance_m": 0.26988580553512814
+  },
+  "reported_path_metrics": {
+    "sample_count": 4500,
+    "cross_track_rmse_m": 0.14480047135675697,
+    "maximum_path_distance_m": 0.2921812490787316,
+    "heading_error_rmse_rad": 0.3683958549546374,
+    "final_progress_m": 6.283105558829253,
+    "path_length_m": 6.283105558829253,
+    "completion_fraction": 1.0,
+    "reached_goal": false,
+    "final_goal_distance_m": 0.2708132562562907
+  },
+  "path_metrics_reconciliation": {
+    "available": true,
+    "all_compared_values_match": true,
+    "values": {
+      "sample_count": {
+        "reported": 4500,
+        "recomputed": 4500,
+        "matches": true
+      },
+      "cross_track_rmse_m": {
+        "reported": 0.14480047135675697,
+        "recomputed": 0.14480047135675683,
+        "matches": true
+      },
+      "maximum_path_distance_m": {
+        "reported": 0.2921812490787316,
+        "recomputed": 0.2921812490787316,
+        "matches": true
+      },
+      "heading_error_rmse_rad": {
+        "reported": 0.3683958549546374,
+        "recomputed": 0.36839585495463756,
+        "matches": true
+      },
+      "path_length_m": {
+        "reported": 6.283105558829253,
+        "recomputed": 6.283105558829233,
+        "matches": true
+      }
+    }
+  },
+  "final_metric_sampling_note": "path_metrics.json 的 final_*、completion_fraction 与 reached_goal 来自最后一个 1 kHz 物理步；states.csv 最后一行来自 100 Hz 日志，因此不把这些终值做严格相等对账。",
+  "figures": [
+    "planar_trajectory.png",
+    "cross_track_error.png",
+    "heading_error.png"
+  ]
+}

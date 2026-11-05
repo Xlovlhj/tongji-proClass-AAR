@@ -1,0 +1,86 @@
+{
+  "schema": "Pro2.L0.analysis_metrics.v1",
+  "experiment_directory": "Pro2/output/L0/verify_default",
+  "source_files": [
+    "Pro2/output/L0/verify_default/run.json",
+    "Pro2/output/L0/verify_default/states.csv"
+  ],
+  "method": {
+    "description": "Read run metadata and the 100 Hz states.csv log with Python's csv module; no interpolation or smoothing was applied.",
+    "maximum_tilt_norm_definition": "max(sqrt(roll_rad^2 + pitch_rad^2)) over logged samples",
+    "net_horizontal_displacement_definition": "sqrt((x_last-x_first)^2 + (y_last-y_first)^2)",
+    "qp_nonzero_sample_definition": "count of logged status values unequal to zero"
+  },
+  "run_summary": {
+    "status": "completed",
+    "simulation_duration_s": 20.0,
+    "physics_steps": 20000,
+    "logged_samples": 2000,
+    "final_base_position_m": [
+      2.7700181007385254,
+      -0.015256870537996292,
+      1.0820355415344238
+    ],
+    "minimum_base_height_m": 1.060375452041626,
+    "maximum_tilt_rad": 0.03981338034907098,
+    "maximum_joint_torque_nm": 221.51015016380148,
+    "video_frames": null,
+    "video_fps": null,
+    "video_duration_s": null
+  },
+  "logged_metrics": {
+    "sample_count": 2000,
+    "first_sample_time_s": 0.0,
+    "last_sample_time_s": 19.990000000000002,
+    "initial_base_position_m": [
+      1.862645149230957e-09,
+      5.820766091346741e-10,
+      1.0840739011764526
+    ],
+    "final_logged_base_position_m": [
+      2.7678771018981934,
+      -0.01703202724456787,
+      1.0830289125442505
+    ],
+    "net_horizontal_displacement_m": 2.767929502511414,
+    "minimum_base_height_m": 1.06039297580719,
+    "maximum_base_height_m": 1.0894783735275269,
+    "maximum_abs_roll_rad": 0.03978818249020428,
+    "maximum_abs_pitch_rad": 0.03847061177139087,
+    "maximum_tilt_norm_rad": 0.049756161130333904,
+    "final_yaw_rad": 0.006683763384746761,
+    "mean_world_vx_while_walking_m_s": 0.18599526531199614,
+    "mpc_qp_nonzero_samples": 0,
+    "wbc_qp_nonzero_samples": 0,
+    "external_force_nonzero_samples": 0,
+    "maximum_external_force_norm_n": 0.0
+  },
+  "logged_command_segments": {
+    "cmd_vx_body_m_s": [
+      {
+        "start_s": 0.0,
+        "end_s": 4.99,
+        "value": 0.0
+      },
+      {
+        "start_s": 5.0,
+        "end_s": 19.990000000000002,
+        "value": 0.2
+      }
+    ],
+    "cmd_vy_body_m_s": [
+      {
+        "start_s": 0.0,
+        "end_s": 19.990000000000002,
+        "value": 0.0
+      }
+    ],
+    "cmd_wz_rad_s": [
+      {
+        "start_s": 0.0,
+        "end_s": 19.990000000000002,
+        "value": 0.0
+      }
+    ]
+  }
+}

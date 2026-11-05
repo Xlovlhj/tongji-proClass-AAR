@@ -1,0 +1,112 @@
+{
+  "status": "preflight_failed",
+  "experiment": "vertical_jump",
+  "config": {
+    "isaac_root": null,
+    "repo_root": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/OpenLoong-Dyn-Control",
+    "level": "L4",
+    "config": "Pro2/experiments/L4/jump/vertical_jump.json",
+    "check_env": false,
+    "build_only": false,
+    "no_build": true,
+    "rebuild_asset": false,
+    "show_config": false,
+    "headless": false,
+    "record_video": false,
+    "video_fps": 30,
+    "mode": "stand",
+    "mpc_horizon_steps": 10,
+    "duration": 13.0,
+    "dt": 0.001,
+    "mpc_dt": 0.005,
+    "swing_time": 0.4,
+    "step_height": 0.12,
+    "stand_height": 1.08,
+    "walk_start": 5.0,
+    "vx": 0.2,
+    "vy": 0.0,
+    "wz": 0.0,
+    "render_hz": 30.0,
+    "log_hz": 100.0,
+    "push_at": null,
+    "push_duration": 0.1,
+    "push_force": [
+      0.0,
+      50.0,
+      0.0
+    ],
+    "output": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/output/L4/03_terrain_and_jump/vertical_jump_preflight",
+    "jobs": 2,
+    "u_weight": 1e-06,
+    "state_weights": [
+      1,
+      1,
+      1,
+      0.001,
+      100,
+      1,
+      0.001,
+      0.001,
+      0.001,
+      1,
+      100,
+      1
+    ],
+    "input_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "path_tracking": null,
+    "terrain": {
+      "type": "flat",
+      "friction": 1.0,
+      "restitution": 0.0,
+      "color": [
+        0.17,
+        0.2,
+        0.23
+      ]
+    },
+    "jump": {
+      "enabled": true,
+      "start_time_s": 8.5,
+      "stand_height_m": 1.08,
+      "crouch_height_m": 0.9,
+      "target_height_m": 0.12,
+      "crouch_duration_s": 1.0,
+      "thrust_duration_s": 0.18,
+      "landing_timeout_s": 1.5,
+      "recovery_duration_s": 1.5
+    }
+  },
+  "jump_preflight": {
+    "requested": true,
+    "required_capabilities": {
+      "dynamic_base_height_reference": "运行时修改质心/基座高度参考",
+      "flight_phase_control": "腾空时关闭接触力 MPC 并切换腿部轨迹",
+      "bilateral_contact_feedback": "读取左右脚接触以判定落地"
+    },
+    "available_capabilities": {
+      "dynamic_base_height_reference": false,
+      "flight_phase_control": false,
+      "bilateral_contact_feedback": false
+    },
+    "ready": false,
+    "missing": [
+      "运行时修改质心/基座高度参考",
+      "腾空时关闭接触力 MPC 并切换腿部轨迹",
+      "读取左右脚接触以判定落地"
+    ]
+  }
+}

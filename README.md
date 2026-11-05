@@ -1,69 +1,61 @@
-# tongji-proClass-AAR · 机械臂画家
+# tongji-proClass-AAR · Project 2：青龙人形机器人 MPC/WBC
 
-本仓库保存机器人课程项目 **robot arm artist（raa-v0）**，代码位于 `Pro1/`。在 Isaac Sim 中加载 Franka Panda 七轴机械臂，让虚拟笔尖画出 ChatGPT 标志，并比较 PD、重力补偿 PD、RBF 自适应和模糊自适应控制。
+当前为 **`project2` 分支**，项目目录为 `Pro2/`。机械臂画家项目位于
+[`project1` 分支](https://github.com/Xlovlhj/tongji-proClass-AAR/tree/project1) 的 `Pro1/`。
+
+本项目将 OpenLoong 的 C++ MPC、WBC、步态规划与关节控制接入 Isaac Sim，并按 L0、L1、L2、L3、L4 保存复现、源码分析、参数实验、理论联系和拓展验证。
 
 ## 成果展示
 
-下面的动图来自八个真实 Isaac Sim **▶ Play 三维视口录制**，是完整视频的 **8 倍速预览**。点击动图或控制器名称，可打开或下载约 116 秒的完整 MP4。动图和视频均使用仓库内的相对路径。
+[![青龙机器人项目演示](Pro2/output/final/assets/演示视频封面.png)](Pro2/output/final/assets/项目验收演示_L0_L2_L4.mp4)
 
-### 正常绘画
+点击上图打开 **132 秒验收演示视频**，包含基础行走、参数与侧推对照、路径跟踪、四种地形同屏行走和跳跃。
 
-| **[PD](Pro1/video/pd_normal.mp4)** | **[重力补偿 PD](Pro1/video/gc-pd_normal.mp4)** |
-| :---: | :---: |
-| [![PD正常绘画视频预览](Pro1/video/preview/pd_normal.gif)](Pro1/video/pd_normal.mp4)<br>按位置偏差纠正；自重使轮廓偏离明显。 | [![重力补偿 PD正常绘画视频预览](Pro1/video/preview/gc-pd_normal.gif)](Pro1/video/gc-pd_normal.mp4)<br>先托住机械臂自重，轮廓更贴近目标。 |
-| **[RBF 自适应](Pro1/video/rbf_normal.mp4)** | **[模糊自适应](Pro1/video/fuzzy_normal.mp4)** |
-| [![RBF 自适应正常绘画视频预览](Pro1/video/preview/rbf_normal.gif)](Pro1/video/rbf_normal.mp4)<br>边画边学习补偿，完成标志轮廓。 | [![模糊自适应正常绘画视频预览](Pro1/video/preview/fuzzy_normal.gif)](Pro1/video/fuzzy_normal.mp4)<br>根据误差规则补偿，本次正常整体误差最小。 |
+- [正式汇报 PPT（15 页，内嵌视频）](Pro2/output/final/青龙MPC_项目汇报_15页.pptx)
+- [同版 PDF](Pro2/output/final/青龙MPC_项目汇报_15页.pdf)
+- [逐页讲稿与证据来源](Pro2/output/final/逐页讲稿与证据来源.md)
+- [项目要求与 PPT 页码对应](Pro2/output/final/验收要求与PPT对应.md)
+- [工程与参数改动清单](Pro2/output/final/工程与参数改动清单.md)
 
-### 外力干扰
+## L0–L4 阶段报告
 
-四种控制器使用同样的三次笔尖推力：20–22 秒 `(3,0,0)` N、55–57 秒 `(0,−3,0)` N、90–92 秒 `(2,2,0)` N。目标路线保持一致，观察实际画线的偏移与撤力后的恢复。
+| 阶段 | 内容 | 报告 |
+| --- | --- | --- |
+| L0 | 环境、示例复现、基础运行与输入权重实验 | [L0 验收报告](Pro2/output/L0/L0验收报告.md) |
+| L1 | MPC/WBC 闭环结构与源码定位 | [L1 源码分析报告](Pro2/output/L1/L1源码分析报告.md) |
+| L2 | 速度权重、预测时域、抬腿高度与侧向扰动实验 | [L2 验收报告](Pro2/output/L2/L2验收报告.md) |
+| L3 | LQR、iLQR、MPC 与凸优化的理论联系 | [L3 理论联系报告](Pro2/output/L3/L3理论联系报告.md) |
+| L4 | 模型适配、路径跟踪、地形与跳跃、MPC 对比、力矩分解 | [L4 验收报告](Pro2/output/L4/L4验收报告.md) |
 
-| **[PD](Pro1/video/pd_disturbed.mp4)** | **[重力补偿 PD](Pro1/video/gc-pd_disturbed.mp4)** |
-| :---: | :---: |
-| [![PD外力干扰视频预览](Pro1/video/preview/pd_disturbed.gif)](Pro1/video/pd_disturbed.mp4)<br>观察笔尖受推后的额外偏移与恢复。 | [![重力补偿 PD外力干扰视频预览](Pro1/video/preview/gc-pd_disturbed.gif)](Pro1/video/gc-pd_disturbed.mp4)<br>受推时短暂偏离，本次撤力恢复最快。 |
-| **[RBF 自适应](Pro1/video/rbf_disturbed.mp4)** | **[模糊自适应](Pro1/video/fuzzy_disturbed.mp4)** |
-| [![RBF 自适应外力干扰视频预览](Pro1/video/preview/rbf_disturbed.gif)](Pro1/video/rbf_disturbed.mp4)<br>受推时在线学习补偿，观察轨迹修正过程。 | [![模糊自适应外力干扰视频预览](Pro1/video/preview/fuzzy_disturbed.gif)](Pro1/video/fuzzy_disturbed.mp4)<br>持续更新补偿，本次受推整体误差最小。 |
-
-纸面青绿色线条显示实际笔尖的 XY 投影，三维误差按真实笔尖位置计算。灰线为目标轮廓；普通 PD 的高度偏差会遮挡推力箭头，可结合轨迹记录判断其受扰响应。
-
-## 实验结果
-
-落笔阶段三维均方根误差 RMSE，单位 mm，越小越好：
-
-| 控制器 | 正常绘画 | 外力干扰 |
-| --- | ---: | ---: |
-| PD | 32.955 | 32.832 |
-| 重力补偿 PD | 0.562 | 2.558 |
-| RBF 自适应 | 0.567 | 2.096 |
-| 模糊自适应 | 0.518 | 1.769 |
-
-在本次图案、控制参数和推力设置下，**模糊控制整体误差最低，重力补偿 PD 撤力后恢复最快**。完整指标与恢复时间见[实验结果](Pro1/results/README.md)，目标／正常／受扰轨迹图见[图表目录](Pro1/pictures/)。
-
-## 汇报文件
-
-- [可编辑 PPT：10 页，内嵌八个完整视频](https://github.com/Xlovlhj/tongji-proClass-AAR/releases/download/raa-v0/raa-v0.pptx)。进入第 8、9 页时，四个视频分别自动同时播放；每个视频下方有可编辑解释。
-- [静态 PDF 预览](Pro1/ppt/raa-v0.pdf)。PDF 中的视频位置显示封面，播放视频请使用 PPT。
-- [逐页讲稿](Pro1/ppt/speaker_notes.md)。
+各阶段的原始 CSV、配置、结构化指标、图片与录像保存在对应 `Pro2/output/L0/` 至 `L4/` 中，每次实验使用独立子目录。正式运行、调试运行和失稳工况的区别以报告说明为准。
 
 ## 运行
 
-在已有 Isaac Sim 的电脑上，从仓库根目录执行：
+准备 Linux、NVIDIA GPU、Isaac Sim 6.0.1，以及 CMake 和 C++17 编译器。在仓库根目录执行：
 
 ```bash
-python3 Pro1/main.py --config fuzzy --gui
+python3 Pro2/run_isaac.py --check-env
+python3 Pro2/run_isaac.py --show-config --mode walk
+python3 Pro2/run_isaac.py --mode walk --duration 20 --vx 0.2
 ```
 
-`--config` 可选择 `pd`、`gc-pd`、`rbf`、`fuzzy`；加入 `--disturbance` 运行外力干扰实验。完整环境、轨迹规划与复现方法见[项目说明](Pro1/README.md)。
+启动器负责寻找 Isaac 安装与编译控制库；Isaac Sim 本身需要提前安装。完整环境、参数、实验命令与输入输出说明见 [Pro2/README.md](Pro2/README.md)。
+
+青龙模型和实际使用的 OpenLoong 修改源码已包含在本分支；L4 的 Unitree H1 拓展使用外部 USD 模型，需要按 [机器人模型规格](Pro2/robots/README.md) 单独准备资产。
 
 ## 目录
 
 | 路径 | 内容 |
 | --- | --- |
-| `Pro1/raa/` | 轨迹规划、逆运动学、力矩控制、外力和录制 |
-| `Pro1/configs/` | 四种控制器的配置 |
-| `Pro1/video/` | 八个完整 MP4、录制元数据和动图预览 |
-| `Pro1/pictures/` | 目标、实际轨迹与误差图，SVG／PNG |
-| `Pro1/results/` | 实验指标、恢复时间与独立核验摘要 |
-| `Pro1/ppt/` | PDF、讲稿、汇报预览与说明 |
+| `Pro2/run_isaac.py` | 青龙仿真的 Python 启动入口 |
+| `Pro2/isaac/` | Isaac 适配、场景、状态与控制接口、原生桥接和测试 |
+| `Pro2/OpenLoong-Dyn-Control/` | 上游工程、模型、依赖及本项目修改后的 C++ 源码 |
+| `Pro2/experiments/` | 可复用的实验配置 |
+| `Pro2/control/` | 控制算法与数学对照 |
+| `Pro2/tools/` | 实验分析、作图、报告检查工具 |
+| `Pro2/output/L0/` 至 `Pro2/output/L4/` | 分阶段实验与报告成果 |
+| `Pro2/output/final/` | 一套 15 页正式汇报、视频、讲稿及验证记录 |
 
-完整 MP4 每个约 43–46 MiB，通过 Git 提交；约 360 MiB 的内嵌视频 PPT 放在 [Release](https://github.com/Xlovlhj/tongji-proClass-AAR/releases/tag/raa-v0) 附件中。缓存、原始逐步 CSV 和本机日志保留在本地，完成批量实验后可重新生成。
+缓存、编译产物、日志、依赖本机缓存的 USD 场景、录像逐帧图片和视频合成中间文件不随仓库发布。已发布的代码、数据、图片、视频与 PPT 使用普通 Git 保存。
+
+上游版本与修改文件见 [UPSTREAM.md](Pro2/OpenLoong-Dyn-Control/UPSTREAM.md)，许可证及第三方声明保留在原目录。

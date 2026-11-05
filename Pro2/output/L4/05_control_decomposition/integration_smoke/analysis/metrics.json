@@ -1,0 +1,62 @@
+{
+  "input": "Pro2/output/L4/05_control_decomposition/integration_smoke/states.csv",
+  "samples": 400,
+  "duration_s": 3.99,
+  "joints": [
+    {
+      "joint": "J_hip_l_pitch",
+      "wbc_rms_Nm": 8.2046966522253,
+      "pd_filtered_rms_Nm": 9.644781836915355,
+      "command_peak_abs_Nm": 49.11230588072889,
+      "saturation_samples": 0,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 3.513189815229376e-07
+    },
+    {
+      "joint": "J_knee_l_pitch",
+      "wbc_rms_Nm": 40.06216858480609,
+      "pd_filtered_rms_Nm": 50.25061028260839,
+      "command_peak_abs_Nm": 184.9130329418118,
+      "saturation_samples": 0,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 1.4580862915425365e-06
+    },
+    {
+      "joint": "J_ankle_l_pitch",
+      "wbc_rms_Nm": 11.76989118528794,
+      "pd_filtered_rms_Nm": 5.1113070017417375,
+      "command_peak_abs_Nm": 42.67694557287359,
+      "saturation_samples": 0,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 3.4128392416856103e-07
+    },
+    {
+      "joint": "J_hip_r_pitch",
+      "wbc_rms_Nm": 8.911433890604664,
+      "pd_filtered_rms_Nm": 9.695071555082269,
+      "command_peak_abs_Nm": 43.33055524578149,
+      "saturation_samples": 0,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 4.180739490391917e-07
+    },
+    {
+      "joint": "J_knee_r_pitch",
+      "wbc_rms_Nm": 40.125626427342254,
+      "pd_filtered_rms_Nm": 51.109227475450425,
+      "command_peak_abs_Nm": 167.73675833281382,
+      "saturation_samples": 0,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 1.478252869671846e-06
+    },
+    {
+      "joint": "J_ankle_r_pitch",
+      "wbc_rms_Nm": 7.930666211652005,
+      "pd_filtered_rms_Nm": 4.221132705122737,
+      "command_peak_abs_Nm": 44.30348003264575,
+      "saturation_samples": 0,
+      "isaac_applied_available": true,
+      "command_vs_applied_rmse_Nm": 2.6182501257568236e-07
+    }
+  ],
+  "actual_effort_semantics": "isaac_applied_Nm is get_dof_efforts actuation when present; projected joint force must be logged separately."
+}

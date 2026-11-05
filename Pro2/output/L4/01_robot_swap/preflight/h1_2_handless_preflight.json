@@ -1,0 +1,996 @@
+{
+  "schema_version": 1,
+  "robot_id": "unitree_h1_2_handless",
+  "asset": {
+    "path": "/home/xqw/xqw-file/unitree_model/H1-2/h1_2_handless/h1_2_handless.usd",
+    "resolution_source": "path_candidates[0]",
+    "source_policy": "read_only_reference",
+    "sidecar_config": "/home/xqw/xqw-file/unitree_model/H1-2/h1_2_handless/config.yaml",
+    "sidecar_source_urdf": "/home/agnel/unitree/github/unitree_ros/robots/h1_2_description/h1_2_handless.urdf",
+    "sidecar_source_urdf_exists": false
+  },
+  "result": {
+    "asset_preflight_passed": true,
+    "openloong_controller_ready": false,
+    "status": "asset_valid_controller_port_required"
+  },
+  "asset_validation": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "default_prim",
+        "passed": true,
+        "expected": "/h1_2",
+        "actual": "/h1_2"
+      },
+      {
+        "name": "up_axis",
+        "passed": true,
+        "expected": "Z",
+        "actual": "Z"
+      },
+      {
+        "name": "meters_per_unit",
+        "passed": true,
+        "expected": 1.0,
+        "actual": 1.0
+      },
+      {
+        "name": "articulation_root",
+        "passed": true,
+        "expected": [
+          "/h1_2/pelvis"
+        ],
+        "actual": [
+          "/h1_2/pelvis"
+        ]
+      },
+      {
+        "name": "floating_base",
+        "passed": true,
+        "expected": true,
+        "actual": true
+      },
+      {
+        "name": "joint_count",
+        "passed": true,
+        "expected": 27,
+        "actual": 27
+      },
+      {
+        "name": "joint_names",
+        "passed": true,
+        "expected": [
+          "left_ankle_pitch_joint",
+          "left_ankle_roll_joint",
+          "left_elbow_joint",
+          "left_hip_pitch_joint",
+          "left_hip_roll_joint",
+          "left_hip_yaw_joint",
+          "left_knee_joint",
+          "left_shoulder_pitch_joint",
+          "left_shoulder_roll_joint",
+          "left_shoulder_yaw_joint",
+          "left_wrist_pitch_joint",
+          "left_wrist_roll_joint",
+          "left_wrist_yaw_joint",
+          "right_ankle_pitch_joint",
+          "right_ankle_roll_joint",
+          "right_elbow_joint",
+          "right_hip_pitch_joint",
+          "right_hip_roll_joint",
+          "right_hip_yaw_joint",
+          "right_knee_joint",
+          "right_shoulder_pitch_joint",
+          "right_shoulder_roll_joint",
+          "right_shoulder_yaw_joint",
+          "right_wrist_pitch_joint",
+          "right_wrist_roll_joint",
+          "right_wrist_yaw_joint",
+          "torso_joint"
+        ],
+        "actual": [
+          "left_ankle_pitch_joint",
+          "left_ankle_roll_joint",
+          "left_elbow_joint",
+          "left_hip_pitch_joint",
+          "left_hip_roll_joint",
+          "left_hip_yaw_joint",
+          "left_knee_joint",
+          "left_shoulder_pitch_joint",
+          "left_shoulder_roll_joint",
+          "left_shoulder_yaw_joint",
+          "left_wrist_pitch_joint",
+          "left_wrist_roll_joint",
+          "left_wrist_yaw_joint",
+          "right_ankle_pitch_joint",
+          "right_ankle_roll_joint",
+          "right_elbow_joint",
+          "right_hip_pitch_joint",
+          "right_hip_roll_joint",
+          "right_hip_yaw_joint",
+          "right_knee_joint",
+          "right_shoulder_pitch_joint",
+          "right_shoulder_roll_joint",
+          "right_shoulder_yaw_joint",
+          "right_wrist_pitch_joint",
+          "right_wrist_roll_joint",
+          "right_wrist_yaw_joint",
+          "torso_joint"
+        ]
+      },
+      {
+        "name": "all_joints_have_drives",
+        "passed": true,
+        "expected": true,
+        "actual": 27
+      },
+      {
+        "name": "all_joint_body_relations_resolve",
+        "passed": true,
+        "expected": true,
+        "actual": 27
+      },
+      {
+        "name": "rigid_body_count",
+        "passed": true,
+        "expected": 28,
+        "actual": 28
+      },
+      {
+        "name": "base_link_is_rigid",
+        "passed": true,
+        "expected": "/h1_2/pelvis",
+        "actual": true
+      },
+      {
+        "name": "left_foot_is_rigid",
+        "passed": true,
+        "expected": "/h1_2/left_ankle_roll_link",
+        "actual": true
+      },
+      {
+        "name": "right_foot_is_rigid",
+        "passed": true,
+        "expected": "/h1_2/right_ankle_roll_link",
+        "actual": true
+      },
+      {
+        "name": "all_rigid_bodies_have_explicit_mass",
+        "passed": true,
+        "expected": 28,
+        "actual": 28
+      },
+      {
+        "name": "total_mass_kg",
+        "passed": true,
+        "expected": 66.98399928212166,
+        "actual": 66.98399928212166
+      },
+      {
+        "name": "all_composition_layers_exist",
+        "passed": true,
+        "expected": [],
+        "actual": []
+      },
+      {
+        "name": "left_foot_has_collision",
+        "passed": true,
+        "expected": true,
+        "actual": [
+          "/h1_2/left_ankle_roll_link/collisions/left_ankle_roll_link/mesh"
+        ]
+      },
+      {
+        "name": "right_foot_has_collision",
+        "passed": true,
+        "expected": true,
+        "actual": [
+          "/h1_2/right_ankle_roll_link/collisions/right_ankle_roll_link/mesh"
+        ]
+      }
+    ]
+  },
+  "controller_compatibility": {
+    "ready": false,
+    "baseline_robot": "AzureLoong",
+    "baseline_joint_count": 31,
+    "replacement_joint_count": 27,
+    "joint_name_overlap": [],
+    "checks": [
+      {
+        "name": "actuated_joint_count",
+        "passed": false,
+        "expected": 31,
+        "actual": 27
+      },
+      {
+        "name": "pinocchio_nv",
+        "passed": false,
+        "expected": 37,
+        "actual": 33
+      },
+      {
+        "name": "exact_joint_names_and_order",
+        "passed": false,
+        "expected": [
+          "J_head_yaw",
+          "J_head_pitch",
+          "J_arm_r_01",
+          "J_arm_r_02",
+          "J_arm_r_03",
+          "J_arm_r_04",
+          "J_arm_r_05",
+          "J_arm_r_06",
+          "J_arm_r_07",
+          "J_arm_l_01",
+          "J_arm_l_02",
+          "J_arm_l_03",
+          "J_arm_l_04",
+          "J_arm_l_05",
+          "J_arm_l_06",
+          "J_arm_l_07",
+          "J_waist_pitch",
+          "J_waist_roll",
+          "J_waist_yaw",
+          "J_hip_r_roll",
+          "J_hip_r_yaw",
+          "J_hip_r_pitch",
+          "J_knee_r_pitch",
+          "J_ankle_r_pitch",
+          "J_ankle_r_roll",
+          "J_hip_l_roll",
+          "J_hip_l_yaw",
+          "J_hip_l_pitch",
+          "J_knee_l_pitch",
+          "J_ankle_l_pitch",
+          "J_ankle_l_roll"
+        ],
+        "actual": [
+          "left_hip_yaw_joint",
+          "left_hip_pitch_joint",
+          "left_hip_roll_joint",
+          "left_knee_joint",
+          "left_ankle_pitch_joint",
+          "left_ankle_roll_joint",
+          "right_hip_yaw_joint",
+          "right_hip_pitch_joint",
+          "right_hip_roll_joint",
+          "right_knee_joint",
+          "right_ankle_pitch_joint",
+          "right_ankle_roll_joint",
+          "torso_joint",
+          "left_shoulder_pitch_joint",
+          "left_shoulder_roll_joint",
+          "left_shoulder_yaw_joint",
+          "left_elbow_joint",
+          "left_wrist_roll_joint",
+          "left_wrist_pitch_joint",
+          "left_wrist_yaw_joint",
+          "right_shoulder_pitch_joint",
+          "right_shoulder_roll_joint",
+          "right_shoulder_yaw_joint",
+          "right_elbow_joint",
+          "right_wrist_roll_joint",
+          "right_wrist_pitch_joint",
+          "right_wrist_yaw_joint"
+        ]
+      },
+      {
+        "name": "mpc_mass_parameter",
+        "passed": false,
+        "expected": 77.35,
+        "actual": 66.98399928212166
+      }
+    ],
+    "source_evidence": [
+      {
+        "path": "Pro2/isaac/native/controller_bridge.cpp",
+        "line": 26,
+        "text": "constexpr int kJointCount = 31;",
+        "found": true
+      },
+      {
+        "path": "Pro2/isaac/native/controller_bridge.cpp",
+        "line": 88,
+        "text": "require(kin.model_nv == 37, \"Expected the 31-joint AzureLoong model (nv=37)\");",
+        "found": true
+      },
+      {
+        "path": "Pro2/OpenLoong-Dyn-Control/algorithm/pino_kin_dyn.cpp",
+        "line": 43,
+        "text": "r_ankle_joint = model_biped.getJointId(\"J_ankle_r_roll\");",
+        "found": true
+      },
+      {
+        "path": "Pro2/OpenLoong-Dyn-Control/algorithm/pino_kin_dyn.h",
+        "line": 29,
+        "text": "const std::vector<std::string> motorName = {\"J_arm_l_01\", \"J_arm_l_02\", \"J_arm_l_03\", \"J_arm_l_04\", \"J_arm_l_05\",",
+        "found": true
+      },
+      {
+        "path": "Pro2/OpenLoong-Dyn-Control/common/PVT_ctrl.h",
+        "line": 65,
+        "text": "const std::vector<std::string> motorName={\"J_arm_l_01\",\"J_arm_l_02\",\"J_arm_l_03\", \"J_arm_l_04\", \"J_arm_l_05\",",
+        "found": true
+      },
+      {
+        "path": "Pro2/OpenLoong-Dyn-Control/algorithm/mpc.cpp",
+        "line": 13,
+        "text": "m = 77.35;",
+        "found": true
+      },
+      {
+        "path": "Pro2/OpenLoong-Dyn-Control/algorithm/mpc.cpp",
+        "line": 191,
+        "text": "Ic << 12.61, 0, 0.37, 0, 11.15, 0.01, 0.37, 0.01, 2.15;",
+        "found": true
+      }
+    ],
+    "blockers": [
+      "H1-2 有 27 个执行关节（nv=33），而当前桥接器与 DataBus 合同固定为 31 个关节（nv=37）。",
+      "H1 的关节和连杆名称与代码中固定的 AzureLoong motorName、踝、髋、手和腰部名称不同。",
+      "当前 Pinocchio/WBC 必须读取匹配的 URDF；本地 H1 包只有可组合的 USD，旁置配置指向另一台机器上的源 URDF。",
+      "必须为 H1 定义并验证 PVT 增益、力矩限制、初始姿态、任务选择矩阵和 WBC 维数。",
+      "MPC 中的质量、质心惯量、髋宽、踝到足底距离和支撑面尺寸都是 AzureLoong 常量，必须替换为 H1 参数。"
+    ]
+  },
+  "usd_observation": {
+    "source_usd": "/home/xqw/xqw-file/unitree_model/H1-2/h1_2_handless/h1_2_handless.usd",
+    "source_sha256": "16e15b97c8dc23b32f07a706cf3e8976872d968ab4a7985d5c4d11120eb1055c",
+    "default_prim": "/h1_2",
+    "up_axis": "Z",
+    "meters_per_unit": 1.0,
+    "articulation_roots": [
+      "/h1_2/pelvis"
+    ],
+    "fixed_to_world_joints": [],
+    "floating_base": true,
+    "joint_count": 27,
+    "joint_names": [
+      "left_hip_yaw_joint",
+      "left_hip_pitch_joint",
+      "left_hip_roll_joint",
+      "left_knee_joint",
+      "left_ankle_pitch_joint",
+      "left_ankle_roll_joint",
+      "right_hip_yaw_joint",
+      "right_hip_pitch_joint",
+      "right_hip_roll_joint",
+      "right_knee_joint",
+      "right_ankle_pitch_joint",
+      "right_ankle_roll_joint",
+      "torso_joint",
+      "left_shoulder_pitch_joint",
+      "left_shoulder_roll_joint",
+      "left_shoulder_yaw_joint",
+      "left_elbow_joint",
+      "left_wrist_roll_joint",
+      "left_wrist_pitch_joint",
+      "left_wrist_yaw_joint",
+      "right_shoulder_pitch_joint",
+      "right_shoulder_roll_joint",
+      "right_shoulder_yaw_joint",
+      "right_elbow_joint",
+      "right_wrist_roll_joint",
+      "right_wrist_pitch_joint",
+      "right_wrist_yaw_joint"
+    ],
+    "joints": [
+      {
+        "name": "left_hip_yaw_joint",
+        "path": "/h1_2/joints/left_hip_yaw_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/pelvis"
+        ],
+        "body1": [
+          "/h1_2/left_hip_yaw_link"
+        ],
+        "lower_limit_authored_units": -24.637184143066406,
+        "upper_limit_authored_units": 24.637184143066406,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 142.36366271972656,
+        "drive_damping": 0.05694546177983284,
+        "drive_max_force": 200.0
+      },
+      {
+        "name": "left_hip_pitch_joint",
+        "path": "/h1_2/joints/left_hip_pitch_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/left_hip_yaw_link"
+        ],
+        "body1": [
+          "/h1_2/left_hip_pitch_link"
+        ],
+        "lower_limit_authored_units": -179.9087371826172,
+        "upper_limit_authored_units": 143.23944091796875,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 243.8220977783203,
+        "drive_damping": 0.097528837621212,
+        "drive_max_force": 200.0
+      },
+      {
+        "name": "left_hip_roll_joint",
+        "path": "/h1_2/joints/left_hip_roll_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/left_hip_pitch_link"
+        ],
+        "body1": [
+          "/h1_2/left_hip_roll_link"
+        ],
+        "lower_limit_authored_units": -24.637184143066406,
+        "upper_limit_authored_units": 179.9087371826172,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 246.55125427246094,
+        "drive_damping": 0.09862049669027328,
+        "drive_max_force": 200.0
+      },
+      {
+        "name": "left_knee_joint",
+        "path": "/h1_2/joints/left_knee_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/left_hip_roll_link"
+        ],
+        "body1": [
+          "/h1_2/left_knee_link"
+        ],
+        "lower_limit_authored_units": -6.875493049621582,
+        "upper_limit_authored_units": 125.47775268554688,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 1018.744384765625,
+        "drive_damping": 0.40749773383140564,
+        "drive_max_force": 300.0
+      },
+      {
+        "name": "left_ankle_pitch_joint",
+        "path": "/h1_2/joints/left_ankle_pitch_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/left_knee_link"
+        ],
+        "body1": [
+          "/h1_2/left_ankle_pitch_link"
+        ],
+        "lower_limit_authored_units": -51.413448333740234,
+        "upper_limit_authored_units": 29.999954223632812,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 141.0511474609375,
+        "drive_damping": 0.0564204603433609,
+        "drive_max_force": 60.0
+      },
+      {
+        "name": "left_ankle_roll_joint",
+        "path": "/h1_2/joints/left_ankle_roll_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/left_ankle_pitch_link"
+        ],
+        "body1": [
+          "/h1_2/left_ankle_roll_link"
+        ],
+        "lower_limit_authored_units": -14.999977111816406,
+        "upper_limit_authored_units": 14.999977111816406,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 4.325851917266846,
+        "drive_damping": 0.0017303406493738294,
+        "drive_max_force": 40.0
+      },
+      {
+        "name": "right_hip_yaw_joint",
+        "path": "/h1_2/joints/right_hip_yaw_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/pelvis"
+        ],
+        "body1": [
+          "/h1_2/right_hip_yaw_link"
+        ],
+        "lower_limit_authored_units": -24.637184143066406,
+        "upper_limit_authored_units": 24.637184143066406,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 142.42860412597656,
+        "drive_damping": 0.05697144195437431,
+        "drive_max_force": 200.0
+      },
+      {
+        "name": "right_hip_pitch_joint",
+        "path": "/h1_2/joints/right_hip_pitch_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/right_hip_yaw_link"
+        ],
+        "body1": [
+          "/h1_2/right_hip_pitch_link"
+        ],
+        "lower_limit_authored_units": -179.9087371826172,
+        "upper_limit_authored_units": 143.23944091796875,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 243.92018127441406,
+        "drive_damping": 0.0975680723786354,
+        "drive_max_force": 200.0
+      },
+      {
+        "name": "right_hip_roll_joint",
+        "path": "/h1_2/joints/right_hip_roll_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/right_hip_pitch_link"
+        ],
+        "body1": [
+          "/h1_2/right_hip_roll_link"
+        ],
+        "lower_limit_authored_units": -179.9087371826172,
+        "upper_limit_authored_units": 24.637184143066406,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 246.64822387695312,
+        "drive_damping": 0.09865928441286087,
+        "drive_max_force": 200.0
+      },
+      {
+        "name": "right_knee_joint",
+        "path": "/h1_2/joints/right_knee_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/right_hip_roll_link"
+        ],
+        "body1": [
+          "/h1_2/right_knee_link"
+        ],
+        "lower_limit_authored_units": -6.875493049621582,
+        "upper_limit_authored_units": 125.47775268554688,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 1018.760986328125,
+        "drive_damping": 0.4075043797492981,
+        "drive_max_force": 300.0
+      },
+      {
+        "name": "right_ankle_pitch_joint",
+        "path": "/h1_2/joints/right_ankle_pitch_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/right_knee_link"
+        ],
+        "body1": [
+          "/h1_2/right_ankle_pitch_link"
+        ],
+        "lower_limit_authored_units": -51.413448333740234,
+        "upper_limit_authored_units": 29.999954223632812,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 141.05117797851562,
+        "drive_damping": 0.0564204677939415,
+        "drive_max_force": 60.0
+      },
+      {
+        "name": "right_ankle_roll_joint",
+        "path": "/h1_2/joints/right_ankle_roll_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/right_ankle_pitch_link"
+        ],
+        "body1": [
+          "/h1_2/right_ankle_roll_link"
+        ],
+        "lower_limit_authored_units": -14.999977111816406,
+        "upper_limit_authored_units": 14.999977111816406,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 4.325851917266846,
+        "drive_damping": 0.0017303406493738294,
+        "drive_max_force": 40.0
+      },
+      {
+        "name": "torso_joint",
+        "path": "/h1_2/joints/torso_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/pelvis"
+        ],
+        "body1": [
+          "/h1_2/torso_link"
+        ],
+        "lower_limit_authored_units": -134.6450653076172,
+        "upper_limit_authored_units": 134.6450653076172,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 51.876033782958984,
+        "drive_damping": 0.020750412717461586,
+        "drive_max_force": 200.0
+      },
+      {
+        "name": "left_shoulder_pitch_joint",
+        "path": "/h1_2/joints/left_shoulder_pitch_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/torso_link"
+        ],
+        "body1": [
+          "/h1_2/left_shoulder_pitch_link"
+        ],
+        "lower_limit_authored_units": -179.9087371826172,
+        "upper_limit_authored_units": 89.9543685913086,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 612.7113037109375,
+        "drive_damping": 0.24508452415466309,
+        "drive_max_force": 40.0
+      },
+      {
+        "name": "left_shoulder_roll_joint",
+        "path": "/h1_2/joints/left_shoulder_roll_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/left_shoulder_pitch_link"
+        ],
+        "body1": [
+          "/h1_2/left_shoulder_roll_link"
+        ],
+        "lower_limit_authored_units": -21.77239418029785,
+        "upper_limit_authored_units": 194.80564880371094,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 276.20916748046875,
+        "drive_damping": 0.11048366129398346,
+        "drive_max_force": 40.0
+      },
+      {
+        "name": "left_shoulder_yaw_joint",
+        "path": "/h1_2/joints/left_shoulder_yaw_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/left_shoulder_roll_link"
+        ],
+        "body1": [
+          "/h1_2/left_shoulder_yaw_link"
+        ],
+        "lower_limit_authored_units": -152.40676879882812,
+        "upper_limit_authored_units": 172.4602813720703,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 247.79002380371094,
+        "drive_damping": 0.0991160124540329,
+        "drive_max_force": 18.0
+      },
+      {
+        "name": "left_elbow_joint",
+        "path": "/h1_2/joints/left_elbow_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/left_shoulder_yaw_link"
+        ],
+        "body1": [
+          "/h1_2/left_elbow_link"
+        ],
+        "lower_limit_authored_units": -54.43098831176758,
+        "upper_limit_authored_units": 182.20057678222656,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 113.30206298828125,
+        "drive_damping": 0.04532082751393318,
+        "drive_max_force": 18.0
+      },
+      {
+        "name": "left_wrist_roll_joint",
+        "path": "/h1_2/joints/left_wrist_roll_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/left_elbow_link"
+        ],
+        "body1": [
+          "/h1_2/left_wrist_roll_link"
+        ],
+        "lower_limit_authored_units": -172.4602813720703,
+        "upper_limit_authored_units": 157.56338500976562,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 45.76715087890625,
+        "drive_damping": 0.018306860700249672,
+        "drive_max_force": 19.0
+      },
+      {
+        "name": "left_wrist_pitch_joint",
+        "path": "/h1_2/joints/left_wrist_pitch_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/left_wrist_roll_link"
+        ],
+        "body1": [
+          "/h1_2/left_wrist_pitch_link"
+        ],
+        "lower_limit_authored_units": -26.499296188354492,
+        "upper_limit_authored_units": 26.499296188354492,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 7.101562023162842,
+        "drive_damping": 0.002840624889358878,
+        "drive_max_force": 19.0
+      },
+      {
+        "name": "left_wrist_yaw_joint",
+        "path": "/h1_2/joints/left_wrist_yaw_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/left_wrist_pitch_link"
+        ],
+        "body1": [
+          "/h1_2/left_wrist_yaw_link"
+        ],
+        "lower_limit_authored_units": -72.76563262939453,
+        "upper_limit_authored_units": 72.76563262939453,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 0.3766508996486664,
+        "drive_damping": 0.00015066035848576576,
+        "drive_max_force": 19.0
+      },
+      {
+        "name": "right_shoulder_pitch_joint",
+        "path": "/h1_2/joints/right_shoulder_pitch_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/torso_link"
+        ],
+        "body1": [
+          "/h1_2/right_shoulder_pitch_link"
+        ],
+        "lower_limit_authored_units": -179.9087371826172,
+        "upper_limit_authored_units": 89.9543685913086,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 614.0441284179688,
+        "drive_damping": 0.24561765789985657,
+        "drive_max_force": 40.0
+      },
+      {
+        "name": "right_shoulder_roll_joint",
+        "path": "/h1_2/joints/right_shoulder_roll_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/right_shoulder_pitch_link"
+        ],
+        "body1": [
+          "/h1_2/right_shoulder_roll_link"
+        ],
+        "lower_limit_authored_units": -194.80564880371094,
+        "upper_limit_authored_units": 21.77239418029785,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 276.69873046875,
+        "drive_damping": 0.110679492354393,
+        "drive_max_force": 40.0
+      },
+      {
+        "name": "right_shoulder_yaw_joint",
+        "path": "/h1_2/joints/right_shoulder_yaw_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/right_shoulder_roll_link"
+        ],
+        "body1": [
+          "/h1_2/right_shoulder_yaw_link"
+        ],
+        "lower_limit_authored_units": -172.4602813720703,
+        "upper_limit_authored_units": 152.40676879882812,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 247.96658325195312,
+        "drive_damping": 0.09918662905693054,
+        "drive_max_force": 18.0
+      },
+      {
+        "name": "right_elbow_joint",
+        "path": "/h1_2/joints/right_elbow_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/right_shoulder_yaw_link"
+        ],
+        "body1": [
+          "/h1_2/right_elbow_link"
+        ],
+        "lower_limit_authored_units": -54.43098831176758,
+        "upper_limit_authored_units": 182.20057678222656,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 113.3290023803711,
+        "drive_damping": 0.045331601053476334,
+        "drive_max_force": 18.0
+      },
+      {
+        "name": "right_wrist_roll_joint",
+        "path": "/h1_2/joints/right_wrist_roll_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/right_elbow_link"
+        ],
+        "body1": [
+          "/h1_2/right_wrist_roll_link"
+        ],
+        "lower_limit_authored_units": -157.56338500976562,
+        "upper_limit_authored_units": 172.4602813720703,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 45.60688400268555,
+        "drive_damping": 0.01824275404214859,
+        "drive_max_force": 19.0
+      },
+      {
+        "name": "right_wrist_pitch_joint",
+        "path": "/h1_2/joints/right_wrist_pitch_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/right_wrist_roll_link"
+        ],
+        "body1": [
+          "/h1_2/right_wrist_pitch_link"
+        ],
+        "lower_limit_authored_units": -26.499296188354492,
+        "upper_limit_authored_units": 26.499296188354492,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 7.1016340255737305,
+        "drive_damping": 0.0028406535275280476,
+        "drive_max_force": 19.0
+      },
+      {
+        "name": "right_wrist_yaw_joint",
+        "path": "/h1_2/joints/right_wrist_yaw_joint",
+        "type": "PhysicsRevoluteJoint",
+        "drive_axis": "angular",
+        "body0": [
+          "/h1_2/right_wrist_pitch_link"
+        ],
+        "body1": [
+          "/h1_2/right_wrist_yaw_link"
+        ],
+        "lower_limit_authored_units": -72.76563262939453,
+        "upper_limit_authored_units": 72.76563262939453,
+        "drive": true,
+        "drive_type": "force",
+        "drive_stiffness": 0.3766510784626007,
+        "drive_damping": 0.0001506604312453419,
+        "drive_max_force": 19.0
+      }
+    ],
+    "rigid_body_count": 28,
+    "rigid_body_paths": [
+      "/h1_2/pelvis",
+      "/h1_2/left_hip_yaw_link",
+      "/h1_2/left_hip_pitch_link",
+      "/h1_2/left_hip_roll_link",
+      "/h1_2/left_knee_link",
+      "/h1_2/left_ankle_pitch_link",
+      "/h1_2/left_ankle_roll_link",
+      "/h1_2/right_hip_yaw_link",
+      "/h1_2/right_hip_pitch_link",
+      "/h1_2/right_hip_roll_link",
+      "/h1_2/right_knee_link",
+      "/h1_2/right_ankle_pitch_link",
+      "/h1_2/right_ankle_roll_link",
+      "/h1_2/torso_link",
+      "/h1_2/left_shoulder_pitch_link",
+      "/h1_2/left_shoulder_roll_link",
+      "/h1_2/left_shoulder_yaw_link",
+      "/h1_2/left_elbow_link",
+      "/h1_2/left_wrist_roll_link",
+      "/h1_2/left_wrist_pitch_link",
+      "/h1_2/left_wrist_yaw_link",
+      "/h1_2/right_shoulder_pitch_link",
+      "/h1_2/right_shoulder_roll_link",
+      "/h1_2/right_shoulder_yaw_link",
+      "/h1_2/right_elbow_link",
+      "/h1_2/right_wrist_roll_link",
+      "/h1_2/right_wrist_pitch_link",
+      "/h1_2/right_wrist_yaw_link"
+    ],
+    "explicit_mass_count": 28,
+    "link_masses_kg": {
+      "/h1_2/pelvis": 5.982999801635742,
+      "/h1_2/left_hip_yaw_link": 2.8289999961853027,
+      "/h1_2/left_hip_pitch_link": 2.9200000762939453,
+      "/h1_2/left_hip_roll_link": 4.961999893188477,
+      "/h1_2/left_knee_link": 3.8389999866485596,
+      "/h1_2/left_ankle_pitch_link": 0.10199999809265137,
+      "/h1_2/left_ankle_roll_link": 0.746999979019165,
+      "/h1_2/right_hip_yaw_link": 2.8289999961853027,
+      "/h1_2/right_hip_pitch_link": 2.9200000762939453,
+      "/h1_2/right_hip_roll_link": 4.961999893188477,
+      "/h1_2/right_knee_link": 3.8389999866485596,
+      "/h1_2/right_ankle_pitch_link": 0.10199999809265137,
+      "/h1_2/right_ankle_roll_link": 0.746999979019165,
+      "/h1_2/torso_link": 17.788999557495117,
+      "/h1_2/left_shoulder_pitch_link": 1.3270000219345093,
+      "/h1_2/left_shoulder_roll_link": 1.3930000066757202,
+      "/h1_2/left_shoulder_yaw_link": 1.5049999952316284,
+      "/h1_2/left_elbow_link": 0.6909999847412109,
+      "/h1_2/left_wrist_roll_link": 0.6830000281333923,
+      "/h1_2/left_wrist_pitch_link": 0.48399999737739563,
+      "/h1_2/left_wrist_yaw_link": 0.12399999797344208,
+      "/h1_2/right_shoulder_pitch_link": 1.3270000219345093,
+      "/h1_2/right_shoulder_roll_link": 1.3930000066757202,
+      "/h1_2/right_shoulder_yaw_link": 1.5049999952316284,
+      "/h1_2/right_elbow_link": 0.6909999847412109,
+      "/h1_2/right_wrist_roll_link": 0.6830000281333923,
+      "/h1_2/right_wrist_pitch_link": 0.48399999737739563,
+      "/h1_2/right_wrist_yaw_link": 0.12399999797344208
+    },
+    "total_explicit_mass_kg": 66.98399928212166,
+    "used_layers": [
+      {
+        "identifier": "/home/xqw/xqw-file/unitree_model/H1-2/h1_2_handless/configuration/h1_2_handless_base.usd",
+        "anonymous": false,
+        "exists": true
+      },
+      {
+        "identifier": "/home/xqw/xqw-file/unitree_model/H1-2/h1_2_handless/configuration/h1_2_handless_physics.usd",
+        "anonymous": false,
+        "exists": true
+      },
+      {
+        "identifier": "/home/xqw/xqw-file/unitree_model/H1-2/h1_2_handless/configuration/h1_2_handless_robot.usd",
+        "anonymous": false,
+        "exists": true
+      },
+      {
+        "identifier": "/home/xqw/xqw-file/unitree_model/H1-2/h1_2_handless/configuration/h1_2_handless_sensor.usd",
+        "anonymous": false,
+        "exists": true
+      },
+      {
+        "identifier": "/home/xqw/xqw-file/unitree_model/H1-2/h1_2_handless/h1_2_handless.usd",
+        "anonymous": false,
+        "exists": true
+      },
+      {
+        "identifier": "anon:0x56f1ad377190:h1_2_handless-session.usda",
+        "anonymous": true,
+        "exists": true
+      }
+    ],
+    "left_foot_collision_paths": [
+      "/h1_2/left_ankle_roll_link/collisions/left_ankle_roll_link/mesh"
+    ],
+    "right_foot_collision_paths": [
+      "/h1_2/right_ankle_roll_link/collisions/right_ankle_roll_link/mesh"
+    ]
+  }
+}

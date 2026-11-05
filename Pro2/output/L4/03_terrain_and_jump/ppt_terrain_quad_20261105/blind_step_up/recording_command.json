@@ -1,0 +1,17 @@
+[
+  "/home/xqw/miniconda3/bin/python3",
+  "Pro2/run_isaac.py",
+  "--isaac-root",
+  "/home/xqw/isaacsim6.0.1",
+  "--no-build",
+  "--headless",
+  "--level",
+  "L4",
+  "--config",
+  "Pro2/experiments/L4/terrain/blind_step_up.json",
+  "--record-video",
+  "--video-fps",
+  "30",
+  "--output",
+  "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up"
+]

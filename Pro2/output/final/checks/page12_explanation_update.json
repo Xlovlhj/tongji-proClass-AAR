@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "snapshot_before": "/tmp/pro2_page12_before_ee2368e90370.pptx",
+  "input_pptx_sha256": "ee2368e903700e89f2a0fdd6628d41b253560f3e75cf83267102333f13461a4c",
+  "output_pptx_sha256": "178b893422b2465d7749877b61c3eef75ec2e7962438fe59f557261419af40f4",
+  "changed_parts": [
+    "ppt/notesSlides/notesSlide12.xml",
+    "ppt/slides/slide12.xml"
+  ],
+  "preserved_slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15
+  ],
+  "other_14_slides_byte_identical": true,
+  "all_media_byte_identical": true,
+  "explanation": "左图：灰虚线为参考路径，\n蓝实线为机器人实际轨迹。\n两线越接近，路径跟踪越准确。"
+}

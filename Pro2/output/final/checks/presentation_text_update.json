@@ -1,0 +1,190 @@
+{
+  "status": "pass",
+  "snapshot_before": "/tmp/pro2_text_before_f484afc53438.pptx",
+  "input_pptx_sha256": "f484afc534385986ba7f5208e11b89a29ce2006468248dcbbb4cc1bb171a5b03",
+  "output_pptx_sha256": "ee2368e903700e89f2a0fdd6628d41b253560f3e75cf83267102333f13461a4c",
+  "changed_parts": [
+    "ppt/notesSlides/notesSlide9.xml",
+    "ppt/notesSlides/notesSlide8.xml",
+    "ppt/notesSlides/notesSlide1.xml",
+    "ppt/notesSlides/notesSlide10.xml",
+    "ppt/notesSlides/notesSlide14.xml",
+    "ppt/notesSlides/notesSlide5.xml",
+    "ppt/notesSlides/notesSlide11.xml",
+    "ppt/notesSlides/notesSlide2.xml",
+    "ppt/notesSlides/notesSlide15.xml",
+    "ppt/notesSlides/notesSlide6.xml",
+    "ppt/notesSlides/notesSlide12.xml",
+    "ppt/notesSlides/notesSlide3.xml",
+    "ppt/notesSlides/notesSlide7.xml",
+    "ppt/notesSlides/notesSlide4.xml",
+    "ppt/notesSlides/notesSlide13.xml",
+    "ppt/slides/slide13.xml",
+    "ppt/slides/slide15.xml",
+    "ppt/slides/slide14.xml",
+    "ppt/slides/slide2.xml",
+    "ppt/slides/slide3.xml",
+    "ppt/slides/slide4.xml",
+    "ppt/slides/slide5.xml",
+    "ppt/slides/slide6.xml",
+    "ppt/slides/slide7.xml",
+    "ppt/slides/slide10.xml",
+    "ppt/slides/slide8.xml",
+    "ppt/slides/slide11.xml",
+    "ppt/slides/slide12.xml",
+    "ppt/slides/slide9.xml"
+  ],
+  "text_changes": [
+    {
+      "page": 2,
+      "before": "Isaac Sim 6.0.1 / PhysX",
+      "after": "Isaac Sim 6.0.1、PhysX"
+    },
+    {
+      "page": 2,
+      "before": "g++ 11.4 / CMake 3.22",
+      "after": "g++ 11.4、CMake 3.22"
+    },
+    {
+      "page": 2,
+      "before": "MPC / WBC 非零状态均为 0",
+      "after": "MPC、WBC 非零状态均为 0"
+    },
+    {
+      "page": 3,
+      "before": "u_weight：10⁻⁷ 、10⁻⁶（默认）、 10⁻⁵；每次 12 s，统计 5–12 s。",
+      "after": "u_weight：10⁻⁷、10⁻⁶（默认）、10⁻⁵；每次 12 s，统计 5–12 s。"
+    },
+    {
+      "page": 4,
+      "shape": "TextBox 3",
+      "before": "MPC 规划未来接触力，WBC 协调全身运动。",
+      "after": "MPC 决定未来双脚怎样发力。"
+    },
+    {
+      "page": 4,
+      "shape": "TextBox 4",
+      "before": "状态：姿态、位置、角速度、线速度，共 12 维。\n输入：左右脚力与力矩 + 固定重力增广量，共 13 维。",
+      "after": "优化变量：未来左右脚的接触力与力矩序列。\n预测状态：姿态、位置、角速度、线速度（12 维）。"
+    },
+    {
+      "page": 4,
+      "shape": "TextBox 5",
+      "before": "模型：在线线性化单刚体。\n目标：状态误差与接触输入偏差的二次代价。\n约束：摩擦、单边接触、足底力矩与支撑切换。",
+      "after": "目标：最小化两项误差的加权平方和：\n① 预测状态与参考运动的误差；\n② 接触输入与参考支撑载荷的偏差。\n约束：摩擦、单边接触、足底力矩与支撑切换。"
+    },
+    {
+      "page": 4,
+      "shape": "TextBox 6",
+      "before": "求解：qpOASES；只执行第一步接触输入。\n预测 10 × 5 ms = 50 ms；独立控制 3 步。\nMPC 200 Hz；WBC / PVT / 物理 1 kHz。\n当前状态来自 Isaac 真值。",
+      "after": "模型：线性化单刚体；qpOASES 求解。\n只把第一步接触输入交给 WBC，再求关节力矩。\n预测 10 × 5 ms = 50 ms；独立控制 3 步。\nMPC 200 Hz；WBC、PVT、物理 1 kHz。"
+    },
+    {
+      "page": 4,
+      "before": "L1  MPC / WBC 闭环与优化问题",
+      "after": "L1  MPC、WBC 闭环与优化问题"
+    },
+    {
+      "page": 5,
+      "before": "源码 / 函数",
+      "after": "源码、函数"
+    },
+    {
+      "page": 5,
+      "before": "步态 / 足端规划",
+      "after": "步态、足端规划"
+    },
+    {
+      "page": 5,
+      "before": "algorithm/mpc.cpp::cal() / set_weight()",
+      "after": "algorithm/mpc.cpp::cal()、set_weight()"
+    },
+    {
+      "page": 5,
+      "before": "algorithm/wbc_priority.cpp::computeDdq() / computeTau()",
+      "after": "algorithm/wbc_priority.cpp::computeDdq()、computeTau()"
+    },
+    {
+      "page": 5,
+      "before": "WBC：分层伪逆 / 零空间求运动目标，再用动力学 QP 得到前馈力矩。",
+      "after": "WBC：分层伪逆与零空间求运动目标，再用动力学 QP 得到前馈力矩。"
+    },
+    {
+      "page": 6,
+      "before": "state_weights[9]：0.2 、 1.0（默认）、 5.0",
+      "after": "state_weights[9]：0.2、1.0（默认）、5.0"
+    },
+    {
+      "page": 7,
+      "before": "mpc_horizon_steps：5 / 10（默认）/ 15；对应 25 / 50 / 75 ms。",
+      "after": "mpc_horizon_steps：5、10（默认）、15；对应 25、50、75 ms。"
+    },
+    {
+      "page": 8,
+      "before": "step_height：0.08 / 0.12（默认）/ 0.16 m；平地，目标速度 0.2 m/s。",
+      "after": "step_height：0.08、0.12（默认）、0.16 m；平地，目标速度 0.2 m/s。"
+    },
+    {
+      "page": 9,
+      "before": "世界 +Y 侧推 0 / 50 / 100 N，7–7.5 s；Δvy 峰值窗口 7.00–8.99 s",
+      "after": "世界 +Y 侧推 0、50、100 N，7–7.5 s；Δvy 峰值窗口 7–9 s"
+    },
+    {
+      "page": 9,
+      "before": "100 N：8.994 s 失稳",
+      "after": "100 N：约 9 s 失稳"
+    },
+    {
+      "page": 9,
+      "before": "外力持续 0.5 s，冲量为 0 / 25 / 50 N·s。",
+      "after": "外力持续 0.5 s，冲量为 0、25、50 N·s。"
+    },
+    {
+      "page": 10,
+      "before": "本阶段为理论分析，未运行 LQR / iLQR。",
+      "after": "本阶段为理论分析，未运行 LQR、iLQR。"
+    },
+    {
+      "page": 11,
+      "before": "OpenLoong MPC / WBC 尚未迁移到 H1。",
+      "after": "OpenLoong MPC、WBC 尚未迁移到 H1。"
+    },
+    {
+      "page": 12,
+      "before": "路径误差生成 vx、vy、wz，经限幅送入原 MPC / WBC 行走闭环。",
+      "after": "路径误差生成 vx、vy、wz，经限幅送入原 MPC、WBC 行走闭环。"
+    },
+    {
+      "page": 12,
+      "before": "五组完成，四组触发到点。圆开 / 闭环时长和容差不同，不能直接比较优劣。",
+      "after": "五组完成，四组触发到点。圆开环、闭环时长和容差不同，不能直接比较优劣。"
+    },
+    {
+      "page": 13,
+      "before": "腾空持续 0.269 s。",
+      "after": "腾空持续 0.27 s。"
+    },
+    {
+      "page": 14,
+      "before": "36 / 350 更新",
+      "after": "36 次，共 350 次"
+    },
+    {
+      "page": 14,
+      "before": "NMPC 失败 / 接触不匹配时回退到 C++ 输入。",
+      "after": "NMPC 失败或接触不匹配时回退到 C++ 输入。"
+    },
+    {
+      "page": 15,
+      "before": "左 / 右踝限幅 5 / 10 点；命令回读差约 10⁻⁶ N·m。",
+      "after": "左、右踝限幅 5、10 点；命令回读差约 10⁻⁶ N·m。"
+    }
+  ],
+  "preserved_slide_xml_pages": [
+    1
+  ],
+  "all_media_byte_identical": true,
+  "preserved_media_count": 18,
+  "experimental_data_modified": false,
+  "slides": 15
+}

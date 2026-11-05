@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "algorithm": "python_convex_reference",
+  "role": "formula_check_not_production_baseline",
+  "state_order": ["roll", "pitch", "yaw", "px", "py", "pz", "wx", "wy", "wz", "vx", "vy", "vz"],
+  "wrench_frame": "world",
+  "dt_s": 0.005,
+  "horizon_steps": 10,
+  "control_horizon_steps": 3,
+  "input_weight": 1e-6,
+  "state_weights": [1.0, 1.0, 1.0, 0.001, 100.0, 1.0, 0.001, 0.001, 0.001, 1.0, 100.0, 1.0],
+  "solver": "OSQP"
+}

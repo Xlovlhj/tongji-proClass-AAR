@@ -1,0 +1,1047 @@
+{
+  "h1": {
+    "run": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2",
+    "metrics": {
+      "simulated_duration_s": 8.0,
+      "transition_time_s": 3.0,
+      "target_hold_duration_s": 5.0,
+      "minimum_base_height_m": 0.9892775416374207,
+      "maximum_tilt_rad": 0.07764301808084291,
+      "maximum_horizontal_drift_m": 0.06073271339577004,
+      "maximum_abs_joint_velocity_rad_s": 8.751992225646973,
+      "maximum_abs_pd_effort_estimate_nm": 48.38344804942608,
+      "maximum_abs_explicit_actuation_nm": 0.0,
+      "maximum_abs_projected_joint_force_nm": 48.12358093261719,
+      "maximum_abs_balance_correction_rad": 0.21565271189739404,
+      "final_joint_target_rmse_rad": 0.03650306055939122,
+      "acceptance_thresholds": {
+        "minimum_base_height_m": 0.85,
+        "maximum_tilt_rad": 0.2,
+        "maximum_horizontal_drift_m": 0.1,
+        "final_joint_target_rmse_rad": 0.1
+      },
+      "acceptance_passed": true
+    },
+    "openloong_mpc_wbc_used": false
+  },
+  "path_summary": {
+    "schema_version": 1,
+    "audit_scope": "L4 五组正式路径跟踪输出",
+    "acceptance_rule": {
+      "simulation_completed": "run.json.status == completed",
+      "goal_reached": "path_metrics.json.reached_goal == true",
+      "interpretation": "闭环实验同时满足仿真完成和到点才记为通过；开环圆周是对照实验，完整运行但未到点时记为对照有效、未通过到点验收。"
+    },
+    "metric_source": "每组 analysis/metrics.json 的 reported_path_metrics；五组 path_metrics_reconciliation 均为 true。",
+    "experiment_count": 5,
+    "completed_count": 5,
+    "reached_goal_count": 4,
+    "experiments": [
+      {
+        "experiment": "straight_run02",
+        "experiment_label": "直线闭环",
+        "config_relative_path": "Pro2/experiments/L4/path_tracking/straight.json",
+        "output_relative_path": "Pro2/output/L4/02_path_tracking/straight_run02",
+        "completed": true,
+        "reached_goal": true,
+        "duration_s": 18.0,
+        "path_length_m": 2.0,
+        "completion_fraction": 1.0,
+        "cross_track_rmse_m": 0.07908849979109729,
+        "maximum_path_distance_m": 0.15362504124641418,
+        "heading_error_rmse_rad": 0.03087395711499654,
+        "final_goal_distance_m": 0.03183837020226216,
+        "acceptance": "通过（仿真完成并触发到点）",
+        "notes": "仿真和到点判据均完成；直线路径误差最低，analysis 指标与 path_metrics.json 对账一致。"
+      },
+      {
+        "experiment": "turn_90",
+        "experiment_label": "90° 转弯闭环",
+        "config_relative_path": "Pro2/experiments/L4/path_tracking/turn_90.json",
+        "output_relative_path": "Pro2/output/L4/02_path_tracking/turn_90",
+        "completed": true,
+        "reached_goal": true,
+        "duration_s": 28.0,
+        "path_length_m": 2.4,
+        "completion_fraction": 1.0,
+        "cross_track_rmse_m": 0.20102429228408203,
+        "maximum_path_distance_m": 0.38525693416595463,
+        "heading_error_rmse_rad": 0.7157771580601839,
+        "final_goal_distance_m": 0.018601420045372533,
+        "acceptance": "通过（仿真完成并触发到点）",
+        "notes": "完成 90° 折线路径并到点；转角使横向与航向误差明显高于直线，analysis 指标与 path_metrics.json 对账一致。"
+      },
+      {
+        "experiment": "circle_open_loop_run02",
+        "experiment_label": "圆周开环对照",
+        "config_relative_path": "Pro2/experiments/L4/path_tracking/circle_open_loop.json",
+        "output_relative_path": "Pro2/output/L4/02_path_tracking/circle_open_loop_run02",
+        "completed": true,
+        "reached_goal": false,
+        "duration_s": 50.0,
+        "path_length_m": 6.283105558829253,
+        "completion_fraction": 1.0,
+        "cross_track_rmse_m": 0.14480047135675697,
+        "maximum_path_distance_m": 0.2921812490787316,
+        "heading_error_rmse_rad": 0.3683958549546374,
+        "final_goal_distance_m": 0.2708132562562907,
+        "acceptance": "对照有效，未通过到点验收",
+        "notes": "开环圆周对照完整运行且路径投影进度达到 100%，但最终距目标 0.271 m，大于配置的 0.12 m 到点容差，因此未触发到点。"
+      },
+      {
+        "experiment": "circle_closed_loop_run02",
+        "experiment_label": "圆周闭环",
+        "config_relative_path": "Pro2/experiments/L4/path_tracking/circle_closed_loop.json",
+        "output_relative_path": "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02",
+        "completed": true,
+        "reached_goal": true,
+        "duration_s": 40.0,
+        "path_length_m": 6.283105558829253,
+        "completion_fraction": 0.9951525039344283,
+        "cross_track_rmse_m": 0.13395048447719918,
+        "maximum_path_distance_m": 0.313464939787052,
+        "heading_error_rmse_rad": 0.2333964491824339,
+        "final_goal_distance_m": 0.15697878262135467,
+        "acceptance": "通过（仿真完成并触发到点）",
+        "notes": "闭环圆周达到 99.515% 路径进度并触发到点，最终距目标 0.157 m，处于配置的 0.25 m 容差内。"
+      },
+      {
+        "experiment": "waypoints_run06",
+        "experiment_label": "多航点闭环",
+        "config_relative_path": "Pro2/experiments/L4/path_tracking/waypoints.json",
+        "output_relative_path": "Pro2/output/L4/02_path_tracking/waypoints_run06",
+        "completed": true,
+        "reached_goal": true,
+        "duration_s": 30.0,
+        "path_length_m": 3.040312423743285,
+        "completion_fraction": 1.0,
+        "cross_track_rmse_m": 0.2173197371385342,
+        "maximum_path_distance_m": 0.46201663017272954,
+        "heading_error_rmse_rad": 0.6828587697250846,
+        "final_goal_distance_m": 0.2874026103699741,
+        "acceptance": "通过（仿真完成并触发到点）",
+        "notes": "多航点路径在 24.47 s 首次进入 0.25 m 到点范围并锁存成功；随后保持零速度指令、步态原地运行，末态距离漂移至 0.287 m。"
+      }
+    ]
+  },
+  "circle_fair_pair": [
+    {
+      "run": "Pro2/output/L4/02_path_tracking/circle_open_loop_run02",
+      "config": {
+        "mode": "open_loop",
+        "path": {
+          "type": "circle",
+          "center": [
+            0.0,
+            1.0
+          ],
+          "radius_m": 1.0,
+          "start_angle_rad": -1.5707963267948966,
+          "end_angle_rad": 4.71238898038469,
+          "num_points": 361
+        },
+        "lookahead_m": 0.3,
+        "nominal_speed_m_s": 0.15,
+        "open_loop_command": [
+          0.15,
+          0.0,
+          0.15
+        ],
+        "limits": {
+          "vx_m_s": 0.25,
+          "vy_m_s": 0.12,
+          "wz_rad_s": 0.35,
+          "linear_accel_m_s2": 0.5,
+          "angular_accel_rad_s2": 0.8
+        },
+        "goal_tolerance_m": 0.12,
+        "stop_at_goal": true
+      },
+      "duration_s": 50.0,
+      "walk_start_s": 5.0,
+      "metrics": {
+        "sample_count": 4500,
+        "cross_track_rmse_m": 0.14480047135675697,
+        "maximum_path_distance_m": 0.2921812490787316,
+        "heading_error_rmse_rad": 0.3683958549546374,
+        "final_progress_m": 6.283105558829253,
+        "path_length_m": 6.283105558829253,
+        "completion_fraction": 1.0,
+        "reached_goal": false,
+        "final_goal_distance_m": 0.2708132562562907
+      },
+      "controller_library_sha256": "2030b85c907d925b268308d7e9317a9b5bc5c9ca04011ec5fb7a259e676ea74f"
+    },
+    {
+      "run": "Pro2/output/L4/02_path_tracking/circle_closed_loop",
+      "config": {
+        "mode": "closed_loop",
+        "path": {
+          "type": "circle",
+          "center": [
+            0.0,
+            1.0
+          ],
+          "radius_m": 1.0,
+          "start_angle_rad": -1.5707963267948966,
+          "end_angle_rad": 4.71238898038469,
+          "num_points": 361
+        },
+        "lookahead_m": 0.3,
+        "nominal_speed_m_s": 0.15,
+        "gains": {
+          "longitudinal": 0.55,
+          "lateral": 0.8,
+          "heading": 1.2,
+          "cross_heading": 0.45
+        },
+        "limits": {
+          "vx_m_s": 0.25,
+          "vy_m_s": 0.12,
+          "wz_rad_s": 0.35,
+          "linear_accel_m_s2": 0.5,
+          "angular_accel_rad_s2": 0.8
+        },
+        "goal_tolerance_m": 0.12,
+        "stop_at_goal": true
+      },
+      "duration_s": 50.0,
+      "walk_start_s": 5.0,
+      "metrics": {
+        "sample_count": 4500,
+        "cross_track_rmse_m": 0.14404687518375628,
+        "maximum_path_distance_m": 0.354231685847737,
+        "heading_error_rmse_rad": 0.1923893426943043,
+        "final_progress_m": 6.283105558829253,
+        "path_length_m": 6.283105558829253,
+        "completion_fraction": 1.0,
+        "reached_goal": false,
+        "final_goal_distance_m": 0.5404635876341525
+      },
+      "controller_library_sha256": "2030b85c907d925b268308d7e9317a9b5bc5c9ca04011ec5fb7a259e676ea74f"
+    }
+  ],
+  "terrain_summary": {
+    "schema_version": 2,
+    "metric_source": "各实验 analysis/metrics.json",
+    "traversal_rule": "run.status 必须为 completed；基座 y 必须位于地形宽度内；x 到达起点记为进入，到达终点记为穿越。",
+    "step_front_proxy_rule": "base-only proxy：仅依据台阶 y 范围内的基座最大 x；states.csv 未记录足端 contact prim，因此不能等同于双脚已接触上台阶的证明。",
+    "experiment_count": 4,
+    "traversed_count": 1,
+    "experiments": [
+      {
+        "experiment": "slope_05deg",
+        "config_relative_path": "Pro2/experiments/L4/terrain/slope_05deg.json",
+        "output_relative_path": "Pro2/output/L4/03_terrain_and_jump/slope_05deg",
+        "run_status": "completed",
+        "terrain_type": "slope",
+        "terrain_bounds_source": "terrain.config",
+        "terrain_x_start_m": 0.8,
+        "terrain_x_end_m": 3.290486745229364,
+        "terrain_y_min_m": -1.0,
+        "terrain_y_max_m": 1.0,
+        "maximum_base_x_m": 1.7201372385025024,
+        "entry_time_s": 14.1,
+        "exit_time_s": null,
+        "samples_inside": 990,
+        "forward_progress_on_terrain_m": 0.9201372385025024,
+        "progress_fraction": 0.3694608053084664,
+        "entered_terrain": true,
+        "traversed_terrain": false,
+        "completion_reason": "进入未穿越",
+        "step_front_clearance_m": null,
+        "step_front_crossed_proxy": null,
+        "step_front_proxy_note": null
+      },
+      {
+        "experiment": "rough_medium_run02",
+        "config_relative_path": "Pro2/experiments/L4/terrain/rough_medium.json",
+        "output_relative_path": "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02",
+        "run_status": "completed",
+        "terrain_type": "rough_blocks",
+        "terrain_bounds_source": "terrain.config",
+        "terrain_x_start_m": 0.8,
+        "terrain_x_end_m": 3.6000000000000005,
+        "terrain_y_min_m": -1.0,
+        "terrain_y_max_m": 1.0,
+        "maximum_base_x_m": 2.1421663761138916,
+        "entry_time_s": 13.71,
+        "exit_time_s": null,
+        "samples_inside": 1429,
+        "forward_progress_on_terrain_m": 1.3421663761138916,
+        "progress_fraction": 0.4793451343263897,
+        "entered_terrain": true,
+        "traversed_terrain": false,
+        "completion_reason": "进入未穿越",
+        "step_front_clearance_m": null,
+        "step_front_crossed_proxy": null,
+        "step_front_proxy_note": null
+      },
+      {
+        "experiment": "random_obstacles_seed01_full",
+        "config_relative_path": "Pro2/experiments/L4/terrain/random_obstacles_seed01_full.json",
+        "output_relative_path": "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full",
+        "run_status": "completed",
+        "terrain_type": "random_obstacles",
+        "terrain_bounds_source": "terrain.plan",
+        "terrain_x_start_m": 0.8042114921295903,
+        "terrain_x_end_m": 2.8015325452348665,
+        "terrain_y_min_m": -0.5721425587951023,
+        "terrain_y_max_m": 0.33674438138613894,
+        "maximum_base_x_m": 3.309629440307617,
+        "entry_time_s": 12.74,
+        "exit_time_s": 40.25,
+        "samples_inside": 2751,
+        "forward_progress_on_terrain_m": 1.997321053105276,
+        "progress_fraction": 1.0,
+        "entered_terrain": true,
+        "traversed_terrain": true,
+        "completion_reason": "穿越",
+        "step_front_clearance_m": null,
+        "step_front_crossed_proxy": null,
+        "step_front_proxy_note": null
+      },
+      {
+        "experiment": "blind_step_up_run02",
+        "config_relative_path": "Pro2/experiments/L4/terrain/blind_step_up.json",
+        "output_relative_path": "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02",
+        "run_status": "completed",
+        "terrain_type": "blind_step",
+        "terrain_bounds_source": "terrain.plan",
+        "terrain_x_start_m": 0.8999999999999999,
+        "terrain_x_end_m": 4.9,
+        "terrain_y_min_m": -1.0,
+        "terrain_y_max_m": 1.0,
+        "maximum_base_x_m": 1.546552062034607,
+        "entry_time_s": 17.22,
+        "exit_time_s": null,
+        "samples_inside": 678,
+        "forward_progress_on_terrain_m": 0.646552062034607,
+        "progress_fraction": 0.16163801550865176,
+        "entered_terrain": true,
+        "traversed_terrain": false,
+        "step_front_clearance_m": 0.646552062034607,
+        "step_front_crossed_proxy": true,
+        "step_front_proxy_note": "base-only proxy：仅依据台阶 y 范围内的基座最大 x；states.csv 未记录足端 contact prim，因此不能等同于双脚已接触上台阶的证明。",
+        "completion_reason": "进入未穿越"
+      }
+    ]
+  },
+  "jumps": [
+    {
+      "run": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01",
+      "pass": true,
+      "passed_checks": 21,
+      "check_count": 21,
+      "metrics": {
+        "logged_samples": 1300,
+        "logged_start_time_s": 0.0,
+        "logged_end_time_s": 12.99,
+        "median_log_period_s": 0.009999999999999787,
+        "phase_sequence_from_states": [
+          "prepare",
+          "crouch",
+          "thrust",
+          "flight_up",
+          "flight_down",
+          "landing",
+          "recovery",
+          "complete"
+        ],
+        "phase_sequence_from_jump_metrics": [
+          "prepare",
+          "crouch",
+          "thrust",
+          "flight_up",
+          "flight_down",
+          "landing",
+          "recovery",
+          "complete"
+        ],
+        "takeoff_time_s": 8.632,
+        "touchdown_time_s": 8.901,
+        "csv_takeoff_sample_index": 864,
+        "csv_takeoff_time_s": 8.64,
+        "csv_takeoff_base_height_m": 0.9944490790367126,
+        "csv_airborne_last_sample_index": 889,
+        "csv_airborne_last_time_s": 8.89,
+        "csv_airborne_sample_count": 26,
+        "csv_airborne_observed_duration_s": 0.25,
+        "csv_landing_sample_index": 890,
+        "csv_landing_time_s": 8.9,
+        "csv_landing_base_height_m": 0.9464590549468994,
+        "csv_apex_sample_index": 875,
+        "csv_apex_time_s": 8.75,
+        "csv_apex_base_height_m": 1.0552647113800049,
+        "csv_actual_rise_m": 0.060815632343292236,
+        "jump_metrics_actual_rise_m": 0.07081210613250732,
+        "actual_rise_m": 0.07081210613250732,
+        "rise_difference_jump_metrics_minus_csv_m": 0.009996473789215088,
+        "minimum_required_rise_m": 0.06,
+        "minimum_required_rise_from_jump_metrics_m": 0.06,
+        "minimum_required_rise_source": "max(0.03, 0.5 * run.json.config.jump.target_height_m)",
+        "csv_takeoff_minus_jump_metrics_s": 0.008000000000000895,
+        "csv_landing_minus_jump_metrics_s": -0.0009999999999994458,
+        "event_time_tolerance_s": 0.010999999999999788,
+        "flight_mpc_enabled_sample_count": 0,
+        "external_force_peak_n": 0.0,
+        "maximum_post_touchdown_both_airborne_duration_s": 0.0,
+        "terminal_window_s": 0.5,
+        "terminal_sample_count": 51,
+        "terminal_left_contact_fraction": 1.0,
+        "terminal_right_contact_fraction": 1.0,
+        "terminal_bilateral_contact_fraction": 1.0,
+        "terminal_max_horizontal_speed_m_s": 0.002305975557524924,
+        "terminal_max_abs_vertical_speed_m_s": 0.0007388223137145075,
+        "terminal_max_tilt_rad": 0.0010271312326874877,
+        "terminal_max_height_error_m": 0.0041902828216553445,
+        "final_base_position_m": [
+          -0.02152276784181595,
+          -0.0064429729245603085,
+          1.0758626461029053
+        ],
+        "planar_drift_m": 0.02246645328836961,
+        "planar_drift_limit_m": 0.30000000000000004,
+        "active_mpc_sample_count": 83,
+        "mpc_qp_failure_sample_count": 0,
+        "active_wbc_sample_count": 1272,
+        "wbc_qp_failure_sample_count": 0
+      },
+      "high_frequency_metrics": {
+        "phase_sequence": [
+          {
+            "phase": "prepare",
+            "time_s": 0.0
+          },
+          {
+            "phase": "crouch",
+            "time_s": 3.0
+          },
+          {
+            "phase": "thrust",
+            "time_s": 8.5
+          },
+          {
+            "phase": "flight_up",
+            "time_s": 8.63
+          },
+          {
+            "phase": "flight_down",
+            "time_s": 8.752
+          },
+          {
+            "phase": "landing",
+            "time_s": 8.901
+          },
+          {
+            "phase": "recovery",
+            "time_s": 9.002
+          },
+          {
+            "phase": "complete",
+            "time_s": 10.761000000000001
+          }
+        ],
+        "takeoff_time_s": 8.632,
+        "touchdown_time_s": 8.901,
+        "takeoff_base_height_m": 0.9844677448272705,
+        "touchdown_base_height_m": 0.9450675249099731,
+        "minimum_crouch_height_m": 0.8973962664604187,
+        "apex_height_m": 1.0552798509597778,
+        "maximum_upward_velocity_m_s": 1.3892252181374798,
+        "maximum_left_contact_force_n": 2535.26806640625,
+        "maximum_right_contact_force_n": 8354.2001953125,
+        "flight_mpc_disabled": true,
+        "minimum_required_rise_m": 0.06,
+        "external_force_assist": false,
+        "completed_phase_sequence": true,
+        "final_phase": "complete",
+        "failed_reason": null,
+        "actual_rise_m": 0.07081210613250732,
+        "flight_duration_s": 0.26900000000000013,
+        "final_base_height_m": 1.075859785079956,
+        "final_height_error_m": 0.004140214920044016,
+        "maximum_tilt_rad": 0.14342674545910475,
+        "maximum_joint_torque_nm": 396.0,
+        "pass": true
+      },
+      "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48",
+      "target_height_m": 0.12
+    },
+    {
+      "run": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02",
+      "pass": true,
+      "passed_checks": 21,
+      "check_count": 21,
+      "metrics": {
+        "logged_samples": 1300,
+        "logged_start_time_s": 0.0,
+        "logged_end_time_s": 12.99,
+        "median_log_period_s": 0.009999999999999787,
+        "phase_sequence_from_states": [
+          "prepare",
+          "crouch",
+          "thrust",
+          "flight_up",
+          "flight_down",
+          "landing",
+          "recovery",
+          "complete"
+        ],
+        "phase_sequence_from_jump_metrics": [
+          "prepare",
+          "crouch",
+          "thrust",
+          "flight_up",
+          "flight_down",
+          "landing",
+          "recovery",
+          "complete"
+        ],
+        "takeoff_time_s": 8.632,
+        "touchdown_time_s": 8.901,
+        "csv_takeoff_sample_index": 864,
+        "csv_takeoff_time_s": 8.64,
+        "csv_takeoff_base_height_m": 0.9944490790367126,
+        "csv_airborne_last_sample_index": 889,
+        "csv_airborne_last_time_s": 8.89,
+        "csv_airborne_sample_count": 26,
+        "csv_airborne_observed_duration_s": 0.25,
+        "csv_landing_sample_index": 890,
+        "csv_landing_time_s": 8.9,
+        "csv_landing_base_height_m": 0.9464590549468994,
+        "csv_apex_sample_index": 875,
+        "csv_apex_time_s": 8.75,
+        "csv_apex_base_height_m": 1.0552647113800049,
+        "csv_actual_rise_m": 0.060815632343292236,
+        "jump_metrics_actual_rise_m": 0.07081210613250732,
+        "actual_rise_m": 0.07081210613250732,
+        "rise_difference_jump_metrics_minus_csv_m": 0.009996473789215088,
+        "minimum_required_rise_m": 0.06,
+        "minimum_required_rise_from_jump_metrics_m": 0.06,
+        "minimum_required_rise_source": "max(0.03, 0.5 * run.json.config.jump.target_height_m)",
+        "csv_takeoff_minus_jump_metrics_s": 0.008000000000000895,
+        "csv_landing_minus_jump_metrics_s": -0.0009999999999994458,
+        "event_time_tolerance_s": 0.010999999999999788,
+        "flight_mpc_enabled_sample_count": 0,
+        "external_force_peak_n": 0.0,
+        "maximum_post_touchdown_both_airborne_duration_s": 0.0,
+        "terminal_window_s": 0.5,
+        "terminal_sample_count": 51,
+        "terminal_left_contact_fraction": 1.0,
+        "terminal_right_contact_fraction": 1.0,
+        "terminal_bilateral_contact_fraction": 1.0,
+        "terminal_max_horizontal_speed_m_s": 0.002305975557524924,
+        "terminal_max_abs_vertical_speed_m_s": 0.0007388223137145075,
+        "terminal_max_tilt_rad": 0.0010271312326874877,
+        "terminal_max_height_error_m": 0.0041902828216553445,
+        "final_base_position_m": [
+          -0.02152276784181595,
+          -0.0064429729245603085,
+          1.0758626461029053
+        ],
+        "planar_drift_m": 0.02246645328836961,
+        "planar_drift_limit_m": 0.30000000000000004,
+        "active_mpc_sample_count": 83,
+        "mpc_qp_failure_sample_count": 0,
+        "active_wbc_sample_count": 1272,
+        "wbc_qp_failure_sample_count": 0
+      },
+      "high_frequency_metrics": {
+        "phase_sequence": [
+          {
+            "phase": "prepare",
+            "time_s": 0.0
+          },
+          {
+            "phase": "crouch",
+            "time_s": 3.0
+          },
+          {
+            "phase": "thrust",
+            "time_s": 8.5
+          },
+          {
+            "phase": "flight_up",
+            "time_s": 8.63
+          },
+          {
+            "phase": "flight_down",
+            "time_s": 8.752
+          },
+          {
+            "phase": "landing",
+            "time_s": 8.901
+          },
+          {
+            "phase": "recovery",
+            "time_s": 9.002
+          },
+          {
+            "phase": "complete",
+            "time_s": 10.761000000000001
+          }
+        ],
+        "takeoff_time_s": 8.632,
+        "touchdown_time_s": 8.901,
+        "takeoff_base_height_m": 0.9844677448272705,
+        "touchdown_base_height_m": 0.9450675249099731,
+        "minimum_crouch_height_m": 0.8973962664604187,
+        "apex_height_m": 1.0552798509597778,
+        "maximum_upward_velocity_m_s": 1.3892252181374798,
+        "maximum_left_contact_force_n": 2535.26806640625,
+        "maximum_right_contact_force_n": 8354.2001953125,
+        "flight_mpc_disabled": true,
+        "minimum_required_rise_m": 0.06,
+        "external_force_assist": false,
+        "completed_phase_sequence": true,
+        "final_phase": "complete",
+        "failed_reason": null,
+        "actual_rise_m": 0.07081210613250732,
+        "flight_duration_s": 0.26900000000000013,
+        "final_base_height_m": 1.075859785079956,
+        "final_height_error_m": 0.004140214920044016,
+        "maximum_tilt_rad": 0.14342674545910475,
+        "maximum_joint_torque_nm": 396.0,
+        "pass": true
+      },
+      "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48",
+      "target_height_m": 0.12
+    }
+  ],
+  "mpc_comparison": {
+    "convex_input": "Pro2/output/L4/04_mpc_comparison/cpp_convex_walk_run03/states.csv",
+    "nmpc_input": "Pro2/output/L4/04_mpc_comparison/nmpc_rti_walk_run04/states.csv",
+    "runs": [
+      {
+        "algorithm": "convex_mpc",
+        "samples": 1000,
+        "duration_s": 9.99,
+        "vx_body_rmse_m_s": 0.03532077695887608,
+        "vy_body_rmse_m_s": 0.11214669128952287,
+        "max_abs_roll_rad": 0.04065258006672978,
+        "max_abs_pitch_rad": 0.03847061177139087,
+        "minimum_base_height_m": 1.0652539730072021,
+        "peak_abs_joint_torque_Nm": 184.91292115724298,
+        "solver_failure_samples": 0,
+        "solver_evaluations_logged": 700,
+        "solver_timing_raw_csv_samples": 1000,
+        "solver_timing_active_csv_samples": 700,
+        "solver_held_samples_removed": null,
+        "solver_timing_scope": "walking_phase_100hz_samples_of_200hz_internal_updates",
+        "solve_time_mean_s": 0.00035470383507864815,
+        "solve_time_p95_s": 0.00047903060913085933,
+        "solve_time_max_s": 0.0005910396575927734,
+        "solve_time_all_logged_samples_mean_s": 0.0002482926845550537,
+        "solve_time_all_logged_samples_p95_s": 0.00046492815017700194,
+        "solve_time_all_logged_samples_max_s": 0.0005910396575927734
+      },
+      {
+        "algorithm": "nmpc",
+        "samples": 1000,
+        "duration_s": 9.99,
+        "vx_body_rmse_m_s": 0.034076862683520566,
+        "vy_body_rmse_m_s": 0.11246505938864301,
+        "max_abs_roll_rad": 0.03958015303592704,
+        "max_abs_pitch_rad": 0.03847061177139087,
+        "minimum_base_height_m": 1.0644813776016235,
+        "peak_abs_joint_torque_Nm": 184.91292115724298,
+        "solver_failure_samples": 36,
+        "solver_evaluations_logged": 350,
+        "solver_timing_raw_csv_samples": 1000,
+        "solver_timing_active_csv_samples": 699,
+        "solver_held_samples_removed": 349,
+        "solver_timing_scope": "all_external_updates_deduplicated_by_counter",
+        "solve_time_mean_s": 0.017128870788593695,
+        "solve_time_p95_s": 0.01844048059974739,
+        "solve_time_max_s": 0.02152380100051232,
+        "external_wrench_sample_fraction": 0.615,
+        "external_updates_observed": 350,
+        "external_update_counter_last": 350,
+        "external_nmpc_manifest_available": true,
+        "external_manifest_updates": 350,
+        "external_manifest_successful_updates": 314,
+        "external_manifest_failed_updates": 36,
+        "external_manifest_deadline_misses": 4,
+        "external_manifest_success_fraction": 0.8971428571428571,
+        "external_manifest_deadline_miss_fraction": 0.011428571428571429,
+        "external_csv_unique_updates": 350,
+        "external_csv_update_counter_last": 350,
+        "external_csv_successful_updates": 314,
+        "external_csv_failed_updates": 36,
+        "external_csv_deadline_misses": 4,
+        "external_csv_success_fraction": 0.8971428571428571,
+        "external_csv_deadline_miss_fraction": 0.011428571428571429,
+        "external_manifest_updates_match_csv_unique_updates": true,
+        "external_manifest_updates_match_csv_counter_last": true,
+        "external_manifest_successful_updates_match_csv": true,
+        "external_manifest_failed_updates_match_csv": true,
+        "external_manifest_deadline_misses_match_csv": true,
+        "external_manifest_success_fraction_match_csv": true,
+        "external_manifest_deadline_miss_fraction_match_csv": true,
+        "external_manifest_statistics_match_csv": true
+      }
+    ],
+    "provenance": {
+      "convex_mpc": {
+        "states_csv": "Pro2/output/L4/04_mpc_comparison/cpp_convex_walk_run03/states.csv",
+        "run_json": "Pro2/output/L4/04_mpc_comparison/cpp_convex_walk_run03/run.json",
+        "run_json_available": true,
+        "status": "completed",
+        "controller_library": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/isaac/build/mpc_n10/libopenloong_controller.so",
+        "controller_library_sha256": "96745fcdac054a8d755f61ad25d001edc38dee58f4b4455c2cb99a247ef60876",
+        "upstream_commit": "4dd7a7e42a9cfd588afc78f3e429998ed8a30f4e",
+        "isaac_version": "6.0.1-rc.7+release.42383.32955d8d.gl",
+        "robot_usd": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/cache/robot/usd/AzureLoong_Isaac/AzureLoong_Isaac.usda",
+        "feedback": "simulation_ground_truth",
+        "physics_backend": "PhysX CPU",
+        "config_source": "Pro2/experiments/L4/mpc_comparison/cpp_convex_walk_run.json",
+        "mpc_backend": "cpp_convex",
+        "key_experiment_config": {
+          "level": "L4",
+          "mode": "walk",
+          "log_control_decomposition": true,
+          "mpc_horizon_steps": 10,
+          "duration": 10.0,
+          "dt": 0.001,
+          "mpc_dt": 0.005,
+          "swing_time": 0.4,
+          "step_height": 0.12,
+          "stand_height": 1.08,
+          "walk_start": 3.0,
+          "vx": 0.08,
+          "vy": 0.0,
+          "wz": 0.0,
+          "render_hz": 30.0,
+          "log_hz": 100.0,
+          "push_at": null,
+          "push_duration": 0.1,
+          "push_force": [
+            0.0,
+            50.0,
+            0.0
+          ],
+          "u_weight": 1e-06,
+          "state_weights": [
+            1,
+            1,
+            1,
+            0.001,
+            100,
+            1,
+            0.001,
+            0.001,
+            0.001,
+            1,
+            100,
+            1
+          ],
+          "input_weights": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "path_tracking": null,
+          "terrain": {
+            "type": "flat",
+            "friction": 1.0,
+            "restitution": 0.0,
+            "color": [
+              0.17,
+              0.2,
+              0.23
+            ]
+          },
+          "jump": null
+        },
+        "missing_key_experiment_config_fields": [],
+        "external_nmpc": null
+      },
+      "nmpc": {
+        "states_csv": "Pro2/output/L4/04_mpc_comparison/nmpc_rti_walk_run04/states.csv",
+        "run_json": "Pro2/output/L4/04_mpc_comparison/nmpc_rti_walk_run04/run.json",
+        "run_json_available": true,
+        "status": "completed",
+        "controller_library": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/isaac/build/mpc_n10/libopenloong_controller.so",
+        "controller_library_sha256": "96745fcdac054a8d755f61ad25d001edc38dee58f4b4455c2cb99a247ef60876",
+        "upstream_commit": "4dd7a7e42a9cfd588afc78f3e429998ed8a30f4e",
+        "isaac_version": "6.0.1-rc.7+release.42383.32955d8d.gl",
+        "robot_usd": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/cache/robot/usd/AzureLoong_Isaac/AzureLoong_Isaac.usda",
+        "feedback": "simulation_ground_truth",
+        "physics_backend": "PhysX CPU",
+        "config_source": "Pro2/experiments/L4/mpc_comparison/nmpc_rti_walk_run.json",
+        "mpc_backend": "nmpc_rti",
+        "key_experiment_config": {
+          "level": "L4",
+          "mode": "walk",
+          "log_control_decomposition": true,
+          "mpc_horizon_steps": 10,
+          "duration": 10.0,
+          "dt": 0.001,
+          "mpc_dt": 0.005,
+          "swing_time": 0.4,
+          "step_height": 0.12,
+          "stand_height": 1.08,
+          "walk_start": 3.0,
+          "vx": 0.08,
+          "vy": 0.0,
+          "wz": 0.0,
+          "render_hz": 30.0,
+          "log_hz": 100.0,
+          "push_at": null,
+          "push_duration": 0.1,
+          "push_force": [
+            0.0,
+            50.0,
+            0.0
+          ],
+          "u_weight": 1e-06,
+          "state_weights": [
+            1,
+            1,
+            1,
+            0.001,
+            100,
+            1,
+            0.001,
+            0.001,
+            0.001,
+            1,
+            100,
+            1
+          ],
+          "input_weights": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "path_tracking": null,
+          "terrain": {
+            "type": "flat",
+            "friction": 1.0,
+            "restitution": 0.0,
+            "color": [
+              0.17,
+              0.2,
+              0.23
+            ]
+          },
+          "jump": null
+        },
+        "missing_key_experiment_config_fields": [],
+        "external_nmpc": {
+          "updates": 350,
+          "successful_updates": 314,
+          "failed_updates": 36,
+          "deadline_misses": 4,
+          "solve_time_sum_s": 5.995104776007793,
+          "solve_time_max_s": 0.02152380100051232,
+          "solve_time_mean_s": 0.017128870788593695,
+          "success_fraction": 0.8971428571428571,
+          "deadline_miss_fraction": 0.011428571428571429
+        }
+      }
+    },
+    "comparison_checks": {
+      "time_vectors_match_exactly": true,
+      "reference_commands_match_exactly": true,
+      "run_json_available_for_both": true,
+      "controller_library_sha256_match": true,
+      "both_runs_completed": true,
+      "key_experiment_config_match": true,
+      "key_experiment_config_mismatches": [],
+      "key_experiment_config_missing_in_convex": [],
+      "key_experiment_config_missing_in_nmpc": []
+    },
+    "scope": "One run per algorithm; no statistical significance implied."
+  },
+  "nmpc_update_failure_fraction": 0.10285714285714286,
+  "nmpc_wrench_source_sample_fractions": {
+    "all": {
+      "samples": 1000,
+      "external_samples": 615,
+      "internal_samples": 385,
+      "internal_fraction": 0.385
+    },
+    "walking_t_ge_3": {
+      "samples": 700,
+      "external_samples": 615,
+      "internal_samples": 85,
+      "internal_fraction": 0.12142857142857143
+    },
+    "external_updates_started": {
+      "samples": 699,
+      "external_samples": 615,
+      "internal_samples": 84,
+      "internal_fraction": 0.12017167381974249
+    }
+  },
+  "decomposition": {
+    "input": "Pro2/output/L4/04_mpc_comparison/cpp_convex_walk_run03/states.csv",
+    "samples": 1000,
+    "duration_s": 9.99,
+    "joints": [
+      {
+        "joint": "J_hip_l_pitch",
+        "wbc_rms_Nm": 8.680944170225413,
+        "pd_filtered_rms_Nm": 9.578359223086444,
+        "command_peak_abs_Nm": 49.29112686166132,
+        "saturation_samples": 0,
+        "isaac_applied_available": true,
+        "command_vs_applied_rmse_Nm": 3.721959176767907e-07
+      },
+      {
+        "joint": "J_knee_l_pitch",
+        "wbc_rms_Nm": 59.64467696008848,
+        "pd_filtered_rms_Nm": 32.74008424669752,
+        "command_peak_abs_Nm": 184.91292115724298,
+        "saturation_samples": 0,
+        "isaac_applied_available": true,
+        "command_vs_applied_rmse_Nm": 1.5701757350669086e-06
+      },
+      {
+        "joint": "J_ankle_l_pitch",
+        "wbc_rms_Nm": 16.622128095923337,
+        "pd_filtered_rms_Nm": 7.39645124830755,
+        "command_peak_abs_Nm": 58.5,
+        "saturation_samples": 5,
+        "isaac_applied_available": true,
+        "command_vs_applied_rmse_Nm": 4.5552710863088607e-07
+      },
+      {
+        "joint": "J_hip_r_pitch",
+        "wbc_rms_Nm": 8.940653255757663,
+        "pd_filtered_rms_Nm": 9.404350785848143,
+        "command_peak_abs_Nm": 43.294966342386715,
+        "saturation_samples": 0,
+        "isaac_applied_available": true,
+        "command_vs_applied_rmse_Nm": 3.8007097984470963e-07
+      },
+      {
+        "joint": "J_knee_r_pitch",
+        "wbc_rms_Nm": 62.10265205364861,
+        "pd_filtered_rms_Nm": 33.26487831384067,
+        "command_peak_abs_Nm": 167.10063437941116,
+        "saturation_samples": 0,
+        "isaac_applied_available": true,
+        "command_vs_applied_rmse_Nm": 1.653023072927293e-06
+      },
+      {
+        "joint": "J_ankle_r_pitch",
+        "wbc_rms_Nm": 15.203814378294634,
+        "pd_filtered_rms_Nm": 7.596063801747397,
+        "command_peak_abs_Nm": 58.5,
+        "saturation_samples": 10,
+        "isaac_applied_available": true,
+        "command_vs_applied_rmse_Nm": 4.017841021002737e-07
+      }
+    ],
+    "actual_effort_semantics": "isaac_applied_Nm is get_dof_efforts actuation when present; projected joint force must be logged separately."
+  },
+  "sources": {
+    "Pro2/output/L4/L4验收报告.md": {
+      "sha256": "5d8cb388af2fc7bb48440d180312431d62223a375df4e769db575270f2b81959",
+      "bytes": 57850
+    },
+    "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/metrics.json": {
+      "sha256": "d4ed055988cd53b9f3f1d0603f95821a131a7d404f4172575908aedcf4019124",
+      "bytes": 778
+    },
+    "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/run.json": {
+      "sha256": "6c1b57dbfe9a3df0fbd038c1293dee18e30fac39f30c5b3a9481cb529f0b5b4a",
+      "bytes": 3536
+    },
+    "Pro2/output/L4/02_path_tracking/path_tracking_summary.json": {
+      "sha256": "efba7d6c1684012659819db8fb3d3d62a1f803e49df3a0d83ff238a0de8c4a5f",
+      "bytes": 4855
+    },
+    "Pro2/output/L4/03_terrain_and_jump/terrain_summary.json": {
+      "sha256": "92697ca766fe64b1901b22c607e67135c4fe5046a91a081ab89d28d9dcdb78b3",
+      "bytes": 4472
+    },
+    "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/metrics.json": {
+      "sha256": "fe5dbabfb577fe4d93956e0299067bef6643159bd78076b4354081e8b0cd70ec",
+      "bytes": 8949
+    },
+    "Pro2/output/L4/04_mpc_comparison/nmpc_rti_walk_run04/nmpc_metrics.json": {
+      "sha256": "fcaed01d15a311a9505d41988a789aaa9e060360c29aef92e38d3e04923a8b8d",
+      "bytes": 319
+    },
+    "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/metrics.json": {
+      "sha256": "3a0ceae4dbdbdb00326a9e1c77694f42f8ce87fe1bb3bc102feb563e24be830e",
+      "bytes": 2113
+    },
+    "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/acceptance.json": {
+      "sha256": "1dbfb5a18885e1591b705544dcd45f6c25b4e62fd5488904751510f1ba7bcfcc",
+      "bytes": 9038
+    },
+    "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/run.json": {
+      "sha256": "fa7c6d30a5727ede6277993466272ff1f0da2bfc6c9c20dda623926d2f93db5f",
+      "bytes": 8959
+    },
+    "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/jump_metrics.json": {
+      "sha256": "b9182e8494ff824fbaf2be5341e3d175fd6faf7a9f3fbf00e890b57977ab2799",
+      "bytes": 1387
+    },
+    "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/states.csv": {
+      "sha256": "317feaf56bbf474f9f464f636d436e78b2a2f7638e18375ac2184284af59ffdb",
+      "bytes": 9952239
+    },
+    "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/acceptance.json": {
+      "sha256": "7b01ef7c41bba814e0282104dd738a96bd64d5d8a0d167ba9c28e914d7097e0b",
+      "bytes": 9038
+    },
+    "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/run.json": {
+      "sha256": "463a13618abf0d5f420a27e97f17fdec9a036aceb364129db7092a7d6c246ad3",
+      "bytes": 8962
+    },
+    "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/jump_metrics.json": {
+      "sha256": "b9182e8494ff824fbaf2be5341e3d175fd6faf7a9f3fbf00e890b57977ab2799",
+      "bytes": 1387
+    },
+    "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/states.csv": {
+      "sha256": "97df3f7d5065978f59ee268a3b43a5e8dd5defc4044191bde60bceb26c099f5d",
+      "bytes": 9952199
+    },
+    "Pro2/output/L4/04_mpc_comparison/nmpc_rti_walk_run04/states.csv": {
+      "sha256": "3f4eab40dc91989e356c4c82081dce80457b9dc2edd734a14fecf8c22ad42070",
+      "bytes": 6722038
+    },
+    "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/run.json": {
+      "sha256": "8b1c7b9b4bd256e94677164ca868f673cf0216a4a9af223733b6d55cad4778ba",
+      "bytes": 6406
+    },
+    "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/path_metrics.json": {
+      "sha256": "f38fc9958cc500e77628e0a7d7e58db9e1dac1b4987cc86de0361b2ce63f481f",
+      "bytes": 350
+    },
+    "Pro2/output/L4/02_path_tracking/circle_closed_loop/run.json": {
+      "sha256": "b7e5550a6fbc9614eecf0b223d4e69c0b42a6f2644a4f49b125536f67a5da671",
+      "bytes": 6458
+    },
+    "Pro2/output/L4/02_path_tracking/circle_closed_loop/path_metrics.json": {
+      "sha256": "d6bf428162febf91ef44b1ad719930a1796a638d98770743746c3d3f1162eec4",
+      "bytes": 349
+    }
+  }
+}

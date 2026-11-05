@@ -1,0 +1,2049 @@
+{
+  "schema_version": 1,
+  "scope": "Pro2 L0-L4 Markdown reports",
+  "stages": {
+    "L0": {
+      "primary_report": "Pro2/output/L0/L0验收报告.md",
+      "minimum_required_primary_images": 7,
+      "primary_image_count": 7,
+      "report_count": 4,
+      "reports": [
+        {
+          "path": "Pro2/output/L0/L0验收报告.md",
+          "primary": true,
+          "embedded_images": [
+            "Pro2/output/L0/mpc_input_weight/comparison/control_effort.png",
+            "Pro2/output/L0/mpc_input_weight/comparison/posture.png",
+            "Pro2/output/L0/mpc_input_weight/comparison/speed_tracking.png",
+            "Pro2/output/L0/verify_default/final_frame.png",
+            "Pro2/output/L0/verify_gui_turn_push/final_frame.png",
+            "Pro2/output/L0/walk_10s_video/final_frame.png",
+            "Pro2/output/L0/walk_turn_at_5s_gui/final_frame.png"
+          ],
+          "referenced_evidence": [
+            "Pro2/experiments/L0/mpc_input_weight/baseline_1e-6.json",
+            "Pro2/experiments/L0/mpc_input_weight/high_1e-5.json",
+            "Pro2/experiments/L0/mpc_input_weight/low_1e-7.json",
+            "Pro2/output/L0/mpc_input_weight/comparison/control_effort.png",
+            "Pro2/output/L0/mpc_input_weight/comparison/metrics.csv",
+            "Pro2/output/L0/mpc_input_weight/comparison/metrics.json",
+            "Pro2/output/L0/mpc_input_weight/comparison/posture.png",
+            "Pro2/output/L0/mpc_input_weight/comparison/speed_tracking.png",
+            "Pro2/output/L0/verify_default/analysis_metrics.json",
+            "Pro2/output/L0/verify_default/final_frame.png",
+            "Pro2/output/L0/verify_default/run.json",
+            "Pro2/output/L0/verify_default/states.csv",
+            "Pro2/output/L0/verify_gui_turn_push/analysis_metrics.json",
+            "Pro2/output/L0/verify_gui_turn_push/final_frame.png",
+            "Pro2/output/L0/verify_gui_turn_push/run.json",
+            "Pro2/output/L0/verify_gui_turn_push/states.csv",
+            "Pro2/output/L0/verify_import/run.json",
+            "Pro2/output/L0/verify_walk/run.json",
+            "Pro2/output/L0/walk_10s_video/analysis_metrics.json",
+            "Pro2/output/L0/walk_10s_video/demo.mp4",
+            "Pro2/output/L0/walk_10s_video/final_frame.png",
+            "Pro2/output/L0/walk_10s_video/run.json",
+            "Pro2/output/L0/walk_10s_video/states.csv",
+            "Pro2/output/L0/walk_turn_at_5s_gui/analysis_metrics.json",
+            "Pro2/output/L0/walk_turn_at_5s_gui/final_frame.png",
+            "Pro2/output/L0/walk_turn_at_5s_gui/run.json",
+            "Pro2/output/L0/walk_turn_at_5s_gui/states.csv"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L0/checks/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L0/mpc_input_weight/comparison/analysis.md",
+          "primary": false,
+          "embedded_images": [
+            "Pro2/output/L0/mpc_input_weight/comparison/control_effort.png",
+            "Pro2/output/L0/mpc_input_weight/comparison/posture.png",
+            "Pro2/output/L0/mpc_input_weight/comparison/speed_tracking.png"
+          ],
+          "referenced_evidence": [
+            "Pro2/experiments/L0/mpc_input_weight/baseline_1e-6.json",
+            "Pro2/experiments/L0/mpc_input_weight/high_1e-5.json",
+            "Pro2/experiments/L0/mpc_input_weight/low_1e-7.json",
+            "Pro2/output/L0/mpc_input_weight/comparison/control_effort.png",
+            "Pro2/output/L0/mpc_input_weight/comparison/metrics.csv",
+            "Pro2/output/L0/mpc_input_weight/comparison/metrics.json",
+            "Pro2/output/L0/mpc_input_weight/comparison/posture.png",
+            "Pro2/output/L0/mpc_input_weight/comparison/speed_tracking.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L0/总报告提醒_尚未调参.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L0/mpc_input_weight/low_1e-7.json",
+            "Pro2/output/L0/mpc_input_weight/comparison/metrics.json"
+          ],
+          "errors": []
+        }
+      ],
+      "referenced_asset_count": 27,
+      "referenced_assets": [
+        {
+          "path": "Pro2/experiments/L0/mpc_input_weight/baseline_1e-6.json",
+          "bytes": 552,
+          "sha256": "66ff8e5445b5ba4c2756e32cdaebd984a48555b0303d0339475f489aaa38b26f"
+        },
+        {
+          "path": "Pro2/experiments/L0/mpc_input_weight/high_1e-5.json",
+          "bytes": 551,
+          "sha256": "622edc4e9f5fd87f872f4cd969024092e625562e3f3c0199cd9be3dccb9f9b5b"
+        },
+        {
+          "path": "Pro2/experiments/L0/mpc_input_weight/low_1e-7.json",
+          "bytes": 553,
+          "sha256": "350593d493817e2c34a27145a95093050b231f51e50f4ad652e39e961a88d2c2"
+        },
+        {
+          "path": "Pro2/output/L0/mpc_input_weight/comparison/control_effort.png",
+          "bytes": 58858,
+          "sha256": "67eb10c4ce97ae4e9ddb44afec855768c3fd094f9f2e1df6afccd7a30d4efa7a"
+        },
+        {
+          "path": "Pro2/output/L0/mpc_input_weight/comparison/metrics.csv",
+          "bytes": 1384,
+          "sha256": "9f7bde0a2b5e4abd0cc4289c9cf894d9c002edf48bf5402ddf851614835d47c7"
+        },
+        {
+          "path": "Pro2/output/L0/mpc_input_weight/comparison/metrics.json",
+          "bytes": 4310,
+          "sha256": "953e996073f06f6006c06ee5fc8824802a659ba1987fcc6dc29b97f040fbd587"
+        },
+        {
+          "path": "Pro2/output/L0/mpc_input_weight/comparison/posture.png",
+          "bytes": 145438,
+          "sha256": "633e3d04db530203758d0e78f130cd81300145876904015ee5cd32f6ee6248bf"
+        },
+        {
+          "path": "Pro2/output/L0/mpc_input_weight/comparison/speed_tracking.png",
+          "bytes": 62844,
+          "sha256": "95a9c51b9bac0b406cbb8a64df9c6f60b32204a050674e445774fc41d759d4c9"
+        },
+        {
+          "path": "Pro2/output/L0/verify_default/analysis_metrics.json",
+          "bytes": 2575,
+          "sha256": "a669893f3f50ad972ed7cb898ddc8e962ced7a1d88ff77cb536e6e26afdb160f"
+        },
+        {
+          "path": "Pro2/output/L0/verify_default/final_frame.png",
+          "bytes": 76844,
+          "sha256": "8e569bd36c8a5d7a52f05b016a2163847caccb19633f030c22a64b3940076290"
+        },
+        {
+          "path": "Pro2/output/L0/verify_default/run.json",
+          "bytes": 3711,
+          "sha256": "ab22900e6e8363e05f127fe4347b4b7ed8fae941069b8ae515e5f758fc96b154"
+        },
+        {
+          "path": "Pro2/output/L0/verify_default/states.csv",
+          "bytes": 4830705,
+          "sha256": "04ba5b407ed2adc28d2f72faf2b0167b79734eaddd4bdd61e90c47459a3d64dc"
+        },
+        {
+          "path": "Pro2/output/L0/verify_gui_turn_push/analysis_metrics.json",
+          "bytes": 2620,
+          "sha256": "14e55e574a839e52c0a66f34645fd162f8a89bc02502b74b2d55c0eaa3fb1c84"
+        },
+        {
+          "path": "Pro2/output/L0/verify_gui_turn_push/final_frame.png",
+          "bytes": 71516,
+          "sha256": "52553e6c57aafe4e4246adb397bd241ec46732f8826b4dfc6d53e856d3ad8ae6"
+        },
+        {
+          "path": "Pro2/output/L0/verify_gui_turn_push/run.json",
+          "bytes": 3710,
+          "sha256": "af8b422523d6f21a8be4b713f627b844278f56223d030fd93b805b52a6427b8e"
+        },
+        {
+          "path": "Pro2/output/L0/verify_gui_turn_push/states.csv",
+          "bytes": 2902887,
+          "sha256": "b0296e5b05aca69580fa96c88de0cfb1b5548db8bb73205801d996e4b9af1e40"
+        },
+        {
+          "path": "Pro2/output/L0/verify_import/run.json",
+          "bytes": 3500,
+          "sha256": "3e5531420929bcc3d0320083de1da165ee9212db9df592ad9350dcee83a6352a"
+        },
+        {
+          "path": "Pro2/output/L0/verify_walk/run.json",
+          "bytes": 3499,
+          "sha256": "306da66037e41c312d294ce2e9554b5dcb88ecd5ee381b007e9f96b03f981ad1"
+        },
+        {
+          "path": "Pro2/output/L0/walk_10s_video/analysis_metrics.json",
+          "bytes": 2521,
+          "sha256": "e4e33e6b3a3d2b23526e5c920a0fc22fb41d617f99a186dfe45f47c4cfeba5c5"
+        },
+        {
+          "path": "Pro2/output/L0/walk_10s_video/demo.mp4",
+          "bytes": 3557032,
+          "sha256": "13b70e9dd024de87a19927e194e7dd08bbc63528edee69e08a6f68067f2eac34"
+        },
+        {
+          "path": "Pro2/output/L0/walk_10s_video/final_frame.png",
+          "bytes": 78107,
+          "sha256": "82b02d3597457e74c9f490d91adcd8f04f997f24e3863f1bd8f04d95a79c7dca"
+        },
+        {
+          "path": "Pro2/output/L0/walk_10s_video/run.json",
+          "bytes": 4415,
+          "sha256": "abf6c96527985c4219d1e7230625551333ee83f0b5491889f085d78fb6b20053"
+        },
+        {
+          "path": "Pro2/output/L0/walk_10s_video/states.csv",
+          "bytes": 2421524,
+          "sha256": "81b7063e103b8676bb854a7d060fa52eb93cf571b85b5606ea3e0d1b8ad76019"
+        },
+        {
+          "path": "Pro2/output/L0/walk_turn_at_5s_gui/analysis_metrics.json",
+          "bytes": 2699,
+          "sha256": "eacc488108ade789ca92d633e56ea414a325e2ed43c30f573cccf3bc6a87d141"
+        },
+        {
+          "path": "Pro2/output/L0/walk_turn_at_5s_gui/final_frame.png",
+          "bytes": 74007,
+          "sha256": "72bcf33222d1bdb87ffbef2dbc4b0faebd4cb5038d0af2c27a1bcfd5c89544b2"
+        },
+        {
+          "path": "Pro2/output/L0/walk_turn_at_5s_gui/run.json",
+          "bytes": 4128,
+          "sha256": "d842ac3eef18f158f57ae02d193b4deae4b942d108c16a0d6d5e5387c14f2a9c"
+        },
+        {
+          "path": "Pro2/output/L0/walk_turn_at_5s_gui/states.csv",
+          "bytes": 2421173,
+          "sha256": "b28ebbacbde6b8b47be9eed4a05bef3b896022400562db4801f2330dedfd9aa8"
+        }
+      ]
+    },
+    "L1": {
+      "primary_report": "Pro2/output/L1/L1源码分析报告.md",
+      "minimum_required_primary_images": 1,
+      "primary_image_count": 1,
+      "report_count": 3,
+      "reports": [
+        {
+          "path": "Pro2/output/L1/L1任务清单.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/OpenLoong-Dyn-Control/common/joint_ctrl_config.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L1/L1源码分析报告.md",
+          "primary": true,
+          "embedded_images": [
+            "Pro2/output/L1/figures/L1闭环控制框架.png"
+          ],
+          "referenced_evidence": [
+            "Pro2/OpenLoong-Dyn-Control/common/joint_ctrl_config.json",
+            "Pro2/output/L1/figures/L1闭环控制框架.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L1/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L1/figures/L1闭环控制框架.png"
+          ],
+          "errors": []
+        }
+      ],
+      "referenced_asset_count": 2,
+      "referenced_assets": [
+        {
+          "path": "Pro2/OpenLoong-Dyn-Control/common/joint_ctrl_config.json",
+          "bytes": 6358,
+          "sha256": "800f1b5c8f0c20bbd91f76521894afa3a5f555a42c6fc738875ce33232e84109"
+        },
+        {
+          "path": "Pro2/output/L1/figures/L1闭环控制框架.png",
+          "bytes": 106684,
+          "sha256": "98fddf2d66d948e4be32cae5f255d377aafcfd213b1c743e8d7f457fcf83e9b4"
+        }
+      ]
+    },
+    "L2": {
+      "primary_report": "Pro2/output/L2/L2验收报告.md",
+      "minimum_required_primary_images": 13,
+      "primary_image_count": 13,
+      "report_count": 16,
+      "reports": [
+        {
+          "path": "Pro2/output/L2/L2验收与实验计划.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L2/active_runs.json",
+            "Pro2/output/L2/summary/L2总指标.csv"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/L2验收报告.md",
+          "primary": true,
+          "embedded_images": [
+            "Pro2/output/L2/figures/L2实验框架图.png",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/control_effort.png",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/disturbance_response.png",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/recovery.png",
+            "Pro2/output/L2/mpc_vx_weight/comparison/control_effort.png",
+            "Pro2/output/L2/mpc_vx_weight/comparison/posture.png",
+            "Pro2/output/L2/mpc_vx_weight/comparison/speed_tracking.png",
+            "Pro2/output/L2/prediction_horizon/comparison/posture.png",
+            "Pro2/output/L2/prediction_horizon/comparison/solver_time.png",
+            "Pro2/output/L2/prediction_horizon/comparison/speed_tracking.png",
+            "Pro2/output/L2/step_height/comparison/base_height.png",
+            "Pro2/output/L2/step_height/comparison/joint_torque.png",
+            "Pro2/output/L2/step_height/comparison/posture.png"
+          ],
+          "referenced_evidence": [
+            "Pro2/experiments/L2/lateral_push/no_push.json",
+            "Pro2/experiments/L2/lateral_push/push_100N.json",
+            "Pro2/experiments/L2/lateral_push/push_50N.json",
+            "Pro2/experiments/L2/mpc_vx_weight/baseline.json",
+            "Pro2/experiments/L2/mpc_vx_weight/high.json",
+            "Pro2/experiments/L2/mpc_vx_weight/low.json",
+            "Pro2/experiments/L2/prediction_horizon/baseline_n10.json",
+            "Pro2/experiments/L2/prediction_horizon/long_n15.json",
+            "Pro2/experiments/L2/prediction_horizon/short_n5.json",
+            "Pro2/experiments/L2/step_height/baseline_012.json",
+            "Pro2/experiments/L2/step_height/high_016.json",
+            "Pro2/experiments/L2/step_height/low_008.json",
+            "Pro2/output/L2/active_runs.json",
+            "Pro2/output/L2/figures/L2实验框架图.png",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/control_effort.png",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/disturbance_response.png",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/metrics.csv",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/presentation_summary.json",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/recovery.png",
+            "Pro2/output/L2/lateral_push/long_push_20261105/pre_push_consistency_verification.json",
+            "Pro2/output/L2/mpc_vx_weight/comparison/control_effort.png",
+            "Pro2/output/L2/mpc_vx_weight/comparison/metrics.csv",
+            "Pro2/output/L2/mpc_vx_weight/comparison/posture.png",
+            "Pro2/output/L2/mpc_vx_weight/comparison/speed_tracking.png",
+            "Pro2/output/L2/prediction_horizon/comparison/metrics.csv",
+            "Pro2/output/L2/prediction_horizon/comparison/posture.png",
+            "Pro2/output/L2/prediction_horizon/comparison/solver_time.png",
+            "Pro2/output/L2/prediction_horizon/comparison/speed_tracking.png",
+            "Pro2/output/L2/step_height/comparison/base_height.png",
+            "Pro2/output/L2/step_height/comparison/joint_torque.png",
+            "Pro2/output/L2/step_height/comparison/metrics.csv",
+            "Pro2/output/L2/step_height/comparison/posture.png",
+            "Pro2/output/L2/summary/L2总指标.csv",
+            "Pro2/output/final/assets/项目验收演示_L0_L2_L4.mp4"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L2/active_runs.json",
+            "Pro2/output/L2/summary/L2总指标.csv"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L2/active_runs.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/comparison/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/comparison/analysis.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L2/lateral_push/no_push.json",
+            "Pro2/experiments/L2/lateral_push/push_100N.json",
+            "Pro2/experiments/L2/lateral_push/push_50N.json",
+            "Pro2/output/L2/lateral_push/comparison/control_effort.png",
+            "Pro2/output/L2/lateral_push/comparison/disturbance_response.png",
+            "Pro2/output/L2/lateral_push/comparison/metrics.csv",
+            "Pro2/output/L2/lateral_push/comparison/recovery.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L2/lateral_push/long_push_20261105/arrow_render_verification.json",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/analysis_verification.json",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/metrics.csv",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/presentation_summary.json",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/side_by_side.mp4",
+            "Pro2/output/L2/lateral_push/long_push_20261105/pre_push_consistency_verification.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/analysis.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L2/lateral_push/no_push.json",
+            "Pro2/experiments/L2/lateral_push/push_100N.json",
+            "Pro2/experiments/L2/lateral_push/push_50N.json",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/control_effort.png",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/disturbance_response.png",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/metrics.csv",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/recovery.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/ppt_video_20261104/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L2/lateral_push/no_push.json",
+            "Pro2/experiments/L2/lateral_push/push_100N.json",
+            "Pro2/experiments/L2/lateral_push/push_50N.json",
+            "Pro2/output/final/checks/recordings_verification.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/mpc_vx_weight/comparison/analysis.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L2/mpc_vx_weight/baseline.json",
+            "Pro2/experiments/L2/mpc_vx_weight/high.json",
+            "Pro2/experiments/L2/mpc_vx_weight/low.json",
+            "Pro2/output/L2/mpc_vx_weight/comparison/control_effort.png",
+            "Pro2/output/L2/mpc_vx_weight/comparison/metrics.csv",
+            "Pro2/output/L2/mpc_vx_weight/comparison/posture.png",
+            "Pro2/output/L2/mpc_vx_weight/comparison/speed_tracking.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/ppt_demo_20261104/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L2/mpc_vx_weight/baseline.json",
+            "Pro2/experiments/L2/mpc_vx_weight/high.json",
+            "Pro2/experiments/L2/mpc_vx_weight/low.json",
+            "Pro2/output/L2/ppt_demo_20261104/baseline/demo.mp4",
+            "Pro2/output/L2/ppt_demo_20261104/high/demo.mp4",
+            "Pro2/output/L2/ppt_demo_20261104/low/demo.mp4",
+            "Pro2/output/L2/ppt_demo_20261104/verification.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/prediction_horizon/comparison/analysis.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L2/prediction_horizon/baseline_n10.json",
+            "Pro2/experiments/L2/prediction_horizon/long_n15.json",
+            "Pro2/experiments/L2/prediction_horizon/short_n5.json",
+            "Pro2/output/L2/prediction_horizon/comparison/metrics.csv",
+            "Pro2/output/L2/prediction_horizon/comparison/posture.png",
+            "Pro2/output/L2/prediction_horizon/comparison/solver_time.png",
+            "Pro2/output/L2/prediction_horizon/comparison/speed_tracking.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/prediction_horizon/ppt_video_20261104/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L2/prediction_horizon/baseline_n10.json",
+            "Pro2/experiments/L2/prediction_horizon/long_n15.json",
+            "Pro2/experiments/L2/prediction_horizon/short_n5.json",
+            "Pro2/output/final/checks/recordings_verification.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/step_height/comparison/analysis.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L2/step_height/baseline_012.json",
+            "Pro2/experiments/L2/step_height/high_016.json",
+            "Pro2/experiments/L2/step_height/low_008.json",
+            "Pro2/output/L2/step_height/comparison/base_height.png",
+            "Pro2/output/L2/step_height/comparison/joint_torque.png",
+            "Pro2/output/L2/step_height/comparison/metrics.csv",
+            "Pro2/output/L2/step_height/comparison/posture.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/step_height/ppt_video_20261104/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L2/step_height/baseline_012.json",
+            "Pro2/experiments/L2/step_height/high_016.json",
+            "Pro2/experiments/L2/step_height/low_008.json",
+            "Pro2/output/final/checks/recordings_verification.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L2/summary/L2实验结论.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/metrics.csv",
+            "Pro2/output/L2/mpc_vx_weight/comparison/metrics.csv",
+            "Pro2/output/L2/prediction_horizon/comparison/metrics.csv",
+            "Pro2/output/L2/step_height/comparison/metrics.csv",
+            "Pro2/output/L2/summary/L2总指标.csv"
+          ],
+          "errors": []
+        }
+      ],
+      "referenced_asset_count": 46,
+      "referenced_assets": [
+        {
+          "path": "Pro2/experiments/L2/lateral_push/no_push.json",
+          "bytes": 502,
+          "sha256": "093facf8d5f018b9405ee0e69c1d9fbe066845671cfd4e661a9b0fcd00263ebd"
+        },
+        {
+          "path": "Pro2/experiments/L2/lateral_push/push_100N.json",
+          "bytes": 504,
+          "sha256": "f5e28e9cf44f3ed252659709514e0a3b4392b3e4fd47b9331da6eab6b7b92ab1"
+        },
+        {
+          "path": "Pro2/experiments/L2/lateral_push/push_50N.json",
+          "bytes": 503,
+          "sha256": "d6af00aa3670c81e89da4fd56fa48c0f91ef06b0d09139e9b985281aebd1087b"
+        },
+        {
+          "path": "Pro2/experiments/L2/mpc_vx_weight/baseline.json",
+          "bytes": 236,
+          "sha256": "90ccd267290fbeadd67a4a5ce7ddad13f23c802299e78d2e602a00d4e1d2d340"
+        },
+        {
+          "path": "Pro2/experiments/L2/mpc_vx_weight/high.json",
+          "bytes": 236,
+          "sha256": "999226ffc622106dd4dfefdfee464344cecb81c0f24523a0614741323b99b581"
+        },
+        {
+          "path": "Pro2/experiments/L2/mpc_vx_weight/low.json",
+          "bytes": 238,
+          "sha256": "a14a785cc33ccc0f6c60b67b577502ebebb582b1133168e418d41cabbff2dedc"
+        },
+        {
+          "path": "Pro2/experiments/L2/prediction_horizon/baseline_n10.json",
+          "bytes": 352,
+          "sha256": "fef4f34554c2d83406f96c5fd3ed67b343d71b3a23bebd5824fa83935ea77594"
+        },
+        {
+          "path": "Pro2/experiments/L2/prediction_horizon/long_n15.json",
+          "bytes": 352,
+          "sha256": "34520385e4e864dbc6a48dc79f06a550b2338d7d959f1a414b803cbcbe71df55"
+        },
+        {
+          "path": "Pro2/experiments/L2/prediction_horizon/short_n5.json",
+          "bytes": 351,
+          "sha256": "95c86f954c65025d02d39c52ce068db1f651fd2f107724d3f205503f470d7775"
+        },
+        {
+          "path": "Pro2/experiments/L2/step_height/baseline_012.json",
+          "bytes": 306,
+          "sha256": "af4ba59bde05483dacf7c8f9d56e16938a6716829a004c90525e482808e31aba"
+        },
+        {
+          "path": "Pro2/experiments/L2/step_height/high_016.json",
+          "bytes": 306,
+          "sha256": "266ae456a8e9d26ccdf6c544152692e7e98be801932d2f9f809ae04a807cb7e1"
+        },
+        {
+          "path": "Pro2/experiments/L2/step_height/low_008.json",
+          "bytes": 306,
+          "sha256": "7af61f46e3c3fa3e46ca84a9cd7874a0792269b4fe6ab6f3093f71812ac73370"
+        },
+        {
+          "path": "Pro2/output/L2/active_runs.json",
+          "bytes": 453,
+          "sha256": "ee90e0d83b34747c67de1423da662f03f5e66bd2fe86f6bccaf861bcac53365e"
+        },
+        {
+          "path": "Pro2/output/L2/figures/L2实验框架图.png",
+          "bytes": 133459,
+          "sha256": "d86f57f92f903512c56c91267f0474640edb6e887d10593ab33c4d3bde52ea64"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/comparison/control_effort.png",
+          "bytes": 57058,
+          "sha256": "38614fb290b0e5f1cfbc4822390207103c1dc9f3d4f1b6b3c17ab2e434b6dc1a"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/comparison/disturbance_response.png",
+          "bytes": 106783,
+          "sha256": "51010c17d0682227de50f49aff442924648b850bc5f43b6a49bd5d93ed28a4a5"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/comparison/metrics.csv",
+          "bytes": 4391,
+          "sha256": "4ce1e95856c0d76cb324a85e36eff422b2a2b62b3c99cf0710f7af50b4ebf8be"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/comparison/recovery.png",
+          "bytes": 99244,
+          "sha256": "90c15a7e5e43332f410e473ad4fc763fa963fe92f465a5c2180af60066a60d90"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/arrow_render_verification.json",
+          "bytes": 4760,
+          "sha256": "8b9fdc19cc0ba8326ea61ab9eac0a037f5289f43ac2cf3fca79513976ff0455e"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/analysis_verification.json",
+          "bytes": 5146,
+          "sha256": "c43cb19c12047346114cc4e229a93414a1dada1fcee0668c8e45e333e208e620"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/control_effort.png",
+          "bytes": 52570,
+          "sha256": "6c5f2cf66accc087a13f8f36f68e87ad6075df6a4083a7d25b40ee6b313d21c3"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/disturbance_response.png",
+          "bytes": 90362,
+          "sha256": "4fc672c589f6271bd33ce6ab9784b4c9a0ecf4fafc69a8259cdc38da8a8c9bce"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/metrics.csv",
+          "bytes": 4950,
+          "sha256": "b98e8b437a797326788d6b27b3005b6151164030fc24af3a5ed5dddac54718d3"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/presentation_summary.json",
+          "bytes": 3356,
+          "sha256": "f1c7a9d649a55f3a0e41d05f3d1a5d2930c512dd5f8b5a409e62059fd9f072bf"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/recovery.png",
+          "bytes": 82461,
+          "sha256": "bc6099218d01bd47f920232abc716a2a4112a40b95232d498c9bec318a735589"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/side_by_side.mp4",
+          "bytes": 2163740,
+          "sha256": "c1cb1609ddb7736106c49f995282dc9c376259decf6f5f5c447d87efefca6dd7"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/pre_push_consistency_verification.json",
+          "bytes": 865,
+          "sha256": "acf06200ce7f13d6415bc32f76d6dcd2879d401276c50a63c8b54b82984f5852"
+        },
+        {
+          "path": "Pro2/output/L2/mpc_vx_weight/comparison/control_effort.png",
+          "bytes": 64236,
+          "sha256": "0b0d948b10f8ec6ee292a731002031c7dcce667c3552dcf26099bcb4de87df7f"
+        },
+        {
+          "path": "Pro2/output/L2/mpc_vx_weight/comparison/metrics.csv",
+          "bytes": 3516,
+          "sha256": "9bc2134a29f4220be646aaa17f1039a737de55fe8225a96550270e8b01e81f63"
+        },
+        {
+          "path": "Pro2/output/L2/mpc_vx_weight/comparison/posture.png",
+          "bytes": 108290,
+          "sha256": "069563556573614b68b575d03ff85c49fad588505c320ee5715c0a5279560eb1"
+        },
+        {
+          "path": "Pro2/output/L2/mpc_vx_weight/comparison/speed_tracking.png",
+          "bytes": 65394,
+          "sha256": "0e5595c27db689f89c45ad74a3a4d1a08fa5351970bcf5044f5add591988bc41"
+        },
+        {
+          "path": "Pro2/output/L2/ppt_demo_20261104/baseline/demo.mp4",
+          "bytes": 5226710,
+          "sha256": "3d4463eac52d105e499eacbd0e9877e0bd9d4e31c42a15aa521c776c49f09438"
+        },
+        {
+          "path": "Pro2/output/L2/ppt_demo_20261104/high/demo.mp4",
+          "bytes": 5220029,
+          "sha256": "9e13488bd45b4348d8b49e891c132bf884f9c488e7575eba28e5f72ab35351dd"
+        },
+        {
+          "path": "Pro2/output/L2/ppt_demo_20261104/low/demo.mp4",
+          "bytes": 5224150,
+          "sha256": "c34788100e88508168efed8c022a6dc7fdf56a42940f0cbb952e1fb550bbf673"
+        },
+        {
+          "path": "Pro2/output/L2/ppt_demo_20261104/verification.json",
+          "bytes": 6850,
+          "sha256": "0f27b3853848b540bc5a6a6777dfb7790cdebe524fdb1e61c73dff99e6da79e2"
+        },
+        {
+          "path": "Pro2/output/L2/prediction_horizon/comparison/metrics.csv",
+          "bytes": 3566,
+          "sha256": "2bda236b04c920eeb9fa8e4ca56dc89db5edc0d247621a1458f885e803e707d4"
+        },
+        {
+          "path": "Pro2/output/L2/prediction_horizon/comparison/posture.png",
+          "bytes": 105393,
+          "sha256": "331a0a9d6dfd4f3271385c2313990363438925b15233db240dd2e6e3f177007c"
+        },
+        {
+          "path": "Pro2/output/L2/prediction_horizon/comparison/solver_time.png",
+          "bytes": 65578,
+          "sha256": "96892fa878f3c43cf2585e83a8c382a51126081f36fea36cff8f5f80712f09ab"
+        },
+        {
+          "path": "Pro2/output/L2/prediction_horizon/comparison/speed_tracking.png",
+          "bytes": 65067,
+          "sha256": "4d75169dfdf7d6988aa97b5aa032296ec2d6201570e4e73bcc5e42e8455ddf96"
+        },
+        {
+          "path": "Pro2/output/L2/step_height/comparison/base_height.png",
+          "bytes": 57120,
+          "sha256": "46570f419f5be7a85002f705a978a1bb78300784812c3238869d7e14825b9797"
+        },
+        {
+          "path": "Pro2/output/L2/step_height/comparison/joint_torque.png",
+          "bytes": 60580,
+          "sha256": "60eee8fe0fc51295fb3f112f6bde8bd125131f2ab6116bbe6f2fb060cf925633"
+        },
+        {
+          "path": "Pro2/output/L2/step_height/comparison/metrics.csv",
+          "bytes": 3517,
+          "sha256": "a84d5c6166e5d2d594be4144b0bacde9f970f4ad822238cfd3a08b9671b5e0f3"
+        },
+        {
+          "path": "Pro2/output/L2/step_height/comparison/posture.png",
+          "bytes": 110111,
+          "sha256": "c4611923dcddf7b3ce7ffe2fe5dd65293972ca9ef5f8b11b0b6f3e9929533ab5"
+        },
+        {
+          "path": "Pro2/output/L2/summary/L2总指标.csv",
+          "bytes": 10511,
+          "sha256": "e6ec9430d596fae7bd22f99c559e60c550a39de16a71be679d674c2271310815"
+        },
+        {
+          "path": "Pro2/output/final/assets/项目验收演示_L0_L2_L4.mp4",
+          "bytes": 29663738,
+          "sha256": "4b43b8dd82247d66b94e0470bb907fbeb79e7e21b4b56aa04606e2ba281824c1"
+        },
+        {
+          "path": "Pro2/output/final/checks/recordings_verification.json",
+          "bytes": 305799,
+          "sha256": "8e3e9e74f38a5867f4a31e289328515561deafb76072d6dbda049669d4ec89f6"
+        }
+      ]
+    },
+    "L3": {
+      "primary_report": "Pro2/output/L3/L3理论联系报告.md",
+      "minimum_required_primary_images": 1,
+      "primary_image_count": 1,
+      "report_count": 2,
+      "reports": [
+        {
+          "path": "Pro2/output/L3/L3理论联系报告.md",
+          "primary": true,
+          "embedded_images": [
+            "Pro2/output/L3/figures/L3理论关系图.png"
+          ],
+          "referenced_evidence": [
+            "Pro2/cache/robot/model_metadata.json",
+            "Pro2/output/L2/lateral_push/long_push_20261105/comparison/metrics.csv",
+            "Pro2/output/L2/mpc_vx_weight/comparison/metrics.csv",
+            "Pro2/output/L2/prediction_horizon/comparison/metrics.csv",
+            "Pro2/output/L2/summary/L2总指标.csv",
+            "Pro2/output/L3/figures/L3理论关系图.png",
+            "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/metrics.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L3/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L3/figures/L3理论关系图.png"
+          ],
+          "errors": []
+        }
+      ],
+      "referenced_asset_count": 7,
+      "referenced_assets": [
+        {
+          "path": "Pro2/cache/robot/model_metadata.json",
+          "bytes": 19298,
+          "sha256": "4f65458e02606dd284824b4e312fddac0e6c636ce7b64d8d58c8be3cee250f4b"
+        },
+        {
+          "path": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/metrics.csv",
+          "bytes": 4950,
+          "sha256": "b98e8b437a797326788d6b27b3005b6151164030fc24af3a5ed5dddac54718d3"
+        },
+        {
+          "path": "Pro2/output/L2/mpc_vx_weight/comparison/metrics.csv",
+          "bytes": 3516,
+          "sha256": "9bc2134a29f4220be646aaa17f1039a737de55fe8225a96550270e8b01e81f63"
+        },
+        {
+          "path": "Pro2/output/L2/prediction_horizon/comparison/metrics.csv",
+          "bytes": 3566,
+          "sha256": "2bda236b04c920eeb9fa8e4ca56dc89db5edc0d247621a1458f885e803e707d4"
+        },
+        {
+          "path": "Pro2/output/L2/summary/L2总指标.csv",
+          "bytes": 10511,
+          "sha256": "e6ec9430d596fae7bd22f99c559e60c550a39de16a71be679d674c2271310815"
+        },
+        {
+          "path": "Pro2/output/L3/figures/L3理论关系图.png",
+          "bytes": 87604,
+          "sha256": "53ce27cfa4b366878f5b55cca49d7b73996e97b9570728149c1844eb61c78109"
+        },
+        {
+          "path": "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/metrics.json",
+          "bytes": 8949,
+          "sha256": "fe5dbabfb577fe4d93956e0299067bef6643159bd78076b4354081e8b0cd70ec"
+        }
+      ]
+    },
+    "L4": {
+      "primary_report": "Pro2/output/L4/L4验收报告.md",
+      "minimum_required_primary_images": 59,
+      "primary_image_count": 59,
+      "report_count": 25,
+      "reports": [
+        {
+          "path": "Pro2/output/L4/01_robot_swap/L4-01_模型更换验收.md",
+          "primary": false,
+          "embedded_images": [
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/balance_feedback.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_attitude.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_height.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/joint_effort.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/joint_tracking.png"
+          ],
+          "referenced_evidence": [
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/balance_feedback.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_attitude.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_height.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/joint_effort.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/joint_tracking.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/metrics.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/metrics.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/states.csv",
+            "Pro2/robots/unitree_h1_2_handless.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final/H1站立验收.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final/config.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final/metrics.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final/run.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final/states.csv"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/H1站立验收.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/config.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/metrics.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/run.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/states.csv"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_run06/H1站立验收.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_run06/config.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_run06/metrics.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_run06/run.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_run06/states.csv"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_stand_pd_5s_run02/H1站立验收.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/01_robot_swap/h1_stand_pd_5s_run02/config.json",
+            "Pro2/output/L4/01_robot_swap/h1_stand_pd_5s_run02/metrics.json",
+            "Pro2/output/L4/01_robot_swap/h1_stand_pd_5s_run02/run.json",
+            "Pro2/output/L4/01_robot_swap/h1_stand_pd_5s_run02/states.csv"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/preflight/h1_2_handless_preflight.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/01_robot_swap/preflight/h1_2_handless_preflight.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/visual_h1_20261031-231708/H1站立验收.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/01_robot_swap/visual_h1_20261031-231708/config.json",
+            "Pro2/output/L4/01_robot_swap/visual_h1_20261031-231708/metrics.json",
+            "Pro2/output/L4/01_robot_swap/visual_h1_20261031-231708/run.json",
+            "Pro2/output/L4/01_robot_swap/visual_h1_20261031-231708/states.csv"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/circle_open_loop/INVALIDATED.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/ppt_video_20261104/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L4/path_tracking/waypoints.json",
+            "Pro2/output/L4/02_path_tracking/ppt_video_20261104/waypoints/recording_command.json",
+            "Pro2/output/final/checks/recordings_verification.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/JUMP_IMPLEMENTATION_REPORT.md",
+          "primary": false,
+          "embedded_images": [
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/velocity.png"
+          ],
+          "referenced_evidence": [
+            "Pro2/experiments/L4/jump/vertical_jump.json",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/acceptance.json",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/velocity.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/acceptance.json",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/velocity.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/experiments/L4/jump/vertical_jump.json",
+            "Pro2/experiments/L4/terrain/rough_medium.json",
+            "Pro2/experiments/L4/terrain/slope_05deg.json",
+            "Pro2/output/final/checks/recordings_verification.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/analysis/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/analysis/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/analysis/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/analysis/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/analysis/velocity.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/rough_low/INVALIDATED.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/rough_medium/INVALIDATED.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis/velocity.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_csv_verified/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_csv_verified/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_csv_verified/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_csv_verified/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_csv_verified/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_csv_verified/velocity.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/velocity.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis/velocity.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_csv_verified/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_csv_verified/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_csv_verified/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_csv_verified/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_csv_verified/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_csv_verified/velocity.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/velocity.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run32/analysis/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run32/analysis/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run32/analysis/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run32/analysis/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run32/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run32/analysis/velocity.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run35/analysis/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run35/analysis/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run35/analysis/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run35/analysis/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run35/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run35/analysis/velocity.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/visual_vertical_jump_20261102-220532-465767/analysis/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/03_terrain_and_jump/visual_vertical_jump_20261102-220532-465767/analysis/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/visual_vertical_jump_20261102-220532-465767/analysis/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/visual_vertical_jump_20261102-220532-465767/analysis/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/visual_vertical_jump_20261102-220532-465767/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/visual_vertical_jump_20261102-220532-465767/analysis/velocity.png"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/L4验收报告.md",
+          "primary": true,
+          "embedded_images": [
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/balance_feedback.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_attitude.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_height.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/joint_effort.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/joint_tracking.png",
+            "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/cross_track_error.png",
+            "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/heading_error.png",
+            "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/planar_trajectory.png",
+            "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/analysis/cross_track_error.png",
+            "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/analysis/heading_error.png",
+            "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/analysis/planar_trajectory.png",
+            "Pro2/output/L4/02_path_tracking/straight_run02/analysis/cross_track_error.png",
+            "Pro2/output/L4/02_path_tracking/straight_run02/analysis/heading_error.png",
+            "Pro2/output/L4/02_path_tracking/straight_run02/analysis/planar_trajectory.png",
+            "Pro2/output/L4/02_path_tracking/turn_90/analysis/cross_track_error.png",
+            "Pro2/output/L4/02_path_tracking/turn_90/analysis/heading_error.png",
+            "Pro2/output/L4/02_path_tracking/turn_90/analysis/planar_trajectory.png",
+            "Pro2/output/L4/02_path_tracking/waypoints_run06/analysis/cross_track_error.png",
+            "Pro2/output/L4/02_path_tracking/waypoints_run06/analysis/heading_error.png",
+            "Pro2/output/L4/02_path_tracking/waypoints_run06/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/base_attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/base_height.png",
+            "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/forward_velocity.png",
+            "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/base_attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/base_height.png",
+            "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/forward_velocity.png",
+            "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/base_attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/base_height.png",
+            "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/forward_velocity.png",
+            "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/base_attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/base_height.png",
+            "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/forward_velocity.png",
+            "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/velocity.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/velocity.png",
+            "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/vx_world_m_s_comparison.png",
+            "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/vy_world_m_s_comparison.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_ankle_l_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_ankle_r_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_hip_l_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_hip_r_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_knee_l_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_knee_r_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/mpc_vertical_contact_force.png",
+            "Pro2/output/L4/figures/L4凸MPC与NMPC对比.png",
+            "Pro2/output/L4/figures/L4力矩分解链路.png",
+            "Pro2/output/L4/figures/L4总体适配架构.png",
+            "Pro2/output/L4/figures/L4路径跟踪闭环.png"
+          ],
+          "referenced_evidence": [
+            "Pro2/experiments/L4/jump/vertical_jump.json",
+            "Pro2/experiments/L4/mpc_comparison/cpp_convex_walk_run.json",
+            "Pro2/experiments/L4/mpc_comparison/nmpc_rti_walk_run.json",
+            "Pro2/experiments/L4/path_tracking/straight.json",
+            "Pro2/experiments/L4/terrain/blind_step_up.json",
+            "Pro2/experiments/L4/terrain/random_obstacles_seed01_full.json",
+            "Pro2/experiments/L4/terrain/rough_medium.json",
+            "Pro2/experiments/L4/terrain/slope_05deg.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/balance_feedback.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_attitude.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_height.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/joint_effort.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/joint_tracking.png",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/metrics.json",
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/states.csv",
+            "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/cross_track_error.png",
+            "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/heading_error.png",
+            "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/planar_trajectory.png",
+            "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/analysis/cross_track_error.png",
+            "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/analysis/heading_error.png",
+            "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/analysis/planar_trajectory.png",
+            "Pro2/output/L4/02_path_tracking/path_tracking_summary.csv",
+            "Pro2/output/L4/02_path_tracking/path_tracking_summary.json",
+            "Pro2/output/L4/02_path_tracking/straight_run02/analysis/cross_track_error.png",
+            "Pro2/output/L4/02_path_tracking/straight_run02/analysis/heading_error.png",
+            "Pro2/output/L4/02_path_tracking/straight_run02/analysis/planar_trajectory.png",
+            "Pro2/output/L4/02_path_tracking/turn_90/analysis/cross_track_error.png",
+            "Pro2/output/L4/02_path_tracking/turn_90/analysis/heading_error.png",
+            "Pro2/output/L4/02_path_tracking/turn_90/analysis/planar_trajectory.png",
+            "Pro2/output/L4/02_path_tracking/waypoints_run06/analysis/cross_track_error.png",
+            "Pro2/output/L4/02_path_tracking/waypoints_run06/analysis/heading_error.png",
+            "Pro2/output/L4/02_path_tracking/waypoints_run06/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/base_attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/base_height.png",
+            "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/forward_velocity.png",
+            "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/base_attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/base_height.png",
+            "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/forward_velocity.png",
+            "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/base_attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/base_height.png",
+            "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/forward_velocity.png",
+            "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/base_attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/base_height.png",
+            "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/forward_velocity.png",
+            "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/terrain_summary.csv",
+            "Pro2/output/L4/03_terrain_and_jump/terrain_summary.json",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/acceptance.json",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/velocity.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/acceptance.json",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/attitude.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/contact_forces.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/height.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/planar_trajectory.png",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/velocity.png",
+            "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/metrics.json",
+            "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/vx_world_m_s_comparison.png",
+            "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/vy_world_m_s_comparison.png",
+            "Pro2/output/L4/04_mpc_comparison/cpp_convex_walk_run03/states.csv",
+            "Pro2/output/L4/04_mpc_comparison/nmpc_rti_online/self_check.json",
+            "Pro2/output/L4/04_mpc_comparison/nmpc_slsqp_offline/self_check.json",
+            "Pro2/output/L4/04_mpc_comparison/python_convex_reference/self_check.json",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_ankle_l_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_ankle_r_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_hip_l_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_hip_r_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_knee_l_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_knee_r_pitch.png",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/mpc_vertical_contact_force.png",
+            "Pro2/output/L4/figures/L4凸MPC与NMPC对比.png",
+            "Pro2/output/L4/figures/L4力矩分解链路.png",
+            "Pro2/output/L4/figures/L4总体适配架构.png",
+            "Pro2/output/L4/figures/L4路径跟踪闭环.png",
+            "Pro2/robots/unitree_h1_2_handless.json"
+          ],
+          "errors": []
+        },
+        {
+          "path": "Pro2/output/L4/README.md",
+          "primary": false,
+          "embedded_images": [],
+          "referenced_evidence": [
+            "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/metrics.json",
+            "Pro2/output/L4/02_path_tracking/path_tracking_summary.csv",
+            "Pro2/output/L4/02_path_tracking/path_tracking_summary.json",
+            "Pro2/output/L4/03_terrain_and_jump/terrain_summary.csv",
+            "Pro2/output/L4/03_terrain_and_jump/terrain_summary.json",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/acceptance.json",
+            "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/acceptance.json",
+            "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/metrics.json",
+            "Pro2/output/L4/04_mpc_comparison/cpp_convex_walk_run03/states.csv",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/joint_metrics.csv",
+            "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/metrics.json",
+            "Pro2/output/L4/figures/L4凸MPC与NMPC对比.png",
+            "Pro2/output/L4/figures/L4力矩分解链路.png",
+            "Pro2/output/L4/figures/L4总体适配架构.png",
+            "Pro2/output/L4/figures/L4路径跟踪闭环.png"
+          ],
+          "errors": []
+        }
+      ],
+      "referenced_asset_count": 146,
+      "referenced_assets": [
+        {
+          "path": "Pro2/experiments/L4/jump/vertical_jump.json",
+          "bytes": 721,
+          "sha256": "8d3f673d635a5118e954406d99c0768372afcfd10d1a798951db12069793b2ac"
+        },
+        {
+          "path": "Pro2/experiments/L4/mpc_comparison/cpp_convex_walk_run.json",
+          "bytes": 201,
+          "sha256": "d2c1b4aff57963879d891a4f41863b8bd36b136a6c8368d774a0a78484c07160"
+        },
+        {
+          "path": "Pro2/experiments/L4/mpc_comparison/nmpc_rti_walk_run.json",
+          "bytes": 515,
+          "sha256": "d1167081d8f2f18e42b86a0ec7f869da36c4184e93afb2ea450be08cabb37368"
+        },
+        {
+          "path": "Pro2/experiments/L4/path_tracking/straight.json",
+          "bytes": 557,
+          "sha256": "fddaf2acf1df15e98c803e7700e13ae840c2584d495b291b1c97fcd2b100454b"
+        },
+        {
+          "path": "Pro2/experiments/L4/path_tracking/waypoints.json",
+          "bytes": 579,
+          "sha256": "4e230161396b803a8ac48a430a2bce9811789c62e5d7f7c5d5d719a4e2b55fea"
+        },
+        {
+          "path": "Pro2/experiments/L4/terrain/blind_step_up.json",
+          "bytes": 214,
+          "sha256": "67f543987223a68e37e878b4ec43ae660485dc775ce716fa07085707187009fd"
+        },
+        {
+          "path": "Pro2/experiments/L4/terrain/random_obstacles_seed01_full.json",
+          "bytes": 306,
+          "sha256": "fcedd0c78d399b966e4d00f414461dc6c981743ff6bbf360db32e79b4af3adf1"
+        },
+        {
+          "path": "Pro2/experiments/L4/terrain/rough_medium.json",
+          "bytes": 229,
+          "sha256": "f007cfa4c4d3be02a1f05549c05c818cb20aa54d6b1f6823e2d0a1e3533433f5"
+        },
+        {
+          "path": "Pro2/experiments/L4/terrain/slope_05deg.json",
+          "bytes": 213,
+          "sha256": "836207bbb6b0203403705008e005aa3ed73cdcedbaad0cd8c078e3996b43d1a1"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final/config.json",
+          "bytes": 732,
+          "sha256": "74e0bfcafd956cea894d6b8fb6a282144e85e375456655b3a4ea056b8e6a5628"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final/metrics.json",
+          "bytes": 778,
+          "sha256": "d4ed055988cd53b9f3f1d0603f95821a131a7d404f4172575908aedcf4019124"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final/run.json",
+          "bytes": 3464,
+          "sha256": "c7e0cbfd9358a5685f9c3c01c83a261d5c2952db07818315950539ae13d323fd"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final/states.csv",
+          "bytes": 2563201,
+          "sha256": "03f33279662b97c6fc18077151553ddb03a607c53f06f3a1cd2247ed574a3791"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/balance_feedback.png",
+          "bytes": 34647,
+          "sha256": "1e27ad3cbda22f14a2b12ad64305d3f6c48074d38081226a1c54638d186cd76b"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_attitude.png",
+          "bytes": 32602,
+          "sha256": "8d2c2aaed5ccfbacc158abeda98093f10e30723efa66607959b3d46ccb6f8cbc"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/base_height.png",
+          "bytes": 30406,
+          "sha256": "4394400ca74bac29e6da89f86bdc27573ba7ef631a63f0322a9c9dcdcecd7787"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/joint_effort.png",
+          "bytes": 31107,
+          "sha256": "8d6f07186f2352acdd512fbeecbd5f6eccace0276fa590e589c934e81fb46442"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/joint_tracking.png",
+          "bytes": 31022,
+          "sha256": "94d61d9d8935a7f9c40d232fbc18e51b1ed30feb5f5625fba8b0d2a2ba66bdd4"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/analysis/metrics.json",
+          "bytes": 5123,
+          "sha256": "14e2fa758579592a1f04cf509ad3cb61c91b38e9a747c816c5445999f080f4dc"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/config.json",
+          "bytes": 735,
+          "sha256": "2e662fcb8428db65ef52998b685fdd07533af62f8eecbfb6ad26325e37b6e8d4"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/metrics.json",
+          "bytes": 778,
+          "sha256": "d4ed055988cd53b9f3f1d0603f95821a131a7d404f4172575908aedcf4019124"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/run.json",
+          "bytes": 3536,
+          "sha256": "6c1b57dbfe9a3df0fbd038c1293dee18e30fac39f30c5b3a9481cb529f0b5b4a"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/states.csv",
+          "bytes": 2563201,
+          "sha256": "03f33279662b97c6fc18077151553ddb03a607c53f06f3a1cd2247ed574a3791"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_run06/config.json",
+          "bytes": 732,
+          "sha256": "4671ebac1080d65bbab77876e9195d9d18683632656b596f0f9f2432e1bde90e"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_run06/metrics.json",
+          "bytes": 778,
+          "sha256": "d4ed055988cd53b9f3f1d0603f95821a131a7d404f4172575908aedcf4019124"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_run06/run.json",
+          "bytes": 3464,
+          "sha256": "4988b504e9c6f12191b8e8cc5cfa1c9f5f589999cfa36ea8b7870e30f50011c0"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_run06/states.csv",
+          "bytes": 2563201,
+          "sha256": "03f33279662b97c6fc18077151553ddb03a607c53f06f3a1cd2247ed574a3791"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_stand_pd_5s_run02/config.json",
+          "bytes": 437,
+          "sha256": "fb7f9d126e37e6a5ab787c3ccb8ce910c4802df214523ff932e4c7f5f463f134"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_stand_pd_5s_run02/metrics.json",
+          "bytes": 439,
+          "sha256": "2d3497c2ff2d90db9b7759e25f4b6e255054d3405ea11e0ee8f5c91996826e2f"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_stand_pd_5s_run02/run.json",
+          "bytes": 3040,
+          "sha256": "749eddbaa24a2a46d4409cf59872f8424600f0c530ec314a39ba4d9b8a93c8b2"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/h1_stand_pd_5s_run02/states.csv",
+          "bytes": 789427,
+          "sha256": "db81f1a20dec2701931eef98715b1976404c34ffb22c7f1e6d0fec540487adec"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/preflight/h1_2_handless_preflight.json",
+          "bytes": 31759,
+          "sha256": "be4326dd47d4dea7aca1d29cc38d3d86d4bd91a1976a0ec65b68bb12570b0ec0"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/visual_h1_20261031-231708/config.json",
+          "bytes": 750,
+          "sha256": "106061affecbe55ab169266d846d785c9eb534abf1a3bb5bc5823c5e668f8676"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/visual_h1_20261031-231708/metrics.json",
+          "bytes": 778,
+          "sha256": "d4ed055988cd53b9f3f1d0603f95821a131a7d404f4172575908aedcf4019124"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/visual_h1_20261031-231708/run.json",
+          "bytes": 3551,
+          "sha256": "6d8685fce6ed0500474d284e9ae7b072c203e91e3ad9fb4885b1ae4c597fd9cf"
+        },
+        {
+          "path": "Pro2/output/L4/01_robot_swap/visual_h1_20261031-231708/states.csv",
+          "bytes": 2563201,
+          "sha256": "03f33279662b97c6fc18077151553ddb03a607c53f06f3a1cd2247ed574a3791"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/cross_track_error.png",
+          "bytes": 33889,
+          "sha256": "773163ee44762335984dbe22f59d0d52a37ee64739f167f0fa78f5ea76ee7ef6"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/heading_error.png",
+          "bytes": 31534,
+          "sha256": "c327a3d657b6da7aad3b85e2b66349292d06be9c68634fb013e46ebf666749dc"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/circle_closed_loop_run02/analysis/planar_trajectory.png",
+          "bytes": 37363,
+          "sha256": "c0ba583ee02670e9998e9a09939daf8d11199cd8b9a5021e90969dc6fb937f12"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/analysis/cross_track_error.png",
+          "bytes": 35143,
+          "sha256": "ab3a3d6be1bf4f8401053a43daa4d9037c78a8757c9e84b406bd3af3fe1b4996"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/analysis/heading_error.png",
+          "bytes": 32608,
+          "sha256": "6188bab6eb4fc32567bb65d1c31cd3606f2ba30a5ffa6d5bb73fc9c8c12e767b"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/circle_open_loop_run02/analysis/planar_trajectory.png",
+          "bytes": 39050,
+          "sha256": "ec4c5a676e5b54feab6a3d0e45ba904cfafd23ff73a7d99774bcf19ce42f32f2"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/path_tracking_summary.csv",
+          "bytes": 2374,
+          "sha256": "2af352d863b6bca6a2f595985d1355ea2b9b3c817603804eadf4a48d8d900cee"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/path_tracking_summary.json",
+          "bytes": 4855,
+          "sha256": "efba7d6c1684012659819db8fb3d3d62a1f803e49df3a0d83ff238a0de8c4a5f"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/ppt_video_20261104/waypoints/recording_command.json",
+          "bytes": 357,
+          "sha256": "886c4e14cbbeb4a8e29e62270346518ccf5c3a1d1fe4ba6de643e34dca039730"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/straight_run02/analysis/cross_track_error.png",
+          "bytes": 33551,
+          "sha256": "b94673b1de30414c3c0e52bbeed4d96b844a4bee1c12e0ce20dc5f622bd08c8c"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/straight_run02/analysis/heading_error.png",
+          "bytes": 32066,
+          "sha256": "7b7914ccce7bfb4179cf71b5716c52c09aa41ad5a27361a3e91dc28b2a434f4b"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/straight_run02/analysis/planar_trajectory.png",
+          "bytes": 36598,
+          "sha256": "fd54d42229b813a2baf62f47eabbd5a1848e73e4d96db3c3756c6ca54a028085"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/turn_90/analysis/cross_track_error.png",
+          "bytes": 33406,
+          "sha256": "59432d99991105e14144bfa6b20f67d2ec3881b917e61e216fc4792828f90d69"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/turn_90/analysis/heading_error.png",
+          "bytes": 30199,
+          "sha256": "8fd9d7dbe3ba46544c21e713e18131c73e3e49f3f20dd39f59a70fc863f6f895"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/turn_90/analysis/planar_trajectory.png",
+          "bytes": 35010,
+          "sha256": "a4ec0e44fc9439efb7be6972f214d116b9d2e06f46503227db6fdcf3d7c6f892"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/waypoints_run06/analysis/cross_track_error.png",
+          "bytes": 33181,
+          "sha256": "8336a33c5e72cbce76f7abbb6bc5cdd1b59b81b91fc6a1b1a65101e92ab5556c"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/waypoints_run06/analysis/heading_error.png",
+          "bytes": 30086,
+          "sha256": "09a1abba43ad6a39787e1997e13c17123586978b33ae4626c0d1d47a96318cee"
+        },
+        {
+          "path": "Pro2/output/L4/02_path_tracking/waypoints_run06/analysis/planar_trajectory.png",
+          "bytes": 36915,
+          "sha256": "9e233e0c4a922cb24b4297aabcd11dd26e5d00af80eb1717fe8e355939d2635f"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/base_attitude.png",
+          "bytes": 42812,
+          "sha256": "5d8542000cd6718ca96e2d048bdc1d2f743891598968c636a9bcac72fffb47ef"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/base_height.png",
+          "bytes": 30690,
+          "sha256": "3ac306be15b8f9d07181a39f76f3006dbfed00905cd79a415af1e8e4d1b37e31"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/forward_velocity.png",
+          "bytes": 40257,
+          "sha256": "3299796a93283620225ba2b3c3a7530ddfe3b978dcbe09bf8d155670a9edc3f5"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/blind_step_up_run02/analysis/planar_trajectory.png",
+          "bytes": 35336,
+          "sha256": "e47063f9aaf2a21ebf9e896ecfedef355a10a1d1bbe707b1ac1c3df336de41c7"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/analysis/attitude.png",
+          "bytes": 25664,
+          "sha256": "ddcc7a036a22f69ae7149ed3941f89da8d1b3c4553674ecd8c27416c94d292b3"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/analysis/contact_forces.png",
+          "bytes": 33356,
+          "sha256": "7075f633aaef59064b592b8c7173f46e8421241b8dceb90b9ed063bc93c3fd89"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/analysis/height.png",
+          "bytes": 27703,
+          "sha256": "74fdafe40169edec1f0cfe8bddd705459a768a91d5d165594097bcd274bdace8"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/analysis/planar_trajectory.png",
+          "bytes": 24360,
+          "sha256": "fe6cc0e057ec5a2833a0617436cec54070e16d9704b9004877d8ab3d8668eeac"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/analysis/velocity.png",
+          "bytes": 27948,
+          "sha256": "729ae7fa33fc829882663d5200348c5ad71e88fec8578c9eed777feec8a045e3"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/base_attitude.png",
+          "bytes": 47721,
+          "sha256": "f1ad20948b5468a2c4653cbb7105414009d6ce23ab0a8427104d860075f0824e"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/base_height.png",
+          "bytes": 31317,
+          "sha256": "6588ccdb9d0375215c08f0bc4ab4ecf5f58c571806d36394aa5ad758bd7cd402"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/forward_velocity.png",
+          "bytes": 41959,
+          "sha256": "08b93ca6621ad4d0f6457e07ae49e36dbf533fd55f155b8d5d8d246b2cf3cc8c"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/analysis/planar_trajectory.png",
+          "bytes": 36704,
+          "sha256": "c6ec55bb82b3e1b44e854bba9aefa96e77531d7c60c0f280b4d49bdcfda1aee3"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/base_attitude.png",
+          "bytes": 44754,
+          "sha256": "6d737438b2bbf2ee3a86cd2d614b8fe3f4efab947f004bbf5bf250b21c791641"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/base_height.png",
+          "bytes": 30762,
+          "sha256": "9a391b719d1a682de781f530e42b3bc3b71c00a3060f619b1b8b20ceb5a846a6"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/forward_velocity.png",
+          "bytes": 41289,
+          "sha256": "705827edcc4748702b645b8009f76636cae4e9982d40802b0d03adf49d94489e"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/rough_medium_run02/analysis/planar_trajectory.png",
+          "bytes": 35292,
+          "sha256": "4c04742255d04f1238f3119aa28380053d4a1ce9fa98275166c829265e8a22c4"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/base_attitude.png",
+          "bytes": 44020,
+          "sha256": "8005c698b4b1309d391e436ca7afb3615c06b6ce3a667459f37091cdcee21eb2"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/base_height.png",
+          "bytes": 31587,
+          "sha256": "ad9328f3d8edfd33c6711e50f07e2a1045b8021ee42b5f201d9cf955115fad39"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/forward_velocity.png",
+          "bytes": 39854,
+          "sha256": "630364c3fc7390ac62c5e0df480c47115016d01135cb4d582e21b794885e7a22"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/slope_05deg/analysis/planar_trajectory.png",
+          "bytes": 35385,
+          "sha256": "f45c5c11fff2fe6db9d86b0c6f384a8b2bc7fa1ed18461b501979ac5036fb11b"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/terrain_summary.csv",
+          "bytes": 1771,
+          "sha256": "ae59f1c4ee8dca5948f207a40257ecb3d16872c5f25ef24a546305f7ab11fe73"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/terrain_summary.json",
+          "bytes": 4472,
+          "sha256": "92697ca766fe64b1901b22c607e67135c4fe5046a91a081ab89d28d9dcdb78b3"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis/attitude.png",
+          "bytes": 25819,
+          "sha256": "eb48b6c6e2070813f8b1f43faa4298e05d3fc3b5f2c4542c7c7effa5260820e2"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis/contact_forces.png",
+          "bytes": 32930,
+          "sha256": "b490382f3ac3005fbd5bea40427514098b4b4bbed25661fcdc0f6ffff822b832"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis/height.png",
+          "bytes": 27754,
+          "sha256": "ccee2002a9af9a1b5938dba0c2d6c01ec36406e15fa4f698bfe431c9a621e4c4"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis/planar_trajectory.png",
+          "bytes": 24396,
+          "sha256": "867e912ca099d9c9124813e1b3e7992d5541cca114d420c66e1c9e4882f63bca"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis/velocity.png",
+          "bytes": 27924,
+          "sha256": "97dbf4931f471576119a0010dd07cf1ca399b0faddf1e4206af513572eff2b19"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_csv_verified/attitude.png",
+          "bytes": 25819,
+          "sha256": "eb48b6c6e2070813f8b1f43faa4298e05d3fc3b5f2c4542c7c7effa5260820e2"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_csv_verified/contact_forces.png",
+          "bytes": 32930,
+          "sha256": "b490382f3ac3005fbd5bea40427514098b4b4bbed25661fcdc0f6ffff822b832"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_csv_verified/height.png",
+          "bytes": 27754,
+          "sha256": "ccee2002a9af9a1b5938dba0c2d6c01ec36406e15fa4f698bfe431c9a621e4c4"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_csv_verified/planar_trajectory.png",
+          "bytes": 24396,
+          "sha256": "867e912ca099d9c9124813e1b3e7992d5541cca114d420c66e1c9e4882f63bca"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_csv_verified/velocity.png",
+          "bytes": 27924,
+          "sha256": "97dbf4931f471576119a0010dd07cf1ca399b0faddf1e4206af513572eff2b19"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/acceptance.json",
+          "bytes": 9038,
+          "sha256": "1dbfb5a18885e1591b705544dcd45f6c25b4e62fd5488904751510f1ba7bcfcc"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/attitude.png",
+          "bytes": 25819,
+          "sha256": "eb48b6c6e2070813f8b1f43faa4298e05d3fc3b5f2c4542c7c7effa5260820e2"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/contact_forces.png",
+          "bytes": 32930,
+          "sha256": "b490382f3ac3005fbd5bea40427514098b4b4bbed25661fcdc0f6ffff822b832"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/height.png",
+          "bytes": 27754,
+          "sha256": "ccee2002a9af9a1b5938dba0c2d6c01ec36406e15fa4f698bfe431c9a621e4c4"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/planar_trajectory.png",
+          "bytes": 24396,
+          "sha256": "867e912ca099d9c9124813e1b3e7992d5541cca114d420c66e1c9e4882f63bca"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run01/analysis_final/velocity.png",
+          "bytes": 27924,
+          "sha256": "97dbf4931f471576119a0010dd07cf1ca399b0faddf1e4206af513572eff2b19"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis/attitude.png",
+          "bytes": 25819,
+          "sha256": "eb48b6c6e2070813f8b1f43faa4298e05d3fc3b5f2c4542c7c7effa5260820e2"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis/contact_forces.png",
+          "bytes": 32930,
+          "sha256": "b490382f3ac3005fbd5bea40427514098b4b4bbed25661fcdc0f6ffff822b832"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis/height.png",
+          "bytes": 27754,
+          "sha256": "ccee2002a9af9a1b5938dba0c2d6c01ec36406e15fa4f698bfe431c9a621e4c4"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis/planar_trajectory.png",
+          "bytes": 24396,
+          "sha256": "867e912ca099d9c9124813e1b3e7992d5541cca114d420c66e1c9e4882f63bca"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis/velocity.png",
+          "bytes": 27924,
+          "sha256": "97dbf4931f471576119a0010dd07cf1ca399b0faddf1e4206af513572eff2b19"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_csv_verified/attitude.png",
+          "bytes": 25819,
+          "sha256": "eb48b6c6e2070813f8b1f43faa4298e05d3fc3b5f2c4542c7c7effa5260820e2"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_csv_verified/contact_forces.png",
+          "bytes": 32930,
+          "sha256": "b490382f3ac3005fbd5bea40427514098b4b4bbed25661fcdc0f6ffff822b832"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_csv_verified/height.png",
+          "bytes": 27754,
+          "sha256": "ccee2002a9af9a1b5938dba0c2d6c01ec36406e15fa4f698bfe431c9a621e4c4"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_csv_verified/planar_trajectory.png",
+          "bytes": 24396,
+          "sha256": "867e912ca099d9c9124813e1b3e7992d5541cca114d420c66e1c9e4882f63bca"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_csv_verified/velocity.png",
+          "bytes": 27924,
+          "sha256": "97dbf4931f471576119a0010dd07cf1ca399b0faddf1e4206af513572eff2b19"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/acceptance.json",
+          "bytes": 9038,
+          "sha256": "7b01ef7c41bba814e0282104dd738a96bd64d5d8a0d167ba9c28e914d7097e0b"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/attitude.png",
+          "bytes": 25819,
+          "sha256": "eb48b6c6e2070813f8b1f43faa4298e05d3fc3b5f2c4542c7c7effa5260820e2"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/contact_forces.png",
+          "bytes": 32930,
+          "sha256": "b490382f3ac3005fbd5bea40427514098b4b4bbed25661fcdc0f6ffff822b832"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/height.png",
+          "bytes": 27754,
+          "sha256": "ccee2002a9af9a1b5938dba0c2d6c01ec36406e15fa4f698bfe431c9a621e4c4"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/planar_trajectory.png",
+          "bytes": 24396,
+          "sha256": "867e912ca099d9c9124813e1b3e7992d5541cca114d420c66e1c9e4882f63bca"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_acceptance_run02/analysis_final/velocity.png",
+          "bytes": 27924,
+          "sha256": "97dbf4931f471576119a0010dd07cf1ca399b0faddf1e4206af513572eff2b19"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run32/analysis/attitude.png",
+          "bytes": 27377,
+          "sha256": "10ee3d228b0c14329571971106991f86233272626179fb72f8dc05c14d1c1a09"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run32/analysis/contact_forces.png",
+          "bytes": 33243,
+          "sha256": "6f9209a0910c2e2637427639e3fa782b481e86640a9c7cb304bc7b8e0738dd3a"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run32/analysis/height.png",
+          "bytes": 28082,
+          "sha256": "5bb395be74e5b1d8fd2b02a38b0c600953423dfe6c5458572165d5eddb1295b2"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run32/analysis/planar_trajectory.png",
+          "bytes": 23862,
+          "sha256": "194663c2b4be159e3b2875d84d30479c21c094d573fa0318f6339d0ff265251f"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run32/analysis/velocity.png",
+          "bytes": 29430,
+          "sha256": "4e661c86b99626b400b21fbcec7f656faa51fa5975524f432baca1da97018925"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run35/analysis/attitude.png",
+          "bytes": 25819,
+          "sha256": "eb48b6c6e2070813f8b1f43faa4298e05d3fc3b5f2c4542c7c7effa5260820e2"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run35/analysis/contact_forces.png",
+          "bytes": 32930,
+          "sha256": "b490382f3ac3005fbd5bea40427514098b4b4bbed25661fcdc0f6ffff822b832"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run35/analysis/height.png",
+          "bytes": 27754,
+          "sha256": "ccee2002a9af9a1b5938dba0c2d6c01ec36406e15fa4f698bfe431c9a621e4c4"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run35/analysis/planar_trajectory.png",
+          "bytes": 24396,
+          "sha256": "867e912ca099d9c9124813e1b3e7992d5541cca114d420c66e1c9e4882f63bca"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/vertical_jump_run35/analysis/velocity.png",
+          "bytes": 27924,
+          "sha256": "97dbf4931f471576119a0010dd07cf1ca399b0faddf1e4206af513572eff2b19"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/visual_vertical_jump_20261102-220532-465767/analysis/attitude.png",
+          "bytes": 25819,
+          "sha256": "eb48b6c6e2070813f8b1f43faa4298e05d3fc3b5f2c4542c7c7effa5260820e2"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/visual_vertical_jump_20261102-220532-465767/analysis/contact_forces.png",
+          "bytes": 32930,
+          "sha256": "b490382f3ac3005fbd5bea40427514098b4b4bbed25661fcdc0f6ffff822b832"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/visual_vertical_jump_20261102-220532-465767/analysis/height.png",
+          "bytes": 27754,
+          "sha256": "ccee2002a9af9a1b5938dba0c2d6c01ec36406e15fa4f698bfe431c9a621e4c4"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/visual_vertical_jump_20261102-220532-465767/analysis/planar_trajectory.png",
+          "bytes": 24396,
+          "sha256": "867e912ca099d9c9124813e1b3e7992d5541cca114d420c66e1c9e4882f63bca"
+        },
+        {
+          "path": "Pro2/output/L4/03_terrain_and_jump/visual_vertical_jump_20261102-220532-465767/analysis/velocity.png",
+          "bytes": 27924,
+          "sha256": "97dbf4931f471576119a0010dd07cf1ca399b0faddf1e4206af513572eff2b19"
+        },
+        {
+          "path": "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/metrics.json",
+          "bytes": 8949,
+          "sha256": "fe5dbabfb577fe4d93956e0299067bef6643159bd78076b4354081e8b0cd70ec"
+        },
+        {
+          "path": "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/vx_world_m_s_comparison.png",
+          "bytes": 47401,
+          "sha256": "9c84ea0e1fcfe7fb566c607e3142a08b5f6b10514e29cfb0b4ca258117ee9c24"
+        },
+        {
+          "path": "Pro2/output/L4/04_mpc_comparison/analysis_same_binary/vy_world_m_s_comparison.png",
+          "bytes": 45209,
+          "sha256": "d2d2386ef628b5f4da3f45ad9e017ef3b5edfbf1937524ba82be453c91243888"
+        },
+        {
+          "path": "Pro2/output/L4/04_mpc_comparison/cpp_convex_walk_run03/states.csv",
+          "bytes": 6650018,
+          "sha256": "87bf58440727f6ab5224ea1a3d8eac22eed14621b7d8c9aa336eca25ef28838a"
+        },
+        {
+          "path": "Pro2/output/L4/04_mpc_comparison/nmpc_rti_online/self_check.json",
+          "bytes": 712,
+          "sha256": "7b82bcfb6aa873d2cecf7506798e8e1a4f8fed8ec8495d6378e065568d9b0ed0"
+        },
+        {
+          "path": "Pro2/output/L4/04_mpc_comparison/nmpc_slsqp_offline/self_check.json",
+          "bytes": 368,
+          "sha256": "a78f82a49f63b0e63b457ddccf026077745f92dc92e135358d68eedf681d83ac"
+        },
+        {
+          "path": "Pro2/output/L4/04_mpc_comparison/python_convex_reference/self_check.json",
+          "bytes": 603,
+          "sha256": "2de423704deed3ded6e29dcf6b1317c23b883775c589f180e50f629210422c0e"
+        },
+        {
+          "path": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_ankle_l_pitch.png",
+          "bytes": 49649,
+          "sha256": "852f87afe8bd1ccdf79353be847972218e9d49679826078a439f85d76a03e4a3"
+        },
+        {
+          "path": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_ankle_r_pitch.png",
+          "bytes": 49788,
+          "sha256": "5f0f5194f615bb68575a1d77882c4cc09eca7ae0309abe253f2a5d455f3bf161"
+        },
+        {
+          "path": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_hip_l_pitch.png",
+          "bytes": 51118,
+          "sha256": "ec76de4b094b45ca0c4fdcd9a0f77dea42e2dba133d7bfa6335ed313fa54984c"
+        },
+        {
+          "path": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_hip_r_pitch.png",
+          "bytes": 51072,
+          "sha256": "754e3adf24ff26267842f65aaef5647bc18787093cf35a7a30b6b8b29be052c9"
+        },
+        {
+          "path": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_knee_l_pitch.png",
+          "bytes": 48959,
+          "sha256": "530ed7b9ef8b33a215d3f7cf08dde0113c1d27fe398e8060e8622d5640493091"
+        },
+        {
+          "path": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/J_knee_r_pitch.png",
+          "bytes": 49448,
+          "sha256": "4b65cdac117638cbe0ca120085d85ed2be93945cf0c28b9e7b34261f387bb75f"
+        },
+        {
+          "path": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/figures/mpc_vertical_contact_force.png",
+          "bytes": 41838,
+          "sha256": "053cbe45c59354cce7af709bd6907cad2424f13d9d509b8e0b206664929a0d29"
+        },
+        {
+          "path": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/joint_metrics.csv",
+          "bytes": 703,
+          "sha256": "d81e12751bf7580f9fbf948e6aeeaf412c2611984047259e32717b95b009a38b"
+        },
+        {
+          "path": "Pro2/output/L4/05_control_decomposition/azureloong_walk_same_binary/metrics.json",
+          "bytes": 2113,
+          "sha256": "3a0ceae4dbdbdb00326a9e1c77694f42f8ce87fe1bb3bc102feb563e24be830e"
+        },
+        {
+          "path": "Pro2/output/L4/figures/L4凸MPC与NMPC对比.png",
+          "bytes": 82895,
+          "sha256": "8c0c8e343b2381e1c39fbd937513f59aa1ab01eb0087004ea35630987e5f9a63"
+        },
+        {
+          "path": "Pro2/output/L4/figures/L4力矩分解链路.png",
+          "bytes": 78588,
+          "sha256": "99daf6b857d8b7eeb851d6cb2d67c810063b4cbf6701981bf7acd759452c15e3"
+        },
+        {
+          "path": "Pro2/output/L4/figures/L4总体适配架构.png",
+          "bytes": 87478,
+          "sha256": "27afcaad9e1ff3bb282d548f397a5b303ab0d834d23136bb917d9e0ef597cab0"
+        },
+        {
+          "path": "Pro2/output/L4/figures/L4路径跟踪闭环.png",
+          "bytes": 75146,
+          "sha256": "27d3b7f9f7e89cb6f086c86609838d47f9752f8e81510a35041a50fc8b069543"
+        },
+        {
+          "path": "Pro2/output/final/checks/recordings_verification.json",
+          "bytes": 305799,
+          "sha256": "8e3e9e74f38a5867f4a31e289328515561deafb76072d6dbda049669d4ec89f6"
+        },
+        {
+          "path": "Pro2/robots/unitree_h1_2_handless.json",
+          "bytes": 4607,
+          "sha256": "a205db3698bd0f000e2d39b558128558a6d0b0e5b32ee255fc8d89d642662248"
+        }
+      ]
+    }
+  },
+  "error_count": 0,
+  "errors": []
+}

@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "verified_at": "2026-11-05T23:15:39.089919+08:00",
+  "video": "Pro2/output/final/assets/项目验收演示_L0_L2_L4.mp4",
+  "output_sha256": "f064344452c4e183902465de212b9e790f5bc7a25788783f8838690f71ef43b9",
+  "duration_s": 132,
+  "decoded_frames": 3960,
+  "full_decode_success": true,
+  "source_integrity_verified": 19,
+  "minimum_generated_text_px": 36,
+  "text_colors": [
+    "#172B36",
+    "#006D68",
+    "#FFFFFF"
+  ],
+  "text_sizes_px": {
+    "clock": 36,
+    "quad_label": 36,
+    "quad_caption": 40,
+    "title": 50
+  },
+  "aspect_ratio_preserved": "960x720 source, 544x408 terrain panes; existing other sections unchanged",
+  "subtitles_burned_in": true,
+  "sampled_segments": 9,
+  "sampled_frames": 16,
+  "checks": {
+    "eight_other_segments_byte_identical": true,
+    "four_distinct_terrain_sources": true,
+    "all_12_sampled_terrain_panes_match_source_and_time": true,
+    "source_sha256_matches": true,
+    "metadata_and_complete_decode": true
+  },
+  "visual_review": "Pro2/output/final/checks/montage_visual_review.md"
+}

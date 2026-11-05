@@ -1,0 +1,95 @@
+{
+  "run_root": "Pro2/output/L2/lateral_push/long_push_20261105",
+  "figure": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/disturbance_response.png",
+  "metrics": "Pro2/output/L2/lateral_push/long_push_20261105/comparison/metrics.csv",
+  "push_at_s": 7.0,
+  "push_duration_s": 0.5,
+  "push_end_s": 7.5,
+  "window_start_s": 7.0,
+  "window_end_s": 8.99,
+  "conditions": [
+    {
+      "name": "no_push",
+      "force_y_N": 0.0,
+      "impulse_N_s": 0.0,
+      "max_abs_delta_vy_m_s": 0.0,
+      "max_abs_delta_roll_rad": 0.0,
+      "max_abs_delta_pitch_rad": 0.0,
+      "max_abs_delta_vx_m_s": 0.0,
+      "extra_height_drop_m": 0.0,
+      "run_directory": "Pro2/output/L2/lateral_push/long_push_20261105/no_push",
+      "run_status": "completed",
+      "status": "completed",
+      "simulation_end_s": 12.0,
+      "video_duration_s": 12.0,
+      "failure_reason": "",
+      "acceptance_validation_status": "ok"
+    },
+    {
+      "name": "push_50N",
+      "force_y_N": 50.0,
+      "impulse_N_s": 25.0,
+      "max_abs_delta_vy_m_s": 0.33707172353433834,
+      "max_abs_delta_roll_rad": 0.05250103097128214,
+      "max_abs_delta_pitch_rad": 0.008070038918609867,
+      "max_abs_delta_vx_m_s": 0.06008216193982069,
+      "extra_height_drop_m": 0.010574579238891602,
+      "run_directory": "Pro2/output/L2/lateral_push/long_push_20261105/push_50N",
+      "run_status": "completed",
+      "status": "completed",
+      "simulation_end_s": 12.0,
+      "video_duration_s": 12.0,
+      "failure_reason": "",
+      "acceptance_validation_status": "ok"
+    },
+    {
+      "name": "push_100N",
+      "force_y_N": 100.0,
+      "impulse_N_s": 50.0,
+      "max_abs_delta_vy_m_s": 2.733507474513786,
+      "max_abs_delta_roll_rad": 0.9518754938167965,
+      "max_abs_delta_pitch_rad": 0.11363927210821485,
+      "max_abs_delta_vx_m_s": 1.3233186739641267,
+      "extra_height_drop_m": 0.4783991575241089,
+      "run_directory": "Pro2/output/L2/lateral_push/long_push_20261105/push_100N",
+      "run_status": "failed",
+      "status": "physical_instability",
+      "simulation_end_s": 8.994,
+      "video_duration_s": 9.0,
+      "failure_reason": "t=8.994s：机器人失稳，z=0.598m，roll=-0.978，pitch=0.013",
+      "acceptance_validation_status": "ok"
+    }
+  ],
+  "conclusions": [
+    "侧推持续 0.5 s，冲量为 0 / 25 / 50 N·s。",
+    "无扰动 0 N：completed，12 s / 侧推 50 N：completed，12 s / 侧推 100 N：physical_instability，8.994 s",
+    "相对同刻无扰动轨迹比较，统计窗口为 7–8.99 s。",
+    "自然步态也未通过固定恢复阈值，不能由该判据给出有效恢复时间。"
+  ],
+  "recovery_criterion_applicable": false,
+  "acceptance_validation_passed": true,
+  "ppt": {
+    "condition": "世界 +Y 侧推 0 / 50 / 100 N，7–7.5 s；Δvy 峰值窗口 7.00–8.99 s",
+    "table_rows": [
+      [
+        "侧推 (N)",
+        "|Δvy| (m/s)"
+      ],
+      [
+        "0",
+        "0.0000"
+      ],
+      [
+        "50",
+        "0.3371"
+      ],
+      [
+        "100",
+        "2.7335"
+      ]
+    ],
+    "conclusion": "50 N 完成 12 s\n100 N：8.994 s 失稳\n失稳属于正式对照结果",
+    "reason": "外力持续 0.5 s，冲量为 0 / 25 / 50 N·s。\n100 N 组失稳；QP 状态为 0 不代表闭环稳定。",
+    "config_path": "Pro2/experiments/L2/lateral_push/push_100N.json"
+  }
+}

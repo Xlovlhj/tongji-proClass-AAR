@@ -1,0 +1,18 @@
+[
+  {
+    "case": "random_obstacles_seed01_full",
+    "returncode": 0,
+    "wall_seconds": 152.14,
+    "status": "completed",
+    "video_saved": true,
+    "simulation_duration_s": 45.0
+  },
+  {
+    "case": "blind_step_up",
+    "returncode": 0,
+    "wall_seconds": 83.56,
+    "status": "completed",
+    "video_saved": true,
+    "simulation_duration_s": 24.0
+  }
+]

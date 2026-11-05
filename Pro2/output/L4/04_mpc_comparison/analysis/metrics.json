@@ -1,0 +1,46 @@
+{
+  "convex_input": "Pro2/output/L4/04_mpc_comparison/cpp_convex_walk/states.csv",
+  "nmpc_input": "Pro2/output/L4/04_mpc_comparison/nmpc_rti_walk_run02/states.csv",
+  "runs": [
+    {
+      "algorithm": "convex_mpc",
+      "samples": 1000,
+      "duration_s": 9.99,
+      "vx_body_rmse_m_s": 0.03532077695887608,
+      "vy_body_rmse_m_s": 0.11214669128952287,
+      "max_abs_roll_rad": 0.04065258006672978,
+      "max_abs_pitch_rad": 0.03847061177139087,
+      "minimum_base_height_m": 1.0652539730072021,
+      "peak_abs_joint_torque_Nm": 184.91292115724298,
+      "solver_failure_samples": 0,
+      "solver_evaluations_logged": 1000,
+      "solver_timing_raw_csv_samples": 1000,
+      "solver_held_samples_removed": null,
+      "solve_time_mean_s": 0.00026752734184265134,
+      "solve_time_p95_s": 0.000530099868774414,
+      "solve_time_max_s": 0.0008361339569091797
+    },
+    {
+      "algorithm": "nmpc",
+      "samples": 1000,
+      "duration_s": 9.99,
+      "vx_body_rmse_m_s": 0.034076862683520566,
+      "vy_body_rmse_m_s": 0.11246505938864301,
+      "max_abs_roll_rad": 0.03958015303592704,
+      "max_abs_pitch_rad": 0.03847061177139087,
+      "minimum_base_height_m": 1.0644813776016235,
+      "peak_abs_joint_torque_Nm": 184.91292115724298,
+      "solver_failure_samples": 36,
+      "solver_evaluations_logged": 350,
+      "solver_timing_raw_csv_samples": 1000,
+      "solver_held_samples_removed": 349,
+      "solve_time_mean_s": 0.018516851465714614,
+      "solve_time_p95_s": 0.0215957571996114,
+      "solve_time_max_s": 0.028014673000143375,
+      "external_wrench_sample_fraction": 0.615,
+      "external_updates_observed": 350,
+      "external_update_counter_last": 350
+    }
+  ],
+  "scope": "One run per algorithm; no statistical significance implied."
+}

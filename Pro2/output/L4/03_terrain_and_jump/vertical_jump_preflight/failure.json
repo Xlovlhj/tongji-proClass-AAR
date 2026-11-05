@@ -1,0 +1,4 @@
+{
+  "error": "跳跃预检未通过，当前 Isaac 控制桥缺少：运行时修改质心/基座高度参考、腾空时关闭接触力 MPC 并切换腿部轨迹、读取左右脚接触以判定落地",
+  "type": "UnsupportedJumpRuntime"
+}

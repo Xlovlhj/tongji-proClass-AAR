@@ -1,0 +1,148 @@
+{
+  "isaac_root": "/home/xqw/isaacsim6.0.1",
+  "repo_root": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/OpenLoong-Dyn-Control",
+  "level": "L4",
+  "config": "Pro2/experiments/L4/path_tracking/waypoints.json",
+  "check_env": false,
+  "build_only": false,
+  "no_build": true,
+  "rebuild_asset": false,
+  "show_config": false,
+  "headless": true,
+  "record_video": false,
+  "video_fps": 30,
+  "mode": "walk",
+  "mpc_backend": "cpp_convex",
+  "log_control_decomposition": false,
+  "mpc_horizon_steps": 10,
+  "duration": 0.05,
+  "dt": 0.001,
+  "mpc_dt": 0.005,
+  "swing_time": 0.4,
+  "step_height": 0.12,
+  "stand_height": 1.08,
+  "walk_start": 3.0,
+  "vx": 0.2,
+  "vy": 0.0,
+  "wz": 0.0,
+  "render_hz": 5.0,
+  "log_hz": 10.0,
+  "push_at": null,
+  "push_duration": 0.1,
+  "push_force": [
+    0.0,
+    50.0,
+    0.0
+  ],
+  "output": "/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/output/L4/02_path_tracking/path_visualization_smoke_20261031_v2",
+  "jobs": 2,
+  "u_weight": 1e-06,
+  "state_weights": [
+    1,
+    1,
+    1,
+    0.001,
+    100,
+    1,
+    0.001,
+    0.001,
+    0.001,
+    1,
+    100,
+    1
+  ],
+  "input_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "path_tracking": {
+    "mode": "closed_loop",
+    "path": {
+      "type": "polyline",
+      "waypoints": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.4,
+          0.5
+        ],
+        [
+          1.4,
+          1.2
+        ],
+        [
+          2.1,
+          1.2
+        ]
+      ]
+    },
+    "lookahead_m": 0.3,
+    "nominal_speed_m_s": 0.12,
+    "gains": {
+      "longitudinal": 0.6,
+      "lateral": 0.8,
+      "heading": 1.3,
+      "cross_heading": 0.45
+    },
+    "limits": {
+      "vx_m_s": 0.22,
+      "vy_m_s": 0.1,
+      "wz_rad_s": 0.3,
+      "linear_accel_m_s2": 0.45,
+      "angular_accel_rad_s2": 0.7
+    },
+    "goal_tolerance_m": 0.25,
+    "stop_at_goal": true
+  },
+  "terrain": {
+    "type": "flat",
+    "friction": 1.0,
+    "restitution": 0.0,
+    "color": [
+      0.17,
+      0.2,
+      0.23
+    ]
+  },
+  "jump": null,
+  "nmpc": {
+    "prediction_dt_s": 0.02,
+    "horizon_steps": 3,
+    "update_period_s": 0.02,
+    "input_weight": 2e-06,
+    "wrench_rate_weight": 1e-07,
+    "state_weights": [
+      4.0,
+      4.0,
+      2.0,
+      1.0,
+      30.0,
+      30.0,
+      0.1,
+      0.1,
+      0.1,
+      5.0,
+      20.0,
+      5.0
+    ],
+    "state_difference": 1e-05,
+    "wrench_difference": 0.001
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "updated": "2026-11-05",
+  "groups": {
+    "lateral_push": {
+      "directory": "lateral_push/long_push_20261105",
+      "expected_config": {
+        "push_at": 7.0,
+        "push_duration": 0.5
+      },
+      "accept_physical_instability": true,
+      "note": "0.5s侧推和外力箭头录像为当前正式批次。100N的物理失稳是正式结果，按真实停止时刻验收；原0.1s批次保留历史。"
+    }
+  }
+}

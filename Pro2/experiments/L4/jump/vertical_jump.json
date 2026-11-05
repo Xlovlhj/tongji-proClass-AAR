@@ -1,0 +1,26 @@
+{
+  "mode": "stand",
+  "duration": 13.0,
+  "walk_start": 5.0,
+  "terrain": {"type": "flat"},
+  "jump": {
+    "enabled": true,
+    "start_time_s": 8.5,
+    "stand_height_m": 1.08,
+    "crouch_height_m": 0.90,
+    "target_height_m": 0.12,
+    "landing_foot_advance_m": 0.20,
+    "landing_foot_swing_duration_s": 0.02,
+    "crouch_duration_s": 5.5,
+    "crouch_speed_m_s": 0.10,
+    "thrust_duration_s": 0.13,
+    "landing_timeout_s": 1.5,
+    "landing_settle_duration_s": 0.10,
+    "landing_settle_timeout_s": 0.80,
+    "landing_vertical_velocity_threshold_m_s": 0.20,
+    "landing_force_threshold_n": 300.0,
+    "recovery_duration_s": 0.8,
+    "recovery_mpc_duration_s": 0.6,
+    "contact_confirm_duration_s": 0.001
+  }
+}

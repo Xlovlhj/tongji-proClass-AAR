@@ -1,0 +1,17 @@
+$ python3 Pro2/isaac/native/test_bridge.py
+
+test_bad_weights_and_bad_clock_ratio (__main__.ControllerTests.test_bad_weights_and_bad_clock_ratio) ... ok
+test_joint_contract_and_initial_ik (__main__.ControllerTests.test_joint_contract_and_initial_ik) ... ok
+test_nonfinite_input_rejected_and_output_cleared (__main__.ControllerTests.test_nonfinite_input_rejected_and_output_cleared) ... ok
+test_output_is_joint_torque_before_gear_division (__main__.ControllerTests.test_output_is_joint_torque_before_gear_division) ... ok
+test_reset_time_is_rejected (__main__.ControllerTests.test_reset_time_is_rejected) ... ok
+test_stand_then_walk_at_native_frequency (__main__.ControllerTests.test_stand_then_walk_at_native_frequency) ... ok
+test_wxyz_quaternion_and_nonunit_normalization (__main__.ControllerTests.test_wxyz_quaternion_and_nonunit_normalization) ... ok
+test_yaw_is_continuous_across_pi_boundary (__main__.ControllerTests.test_yaw_is_continuous_across_pi_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.997s
+
+OK
+
+exit_code=0

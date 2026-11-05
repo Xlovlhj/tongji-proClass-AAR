@@ -1,0 +1,41 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/xqw/xqw-file/Term3-1/Rbt-Project-Mid/Pro2/output/L2/ppt_demo_20261104/low/demo.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41iso5
+    creation_time   : 2026-11-04T06:43:43.000000Z
+  Duration: 00:00:12.00, start: 0.000000, bitrate: 3482 kb/s
+  Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 960x720 [SAR 1:1 DAR 4:3], 3453 kb/s, 30 fps, 30 tbr, 30 tbn (default)
+      Metadata:
+        handler_name    : NVIDIA MPEG4 container
+        vendor_id       : [0][0][0][0]
+        encoder         : AVC Coding
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41iso5
+    encoder         : Lavf61.1.100
+  Stream #0:0(eng): Video: wrapped_avframe, yuv420p(tv, bt709, progressive), 960x720 [SAR 1:1 DAR 4:3], q=2-31, 200 kb/s, 30 fps, 30 tbn (default)
+      Metadata:
+        handler_name    : NVIDIA MPEG4 container
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.3.100 wrapped_avframe
+[out#0/null @ 0xb79fd80] video:155KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=  360 fps=0.0 q=-0.0 Lsize=N/A time=00:00:12.00 bitrate=N/A speed= 151x    
+
+frame=360
+fps=0.00
+stream_0_0_q=-0.0
+bitrate=N/A
+total_size=N/A
+out_time_us=12000000
+out_time_ms=12000000
+out_time=00:00:12.000000
+dup_frames=0
+drop_frames=0
+speed= 151x
+progress=end

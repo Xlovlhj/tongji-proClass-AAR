@@ -1,0 +1,4 @@
+{
+  "error": "position_xy 必须是 [x, y]",
+  "type": "ValueError"
+}

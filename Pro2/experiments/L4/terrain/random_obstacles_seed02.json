@@ -1,0 +1,4 @@
+{
+  "mode": "walk", "duration": 30.0, "walk_start": 5.0, "vx": 0.08, "step_height": 0.18,
+  "terrain": {"type": "random_obstacles", "seed": 2, "count": 12, "region_x_m": [0.8, 3.0], "region_y_m": [-0.6, 0.6], "height_range_m": [0.02, 0.06], "length_range_m": [0.10, 0.22], "width_range_m": [0.10, 0.28]}
+}

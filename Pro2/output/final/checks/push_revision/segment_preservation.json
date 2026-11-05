@@ -1,0 +1,30 @@
+{
+  "changed_segments": [
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4"
+  ],
+  "preserved_segment_count": 9,
+  "before": {
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_01_l0.mp4": "b88bfa9478fa645b9d79f58f1f521aae1f932c2dff20391244200bc6a08a7d6a",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_02_l2_weight.mp4": "36888c138f204df707819211439f46600875093f835584ec8a0f4cf41d076d78",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_03_l2_horizon.mp4": "bf70c58dc83ae8ec409ed8e01ad3c28d5cad66a7be731474cacf79156da87145",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_04_l2_step.mp4": "18476733ed8e831d44e858cb709b1aea876380240531adc6b194247bbfe8bd65",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4": "39668d9d697101da5e023cbb14828031e89fb9769a5f6a2a267968811e4d5177",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_06_l4_path.mp4": "5daff4d3d31d4acdd71c8dd0ff56dfefe4400f6fb3784354193124c37ebe79cb",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_07_l4_rough.mp4": "65c55c4c9e5a3af1a971fcaec912641fb23a60045cbfe1d233bad2fc5c02c650",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_08_l4_slope.mp4": "9dd2108237f2fa44735e23bee2cabb752a75a3a453564f482573df997fc6f59f",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_09_l4_jump.mp4": "648c8e9b4c7b9e6b613df4c3e28fcac9adde3067a256a913f8afddc6dfbd8559",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_10_l4_jump_replay.mp4": "cdd193de7ce7a5fc30dce7030f90ec89374f493a25271f297b8223a724b9489c"
+  },
+  "after": {
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_01_l0.mp4": "b88bfa9478fa645b9d79f58f1f521aae1f932c2dff20391244200bc6a08a7d6a",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_02_l2_weight.mp4": "36888c138f204df707819211439f46600875093f835584ec8a0f4cf41d076d78",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_03_l2_horizon.mp4": "bf70c58dc83ae8ec409ed8e01ad3c28d5cad66a7be731474cacf79156da87145",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_04_l2_step.mp4": "18476733ed8e831d44e858cb709b1aea876380240531adc6b194247bbfe8bd65",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_05_l2_push.mp4": "c1cb1609ddb7736106c49f995282dc9c376259decf6f5f5c447d87efefca6dd7",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_06_l4_path.mp4": "5daff4d3d31d4acdd71c8dd0ff56dfefe4400f6fb3784354193124c37ebe79cb",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_07_l4_rough.mp4": "65c55c4c9e5a3af1a971fcaec912641fb23a60045cbfe1d233bad2fc5c02c650",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_08_l4_slope.mp4": "9dd2108237f2fa44735e23bee2cabb752a75a3a453564f482573df997fc6f59f",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_09_l4_jump.mp4": "648c8e9b4c7b9e6b613df4c3e28fcac9adde3067a256a913f8afddc6dfbd8559",
+    "Pro2/output/final/assets/video_build_L0_L2_L4/segment_10_l4_jump_replay.mp4": "cdd193de7ce7a5fc30dce7030f90ec89374f493a25271f297b8223a724b9489c"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "mode": "walk",
+  "duration": 18.0,
+  "walk_start": 5.0,
+  "terrain": {"type": "flat"},
+  "path_tracking": {
+    "mode": "closed_loop",
+    "path": {"type": "line", "start": [0.0, 0.0], "end": [2.0, 0.0], "num_points": 101},
+    "lookahead_m": 0.30,
+    "nominal_speed_m_s": 0.15,
+    "gains": {"longitudinal": 0.6, "lateral": 0.8, "heading": 1.2, "cross_heading": 0.4},
+    "limits": {"vx_m_s": 0.25, "vy_m_s": 0.12, "wz_rad_s": 0.35, "linear_accel_m_s2": 0.5, "angular_accel_rad_s2": 0.8},
+    "goal_tolerance_m": 0.10,
+    "stop_at_goal": true
+  }
+}

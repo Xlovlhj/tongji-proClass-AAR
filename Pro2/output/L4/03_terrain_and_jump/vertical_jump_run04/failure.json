@@ -1,0 +1,4 @@
+{
+  "error": "t=9.740s：机器人失稳，z=0.926m，roll=1.002，pitch=-0.177",
+  "type": "RuntimeError"
+}

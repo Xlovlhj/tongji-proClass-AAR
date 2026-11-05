@@ -1,0 +1,703 @@
+{
+  "output": "Pro2/output/final/assets/项目验收演示_L0_L2_L4.mp4",
+  "sha256": "f064344452c4e183902465de212b9e790f5bc7a25788783f8838690f71ef43b9",
+  "poster": "Pro2/output/final/assets/演示视频封面.png",
+  "subtitle_file": "Pro2/output/final/assets/项目验收演示_L0_L2_L4.srt",
+  "subtitles_burned_in": true,
+  "metadata": {
+    "duration_s": 132.0,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "codec": "h264"
+  },
+  "decoded_frames": 3960,
+  "full_decode_success": true,
+  "audio": "none",
+  "timeline": [
+    {
+      "number": 1,
+      "name": "l0",
+      "title": "L0｜跑通开源人形机器人控制示例",
+      "start_s": 0,
+      "duration_s": 10,
+      "end_s": 10,
+      "kind": "single",
+      "video_keys": [
+        "l0"
+      ],
+      "condition_labels": [],
+      "caption": "保留 OpenLoong MPC / WBC 控制栈，在 Isaac Sim 中完成行走",
+      "speed": 1.0,
+      "source_start_s": 0.0,
+      "source_end_s": 10.0,
+      "sources": [
+        "Pro2/output/L0/walk_10s_video/demo.mp4"
+      ]
+    },
+    {
+      "number": 2,
+      "name": "l2_weight",
+      "title": "L2｜实验一：前向速度代价权重",
+      "start_s": 10,
+      "duration_s": 12,
+      "end_s": 22,
+      "kind": "triple",
+      "video_keys": [
+        "weight_low",
+        "weight_baseline",
+        "weight_high"
+      ],
+      "condition_labels": [
+        "低权重 0.2",
+        "基线 1.0",
+        "高权重 5.0"
+      ],
+      "caption": "只改变速度误差权重；三组从同一仿真时刻同步播放",
+      "speed": 1.0,
+      "source_start_s": 0.0,
+      "source_end_s": 12.0,
+      "sources": [
+        "Pro2/output/L2/ppt_demo_20261104/low/demo.mp4",
+        "Pro2/output/L2/ppt_demo_20261104/baseline/demo.mp4",
+        "Pro2/output/L2/ppt_demo_20261104/high/demo.mp4"
+      ]
+    },
+    {
+      "number": 3,
+      "name": "l2_horizon",
+      "title": "L2｜实验二：预测时域",
+      "start_s": 22,
+      "duration_s": 12,
+      "end_s": 34,
+      "kind": "triple",
+      "video_keys": [
+        "horizon_short_n5",
+        "horizon_baseline_n10",
+        "horizon_long_n15"
+      ],
+      "condition_labels": [
+        "短时域 N = 5",
+        "基线 N = 10",
+        "长时域 N = 15"
+      ],
+      "caption": "只改变预测步数；比较行走过程中的姿态与动作",
+      "speed": 1.0,
+      "source_start_s": 0.0,
+      "source_end_s": 12.0,
+      "sources": [
+        "Pro2/output/L2/prediction_horizon/ppt_video_20261104/short_n5/demo.mp4",
+        "Pro2/output/L2/prediction_horizon/ppt_video_20261104/baseline_n10/demo.mp4",
+        "Pro2/output/L2/prediction_horizon/ppt_video_20261104/long_n15/demo.mp4"
+      ]
+    },
+    {
+      "number": 4,
+      "name": "l2_step",
+      "title": "L2｜实验三：抬腿高度",
+      "start_s": 34,
+      "duration_s": 12,
+      "end_s": 46,
+      "kind": "triple",
+      "video_keys": [
+        "step_low_008",
+        "step_baseline_012",
+        "step_high_016"
+      ],
+      "condition_labels": [
+        "低抬腿 0.08 m",
+        "基线 0.12 m",
+        "高抬腿 0.16 m"
+      ],
+      "caption": "只改变抬腿高度；比较足端抬起和落下的动作",
+      "speed": 1.0,
+      "source_start_s": 0.0,
+      "source_end_s": 12.0,
+      "sources": [
+        "Pro2/output/L2/step_height/ppt_video_20261104/low_008/demo.mp4",
+        "Pro2/output/L2/step_height/ppt_video_20261104/baseline_012/demo.mp4",
+        "Pro2/output/L2/step_height/ppt_video_20261104/high_016/demo.mp4"
+      ]
+    },
+    {
+      "number": 5,
+      "name": "l2_push",
+      "title": "L2｜实验四：侧向扰动",
+      "start_s": 46,
+      "duration_s": 12,
+      "end_s": 58,
+      "kind": "triple",
+      "video_keys": [
+        "push_no_push",
+        "push_push_50N",
+        "push_push_100N"
+      ],
+      "condition_labels": [
+        "无侧推 0 N",
+        "侧推 50 N",
+        "侧推 100 N"
+      ],
+      "caption": "7–7.5 秒持续施加侧向力；橙红箭头显示受力方向和大小",
+      "speed": 1.0,
+      "source_start_s": 0.0,
+      "source_end_s": 12.0,
+      "sources": [
+        "Pro2/output/L2/lateral_push/long_push_20261105/no_push/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/demo.mp4",
+        "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/demo.mp4"
+      ],
+      "push_at_s": 7.0,
+      "push_end_s": 7.5,
+      "push_duration_s": 0.5,
+      "stopped_panel": {
+        "video_key": "push_push_100N",
+        "panel_index": 2,
+        "freeze_at_s": 9.0,
+        "simulation_stop_s": 8.994,
+        "reason": "physical_instability"
+      }
+    },
+    {
+      "number": 6,
+      "name": "l4_path",
+      "title": "L4｜给定路径跟踪",
+      "start_s": 58,
+      "duration_s": 30,
+      "end_s": 88,
+      "kind": "single",
+      "video_keys": [
+        "path"
+      ],
+      "condition_labels": [],
+      "caption": "青色线是给定路径；机器人根据位置和航向误差闭环跟踪",
+      "speed": 1.0,
+      "source_start_s": 0.0,
+      "source_end_s": 30.0,
+      "sources": [
+        "Pro2/output/L4/02_path_tracking/ppt_video_20261104/waypoints/demo.mp4"
+      ]
+    },
+    {
+      "number": 7,
+      "name": "l4_terrain_quad",
+      "title": "L4｜四种地形行走",
+      "start_s": 88,
+      "duration_s": 24,
+      "end_s": 112,
+      "kind": "quad",
+      "video_keys": [
+        "slope_05deg",
+        "rough_medium",
+        "random_obstacles_seed01_full",
+        "blind_step_up"
+      ],
+      "condition_labels": [
+        "5° 坡道",
+        "粗糙地面",
+        "随机障碍",
+        "6 cm 台阶"
+      ],
+      "caption": "同一仿真时刻同步播放；展示各组前 24 秒行走过程",
+      "speed": 1.0,
+      "source_start_s": 0.0,
+      "source_end_s": 24.0,
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/slope_05deg/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/rough_medium/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/demo.mp4",
+        "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/demo.mp4"
+      ]
+    },
+    {
+      "number": 8,
+      "name": "l4_jump",
+      "title": "L4｜竖直跳跃与落地恢复",
+      "start_s": 112,
+      "duration_s": 13,
+      "end_s": 125,
+      "kind": "single",
+      "video_keys": [
+        "vertical_jump"
+      ],
+      "condition_labels": [],
+      "caption": "下蹲准备 → 蹬伸起跳 → 腾空落地 → 恢复站立",
+      "speed": 1.0,
+      "source_start_s": 0.0,
+      "source_end_s": 13.0,
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/demo.mp4"
+      ]
+    },
+    {
+      "number": 9,
+      "name": "l4_jump_replay",
+      "title": "L4｜跳跃回放 · 0.5× 慢放",
+      "start_s": 125,
+      "duration_s": 7,
+      "end_s": 132,
+      "kind": "single",
+      "video_keys": [
+        "vertical_jump"
+      ],
+      "condition_labels": [],
+      "caption": "原视频 8.0–11.5 秒，以 0.5× 速度回放；观察离地、落地和恢复",
+      "speed": 0.5,
+      "source_start_s": 8.0,
+      "source_end_s": 11.5,
+      "sources": [
+        "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/demo.mp4"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "key": "l0",
+      "path": "Pro2/output/L0/walk_10s_video/demo.mp4",
+      "sha256": "13b70e9dd024de87a19927e194e7dd08bbc63528edee69e08a6f68067f2eac34",
+      "duration_s": 10.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "L0 原验收录像",
+      "run_manifest": {
+        "path": "Pro2/output/L0/walk_10s_video/run.json",
+        "sha256": "abf6c96527985c4219d1e7230625551333ee83f0b5491889f085d78fb6b20053",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": null
+      },
+      "config": {
+        "path": "Pro2/output/L0/walk_10s_video/config.json",
+        "sha256": "f086f2e0283fc019fd9b7c6f927bc2d04f397b122c68d083793f5cb4af6cc9ea"
+      }
+    },
+    {
+      "key": "weight_low",
+      "path": "Pro2/output/L2/ppt_demo_20261104/low/demo.mp4",
+      "sha256": "c34788100e88508168efed8c022a6dc7fdf56a42940f0cbb952e1fb550bbf673",
+      "duration_s": 12.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/ppt_demo_20261104/low/run.json",
+        "sha256": "a62c50bb67141ce38817a81be40d467e3823c834c0aa4135271083fda754090f",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L2/ppt_demo_20261104/low/config.json",
+        "sha256": "e66b0348f737a2de7c19d96f0e6a8d6378d0baf14b4e008b060e2a788160c741"
+      }
+    },
+    {
+      "key": "weight_baseline",
+      "path": "Pro2/output/L2/ppt_demo_20261104/baseline/demo.mp4",
+      "sha256": "3d4463eac52d105e499eacbd0e9877e0bd9d4e31c42a15aa521c776c49f09438",
+      "duration_s": 12.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/ppt_demo_20261104/baseline/run.json",
+        "sha256": "fab655059251efa3ab8fabd44fd844ad40bcd8c868e537cc3844fee5ea8f6a26",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L2/ppt_demo_20261104/baseline/config.json",
+        "sha256": "48c52f472ece616ba81628e8aa09f8e6cbb7252cad19d737023789b7567a75e0"
+      }
+    },
+    {
+      "key": "weight_high",
+      "path": "Pro2/output/L2/ppt_demo_20261104/high/demo.mp4",
+      "sha256": "9e13488bd45b4348d8b49e891c132bf884f9c488e7575eba28e5f72ab35351dd",
+      "duration_s": 12.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/ppt_demo_20261104/high/run.json",
+        "sha256": "b14081afacbd254232be91b1d04643eb80c8afc428dc3d0edaaf9285d480e2fb",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L2/ppt_demo_20261104/high/config.json",
+        "sha256": "d73e375993eb1185101e51e6c5f17d3bdf6534c044d05bf9b1766f509253eead"
+      }
+    },
+    {
+      "key": "horizon_short_n5",
+      "path": "Pro2/output/L2/prediction_horizon/ppt_video_20261104/short_n5/demo.mp4",
+      "sha256": "1602f27c0e8a41c1a79044068ad15256d43ff1e65b214d7fc48d6fe30ae0d434",
+      "duration_s": 12.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/prediction_horizon/ppt_video_20261104/short_n5/run.json",
+        "sha256": "a119645db0bce6a481b1ddd14305870eb8e1ea8d1453c2eb869c28430181f64b",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "3394cae5ef713a367246c92ad5f370b4b4b0a9c10223e58454448c3b5f28f05f"
+      },
+      "config": {
+        "path": "Pro2/output/L2/prediction_horizon/ppt_video_20261104/short_n5/config.json",
+        "sha256": "edc9fcbac6f811d5a85a2a07a0f5bc344cf003a9b366bf8bebe610c9f5e9b9b9"
+      }
+    },
+    {
+      "key": "horizon_baseline_n10",
+      "path": "Pro2/output/L2/prediction_horizon/ppt_video_20261104/baseline_n10/demo.mp4",
+      "sha256": "a6b99f9f2b2142ecef20a165862c8ef21087eb7415668a559e2c9c6936d2395f",
+      "duration_s": 12.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/prediction_horizon/ppt_video_20261104/baseline_n10/run.json",
+        "sha256": "dab1c3363c302610cad41d247ca1b371f7dbf7a03f6ea59c38b896d3b9c67658",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L2/prediction_horizon/ppt_video_20261104/baseline_n10/config.json",
+        "sha256": "26946f41d89050cdefca9e6690fead2646ff17edd3479492eb67cb5f91a339e8"
+      }
+    },
+    {
+      "key": "horizon_long_n15",
+      "path": "Pro2/output/L2/prediction_horizon/ppt_video_20261104/long_n15/demo.mp4",
+      "sha256": "99adde6298c7ab656fe9e70159f503b1ea6a3266c3042d1ca9e0a01cc2eef15a",
+      "duration_s": 12.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/prediction_horizon/ppt_video_20261104/long_n15/run.json",
+        "sha256": "d8980d5ec338415dc40a1dd7f6591ffaa7ad1089209346a11fc89f997037d063",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8b134535af2f5b2d7b6b3f90f37d21d8e018f46a4abc64864f0909bbbcad190c"
+      },
+      "config": {
+        "path": "Pro2/output/L2/prediction_horizon/ppt_video_20261104/long_n15/config.json",
+        "sha256": "ca93143d1cd47fee849cce9a1da03bd4751d5dddaecf98594f022ff18275877f"
+      }
+    },
+    {
+      "key": "step_low_008",
+      "path": "Pro2/output/L2/step_height/ppt_video_20261104/low_008/demo.mp4",
+      "sha256": "2fc6152bdf192e2696902df3d6de9c961a018e2c98adbd0b4d7062a194cb66ca",
+      "duration_s": 12.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/step_height/ppt_video_20261104/low_008/run.json",
+        "sha256": "5a3fc46b98a448a87e728f0b42bd7cbdb3e51f090bbb8d44a5f9623c26ede144",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L2/step_height/ppt_video_20261104/low_008/config.json",
+        "sha256": "074f726562b0d16f248b3f8d91a035933bbceff9f265ea5df70f6c92241ca899"
+      }
+    },
+    {
+      "key": "step_baseline_012",
+      "path": "Pro2/output/L2/step_height/ppt_video_20261104/baseline_012/demo.mp4",
+      "sha256": "ba77d81d7ba426da442ce557d9f530c5a7efd0126ec0e4b618c67a0e5a34b676",
+      "duration_s": 12.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/step_height/ppt_video_20261104/baseline_012/run.json",
+        "sha256": "f09f61ba551c339360739230fc88be6f529620c96ee5c70d4921dc8caaae896f",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L2/step_height/ppt_video_20261104/baseline_012/config.json",
+        "sha256": "7c3195553a5c96d90fe61c4d4968a6a589d4e96014739e56fc3018bfc619b1eb"
+      }
+    },
+    {
+      "key": "step_high_016",
+      "path": "Pro2/output/L2/step_height/ppt_video_20261104/high_016/demo.mp4",
+      "sha256": "6449ab84b6a2f6dc22795b1ec0fe98f77b4b705a36aa801b0837cd283fe7691d",
+      "duration_s": 12.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/step_height/ppt_video_20261104/high_016/run.json",
+        "sha256": "41bad60572c170d0b12f944dfc5b83d8f880c0c6cad4148013ee7f70e3eeabf6",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L2/step_height/ppt_video_20261104/high_016/config.json",
+        "sha256": "78a8b62ae96e7e97dc7d46f4401b2cb7537867467f6bb6d332184296bbdfad4e"
+      }
+    },
+    {
+      "key": "push_no_push",
+      "path": "Pro2/output/L2/lateral_push/long_push_20261105/no_push/demo.mp4",
+      "sha256": "64df421261735f958e69ff7e19d6366c0513bc64d6a0d3b755cdf368edd26506",
+      "duration_s": 12.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "2026-11-05 延长侧推并可视化外力的正式重测录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/lateral_push/long_push_20261105/no_push/run.json",
+        "sha256": "08486138ecc975b64602eff3b22bf4a7487b2e06ce5ebea4b7610852378b72bd",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48",
+        "video_complete": true,
+        "termination_reason": null,
+        "simulation_duration_s": 12.0,
+        "termination_state": null
+      },
+      "config": {
+        "path": "Pro2/output/L2/lateral_push/long_push_20261105/no_push/config.json",
+        "sha256": "6d5ee21cafc07434a1f0c591d9d962ff20f5a500ee8015efd5d10cd4de39571c"
+      }
+    },
+    {
+      "key": "push_push_50N",
+      "path": "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/demo.mp4",
+      "sha256": "7be8422c6be90ea6bec955754d848197cb02b16dd289bd31a876e2e6af849c3e",
+      "duration_s": 12.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "2026-11-05 延长侧推并可视化外力的正式重测录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/run.json",
+        "sha256": "1e2072adc312aa0c73d348858d04f2844f6e83bfda18e69be32b125dd2005349",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48",
+        "video_complete": true,
+        "termination_reason": null,
+        "simulation_duration_s": 12.0,
+        "termination_state": null
+      },
+      "config": {
+        "path": "Pro2/output/L2/lateral_push/long_push_20261105/push_50N/config.json",
+        "sha256": "ce9d7127870782074fb6db38ea49b661235e1f54e4b0d850a707aa226726d6a4"
+      }
+    },
+    {
+      "key": "push_push_100N",
+      "path": "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/demo.mp4",
+      "sha256": "e77891a401f698354be3e272732ca77404311baeabe05335e388a6f905742072",
+      "duration_s": 9.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "2026-11-05 延长侧推并可视化外力的正式重测录像",
+      "run_manifest": {
+        "path": "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/run.json",
+        "sha256": "2b4cd9698a0ba84c633ec472dce1063ef9ba527b7031203971dfabc16d298d1c",
+        "status": "failed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48",
+        "video_complete": false,
+        "termination_reason": "physical_instability",
+        "simulation_duration_s": 8.994,
+        "termination_state": {
+          "time_s": 8.994,
+          "base_position_m": [
+            0.28220662474632263,
+            1.940159797668457,
+            0.5982645750045776
+          ],
+          "roll_rad": -0.9778773899427692,
+          "pitch_rad": 0.012848325987604695
+        }
+      },
+      "config": {
+        "path": "Pro2/output/L2/lateral_push/long_push_20261105/push_100N/config.json",
+        "sha256": "fc136e282216d8ac3a2a73ffdbe80d849c6cd51ab1b142b0d1e48ff8edc88988"
+      }
+    },
+    {
+      "key": "path",
+      "path": "Pro2/output/L4/02_path_tracking/ppt_video_20261104/waypoints/demo.mp4",
+      "sha256": "494a89368f7579861a353f301b75563614b0709ef2d8cc8bc84f9c5345556b00",
+      "duration_s": 30.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L4/02_path_tracking/ppt_video_20261104/waypoints/run.json",
+        "sha256": "09b334df8b89bc2cf0638ea1a9f30559f40dfb3f7fe715f9100902969babd39e",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L4/02_path_tracking/ppt_video_20261104/waypoints/config.json",
+        "sha256": "92e78b79834261123dad4525b9923e6fcd4c7df1c7bcdc782f86543d21092ea2"
+      }
+    },
+    {
+      "key": "rough_medium",
+      "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/rough_medium/demo.mp4",
+      "sha256": "c442fc20c32268bbc1fa081a3cf18afeff04aa9b5471dcc78818bb3e4086f5fb",
+      "duration_s": 28.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/rough_medium/run.json",
+        "sha256": "9b3170c52cb65af7b1f18ddcd37e0d3ae4a3bbc75347409eafd200a7e5cadda6",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/rough_medium/config.json",
+        "sha256": "94434ab74e89ca15588fc54c5a6762ab198e4f4ae62eac05f9b0d4fb04ff0931"
+      }
+    },
+    {
+      "key": "slope_05deg",
+      "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/slope_05deg/demo.mp4",
+      "sha256": "41e88307f5989bd9079337069c3410b86c7d82e6311cae569a34b4e143573fc5",
+      "duration_s": 24.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/slope_05deg/run.json",
+        "sha256": "97bced6f8136a998548c3529b57557d2d6749833ed6f12fa7f0a41c1b4f1b54a",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/slope_05deg/config.json",
+        "sha256": "58d826716805e87989240cd54d4bd98ac853fcd3de9cfeea6c494bb1af9b7441"
+      }
+    },
+    {
+      "key": "vertical_jump",
+      "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/demo.mp4",
+      "sha256": "309f5d45e836116b0f2b765643439cab4904884cf28e08ae3029098b0b091b2d",
+      "duration_s": 13.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "沿用原实验配置补录的真实 Isaac 仿真录像",
+      "run_manifest": {
+        "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/run.json",
+        "sha256": "6539388500a3ecf8069361fa6926d8bb1151e08ffac1e7dfc8d52601166b89b5",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L4/03_terrain_and_jump/ppt_video_20261104/vertical_jump/config.json",
+        "sha256": "e850a1ed7092e30ffc95be1dfd36eb0f36244acd7eae49bb58a373f16a62c5f4"
+      }
+    },
+    {
+      "key": "random_obstacles_seed01_full",
+      "path": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/demo.mp4",
+      "sha256": "cd7bdee434aee2504b86f7767e3e711380d1f7dc93cdf03ce3f6a3b5553f631e",
+      "duration_s": 45.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "2026-11-05 沿用原地形实验配置补录的真实 Isaac 行走录像",
+      "run_manifest": {
+        "path": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/run.json",
+        "sha256": "7d748ba1a50e6a648a70e1143cdb2e3f28926557a84d4dc0392d8466b511d73b",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/random_obstacles_seed01_full/config.json",
+        "sha256": "d28a66fe578f11a4461c954766dfcef37030a4137ddd8aa06c8b6f4ec7be3b58"
+      }
+    },
+    {
+      "key": "blind_step_up",
+      "path": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/demo.mp4",
+      "sha256": "f0339593b7e2ef37b01cf43bfd7bf862c6d2bf1efb11c5c1bfe8fff9597e6246",
+      "duration_s": 24.0,
+      "width": 960,
+      "height": 720,
+      "fps": 30.0,
+      "codec": "h264",
+      "provenance": "2026-11-05 沿用原地形实验配置补录的真实 Isaac 行走录像",
+      "run_manifest": {
+        "path": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/run.json",
+        "sha256": "bffde566b50dfa8d6715743591f174638264e7488a57b4e4423d839e4e40a08d",
+        "status": "completed",
+        "video_saved": true,
+        "controller_library_sha256": "8e8d5f8c6328ef5521428e4da7920dc650d11ca5d36652365d2b7f13b6e1bc48"
+      },
+      "config": {
+        "path": "Pro2/output/L4/03_terrain_and_jump/ppt_terrain_quad_20261105/blind_step_up/config.json",
+        "sha256": "345b4d7e8718c6da0db0d70f5e290f7c62784a0ba5cd9c091fb74c9e09b6aa9b"
+      }
+    }
+  ],
+  "boundaries": [
+    "运动画面均来自原始 Isaac 录像；合成只缩放、排版、加字幕或按明确标记改变播放速度。100 N 失稳停止后仅该画格冻结末帧，并显著标明真实停仿时间；其他两组继续运行。",
+    "L2 四个实验分别在同一画面并排播放三种条件，仿真时间从 0 秒对齐。",
+    "L4 跳跃最后 7 秒为原始 8.0–11.5 秒片段的 0.5× 慢放；其他段落均为原速。",
+    "L1、L3 为原理和分析阶段，不虚构独立机器人演示；其内容保留在 PPT 正文。",
+    "L2 侧推为 2026-11-05 延长外力的正式重测，报告和 PPT 第 9 页使用同批新数据；其余补录只用于演示，原正式定量曲线继续保留各自来源。",
+    "四地形段按左上 5°坡道、右上粗糙地面、左下随机障碍、右下 6 cm 台阶排列；四组均截取仿真 0–24 秒，原速同步播放，不冻结、不裁切。",
+    "四地形同屏展示共同观察窗口内的行走过程；该片段不构成穿越完整地形区域的通过判据，完整录像和阶段报告保留各自实验结果。随机障碍原录像为 45 秒，粗糙地面原录像为 28 秒。",
+    "四种地形沿用各自原实验配置，行走速度和抬腿高度不完全相同；同屏视频用于展示不同场景，不作为仅改变地形的单变量对照。"
+  ]
+}

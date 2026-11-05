@@ -1,0 +1,11 @@
+{
+  "sample_count": 0,
+  "cross_track_rmse_m": null,
+  "maximum_path_distance_m": null,
+  "heading_error_rmse_rad": null,
+  "final_progress_m": 0.0,
+  "path_length_m": 2.0,
+  "completion_fraction": 0.0,
+  "reached_goal": false,
+  "final_goal_distance_m": 0.0
+}

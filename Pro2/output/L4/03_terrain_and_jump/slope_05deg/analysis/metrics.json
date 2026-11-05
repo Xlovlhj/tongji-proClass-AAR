@@ -1,0 +1,101 @@
+{
+  "analysis_kind": "terrain",
+  "source_files": {
+    "run": "Pro2/output/L4/03_terrain_and_jump/slope_05deg/run.json",
+    "states": "Pro2/output/L4/03_terrain_and_jump/slope_05deg/states.csv"
+  },
+  "terrain_type": "slope",
+  "terrain_config": {
+    "type": "slope",
+    "friction": 1.0,
+    "restitution": 0.0,
+    "color": [
+      0.17,
+      0.2,
+      0.23
+    ],
+    "angle_deg": 5.0,
+    "start_x_m": 0.8,
+    "length_m": 2.5,
+    "width_m": 2.0,
+    "thickness_m": 0.08,
+    "start_height_m": 0.0
+  },
+  "terrain_manifest": {
+    "config": {
+      "type": "slope",
+      "friction": 1.0,
+      "restitution": 0.0,
+      "color": [
+        0.17,
+        0.2,
+        0.23
+      ],
+      "angle_deg": 5.0,
+      "start_x_m": 0.8,
+      "length_m": 2.5,
+      "width_m": 2.0,
+      "thickness_m": 0.08,
+      "start_height_m": 0.0
+    },
+    "primitive_count": 2,
+    "primitive_paths": [
+      "/World/Terrain/Ground",
+      "/World/Terrain/Slope00"
+    ]
+  },
+  "terrain_bounds_source": "terrain.config",
+  "terrain_x_start_m": 0.8,
+  "terrain_x_end_m": 3.290486745229364,
+  "terrain_y_min_m": -1.0,
+  "terrain_y_max_m": 1.0,
+  "maximum_base_x_m": 1.7201372385025024,
+  "entry_time_s": 14.1,
+  "exit_time_s": null,
+  "samples_inside": 990,
+  "forward_progress_on_terrain_m": 0.9201372385025024,
+  "progress_fraction": 0.3694608053084664,
+  "entered_terrain": true,
+  "traversed_terrain": false,
+  "completion_reason": "进入未穿越",
+  "run_status": "completed",
+  "run_error": null,
+  "logged_samples": 2400,
+  "logged_duration_s": 23.990000000000002,
+  "walking_samples": 1900,
+  "initial_base_position_m": [
+    1.862645149230957e-09,
+    5.820766091346741e-10,
+    1.0840739011764526
+  ],
+  "final_logged_base_position_m": [
+    1.7201372385025024,
+    -0.029751045629382133,
+    1.0759572982788086
+  ],
+  "net_forward_displacement_m": 1.7201372366398573,
+  "net_lateral_displacement_m": -0.029751046211458743,
+  "planar_distance_travelled_m": 3.0264305139696135,
+  "walking_planar_distance_travelled_m": 2.983873424009706,
+  "minimum_logged_base_height_m": 1.0595171451568604,
+  "maximum_logged_base_height_m": 1.0895732641220093,
+  "maximum_logged_tilt_rad": 0.04200393317139694,
+  "maximum_logged_abs_roll_rad": 0.04200393317139694,
+  "maximum_logged_abs_pitch_rad": 0.03847061177139087,
+  "forward_velocity_tracking_rmse_m_s": 0.04214315475519924,
+  "lateral_velocity_tracking_rmse_m_s": 0.13720664696656978,
+  "peak_abs_logged_joint_torque_Nm": 195.97512824828027,
+  "run_manifest_summary": {
+    "simulation_duration_s": 24.0,
+    "samples": 2400,
+    "minimum_base_height_m": 1.0595043897628784,
+    "maximum_tilt_rad": 0.04201149076283782,
+    "maximum_joint_torque_nm": 226.5372070821149
+  },
+  "figures": [
+    "planar_trajectory.png",
+    "base_height.png",
+    "base_attitude.png",
+    "forward_velocity.png"
+  ]
+}

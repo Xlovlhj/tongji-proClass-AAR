@@ -1,0 +1,393 @@
+{
+  "analysis_kind": "terrain",
+  "source_files": {
+    "run": "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/run.json",
+    "states": "Pro2/output/L4/03_terrain_and_jump/random_obstacles_seed01_full/states.csv"
+  },
+  "terrain_type": "random_obstacles",
+  "terrain_config": {
+    "type": "random_obstacles",
+    "friction": 1.0,
+    "restitution": 0.0,
+    "color": [
+      0.17,
+      0.2,
+      0.23
+    ],
+    "seed": 1,
+    "count": 12,
+    "region_x_m": [
+      0.8,
+      3.0
+    ],
+    "region_y_m": [
+      -0.6,
+      0.6
+    ],
+    "height_range_m": [
+      0.02,
+      0.06
+    ],
+    "length_range_m": [
+      0.1,
+      0.22
+    ],
+    "width_range_m": [
+      0.1,
+      0.28
+    ]
+  },
+  "terrain_manifest": {
+    "config": {
+      "type": "random_obstacles",
+      "friction": 1.0,
+      "restitution": 0.0,
+      "color": [
+        0.17,
+        0.2,
+        0.23
+      ],
+      "seed": 1,
+      "count": 12,
+      "region_x_m": [
+        0.8,
+        3.0
+      ],
+      "region_y_m": [
+        -0.6,
+        0.6
+      ],
+      "height_range_m": [
+        0.02,
+        0.06
+      ],
+      "length_range_m": [
+        0.1,
+        0.22
+      ],
+      "width_range_m": [
+        0.1,
+        0.28
+      ]
+    },
+    "plan": [
+      {
+        "name": "Ground",
+        "center_m": [
+          0.0,
+          0.0,
+          -0.05
+        ],
+        "size_m": [
+          200.0,
+          200.0,
+          0.1
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.17,
+          0.2,
+          0.23
+        ]
+      },
+      {
+        "name": "Obstacle00",
+        "center_m": [
+          1.389594149878734,
+          -0.004325081182060431,
+          0.025275492379532277
+        ],
+        "size_m": [
+          0.11612370929348816,
+          0.2525380726487019,
+          0.050550984759064554
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      },
+      {
+        "name": "Obstacle01",
+        "center_m": [
+          1.069011910641244,
+          -0.4634991912500537,
+          0.02577446702271026
+        ],
+        "size_m": [
+          0.15393892777464857,
+          0.21728673509009735,
+          0.05154893404542052
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      },
+      {
+        "name": "Obstacle02",
+        "center_m": [
+          0.9043573983647825,
+          -0.05581985423790359,
+          0.025245601649158837
+        ],
+        "size_m": [
+          0.20029181247038436,
+          0.17789807222290963,
+          0.050491203298317675
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      },
+      {
+        "name": "Obstacle03",
+        "center_m": [
+          2.7082401432944194,
+          -0.497022028592879,
+          0.02890541391107844
+        ],
+        "size_m": [
+          0.1865848038808939,
+          0.1411771998286815,
+          0.05781082782215688
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      },
+      {
+        "name": "Obstacle04",
+        "center_m": [
+          1.650891642399774,
+          -0.28412207134200246,
+          0.02878298325557021
+        ],
+        "size_m": [
+          0.1030535033192153,
+          0.19745424510282938,
+          0.05756596651114042
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      },
+      {
+        "name": "Obstacle05",
+        "center_m": [
+          1.7727101878185323,
+          -0.00458464363444433,
+          0.0144338333254607
+        ],
+        "size_m": [
+          0.15065398906992608,
+          0.10522734176347623,
+          0.0288676666509214
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      },
+      {
+        "name": "Obstacle06",
+        "center_m": [
+          1.8162971745269405,
+          -0.2225043934610575,
+          0.014375620746753772
+        ],
+        "size_m": [
+          0.12797013403090873,
+          0.1415559774773772,
+          0.028751241493507544
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      },
+      {
+        "name": "Obstacle07",
+        "center_m": [
+          2.1984512184876857,
+          -0.2981490685993744,
+          0.021129086453048666
+        ],
+        "size_m": [
+          0.10257876463190907,
+          0.25076403561926314,
+          0.04225817290609733
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      },
+      {
+        "name": "Obstacle08",
+        "center_m": [
+          1.5685867642478082,
+          0.20934919379456285,
+          0.012417799196116129
+        ],
+        "size_m": [
+          0.21910520946112783,
+          0.2547903751831522,
+          0.024835598392232257
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      },
+      {
+        "name": "Obstacle09",
+        "center_m": [
+          2.5649087156246013,
+          0.1586295350368368,
+          0.0184421399992283
+        ],
+        "size_m": [
+          0.18534301236343356,
+          0.26855930562390273,
+          0.0368842799984566
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      },
+      {
+        "name": "Obstacle10",
+        "center_m": [
+          2.6144115312613665,
+          0.005253361947755719,
+          0.02764958001663715
+        ],
+        "size_m": [
+          0.13640422131195012,
+          0.2057645091058407,
+          0.0552991600332743
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      },
+      {
+        "name": "Obstacle11",
+        "center_m": [
+          2.503528307062866,
+          -0.09372209231398021,
+          0.014854799470861352
+        ],
+        "size_m": [
+          0.17068027095790622,
+          0.10621464942724149,
+          0.029709598941722704
+        ],
+        "rotate_y_deg": 0.0,
+        "color": [
+          0.45,
+          0.2,
+          0.08
+        ]
+      }
+    ],
+    "primitive_count": 13,
+    "primitive_paths": [
+      "/World/Terrain/Ground",
+      "/World/Terrain/Obstacle00",
+      "/World/Terrain/Obstacle01",
+      "/World/Terrain/Obstacle02",
+      "/World/Terrain/Obstacle03",
+      "/World/Terrain/Obstacle04",
+      "/World/Terrain/Obstacle05",
+      "/World/Terrain/Obstacle06",
+      "/World/Terrain/Obstacle07",
+      "/World/Terrain/Obstacle08",
+      "/World/Terrain/Obstacle09",
+      "/World/Terrain/Obstacle10",
+      "/World/Terrain/Obstacle11"
+    ]
+  },
+  "terrain_bounds_source": "terrain.plan",
+  "terrain_x_start_m": 0.8042114921295903,
+  "terrain_x_end_m": 2.8015325452348665,
+  "terrain_y_min_m": -0.5721425587951023,
+  "terrain_y_max_m": 0.33674438138613894,
+  "maximum_base_x_m": 3.309629440307617,
+  "entry_time_s": 12.74,
+  "exit_time_s": 40.25,
+  "samples_inside": 2751,
+  "forward_progress_on_terrain_m": 1.997321053105276,
+  "progress_fraction": 1.0,
+  "entered_terrain": true,
+  "traversed_terrain": true,
+  "completion_reason": "穿越",
+  "run_status": "completed",
+  "run_error": null,
+  "logged_samples": 4500,
+  "logged_duration_s": 44.99,
+  "walking_samples": 4000,
+  "initial_base_position_m": [
+    1.862645149230957e-09,
+    5.820766091346741e-10,
+    1.0840739011764526
+  ],
+  "final_logged_base_position_m": [
+    3.309629440307617,
+    -0.03955543786287308,
+    1.0879961252212524
+  ],
+  "net_forward_displacement_m": 3.309629438444972,
+  "net_lateral_displacement_m": -0.039555438444949687,
+  "planar_distance_travelled_m": 6.482194432768379,
+  "walking_planar_distance_travelled_m": 6.439637342808472,
+  "minimum_logged_base_height_m": 1.0478628873825073,
+  "maximum_logged_base_height_m": 1.0990737676620483,
+  "maximum_logged_tilt_rad": 0.07078313155997235,
+  "maximum_logged_abs_roll_rad": 0.07078313155997235,
+  "maximum_logged_abs_pitch_rad": 0.03847061177139087,
+  "forward_velocity_tracking_rmse_m_s": 0.06574962954270128,
+  "lateral_velocity_tracking_rmse_m_s": 0.1438379994350866,
+  "peak_abs_logged_joint_torque_Nm": 210.22528027067347,
+  "run_manifest_summary": {
+    "simulation_duration_s": 45.0,
+    "samples": 4500,
+    "minimum_base_height_m": 1.0478510856628418,
+    "maximum_tilt_rad": 0.07078410312619743,
+    "maximum_joint_torque_nm": 233.18475314769478
+  },
+  "figures": [
+    "planar_trajectory.png",
+    "base_height.png",
+    "base_attitude.png",
+    "forward_velocity.png"
+  ]
+}

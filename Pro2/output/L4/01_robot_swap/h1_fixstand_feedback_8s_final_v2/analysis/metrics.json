@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "analysis_type": "unitree_h1_2_fixstand_feedback",
+  "generated_by": "Pro2/tools/analyze_l4_h1_stand.py",
+  "source": {
+    "run_directory": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2",
+    "run_json": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/run.json",
+    "runtime_metrics_json": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/metrics.json",
+    "states_csv": "Pro2/output/L4/01_robot_swap/h1_fixstand_feedback_8s_final_v2/states.csv",
+    "sha256": {
+      "run.json": "6c1b57dbfe9a3df0fbd038c1293dee18e30fac39f30c5b3a9481cb529f0b5b4a",
+      "metrics.json": "d4ed055988cd53b9f3f1d0603f95821a131a7d404f4172575908aedcf4019124",
+      "states.csv": "03f33279662b97c6fc18077151553ddb03a607c53f06f3a1cd2247ed574a3791"
+    }
+  },
+  "sampling": {
+    "rows": 800,
+    "columns": 230,
+    "time_start_s": 0.002,
+    "time_end_s": 7.992,
+    "logged_time_span_s": 7.99,
+    "median_log_interval_s": 0.009999999999999787,
+    "simulator_duration_s_from_runtime_metrics": 8.0,
+    "note": "The 100 Hz CSV ends before the final 500 Hz simulator state. Runtime acceptance values therefore remain authoritative; sampled extrema and final logged values are reported separately."
+  },
+  "metric_definitions": {
+    "maximum_abs_roll_or_pitch_rad": "max(max(abs(roll), abs(pitch)))",
+    "maximum_horizontal_drift_from_initial_m": "max(hypot(base_x-base_x_first, base_y-base_y_first))",
+    "joint_tracking_rmse_to_commanded_target_rad": "sqrt(mean((q_actual-q_desired)^2)) over selected samples and all joints",
+    "joint_tracking_rmse_to_nominal_target_rad": "sqrt(mean((q_actual-q_nominal)^2)) over selected samples and all joints",
+    "base_height_population_std_m": "population standard deviation of base_z over selected samples",
+    "sampled_effort_extrema": "maximum absolute logged value over selected samples and all joints"
+  },
+  "runtime_reported_metrics": {
+    "simulated_duration_s": 8.0,
+    "transition_time_s": 3.0,
+    "target_hold_duration_s": 5.0,
+    "minimum_base_height_m": 0.9892775416374207,
+    "maximum_tilt_rad": 0.07764301808084291,
+    "maximum_horizontal_drift_m": 0.06073271339577004,
+    "maximum_abs_joint_velocity_rad_s": 8.751992225646973,
+    "maximum_abs_pd_effort_estimate_nm": 48.38344804942608,
+    "maximum_abs_explicit_actuation_nm": 0.0,
+    "maximum_abs_projected_joint_force_nm": 48.12358093261719,
+    "maximum_abs_balance_correction_rad": 0.21565271189739404,
+    "final_joint_target_rmse_rad": 0.03650306055939122,
+    "acceptance_thresholds": {
+      "minimum_base_height_m": 0.85,
+      "maximum_tilt_rad": 0.2,
+      "maximum_horizontal_drift_m": 0.1,
+      "final_joint_target_rmse_rad": 0.1
+    },
+    "acceptance_passed": true
+  },
+  "derived_from_states_csv": {
+    "all_logged_samples": {
+      "sample_count": 800,
+      "time_start_s": 0.002,
+      "time_end_s": 7.992,
+      "minimum_base_height_m": 0.9892775416374207,
+      "maximum_base_height_m": 1.0309606790542603,
+      "mean_base_height_m": 0.9997743916511536,
+      "base_height_population_std_m": 0.014551330183291822,
+      "maximum_abs_roll_or_pitch_rad": 0.07764286583564792,
+      "maximum_horizontal_drift_from_initial_m": 0.06073264713148425,
+      "joint_tracking_rmse_to_commanded_target_rad": 0.04150928311253769,
+      "joint_tracking_rmse_to_nominal_target_rad": 0.031821459033775264,
+      "maximum_abs_balance_correction_rad": 0.21565271189739404,
+      "maximum_abs_sampled_pd_effort_estimate_nm": 48.36821127682924,
+      "maximum_abs_sampled_projected_joint_force_nm": 48.12358093261719,
+      "maximum_abs_sampled_joint_velocity_rad_s": 5.9725470542907715
+    },
+    "fixstand_hold_samples": {
+      "sample_count": 500,
+      "time_start_s": 3.0020000000000002,
+      "time_end_s": 7.992,
+      "minimum_base_height_m": 0.9892775416374207,
+      "maximum_base_height_m": 0.9925531148910522,
+      "mean_base_height_m": 0.9896771037578582,
+      "base_height_population_std_m": 0.0005760735119069152,
+      "maximum_abs_roll_or_pitch_rad": 0.07764286583564792,
+      "maximum_horizontal_drift_from_initial_m": 0.06073264713148425,
+      "joint_tracking_rmse_to_commanded_target_rad": 0.04975152337641127,
+      "joint_tracking_rmse_to_nominal_target_rad": 0.03667609875496026,
+      "maximum_abs_balance_correction_rad": 0.21565271189739404,
+      "maximum_abs_sampled_pd_effort_estimate_nm": 48.36821127682924,
+      "maximum_abs_sampled_projected_joint_force_nm": 48.12358093261719,
+      "maximum_abs_sampled_joint_velocity_rad_s": 0.19286945462226868
+    },
+    "last_logged_sample": {
+      "time_s": 7.992,
+      "base_position_m": [
+        -0.049551162868738174,
+        0.028526905924081802,
+        0.9895414710044861
+      ],
+      "roll_rad": -0.009127418598288573,
+      "pitch_rad": -0.07674245710545988,
+      "joint_rmse_to_final_nominal_target_rad": 0.03650391238859386,
+      "joint_rmse_to_commanded_target_rad": 0.050734626873950354
+    }
+  },
+  "figures": [
+    "base_height.png",
+    "base_attitude.png",
+    "joint_tracking.png",
+    "balance_feedback.png",
+    "joint_effort.png"
+  ]
+}

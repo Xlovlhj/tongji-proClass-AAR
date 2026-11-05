@@ -1,0 +1,54 @@
+{
+  "phase_sequence": [
+    {
+      "phase": "prepare",
+      "time_s": 0.0
+    },
+    {
+      "phase": "crouch",
+      "time_s": 3.0
+    },
+    {
+      "phase": "thrust",
+      "time_s": 8.5
+    },
+    {
+      "phase": "flight_up",
+      "time_s": 8.63
+    },
+    {
+      "phase": "flight_down",
+      "time_s": 8.752
+    },
+    {
+      "phase": "landing",
+      "time_s": 8.93
+    },
+    {
+      "phase": "recovery",
+      "time_s": 9.031
+    }
+  ],
+  "takeoff_time_s": 8.631,
+  "touchdown_time_s": 8.93,
+  "takeoff_base_height_m": 0.9831057786941528,
+  "touchdown_base_height_m": 0.9025808572769165,
+  "minimum_crouch_height_m": 0.8973981142044067,
+  "apex_height_m": 1.0552719831466675,
+  "maximum_upward_velocity_m_s": 1.3891733982126193,
+  "maximum_left_contact_force_n": 3884.361328125,
+  "maximum_right_contact_force_n": 4373.52001953125,
+  "flight_mpc_disabled": true,
+  "minimum_required_rise_m": 0.06,
+  "external_force_assist": false,
+  "completed_phase_sequence": false,
+  "final_phase": "recovery",
+  "failed_reason": null,
+  "actual_rise_m": 0.07216620445251465,
+  "flight_duration_s": 0.2989999999999995,
+  "final_base_height_m": 0.6000683307647705,
+  "final_height_error_m": 0.47993166923522956,
+  "maximum_tilt_rad": 0.7805634624714564,
+  "maximum_joint_torque_nm": 396.0,
+  "pass": false
+}
