@@ -2,6 +2,7 @@
 
 本目录只保留一套 **15 页正式汇报**。之前的42页、10页及更早归档PPT、PDF、预览已删除。
 
+- [项目源码（project2 分支）](https://github.com/Xlovlhj/tongji-proClass-AAR/tree/project2)，首页显示完整网址并提供可点击超链接。
 - [正式汇报 PPT](青龙MPC_项目汇报_15页.pptx)
 - [同版 PDF](青龙MPC_项目汇报_15页.pdf)
 - [2分12秒验收演示视频](assets/项目验收演示_L0_L2_L4.mp4)

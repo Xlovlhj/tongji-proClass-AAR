@@ -24,8 +24,9 @@
             "autoplay": false
           }
         ],
-        "body_text": "青龙人形机器人 MPC 开源实践\nOpenLoong · Isaac Sim 仿真适配       任务demo展示\nL0  跑通与调参\nL1  控制原理与源码\nL2  四组对照实验\nL3  理论联系\nL4  五项挑战",
-        "tables": []
+        "body_text": "青龙人形机器人 MPC 开源实践\nOpenLoong · Isaac Sim 仿真适配       任务demo展示\nL0  跑通与调参\nL1  控制原理与源码\nL2  四组对照实验\nL3  理论联系\nL4  五项挑战\n项目源码：https://github.com/Xlovlhj/tongji-proClass-AAR/tree/project2",
+        "tables": [],
+        "source_code_url": "https://github.com/Xlovlhj/tongji-proClass-AAR/tree/project2"
       },
       {
         "page": 2,
@@ -703,5 +704,6 @@
     "Pro2/output/final/assets/项目验收演示_L0_L2_L4.mp4": "f064344452c4e183902465de212b9e790f5bc7a25788783f8838690f71ef43b9",
     "Pro2/机器人智能控制_作业2_足式机器人MPC开源实践.docx": "c68a39aa2dd2b0c03388454fb47e8282a59598ba1be8a73db168b6c6a8eadf30"
   },
-  "cover_video_duration_s": 132.0
+  "cover_video_duration_s": 132.0,
+  "source_code_url": "https://github.com/Xlovlhj/tongji-proClass-AAR/tree/project2"
 }

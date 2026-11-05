@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "source_code_url": "https://github.com/Xlovlhj/tongji-proClass-AAR/tree/project2",
+  "slide": 1,
+  "font_pt": 20,
+  "snapshot_before": "/tmp/pro2_source_link_before_0b5ca6fb2c4e.pptx",
+  "input_pptx_sha256": "0b5ca6fb2c4ee6b0b626b2306a71676199fe5be4b29d988fdd5cbc9486ede0e4",
+  "output_pptx_sha256": "75be99d64ee140aa789c0744eabc36a075530531c4bbedd9fb62c5a17d404977",
+  "changed_package_parts": [
+    "ppt/slides/_rels/slide1.xml.rels",
+    "ppt/slides/slide1.xml"
+  ],
+  "non_cover_slides_preserved": 14,
+  "all_existing_media_preserved": true,
+  "existing_cover_shapes_preserved": true
+}

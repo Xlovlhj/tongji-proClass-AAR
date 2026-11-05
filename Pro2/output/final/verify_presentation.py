@@ -66,7 +66,7 @@ def main():
         if order!=sorted(order) or set(order)!=set(range(5)):issues.append(f'{stem}: stage order')
         images=0;videos=0;autoplay=0;tables=0;bounds=[];notes=0;inherited_bounds=[]
         baseline=None
-        audit_paths=[OUT/'checks/terrain_analysis_update.json',OUT/'checks/cover_video_update.json',OUT/'checks/terrain_slide_update.json',OUT/'checks/page12_explanation_update.json',OUT/'checks/presentation_text_update.json',OUT/'checks/push_presentation_update.json']
+        audit_paths=[OUT/'checks/source_link_update.json',OUT/'checks/terrain_analysis_update.json',OUT/'checks/cover_video_update.json',OUT/'checks/terrain_slide_update.json',OUT/'checks/page12_explanation_update.json',OUT/'checks/presentation_text_update.json',OUT/'checks/push_presentation_update.json']
         for audit_path in audit_paths:
             if not audit_path.is_file():continue
             audit=json.loads(audit_path.read_text())
@@ -123,6 +123,10 @@ def main():
                 for el in xml.xpath('.//a:videoFile',namespaces=NS):
                     movie_digests.append(slide_media.get(el.get('{'+NS['r']+'}link')))
                 if sorted(movie_digests)!=sorted(v['sha256'] for v in record['videos']):issues.append(f'{stem} {num}: video relationship mismatch')
+        if manifest.get('source_code_url'):
+            cover_links=[run.hyperlink.address for shape in prs.slides[0].shapes if shape.has_text_frame
+                         for paragraph in shape.text_frame.paragraphs for run in paragraph.runs]
+            if manifest['source_code_url'] not in cover_links:issues.append(f'{stem}: missing cover source hyperlink')
         introduced=[entry for entry in bounds if entry not in inherited_bounds]
         if introduced:issues.append({stem+'_out_of_bounds':introduced})
         if inherited_bounds:warnings.append({'unchanged_user_layout_out_of_bounds':inherited_bounds,'scope':'The same complete shape XML exists in the pre-update snapshot. Text is checked in the PDF; the user layout was preserved.'})
