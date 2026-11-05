@@ -161,7 +161,7 @@ def table(slide, x, y, w, h, rows, widths=None, size=20, highlight_row=None):
             cell.text = str(value)
             cell.margin_left = Inches(0.13)
             cell.margin_right = Inches(0.10)
-            cell.margin_top = cell.margin_bottom = Inches(0.055)
+            cell.margin_top = cell.margin_bottom = Inches(0.035)
             cell.vertical_anchor = MSO_ANCHOR.MIDDLE
             cell.fill.solid()
             cell.fill.fore_color.rgb = rgb(PALE if r == 0 or r == highlight_row else WHITE)
@@ -303,68 +303,6 @@ def outline_plot(slide, x, y, w, h, title, entries, *, small=False, axes=True):
                        py + (ymax - b) / (ymax - ymin) * side) for a, b in stroke]
             polyline(slide, points, color, 1.35 if small else 1.7, dash,
                      f"{title} / {label} / stroke {index + 1}")
-
-
-def read_deviation(path):
-    values = []
-    with path.open(newline="") as stream:
-        reader = csv.reader(stream)
-        fields = next(reader)
-        ti, di = fields.index("time"), fields.index("disturbance_deviation_m")
-        for index, row in enumerate(reader):
-            t = float(row[ti])
-            if t > 27:
-                break
-            if t >= 19 and index % 10 == 0:
-                values.append((t, float(row[di]) * 1000))
-    assert len(values) == 801
-    return values
-
-
-def deviation_chart(slide, x, y, w, h, deviations):
-    text(slide, x, y - 0.48, w, 0.4, "第一次推力前后的额外偏移", 21, bold=True)
-    data = XyChartData()
-    for controller in CONTROL:
-        series = data.add_series(SHORT[controller])
-        for t, v in deviations[controller]:
-            series.add_data_point(t, v)
-    chart = slide.shapes.add_chart(XL_CHART_TYPE.XY_SCATTER_LINES_NO_MARKERS,
-                                  Inches(x), Inches(y), Inches(w), Inches(h), data).chart
-    chart.has_title = False
-    chart.chart_style = 2
-    chart.has_legend = True
-    chart.legend.position = XL_LEGEND_POSITION.BOTTOM
-    chart.legend.include_in_layout = False
-    chart.legend.font.name = FONT
-    chart.legend.font.size = Pt(14)
-    chart.legend.font.color.rgb = rgb(MUTED)
-    for controller, series in zip(CONTROL, chart.series):
-        series.format.line.color.rgb = rgb(SERIES_COLOR[controller])
-        series.format.line.width = Pt(1.6)
-        series.format.line.dash_style = SERIES_DASH[controller]
-        series.smooth = False
-    xaxis, yaxis = chart.category_axis, chart.value_axis
-    for axis in (xaxis, yaxis):
-        axis.tick_labels.font.name = FONT
-        axis.tick_labels.font.size = Pt(14)
-        axis.tick_labels.font.color.rgb = rgb(MUTED)
-        axis.major_tick_mark = XL_TICK_MARK.NONE
-        axis.minor_tick_mark = XL_TICK_MARK.NONE
-        axis.format.line.color.rgb = rgb(TARGET)
-        axis.format.line.width = Pt(0.7)
-        axis.has_title = True
-    xaxis.minimum_scale, xaxis.maximum_scale, xaxis.major_unit = 19, 27, 2
-    maximum = max(value for points in deviations.values() for _, value in points)
-    yaxis.minimum_scale, yaxis.maximum_scale, yaxis.major_unit = 0, math.ceil(maximum / 2) * 2, 2
-    yaxis.has_major_gridlines = True
-    yaxis.major_gridlines.format.line.color.rgb = rgb(GRID)
-    yaxis.major_gridlines.format.line.width = Pt(0.45)
-    for axis, content in ((xaxis, "时间（s）"), (yaxis, "三维位置差（mm）")):
-        axis.axis_title.text_frame.text = content
-        for p in axis.axis_title.text_frame.paragraphs:
-            for r in p.runs:
-                set_font(r, 15, MUTED)
-    return chart
 
 
 def load_notes():
@@ -538,185 +476,242 @@ def video_slide(prs, number, condition, source_paths):
     return embedded
 
 
+def time_series_chart(slide, x, y, w, h, title, traces, ylabel):
+    """Native XY chart; dashed boundaries mark the actual 20–22 s force."""
+    text(slide, x, y - 0.42, w, 0.35, title, 19, bold=True, align=PP_ALIGN.CENTER)
+    data = XyChartData()
+    values = [v for points in traces.values() for _, v in points]
+    lo, hi = min(0, min(values)), max(values)
+    step = 10 if hi - lo > 30 else 2 if hi - lo > 8 else 1
+    lower, upper = math.floor(lo / step) * step, math.ceil(hi / step) * step
+    if lower == upper:
+        upper += step
+    for controller in CONTROL:
+        series = data.add_series(SHORT[controller])
+        for t, value in traces[controller]:
+            series.add_data_point(t, value)
+    for boundary in (20, 22):
+        series = data.add_series("施力起止")
+        for value in (lower, upper):
+            series.add_data_point(boundary, value)
+    chart = slide.shapes.add_chart(XL_CHART_TYPE.XY_SCATTER_LINES_NO_MARKERS,
+                                  Inches(x), Inches(y), Inches(w), Inches(h), data).chart
+    chart.has_title = chart.has_legend = False
+    chart.chart_style = 2
+    for i, series in enumerate(chart.series):
+        color = SERIES_COLOR[CONTROL[i]] if i < 4 else TARGET
+        series.format.line.color.rgb = rgb(color)
+        series.format.line.width = Pt(1.6 if i < 4 else 1.0)
+        series.format.line.dash_style = SERIES_DASH[CONTROL[i]] if i < 4 else MSO_LINE_DASH_STYLE.DASH
+        series.smooth = False
+    xaxis, yaxis = chart.category_axis, chart.value_axis
+    for axis in (xaxis, yaxis):
+        axis.tick_labels.font.name = FONT
+        axis.tick_labels.font.size = Pt(12)
+        axis.tick_labels.font.color.rgb = rgb(MUTED)
+        axis.major_tick_mark = axis.minor_tick_mark = XL_TICK_MARK.NONE
+        axis.format.line.color.rgb = rgb(TARGET)
+        axis.format.line.width = Pt(0.7)
+        axis.has_title = True
+    xaxis.minimum_scale, xaxis.maximum_scale, xaxis.major_unit = 19, 27, 2
+    yaxis.minimum_scale, yaxis.maximum_scale, yaxis.major_unit = lower, upper, step
+    yaxis.has_major_gridlines = True
+    yaxis.major_gridlines.format.line.color.rgb = rgb(GRID)
+    yaxis.major_gridlines.format.line.width = Pt(0.45)
+    for axis, content in ((xaxis, "时间 / s"), (yaxis, ylabel)):
+        axis.axis_title.text_frame.text = content
+        for p in axis.axis_title.text_frame.paragraphs:
+            for run in p.runs:
+                set_font(run, 12, MUTED)
+    return chart
+
+
 def build(destination):
     OUT.mkdir(parents=True, exist_ok=True)
     summary_path = ROOT / "output/summary.csv"
     manifest_path = ROOT / "output/experiment_manifest.json"
+    diagnostic_path = OUT / "assignment_diagnostics.json"
     manifest = json.loads(manifest_path.read_text())
+    diagnostics = json.loads(diagnostic_path.read_text())
     assert manifest["status"] == "completed", "PPT requires the completed eight-run batch"
     with summary_path.open(newline="") as stream:
         summary = {(r["controller"], r["condition"]): r for r in csv.DictReader(stream)}
     assert len(summary) == 8
     rmse = lambda c, condition: float(summary[c, condition]["drawing_tip_rmse_m"]) * 1000
-    normal = {}
-    source_paths = [summary_path, manifest_path]
+    normal, forced, recovery = {}, {}, {}
+    source_paths = [summary_path, manifest_path, diagnostic_path, ROOT / "6546682.pdf",
+                    OUT / "speaker_notes.md", Path(__file__).resolve()]
     for controller in CONTROL:
-        path = ROOT / f"output/normal/{controller}/trajectory.csv"
-        print(f"Reading normal trajectory: {controller}", flush=True)
-        normal[controller] = read_strokes(path)
-        source_paths.append(path)
-    forced_path = ROOT / "output/disturbed/fuzzy/trajectory.csv"
-    print("Reading fuzzy disturbed trajectory", flush=True)
-    forced = read_strokes(forced_path)
-    source_paths.append(forced_path)
-    deviations, recovery = {}, {}
-    for c in CONTROL:
-        csv_path = ROOT / f"output/comparisons/{c}/comparison.csv"
-        json_path = csv_path.with_name("comparison_metrics.json")
-        deviations[c] = read_deviation(csv_path)
-        report = json.loads(json_path.read_text())
-        recovery[c] = [window["recovery_time_s"] for window in report["recovery"]["windows"]]
-        assert report["recovery"]["threshold_m"] == 0.002
-        assert report["recovery"]["required_hold_s"] == 0.5
-        source_paths.extend((csv_path, json_path))
+        for condition, storage in (("normal", normal), ("disturbed", forced)):
+            path = ROOT / f"output/{condition}/{controller}/trajectory.csv"
+            print(f"Reading {condition} trajectory: {controller}", flush=True)
+            storage[controller] = read_strokes(path)
+            source_paths.append(path)
+        comparison = diagnostics["comparisons"][controller]
+        recovery[controller] = [w["recovery_time_s"] for w in comparison["recovery"]["windows"]]
+        assert comparison["recovery"]["threshold_m"] == 0.002
+        assert comparison["recovery"]["required_hold_s"] == 0.5
     improvement = (1 - rmse("fuzzy", "disturbed") / rmse("gc-pd", "disturbed")) * 100
+    reference = diagnostics["reference"]
+    ik_residual_mm = reference["recomputed_max_ik_tip_error_m"] * 1000
+    joint_jump_deg = reference["max_adjacent_planning_joint_jump_deg"]
 
     prs = Presentation()
     prs.slide_width, prs.slide_height = Inches(W), Inches(H)
     prs.core_properties.title = "机械臂画家 · robot arm artist · raa-v0"
-    prs.core_properties.subject = "Isaac Sim 七轴机械臂绘图与四种关节力矩控制的对比"
-    prs.core_properties.author = ""
+    prs.core_properties.subject = "《机器人智能控制》个人作业1：Isaac Sim 七轴机械臂绘图与抗扰"
+    prs.core_properties.author = "肖淇文（2453703）"
     prs.core_properties.keywords = "raa-v0, Isaac Sim, Panda, PD, RBF, 模糊自适应, 可编辑"
-    prs.core_properties.comments = "Based on the completed eight-run experiment batch; all report metrics are pen-down 3D RMSE."
+    prs.core_properties.comments = "Measured results from the completed eight runs; computed-torque control and model-mismatch experiments are explicitly untested."
     scene = ROOT / "output/video_checks/fuzzy_normal/frame_113_9s.png"
     push_scene = ROOT / "output/video_checks/gc-pd_disturbed/frame_55_5s.png"
 
-    # 1 — One clear purpose and an actual simulator image.
+    # 1 — Editable identity and an actual simulator image.
     s = base(prs, 1)
-    text(s, 0.82, 1.55, 5.6, 0.98, "机械臂画家", 46, bold=True)
-    text(s, 0.82, 2.63, 5.5, 0.57, "让七轴机械臂画出 ChatGPT 标志", 24)
-    text(s, 0.82, 3.49, 5.35, 1.02, "画得准不准？\n被推一下，还能跟上吗？", 26, TEAL)
-    text(s, 0.82, 5.73, 5.4, 0.75, "Isaac Sim 三维仿真\nrobot arm artist · raa-v0", 19, MUTED)
-    picture(s, scene, 6.65, 1.66, 6.0, 4.5)
+    text(s, 0.82, 0.82, 5.7, 0.5, "《机器人智能控制》个人作业 1", 21, MUTED)
+    text(s, 0.82, 1.73, 5.6, 0.95, "机械臂画家", 46, bold=True)
+    text(s, 0.82, 2.82, 5.5, 0.62, "让七轴机械臂画出 ChatGPT 标志", 24)
+    text(s, 0.82, 3.66, 5.4, 0.68, "画得准，也要经得住推力", 27, TEAL)
+    text(s, 0.82, 4.75, 5.4, 0.9, "姓名：肖淇文\n学号：2453703", 23)
+    text(s, 0.82, 6.05, 5.4, 0.35, "2026 年 10 月 13 日  ·  Isaac Sim", 18, MUTED)
+    picture(s, scene, 6.65, 1.72, 6.0, 4.5)
 
-    # 2 — Native vertical flow and editable outline.
-    s = base(prs, 2, "机械臂怎样画出图案？", "先安排笔尖怎么走，再算出每个关节怎么动。")
-    steps = [("1", "读取 SVG 轮廓", "把标志变成一条条路线"),
-             ("2", "安排笔尖运动", "平滑起停，笔画之间抬笔"),
-             ("3", "计算关节角度", "连续逆运动学：位置 → 七个关节"),
-             ("4", "控制关节力矩", "读回实际状态，及时纠正偏差"),
-             ("5", "记录仿真结果", "保存真实轨迹、误差和视频")]
-    for i, (number, title, detail) in enumerate(steps):
-        y = 1.83 + i * 0.93
-        rect(s, 0.82, y, 5.3, 0.75, WHITE, GRID)
-        text(s, 1.00, y + 0.12, 0.35, 0.4, number, 23, TEAL, bold=True)
-        text(s, 1.56, y + 0.04, 4.2, 0.36, title, 21, bold=True)
-        text(s, 1.56, y + 0.42, 4.3, 0.28, detail, 16, MUTED)
-        if i < 4:
-            arrow = s.shapes.add_shape(MSO_SHAPE.DOWN_ARROW, Inches(3.34), Inches(y + 0.77),
-                                       Inches(0.25), Inches(0.13))
-            arrow.fill.solid()
-            arrow.fill.fore_color.rgb = rgb(TEAL)
-            arrow.line.fill.background()
-    outline_plot(s, 7.23, 1.73, 4.85, 4.35, "目标轮廓", [("目标", normal["fuzzy"]["target"], TEAL, None)], axes=False)
-    text(s, 7.23, 6.2, 4.85, 0.45, "Franka Panda 七轴  ·  16 cm  ·  8 笔", 18, MUTED,
-         align=PP_ALIGN.CENTER)
+    # 2 — System and environment are merged to leave room for videos.
+    s = base(prs, 2, "系统总览与机器人环境", "从目标路线到真实关节力矩，再读回机械臂的运动状态。")
+    steps = ["Panda URDF 模型", "笛卡尔轨迹规划", "连续逆运动学（IK）",
+             "关节力矩控制器", "PhysX 物理仿真", "关节与笔尖状态"]
+    for i, label in enumerate(steps):
+        y = 1.82 + i * 0.78
+        rect(s, 0.82, y, 3.33, 0.60, PALE, GRID, radius=True)
+        text(s, 0.94, y + 0.075, 3.09, 0.43, label, 20, align=PP_ALIGN.CENTER)
+        if i < len(steps) - 1:
+            text(s, 2.20, y + 0.60, 0.6, 0.19, "↓", 13, TEAL, align=PP_ALIGN.CENTER)
+    text(s, 0.82, 6.61, 3.4, 0.30, "关节反馈回到力矩控制器", 15, MUTED)
+    table(s, 4.52, 1.82, 4.75, 4.79,
+          [["项目", "本次设置"], ["模型 / 基座", "Panda URDF / 固定"],
+           ["手臂关节", "panda_joint1–7"], ["末端连杆", "panda_hand"],
+           ["虚拟笔尖", "手部局部 Z + 0.13 m"], ["物理 / 控制频率", "1000 Hz"],
+           ["重力", "9.81 m/s²"], ["关节力矩限制", "±87 / ±12 N·m"]],
+          [0.40, 0.60], 17)
+    picture(s, scene, 9.58, 1.86, 2.88, 2.16)
+    text(s, 9.58, 4.35, 2.9, 1.82, "Isaac Sim / PhysX\n读取：关节角、速度\n发送：关节力矩 τ", 19)
+    text(s, 9.58, 6.19, 2.9, 0.60, "禁用内置位置 / 速度驱动", 17, TEAL)
 
-    # 3 — Plain mechanisms first, one simple professional expression second.
-    s = base(prs, 3, "四种控制器，区别在哪里？", "都在纠正偏差，区别是怎样补上额外的力矩。")
-    rows = [["控制器", "通俗理解"],
-            ["PD", "偏了就纠正，动得太急就缓一下"],
-            ["重力补偿 PD", "纠正偏差时，先托住机械臂的重量"],
-            ["RBF 自适应", "根据关节位置和速度，边画边学补偿"],
-            ["模糊自适应", "把偏差和变化速度分档，用规则学补偿"]]
-    shape = table(s, 0.82, 1.94, 11.7, 3.40, rows, [0.25, 0.75], 22)
-    # Explanations are easier to read left-aligned.
-    for row in list(shape.table.rows)[1:]:
-        for p in row.cells[1].text_frame.paragraphs:
-            p.alignment = PP_ALIGN.LEFT
-    text(s, 0.82, 5.70, 11.7, 0.51, "RBF 与模糊：重力补偿 PD ＋ 在线学习补偿", 24, TEAL, bold=True)
-    text(s, 0.82, 6.30, 11.7, 0.42, "每次从零权重开始；四种方案都输出七个关节的力矩。", 19, MUTED)
+    # 3 — State exactly which planner and interpolation were actually used.
+    s = base(prs, 3, "轨迹规划与连续逆运动学", "先让路线走得平稳，再让七个关节沿同一构型连续运动。")
+    outline_plot(s, 0.82, 1.83, 3.53, 4.57, "目标轮廓",
+                 [("目标", normal["fuzzy"]["target"], TEAL, None)])
+    text(s, 4.84, 1.84, 7.66, 0.43, "① SVG 轮廓 → 平稳的笔尖路线", 23, bold=True)
+    text(s, 4.84, 2.39, 7.66, 0.96,
+         "8 条轮廓，最大尺寸 16 cm；速度上限 0.04 m/s。\n按累计弧长做五次时间规划；换笔画时抬笔 2.5 cm。", 20)
+    text(s, 4.84, 3.60, 7.66, 0.43, "② 上一点关节解 → 下一点 IK 初值", 23, bold=True)
+    text(s, 4.84, 4.13, 7.66, 0.90,
+         "首点用 Lula IK，后续用热启动阻尼迭代。\n统一手部与虚拟笔尖坐标，减少肘部翻转和固定偏差。", 20)
+    text(s, 4.84, 5.21, 7.66, 0.43, "③ 60 Hz 规划 → 1000 Hz 力矩控制", 23, bold=True)
+    text(s, 4.84, 5.73, 7.66, 0.79,
+         "三次 Hermite 插值得到连续关节角与速度。\n当前未使用加速度前馈；接入前需进一步平滑。", 19)
+    text(s, 0.82, 6.64, 11.7, 0.31,
+         f"IK 最大位置残差 {ik_residual_mm:.3f} mm   ·   相邻规划点最大关节变化 {joint_jump_deg:.3f}°", 17, TEAL)
 
-    # 4 — Fair test and exact physical force vectors.
-    s = base(prs, 4, "同一张图，同样的三次推力", "相同路线、起点和 PD 参数；4 种方法 × 正常 / 受推，共 8 组。")
-    picture(s, push_scene, 0.82, 1.89, 5.80, 4.35)
-    text(s, 0.82, 6.40, 5.80, 0.32, "真实笔尖处施力，目标路线保持原样", 18, MUTED, align=PP_ALIGN.CENTER)
-    text(s, 7.06, 1.87, 5.3, 0.42, "三次推力，每次持续 2 秒", 23, bold=True)
-    table(s, 7.06, 2.47, 5.43, 2.59,
-          [["时段（s）", "方向", "力（N）"],
-           ["20–22", "+X", "(3, 0, 0)"],
-           ["55–57", "−Y", "(0, −3, 0)"],
-           ["90–92", "+X、+Y", "(2, 2, 0)"]], [0.31, 0.26, 0.43], 19)
-    text(s, 7.06, 5.43, 5.4, 0.90, "每 1 ms 更新一次控制\n每组完整运动约 114 秒", 21, MUTED)
+    # 4 — Four real controllers, plus the assignment's untested principle.
+    s = base(prs, 4, "控制律：从纠偏到模型与学习补偿", "e = q_d − q；de/dt 是速度误差。PD 纠偏，模型和学习提供补偿。")
+    table(s, 0.82, 1.83, 11.7, 2.65,
+          [["已运行控制器", "关节力矩", "用到的模型 / 学习"],
+           ["PD", "τ_PD = K_p e + K_d (de/dt)", "位置与速度误差"],
+           ["重力补偿 PD", "τ = τ_PD + G(q)", "物理引擎的重力模型"],
+           ["RBF 自适应", "τ = τ_PD + G(q) + Wᵀφ(q, dq/dt)", "每轴 9 个高斯基函数，在线学补偿"],
+           ["模糊自适应", "τ = τ_PD + G(q) + Wᵀφ(e, de/dt)", "每轴 25 条规则，在线学补偿"]],
+          [0.20, 0.43, 0.37], 18)
+    text(s, 0.82, 4.73, 11.7, 0.43,
+         "自适应权重从零开始，逐步更新；限制权重与补偿力矩。", 20, TEAL)
+    rect(s, 0.82, 5.42, 11.7, 1.26, WHITE, GRID, radius=True)
+    text(s, 1.02, 5.54, 11.25, 0.40, "计算力矩：附件中的原理对照（尚未实测）", 21, bold=True)
+    text(s, 1.02, 6.03, 11.25, 0.42,
+         "τ = M(q) (d²q_d/dt²) + C(q, dq_d/dt) (dq_d/dt) + G(q) + τ_PD", 21, TEAL)
 
-    # 5 — Four same-scale outline plots, exact metrics in an editable table.
-    s = base(prs, 5, "正常绘画：补偿重力后更准确")
-    legend(s, 0.84, 1.35, [("目标", TARGET, MSO_LINE_DASH_STYLE.DASH), ("实际", TEAL, None)], 16)
+    # 5 — Fair real-force experiment; no made-up 50 N result.
+    s = base(prs, 5, "公平实验：在真实笔尖位置施加外力", "同一目标、初始状态、PD 增益与外力；四种控制器各运行正常和受扰两组。")
+    text(s, 0.82, 1.84, 6.23, 0.45, "三个推力窗口（世界坐标系）", 23, bold=True)
+    table(s, 0.82, 2.45, 6.13, 2.08,
+          [["时段 / s", "外力 (Fx, Fy, Fz) / N"],
+           ["20–22", "(3, 0, 0)"], ["55–57", "(0, −3, 0)"], ["90–92", "(2, 2, 0)"]],
+          [0.33, 0.67], 20)
+    text(s, 0.82, 4.86, 6.1, 1.00,
+         "关闭内置驱动 → 读状态 → 算并限幅 τ\n发送关节力矩 → 前进 1 ms → 记录状态", 20)
+    text(s, 0.82, 6.19, 6.1, 0.60, "记录目标 / 实际轨迹、关节力矩与外力。", 18, MUTED)
+    picture(s, push_scene, 7.54, 1.87, 4.83, 3.6225)
+    text(s, 7.54, 5.77, 4.83, 0.98,
+         "共 8 次运行；Isaac Sim ▶ Play 视口录制。\n本次约 3 N；附件 50 N 场景尚未测试。", 18, MUTED)
+
+    # 6 — Four paired outlines; all metrics remain outside chart areas.
+    s = base(prs, 6, "画作与跟踪精度", "相同坐标与尺度；图中显示实际 XY 投影，表中统计落笔阶段的真实三维误差。")
     for i, c in enumerate(CONTROL):
-        outline_plot(s, 0.62 + i * 3.10, 1.89, 2.80, 3.36, SHORT[c],
+        outline_plot(s, 0.82 + i * 2.97, 1.78, 2.78, 2.72, LABEL[c],
                      [("目标", normal[c]["target"], TARGET, MSO_LINE_DASH_STYLE.DASH),
-                      ("实际", normal[c]["actual"], TEAL, None)], small=True)
-    text(s, 0.82, 5.48, 11.7, 0.42, "落笔阶段三维误差 RMSE（mm，越小越好）", 20)
-    table(s, 0.82, 6.00, 11.7, 0.74,
-          [[f"{SHORT[c]}\n{rmse(c, 'normal'):.3f}" for c in CONTROL]], [0.25] * 4, 20)
+                      ("正常", normal[c]["actual"], TEAL, None),
+                      ("受扰", forced[c]["actual"], ORANGE, None)], small=True)
+    legend(s, 4.45, 4.78, [("目标", TARGET, MSO_LINE_DASH_STYLE.DASH),
+                           ("正常", TEAL, None), ("受扰", ORANGE, None)], 15, 1.50)
+    table(s, 0.82, 5.15, 11.7, 1.59,
+          [["控制器", "正常 RMSE / mm", "受扰 RMSE / mm", "受扰峰值误差 / mm"]] +
+          [[SHORT[c], f"{rmse(c, 'normal'):.3f}", f"{rmse(c, 'disturbed'):.3f}",
+            f"{diagnostics['runs']['disturbed'][c]['peak_tracking_errors']['pen_down']['error_m'] * 1000:.3f}"]
+           for c in CONTROL], [0.25, 0.25, 0.25, 0.25], 16, highlight_row=4)
 
-    # 6 — Pairing table and editable normal / disturbed / target XY plot.
-    s = base(prs, 6, "受到推力：模糊的整体误差更小", "目标、无干扰轨迹和受扰轨迹，按同一时刻比较。")
-    text(s, 0.82, 1.85, 5.5, 0.42, "落笔阶段三维 RMSE（mm）", 21, bold=True)
-    table(s, 0.82, 2.43, 5.57, 2.82,
-          [["控制器", "正常", "受推"]] + [[SHORT[c], f"{rmse(c, 'normal'):.3f}",
-                                            f"{rmse(c, 'disturbed'):.3f}"] for c in CONTROL],
-          [0.44, 0.28, 0.28], 20, highlight_row=4)
-    text(s, 0.82, 5.64, 5.56, 1.02,
-         f"模糊受推 RMSE 为 1.77 mm\n比重力补偿 PD 低约 {improvement:.0f}%", 23, TEAL, bold=True)
-    outline_plot(s, 7.0, 1.74, 5.45, 4.48, "模糊控制的轨迹对比",
-                 [("目标", normal["fuzzy"]["target"], TARGET, MSO_LINE_DASH_STYLE.DASH),
-                  ("正常", normal["fuzzy"]["actual"], BLUE, None),
-                  ("受推", forced["actual"], ORANGE, None)])
-    legend(s, 7.43, 6.53, [("目标", TARGET, MSO_LINE_DASH_STYLE.DASH),
-                           ("正常", BLUE, None), ("受推", ORANGE, None)], 15, 1.55)
+    # 7 — Target tracking, additional deviation and actual torque with windows.
+    s = base(prs, 7, "受扰偏移、关节力矩与恢复时间", "三张曲线展示第一次推力；下表比较三次撤力后的恢复，并给出全程受扰偏移峰值。")
+    legend(s, 1.0, 1.66,
+           [(SHORT[c], SERIES_COLOR[c], SERIES_DASH[c]) for c in CONTROL] +
+           [("施力起止", TARGET, MSO_LINE_DASH_STYLE.DASH)], 14, 2.32)
+    tracked, deviations, torques = {}, {}, {}
+    for c in CONTROL:
+        trace = diagnostics["runs"]["disturbed"][c]["chart_traces"]
+        paired = diagnostics["comparisons"][c]["chart_traces"]
+        tracked[c] = list(zip(trace["time_s"], trace["tracking_error_mm"]))
+        deviations[c] = list(zip(paired["time_s"], paired["disturbance_deviation_mm"]))
+        torques[c] = list(zip(trace["time_s"], trace["tau4_nm"]))
+    for x, title, traces, ylabel in (
+        (0.82, "笔尖跟踪误差", tracked, "误差 / mm"),
+        (4.80, "额外受扰偏移", deviations, "偏移 / mm"),
+        (8.78, "关节 4 力矩", torques, "力矩 / N·m")):
+        time_series_chart(s, x, 2.39, 3.74, 2.35, title, traces, ylabel)
+    table(s, 0.82, 5.02, 11.7, 1.60,
+          [["控制器", "全程偏移峰值 / mm", "第 1 次恢复 / s", "第 2 次恢复 / s", "第 3 次恢复 / s"]] +
+          [[SHORT[c], f"{diagnostics['comparisons'][c]['full_peak_paired_deviation']['error_m'] * 1000:.3f}"] +
+           [f"{v:.3f}" for v in recovery[c]] for c in CONTROL],
+          [0.20, 0.26, 0.18, 0.18, 0.18], 15, highlight_row=2)
+    text(s, 0.82, 6.67, 11.7, 0.30,
+         "额外偏移 = 受扰位置 − 正常位置；恢复：三维距离 ≤ 2 mm 且连续保持 0.5 s。", 16, MUTED)
 
-    # 7 — True editable chart with embedded workbook + exact recovery table.
-    s = base(prs, 7, "撤去推力：重力补偿 PD 恢复最快", "看受推轨迹多久回到原来的无干扰轨迹附近。")
-    deviation_chart(s, 0.82, 2.45, 5.80, 3.68, deviations)
-    text(s, 7.02, 1.98, 5.45, 0.45, "撤力后的恢复时间（s）", 21, bold=True)
-    table(s, 7.02, 2.53, 5.46, 2.90,
-          [["控制器", "第 1 次", "第 2 次", "第 3 次"]] +
-          [[SHORT[c]] + [f"{value:.3f}" for value in recovery[c]] for c in CONTROL],
-          [0.37, 0.21, 0.21, 0.21], 18, highlight_row=2)
-    text(s, 7.02, 5.75, 5.46, 0.55, "重力补偿 PD：三次均约 0.2 秒", 21, TEAL, bold=True)
-    text(s, 0.82, 6.51, 11.7, 0.40,
-         "恢复标准：回到无干扰轨迹的 2 mm 内，并连续保持至少 0.5 秒。", 18, MUTED)
-
-    # 8–9 — Native embedded MP4 objects, no external video file references.
+    # 8–9 — Preserve complete embedded originals and four parallel starts.
     embedded_videos = video_slide(prs, 8, "normal", source_paths)
     embedded_videos += video_slide(prs, 9, "disturbed", source_paths)
 
-    # 10 — Three supported takeaways and a single next step.
-    s = base(prs, 10, "本次实验的三个结论")
+    # 10 — Answer the assignment's questions without claiming unrun results.
+    s = base(prs, 10, "三个问题：差别、抗扰与实际选型")
     takeaways = [
-        ("01", "先托住自重，画得更准", "正常三维 RMSE：PD 约 33 mm → 重力补偿 PD 约 0.56 mm"),
-        ("02", "模糊控制的整体误差最小", "本次受推 RMSE 约 1.77 mm，比重力补偿 PD 低约 31%"),
-        ("03", "重力补偿 PD 撤力恢复最快", "三次均约 0.2 秒；绘画精度和恢复速度要分别看"),
+        ("01", "为什么 PD 会把图案画歪？",
+         "没有重力补偿，需要持续偏差来托住自重；正常 RMSE 约 33 mm。\n加上 G(q) 后降至约 0.56 mm，整体偏移显著减少。"),
+        ("02", "受推时谁偏得多，撤力后谁恢复快？",
+         "额外受扰偏移：施力时重力补偿 PD 最大 12.53 mm；全程 PD 最大 19.68 mm。\n重力补偿 PD 恢复最快；模糊的受扰整体 RMSE 最小（1.77 mm）。"),
+        ("03", "从二轴到七轴，实际使用怎么选？",
+         "新增冗余构型、关节限位、笔尖坐标与固定控制频率问题。\n本次慢速绘图优先重力补偿 PD；高速可对照计算力矩，模型不准可验证自适应补偿。"),
     ]
     for i, (number, title, explanation) in enumerate(takeaways):
-        y = 1.81 + i * 1.34
-        text(s, 0.82, y + 0.03, 0.8, 0.64, number, 32, TEAL, bold=True)
-        text(s, 1.95, y, 10.55, 0.53, title, 27, bold=True)
-        text(s, 1.95, y + 0.68, 10.55, 0.43, explanation, 20, MUTED)
+        y = 1.69 + i * 1.49
+        text(s, 0.82, y + 0.01, 0.80, 0.55, number, 30, TEAL, bold=True)
+        text(s, 1.88, y, 10.64, 0.46, title, 24, bold=True)
+        text(s, 1.88, y + 0.56, 10.64, 0.84, explanation, 18, MUTED)
         if i < 2:
-            line(s, 1.95, y + 1.19, 12.48, y + 1.19, GRID, 0.7)
-    text(s, 0.82, 6.10, 11.7, 0.37, "下一步：从图片提取轮廓，再调整参数与推力强度。", 20, TEAL)
-    text(s, 0.82, 6.62, 11.7, 0.29, "结论对应本次图案、控制参数与外力设置。", 16, MUTED)
+            line(s, 1.88, y + 1.36, 12.48, y + 1.36, GRID, 0.7)
+    text(s, 0.82, 6.45, 11.7, 0.41,
+         "计算力矩与模型失配尚未实测；慢速时惯性项较小，预期与重力补偿接近，待后续验证。", 17, TEAL)
 
     notes = load_notes()
-    fallback_notes = {
-        1: "项目完全在 Isaac Sim 中完成，使用 Franka Panda 七轴机械臂描绘 ChatGPT 标志的八条轮廓。",
-        2: "SVG 轮廓通过平滑时间规划、连续逆运动学得到参考关节角度，再用力矩控制执行。目标轮廓来源：output/normal/fuzzy/trajectory.csv。",
-        3: "PD 力矩为 Kp(q_ref-q)+Kd(dq_ref-dq)。GC-PD 增加 g(q)，两种自适应方法再增加 W^T phi，并从零权重在线更新。",
-        4: "外力为世界坐标系下的 (3,0,0)、(0,-3,0)、(2,2,0) N，分别持续20–22、55–57、90–92s。第三次合力约2.828N。",
-        5: "表中 RMSE=sqrt(mean(||p_actual-p_target||^2))，只统计落笔时刻。轨迹按世界坐标XY显示，同轴同尺度。source: output/summary.csv。",
-        6: "正常与受推记录逐时刻对齐。模糊的落笔三维 RMSE 为1.768879888mm，相对GC-PD的2.558163937mm降低30.8535%。PD受扰RMSE稍低，不能据此判为更抗扰。",
-        7: "恢复依据受推位置减无干扰位置的三维范数，撤力后连续0.5s不超过2mm。恢复时间记录这段区间的开始时间减撤力时间。曲线19–27s，展示第一次推力。",
-        8: "四个正常绘画视频完整内嵌在PPT中，进入本页后四个视频自动同时播放。PD轮廓偏移明显，补偿方案轮廓贴近目标。墨迹为实际XY投影，XYZ数据保持真实。模拟虚拟笔尖，没有模拟笔纸接触压力。",
-        9: "四个受扰视频完整内嵌在PPT中。推力发生在20–22、55–57、90–92秒。GC-PD撤力恢复最快，模糊受扰整体RMSE最低。PD箭头被桌面遮挡，实际施力和轨迹偏移已经核验。",
-        10: "重力补偿改善精度；本次参数下模糊整体RMSE最低；GC-PD撤力恢复最快。结论针对这一图案与推力参数。",
-    }
+    assert set(notes) == set(range(1, 11)), "All ten slides require assignment-aligned speaker notes"
     for i, slide in enumerate(prs.slides, 1):
-        body = notes.get(i, fallback_notes[i])
-        slide.notes_slide.notes_text_frame.text = body + "\n\n编辑说明：文字、表格、流程图、轨迹线及时间曲线均为原生 PowerPoint 对象。时间曲线可通过“编辑数据”修改；轨迹线可通过“编辑顶点”修改。真实仿真截图为图片。第8、9页的八个视频完整内嵌，视频下方说明为可编辑文本框。"
+        slide.notes_slide.notes_text_frame.text = notes[i] + "\n\n编辑说明：文字、表格、流程图、轨迹线及时间曲线均为原生 PowerPoint 对象。时间曲线可通过“编辑数据”修改；轨迹线可通过“编辑顶点”修改。真实仿真截图为图片。第8、9页的八个视频完整内嵌，视频下方说明为可编辑文本框。"
     assert len(prs.slides) == TOTAL_SLIDES
-    # Disable template-inherited shadows, including native freeform paths.
     for slide in prs.slides:
         for shape in slide.shapes:
             for effect_ref in shape._element.xpath(".//a:effectRef"):
@@ -724,7 +719,6 @@ def build(destination):
             for props in shape._element.xpath("./p:spPr"):
                 if props.find("a:effectLst", props.nsmap) is None:
                     props.append(OxmlElement("a:effectLst"))
-    # Simple static shape bounds check, followed by actual rendering outside here.
     for i, slide in enumerate(prs.slides, 1):
         for shape in slide.shapes:
             assert shape.left >= -1000 and shape.top >= -1000, (i, shape.name)
@@ -740,38 +734,42 @@ def build(destination):
             temporary.unlink()
     source_hashes = {}
     for p in source_paths + [scene, push_scene]:
-        digest = hashlib.sha256()
         with p.open("rb") as stream:
-            while block := stream.read(1024 * 1024):
-                digest.update(block)
-        source_hashes[str(p.relative_to(ROOT))] = digest.hexdigest()
+            source_hashes[str(p.relative_to(ROOT))] = hashlib.file_digest(stream, "sha256").hexdigest()
     audit = {
         "presentation": str(destination.relative_to(ROOT)) if destination.is_relative_to(ROOT) else str(destination),
-        "slide_count": TOTAL_SLIDES,
-        "slide_size": "16:9",
-        "font": FONT,
+        "assignment": "6546682.pdf", "student": {"name": "肖淇文", "id": "2453703"},
+        "date": "2026-10-13", "slide_count": TOTAL_SLIDES, "slide_size": "16:9", "font": FONT,
         "metric": "pen-down 3D position RMSE, mm",
         "normal_rmse_mm": {c: rmse(c, "normal") for c in CONTROL},
         "disturbed_rmse_mm": {c: rmse(c, "disturbed") for c in CONTROL},
+        "disturbed_drawing_peak_tracking_error_mm": {
+            c: diagnostics["runs"]["disturbed"][c]["peak_tracking_errors"]["pen_down"]["error_m"] * 1000 for c in CONTROL},
+        "full_peak_paired_deviation_mm": {
+            c: diagnostics["comparisons"][c]["full_peak_paired_deviation"]["error_m"] * 1000 for c in CONTROL},
         "recovery_s": recovery,
         "fuzzy_vs_gc_pd_disturbed_rmse_reduction_percent": improvement,
-        "recovery_definition": "After force off, disturbed-normal 3D distance <= 2 mm for at least 0.5 s; time is start of qualifying interval minus force end.",
-        "outline_display": "10 ms displayed samples, stroke endpoints preserved, RDP tolerance 0.05 mm; all reported RMSE use complete 1 ms experiment data",
-        "time_series_display": "first force window, 19–27 s, displayed samples every 10 ms",
-        "native_editable": ["text", "tables", "flowchart", "trajectory freeform paths", "XY time-series chart with embedded Excel workbook"],
+        "max_ik_tip_error_mm": ik_residual_mm, "max_adjacent_planning_joint_jump_deg": joint_jump_deg,
+        "recovery_definition": diagnostics["definitions"]["recovery"],
+        "outline_display": "10 ms displayed samples, stroke endpoints preserved, RDP tolerance 0.05 mm; all reported metrics use complete 1 ms data",
+        "time_series_display": "Three native charts; 19 <= t < 27 s; 10 ms display; native dashed force boundaries at 20 and 22 s",
+        "native_editable": ["text", "tables", "vertical flowchart", "trajectory freeform paths", "three XY charts with embedded Excel workbooks"],
         "raster_assets": [str(p.relative_to(ROOT)) for p in (scene, push_scene)],
         "embedded_videos": embedded_videos,
         "video_delivery": "8 complete internally embedded MP4 files; four videos start automatically in parallel on each video slide; no external video links",
-        "video_playback": {"trigger": "slide entry", "start_delay_ms": 0,
-                           "mode": "parallel", "videos_per_slide": 4, "slides": [8, 9]},
+        "video_playback": {"trigger": "slide entry", "start_delay_ms": 0, "mode": "parallel", "videos_per_slide": 4, "slides": [8, 9]},
         "pdf_preview": "Static poster frames only; embedded videos play in the PPTX slideshow",
-        "source_sha256": source_hashes,
-        "notes_from_markdown": sorted(notes),
+        "scope": {"measured_controllers": list(CONTROL), "platform": "Isaac Sim / PhysX",
+                  "force_n": [[3, 0, 0], [0, -3, 0], [2, 2, 0]],
+                  "computed_torque": "principle only, not implemented or measured",
+                  "model_mismatch": "future experiment, not measured", "50N_example": "not tested",
+                  "qdd_feedforward": "not used; current Hermite interpolation is C1, not C2"},
+        "source_sha256": source_hashes, "notes_from_markdown": sorted(notes),
         "shape_counts": [len(s.shapes) for s in prs.slides],
     }
     (OUT / "presentation_sources.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n")
     print(f"Saved editable presentation: {destination}", flush=True)
-    print(f"Ten slides; eight fully embedded videos; native chart workbook; notes for {len(notes)}/{TOTAL_SLIDES} slides.", flush=True)
+    print("Ten slides; eight complete embedded videos; three editable charts; ten assignment-aligned notes.", flush=True)
     return destination
 
 

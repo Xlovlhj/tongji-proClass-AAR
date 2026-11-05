@@ -1,4 +1,6 @@
-# tongji-proClass-AAR · 机械臂画家
+# tongji-proClass-AAR · Project 1：机械臂画家
+
+当前为 **`project1` 分支**，项目目录为 `Pro1/`。青龙人形机器人 MPC/WBC 项目请切换到 [`project2` 分支](https://github.com/Xlovlhj/tongji-proClass-AAR/tree/project2)。
 
 本仓库保存机器人课程项目 **robot arm artist（raa-v0）**，代码位于 `Pro1/`。在 Isaac Sim 中加载 Franka Panda 七轴机械臂，让虚拟笔尖画出 ChatGPT 标志，并比较 PD、重力补偿 PD、RBF 自适应和模糊自适应控制。
 

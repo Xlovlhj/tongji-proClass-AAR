@@ -1,26 +1,44 @@
 {
+  "assignment": "Pro1/6546682.pdf",
+  "student": {
+    "name": "肖淇文",
+    "id": "2453703"
+  },
   "slide_count": 10,
   "pdf_pages": 10,
   "notes": 10,
+  "notes_match_markdown": true,
+  "native_editable_charts": 3,
+  "embedded_excel_workbooks": 3,
+  "points_per_controller_per_chart": 800,
+  "force_window_markers_s": [
+    20,
+    22
+  ],
   "embedded_video_count": 8,
   "video_pages": {
     "8": "four normal runs",
     "9": "four disturbed runs"
   },
   "external_video_links": 0,
-  "video_titles_and_explanations": "editable text below every video",
-  "native_click_to_play_actions": 8,
   "complete_original_videos": true,
-  "independent_media_audit": "PASS: eight MP4 hashes matched originals; MIME, internal MEDIA/VIDEO relationships, embedded IDs, native play actions/timing, aspect ratio and caption placement checked.",
-  "numeric_evidence": "Existing validated experiment tables and charts retained; same source data.",
-  "visual_review": "Video pages rendered and inspected; titles and two-line captions readable; 10-page PDF and previews updated.",
-  "pdf_preview": "static poster images, no video payload",
-  "pptx_size_mib": 360.139,
-  "pdf_size_kib": 647.707,
-  "pptx_sha256": "bb3a10f3daac36cf67873750bd292554556301041d8f19c1db733bb885a74ca7",
-  "pdf_sha256": "9174f610cad086e3598df6b8b71006a85d04e404ef20186e9327fadf80851e14",
-  "video_playback": "four videos automatically start together on slide entry; shared parallel root; start delay 0 ms",
+  "video_playback": "Four sibling media nodes in a shared parallel root on each video slide; every start condition is delay=0.",
   "parallel_auto_start_video_nodes": 8,
   "embedded_videos_unchanged": true,
-  "playback_audit": "Independent audit passed: both slides have four sibling p:video nodes under their shared tmRoot; all conditions exactly delay=0 with no click event; targets and all eight MP4 hashes match."
+  "video_titles_and_explanations": "native editable text below each video",
+  "numeric_evidence": "IK residual, joint jumps, RMSE, peaks, recovery and torque traces from saved source data; 42 provenance hashes verified.",
+  "verified_diagnostic_source_files": 42,
+  "scope": "Computed torque is principle only; 50 N and model-mismatch experiments are not measured; actual forces around 3 N.",
+  "visual_review": "Ten-page contact sheet and enlarged chart/formula/video pages inspected. Formula derivatives use dq/dt and d²q/dt² to avoid misplaced combining marks.",
+  "pdf_preview": "static poster images; no video payload",
+  "pptx_size_mib": 360.393,
+  "pdf_size_kib": 775.827,
+  "pptx_sha256": "34b1367398d791620f3d35b3f2b9fe5c686ff2779531dd2476b3f249d6e10478",
+  "pdf_sha256": "687ea1b813d9b29bb76e60d2350e7cf8a33f09ef2c270604d4f907a083e1397d",
+  "runtime_playback_test": "Office slideshow unavailable; native package timing and complete embedded media verified.",
+  "submission_files": {
+    "pptx": "Pro1/ppt/2453703_肖淇文_作业1.pptx",
+    "pdf": "Pro1/ppt/2453703_肖淇文_作业1.pdf"
+  },
+  "submission_copy_sha256_matches": true
 }

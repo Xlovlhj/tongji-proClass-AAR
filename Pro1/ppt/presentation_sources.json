@@ -1,5 +1,11 @@
 {
   "presentation": "ppt/raa-v0.pptx",
+  "assignment": "6546682.pdf",
+  "student": {
+    "name": "肖淇文",
+    "id": "2453703"
+  },
+  "date": "2026-10-13",
   "slide_count": 10,
   "slide_size": "16:9",
   "font": "Noto Sans CJK SC",
@@ -15,6 +21,18 @@
     "gc-pd": 2.558163937367584,
     "rbf": 2.0955107719842068,
     "fuzzy": 1.7688798881701515
+  },
+  "disturbed_drawing_peak_tracking_error_mm": {
+    "pd": 50.71991324773262,
+    "gc-pd": 12.334204146554882,
+    "rbf": 11.205873051072336,
+    "fuzzy": 11.134592435652769
+  },
+  "full_peak_paired_deviation_mm": {
+    "pd": 19.676202427884558,
+    "gc-pd": 12.528033737771228,
+    "rbf": 11.499238887143015,
+    "fuzzy": 11.446266748706867
   },
   "recovery_s": {
     "pd": [
@@ -39,15 +57,17 @@
     ]
   },
   "fuzzy_vs_gc_pd_disturbed_rmse_reduction_percent": 30.853536697480997,
-  "recovery_definition": "After force off, disturbed-normal 3D distance <= 2 mm for at least 0.5 s; time is start of qualifying interval minus force end.",
-  "outline_display": "10 ms displayed samples, stroke endpoints preserved, RDP tolerance 0.05 mm; all reported RMSE use complete 1 ms experiment data",
-  "time_series_display": "first force window, 19–27 s, displayed samples every 10 ms",
+  "max_ik_tip_error_mm": 0.001995242354936199,
+  "max_adjacent_planning_joint_jump_deg": 0.170691934493073,
+  "recovery_definition": "After force end, paired 3D deviation <=2 mm continuously for at least 0.5 s; report stable-window start minus force-end time",
+  "outline_display": "10 ms displayed samples, stroke endpoints preserved, RDP tolerance 0.05 mm; all reported metrics use complete 1 ms data",
+  "time_series_display": "Three native charts; 19 <= t < 27 s; 10 ms display; native dashed force boundaries at 20 and 22 s",
   "native_editable": [
     "text",
     "tables",
-    "flowchart",
+    "vertical flowchart",
     "trajectory freeform paths",
-    "XY time-series chart with embedded Excel workbook"
+    "three XY charts with embedded Excel workbooks"
   ],
   "raster_assets": [
     "output/video_checks/fuzzy_normal/frame_113_9s.png",
@@ -120,23 +140,62 @@
     }
   ],
   "video_delivery": "8 complete internally embedded MP4 files; four videos start automatically in parallel on each video slide; no external video links",
+  "video_playback": {
+    "trigger": "slide entry",
+    "start_delay_ms": 0,
+    "mode": "parallel",
+    "videos_per_slide": 4,
+    "slides": [
+      8,
+      9
+    ]
+  },
   "pdf_preview": "Static poster frames only; embedded videos play in the PPTX slideshow",
+  "scope": {
+    "measured_controllers": [
+      "pd",
+      "gc-pd",
+      "rbf",
+      "fuzzy"
+    ],
+    "platform": "Isaac Sim / PhysX",
+    "force_n": [
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        0,
+        -3,
+        0
+      ],
+      [
+        2,
+        2,
+        0
+      ]
+    ],
+    "computed_torque": "principle only, not implemented or measured",
+    "model_mismatch": "future experiment, not measured",
+    "50N_example": "not tested",
+    "qdd_feedforward": "not used; current Hermite interpolation is C1, not C2"
+  },
   "source_sha256": {
     "output/summary.csv": "c34b4f79313a8458ef05da82e02e44e5a992144c76a191894229704b6e0d281a",
     "output/experiment_manifest.json": "35452be251b01b73db888e9d2a1b5b9476c4da45fec8a10cd88c78ed3c664ef0",
+    "ppt/assignment_diagnostics.json": "10ae15c13ed4ab0b4591e5c63d7a4673249b751574e04cb7efcdc42c05ea188e",
+    "6546682.pdf": "a4f495cf8fcd9a08fc9895a614339f6295839438f886b8c359db336796f3a05a",
+    "ppt/speaker_notes.md": "a5e9cdeadc1d2856083707de4d80050c3110a6122e57151237024f3eb497f3d2",
+    "build_ppt.py": "b47c5ae4872734f8e31212fe11af931098c227c9ac5ce039a773083cb277db1b",
     "output/normal/pd/trajectory.csv": "24e114cfea1c34107b395bd7a0e5adba913705da3cdf6b103dd6810709f31b68",
+    "output/disturbed/pd/trajectory.csv": "c48cba4b573a42070d298588ac8d240ec9359e8363ae9bf63f3ee7955ced0f23",
     "output/normal/gc-pd/trajectory.csv": "f4b9178b9045a4ff26f90cc61b12f49431d9f81472cd4308040ee27fc3c15d1b",
+    "output/disturbed/gc-pd/trajectory.csv": "2f181553557f5f7b62bfc43ea72b13943e112b5451f8945141de9ce4a3886e15",
     "output/normal/rbf/trajectory.csv": "db9b2ca6413e07b8f80c65e9c15c7bbe6427f228f44430019d0d1131f0187165",
+    "output/disturbed/rbf/trajectory.csv": "4701e976dea8cb1b7ceeb4c212aea792f627355b9cdcfe518983a8f035ec2c2f",
     "output/normal/fuzzy/trajectory.csv": "f43d229f87a7b516194029864da75c2e34cf6bb7666b8d27006a1fa7d8caa06f",
     "output/disturbed/fuzzy/trajectory.csv": "70f899c96e27dadac57941e63ed8f9c917ca55379a80c751250887a32c1512ec",
-    "output/comparisons/pd/comparison.csv": "d9ee5ac1413eda191a3edd34d02ad1575230bbcbc7cc2112e80c19ae72d78d9e",
-    "output/comparisons/pd/comparison_metrics.json": "24bff9f39c5b6308f53bfae06ade657a9f0b56040864dae8bb2b4cecb220c332",
-    "output/comparisons/gc-pd/comparison.csv": "d2deadc31f5143c548fa0a4222f5521a5c5722f754b0264252724df279ea758d",
-    "output/comparisons/gc-pd/comparison_metrics.json": "8489ed768b6825b7853e8dd2fe530720ec31fa0d58d3ea8078943e33b7f1bf5a",
-    "output/comparisons/rbf/comparison.csv": "3c0a2475dbd0b17405bb15971f6817d10ee6e4c5ec7c596a24296e48234fb441",
-    "output/comparisons/rbf/comparison_metrics.json": "2d6648933460f802d6b076c3232f6b6b00dc8ae851e528db4092e531ee68fba8",
-    "output/comparisons/fuzzy/comparison.csv": "faf97e9b7cb03be22640eda2fb23a74e30680a7fac8452237f0da3f88a8b4dc0",
-    "output/comparisons/fuzzy/comparison_metrics.json": "6a8dfd6fb10ffa735663ca607ddb00aed85f4a0275231470a3bba3c42b4b7094",
     "video/pd_normal.mp4": "a7722736f7b0593f16d0a0c8d56bc876243ba4995db1526119cf06a9223509a9",
     "output/video_checks/pd_normal/frame_113_9s.png": "01880ccbfb9d06641332c08bd8f735a3fb67a9ac04eb7196ebaa4b282289f3e6",
     "video/gc-pd_normal.mp4": "5802fdc419192cd2d36d46a9561f817381315b7861bf0a9a44fca07d03c24949",
@@ -167,25 +226,15 @@
     10
   ],
   "shape_counts": [
-    9,
-    40,
-    9,
     11,
-    143,
-    56,
+    28,
+    38,
+    11,
     12,
+    177,
+    24,
     19,
     19,
-    18
-  ],
-  "video_playback": {
-    "trigger": "slide entry",
-    "start_delay_ms": 0,
-    "mode": "parallel",
-    "videos_per_slide": 4,
-    "slides": [
-      8,
-      9
-    ]
-  }
+    17
+  ]
 }

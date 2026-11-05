@@ -20,12 +20,6 @@
       "17"
     ]
   },
-  "modified_package_entries": [
-    "ppt/slides/slide8.xml",
-    "ppt/notesSlides/notesSlide8.xml",
-    "ppt/slides/slide9.xml",
-    "ppt/notesSlides/notesSlide9.xml"
-  ],
   "embedded_media_sha256": {
     "ppt/media/media1.mp4": "a7722736f7b0593f16d0a0c8d56bc876243ba4995db1526119cf06a9223509a9",
     "ppt/media/media2.mp4": "5802fdc419192cd2d36d46a9561f817381315b7861bf0a9a44fca07d03c24949",
@@ -37,5 +31,5 @@
     "ppt/media/media8.mp4": "06213859e6f458540e1ecd07eae931780d94f90ca623c4fb229683e60240d039"
   },
   "embedded_videos_unchanged": true,
-  "pptx_sha256": "bb3a10f3daac36cf67873750bd292554556301041d8f19c1db733bb885a74ca7"
+  "pptx_sha256": "34b1367398d791620f3d35b3f2b9fe5c686ff2779531dd2476b3f249d6e10478"
 }

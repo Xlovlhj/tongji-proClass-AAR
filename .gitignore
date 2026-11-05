@@ -9,5 +9,6 @@ __pycache__/
 
 # Complete embedded-video presentation is published as a Release attachment
 Pro1/ppt/raa-v0.pptx
+Pro1/ppt/*_作业1.pptx
 Pro1/ppt/.*.building.pptx
 Pro1/ppt/.*.syncing.pptx
